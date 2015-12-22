@@ -78,7 +78,7 @@
                                 <rect key="frame" x="275" y="555" width="51" height="30"/>
                                 <state key="normal" title="camera"/>
                                 <connections>
-                                    <action selector="btnTakingPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I5y-uX-LTf"/>
+                                    <segue destination="kfD-DY-fvQ" kind="show" id="M9w-zn-hqG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1W6-mS-9jg">
@@ -159,6 +159,105 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1H-AP-7ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="232" y="281"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="TYb-ee-16F">
+            <objects>
+                <viewController id="kfD-DY-fvQ" customClass="XMCCameraViewController" customModule="TimeCapturor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lvg-FY-kf9"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Di-BJ-1yP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EHe-Oy-fi3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fGu-uN-cxN" userLabel="Still Area">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LND-H6-SBT" userLabel="Preview Area">
+                                <rect key="frame" x="0.0" y="0.0" width="596" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yn9-16-fdw">
+                                <rect key="frame" x="20" y="544" width="560" height="36"/>
+                                <color key="backgroundColor" red="0.15294118230000001" green="0.67450982329999998" blue="0.51372551919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Capture">
+                                    <color key="titleColor" red="1" green="0.98223738449999998" blue="0.98084233399999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="captureFrame:" destination="kfD-DY-fvQ" eventType="touchUpInside" id="cvc-cq-iXm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cy7-AH-i56" userLabel="Capture Shadow">
+                                <rect key="frame" x="20" y="580" width="560" height="1"/>
+                                <color key="backgroundColor" red="0.15294118230000001" green="0.67450982329999998" blue="0.51372551919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="OC3-a4-Rff"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Camera Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54F-B5-Cdh">
+                                <rect key="frame" x="247" y="261" width="106" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="AAP-4a-k9H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVb-Oe-qpy">
+                                <rect key="frame" x="19" y="44" width="49" height="30"/>
+                                <state key="normal" title="←Back"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="kfD-DY-fvQ" eventType="touchUpInside" id="vUw-19-wbJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hVb-Oe-qpy" firstAttribute="top" secondItem="lvg-FY-kf9" secondAttribute="bottom" id="5MF-qZ-ByD"/>
+                            <constraint firstItem="fGu-uN-cxN" firstAttribute="leading" secondItem="EHe-Oy-fi3" secondAttribute="leading" id="Ddd-8E-d3Q"/>
+                            <constraint firstItem="LND-H6-SBT" firstAttribute="top" secondItem="fGu-uN-cxN" secondAttribute="top" id="Ew1-n8-7Uo"/>
+                            <constraint firstItem="fGu-uN-cxN" firstAttribute="top" secondItem="EHe-Oy-fi3" secondAttribute="top" id="J9c-Wd-iJk"/>
+                            <constraint firstItem="LND-H6-SBT" firstAttribute="bottom" secondItem="6Di-BJ-1yP" secondAttribute="top" id="TPY-su-oms"/>
+                            <constraint firstAttribute="centerX" secondItem="yn9-16-fdw" secondAttribute="centerX" id="UVX-a4-pVh"/>
+                            <constraint firstItem="54F-B5-Cdh" firstAttribute="top" secondItem="lvg-FY-kf9" secondAttribute="bottom" constant="217" id="Wzm-9G-Y39"/>
+                            <constraint firstItem="LND-H6-SBT" firstAttribute="leading" secondItem="fGu-uN-cxN" secondAttribute="leading" id="XL3-XR-TB4"/>
+                            <constraint firstItem="cy7-AH-i56" firstAttribute="leading" secondItem="yn9-16-fdw" secondAttribute="leading" id="XLw-yo-dxP"/>
+                            <constraint firstItem="fGu-uN-cxN" firstAttribute="centerX" secondItem="yn9-16-fdw" secondAttribute="centerX" id="diB-rc-KL8"/>
+                            <constraint firstItem="hVb-Oe-qpy" firstAttribute="leading" secondItem="yn9-16-fdw" secondAttribute="leading" id="gzQ-2f-W2l"/>
+                            <constraint firstItem="yn9-16-fdw" firstAttribute="leading" secondItem="EHe-Oy-fi3" secondAttribute="leadingMargin" id="j1p-HI-W6I"/>
+                            <constraint firstItem="cy7-AH-i56" firstAttribute="bottom" secondItem="yn9-16-fdw" secondAttribute="bottom" constant="1" id="mBU-Bs-D4d"/>
+                            <constraint firstItem="yn9-16-fdw" firstAttribute="trailing" secondItem="EHe-Oy-fi3" secondAttribute="trailingMargin" id="nB1-Sk-9hE"/>
+                            <constraint firstItem="6Di-BJ-1yP" firstAttribute="top" secondItem="yn9-16-fdw" secondAttribute="bottom" constant="20" id="o0Y-PT-rh9"/>
+                            <constraint firstItem="cy7-AH-i56" firstAttribute="trailing" secondItem="yn9-16-fdw" secondAttribute="trailing" id="uN1-fe-gzz"/>
+                            <constraint firstItem="fGu-uN-cxN" firstAttribute="bottom" secondItem="6Di-BJ-1yP" secondAttribute="top" id="uX8-Ha-Pte"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LND-H6-SBT" secondAttribute="trailing" constant="-16" id="w4s-Bz-1Jo"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="Cancle" destination="hVb-Oe-qpy" id="I5E-jI-7ga"/>
+                        <outlet property="cameraCapture" destination="yn9-16-fdw" id="qTV-8D-R5f"/>
+                        <outlet property="cameraCaptureShadow" destination="cy7-AH-i56" id="ii3-d3-cop"/>
+                        <outlet property="cameraPreview" destination="LND-H6-SBT" id="SfS-Gf-0kv"/>
+                        <outlet property="cameraStatus" destination="54F-B5-Cdh" id="5UP-mc-07I"/>
+                        <outlet property="cameraStill" destination="fGu-uN-cxN" id="Xyl-hV-SFc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlL-2v-JRJ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005" y="837"/>
         </scene>
     </scenes>
 </document>
