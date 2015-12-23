@@ -73,6 +73,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAk-0c-Mmr">
                                 <rect key="frame" x="20" y="555" width="30" height="30"/>
                                 <state key="normal" title="GIF"/>
+                                <connections>
+                                    <segue destination="p3c-WG-bjN" kind="show" id="lZr-gb-55h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hco-iC-JGB">
                                 <rect key="frame" x="275" y="555" width="51" height="30"/>
@@ -159,6 +162,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1H-AP-7ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="232" y="281"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DRD-I9-pe0">
+            <objects>
+                <viewController id="p3c-WG-bjN" customClass="GIFViewController" customModule="TimeCapturor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tzb-dS-0AH"/>
+                        <viewControllerLayoutGuide type="bottom" id="tuQ-hI-Kdd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oqc-jq-Eht">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4xj-u7-yTF">
+                                <rect key="frame" x="180" y="106" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="e3e-mB-ALZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4xj-u7-yTF" firstAttribute="centerX" secondItem="Oqc-jq-Eht" secondAttribute="centerX" id="H7o-Wt-7Ij"/>
+                            <constraint firstItem="4xj-u7-yTF" firstAttribute="top" secondItem="Tzb-dS-0AH" secondAttribute="bottom" constant="86" id="n0b-yC-KZk"/>
+                            <constraint firstItem="tuQ-hI-Kdd" firstAttribute="top" secondItem="4xj-u7-yTF" secondAttribute="bottom" constant="366" id="p9e-E4-751"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gifimageView" destination="4xj-u7-yTF" id="aAd-I5-Crf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qGJ-l3-FpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="632" y="991"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="TYb-ee-16F">
@@ -258,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlL-2v-JRJ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005" y="837"/>
+            <point key="canvasLocation" x="1383" y="887"/>
         </scene>
     </scenes>
 </document>

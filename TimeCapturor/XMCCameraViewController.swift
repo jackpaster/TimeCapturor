@@ -94,11 +94,19 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
         } else if self.status == .Still || self.status == .Error {
             if !saveImageToSandBox() {
                 print("save image false")
+            }else{
+                UIView.animateWithDuration(0.225, animations: { () -> Void in
+                    self.cameraStill.alpha = 0.0;
+                    self.cameraStatus.alpha = 0.0;
+                    self.cameraPreview.alpha = 1.0;
+                    self.Cancle.setTitle("←Back", forState: UIControlState.Normal)
+                    self.cameraCapture.setTitle("Capture", forState: UIControlState.Normal)
+                    }, completion: { (done) -> Void in
+                        self.cameraStill.image = nil;
+                        self.status = .Preview
+                })
+
             }
-            self.Cancle.setTitle("←Back", forState: UIControlState.Normal)
-            self.cameraCapture.setTitle("Capture", forState: UIControlState.Normal)
-            self.cameraStill.image = nil;
-            self.status = .Preview
         }
     }
     
@@ -112,6 +120,14 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
                 if let docsDir = filManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as NSURL!
                 {
                     let unique = NSDate.timeIntervalSinceReferenceDate()
+                   // print(unique)//472587882.953091
+                  //  let unique2 = NSDate(timeIntervalSinceReferenceDate: unique).description as NSString
+                  //  print(unique2)//2015-12-23 18:24:42 +0000
+                 //   let range = unique2.rangeOfString(" ")
+                 //   print(range)//10 1
+                  //  let r = NSMakeRange(0, range.location)
+                   // let s = unique2.substringWithRange(r)
+                 //   print(s)
                     let url = docsDir.URLByAppendingPathComponent("\(unique).jpg")
                     // if let path = url.absoluteString as? String{
                     if imageData.writeToURL(url, atomically: true)

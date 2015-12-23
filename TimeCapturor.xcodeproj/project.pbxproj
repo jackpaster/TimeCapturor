@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		FE4DDE731C29DDF400F7A328 /* XMCCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */; };
 		FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */; };
+		FE56C1BB1C2B2D4500F24B32 /* UIImageExtentGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1BA1C2B2D4500F24B32 /* UIImageExtentGif.swift */; };
+		FE56C1BD1C2B2D6E00F24B32 /* GIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1BC1C2B2D6E00F24B32 /* GIFViewController.swift */; };
+		FE56C1BF1C2B2F3700F24B32 /* jeremy.gif in Resources */ = {isa = PBXBuildFile; fileRef = FE56C1BE1C2B2F3700F24B32 /* jeremy.gif */; };
 		FEA216E11C28626E008F07F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA216E01C28626E008F07F0 /* AppDelegate.swift */; };
 		FEA216E31C28626E008F07F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA216E21C28626E008F07F0 /* ViewController.swift */; };
 		FEA216E61C28626E008F07F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA216E41C28626E008F07F0 /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 /* Begin PBXFileReference section */
 		FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCCamera.swift; sourceTree = "<group>"; };
 		FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCCameraViewController.swift; sourceTree = "<group>"; };
+		FE56C1BA1C2B2D4500F24B32 /* UIImageExtentGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtentGif.swift; sourceTree = "<group>"; };
+		FE56C1BC1C2B2D6E00F24B32 /* GIFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFViewController.swift; sourceTree = "<group>"; };
+		FE56C1BE1C2B2F3700F24B32 /* jeremy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jeremy.gif; sourceTree = "<group>"; };
 		FEA216DD1C28626E008F07F0 /* TimeCapturor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCapturor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA216E01C28626E008F07F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEA216E21C28626E008F07F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +49,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE56C1B81C2B2D1000F24B32 /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */,
+				FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */,
+			);
+			name = camera;
+			sourceTree = "<group>";
+		};
+		FE56C1B91C2B2D3300F24B32 /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				FE56C1BC1C2B2D6E00F24B32 /* GIFViewController.swift */,
+				FE56C1BA1C2B2D4500F24B32 /* UIImageExtentGif.swift */,
+			);
+			name = gif;
+			sourceTree = "<group>";
+		};
 		FEA216D41C28626E008F07F0 = {
 			isa = PBXGroup;
 			children = (
@@ -62,12 +86,13 @@
 		FEA216DF1C28626E008F07F0 /* TimeCapturor */ = {
 			isa = PBXGroup;
 			children = (
+				FE56C1B91C2B2D3300F24B32 /* gif */,
+				FE56C1B81C2B2D1000F24B32 /* camera */,
 				FEA216E01C28626E008F07F0 /* AppDelegate.swift */,
+				FE56C1BE1C2B2F3700F24B32 /* jeremy.gif */,
 				FEA216E21C28626E008F07F0 /* ViewController.swift */,
 				FEA216E41C28626E008F07F0 /* Main.storyboard */,
 				FEA216F21C28703B008F07F0 /* CollectionViewCell.swift */,
-				FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */,
-				FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */,
 				FEA216F41C287052008F07F0 /* NewViewController.swift */,
 				FEA216E71C28626E008F07F0 /* Assets.xcassets */,
 				FEA216E91C28626E008F07F0 /* LaunchScreen.storyboard */,
@@ -137,6 +162,7 @@
 			files = (
 				FEA216EB1C28626E008F07F0 /* LaunchScreen.storyboard in Resources */,
 				FEA216E81C28626E008F07F0 /* Assets.xcassets in Resources */,
+				FE56C1BF1C2B2F3700F24B32 /* jeremy.gif in Resources */,
 				FEA216E61C28626E008F07F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,9 +176,11 @@
 			files = (
 				FEA216E31C28626E008F07F0 /* ViewController.swift in Sources */,
 				FE4DDE731C29DDF400F7A328 /* XMCCamera.swift in Sources */,
+				FE56C1BB1C2B2D4500F24B32 /* UIImageExtentGif.swift in Sources */,
 				FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */,
 				FEA216E11C28626E008F07F0 /* AppDelegate.swift in Sources */,
 				FEA216F31C28703B008F07F0 /* CollectionViewCell.swift in Sources */,
+				FE56C1BD1C2B2D6E00F24B32 /* GIFViewController.swift in Sources */,
 				FEA216F51C287052008F07F0 /* NewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
