@@ -27,7 +27,8 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
     @IBAction func btnCancel(sender: UIButton) {
         
         if self.status == .Preview {
-             navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.navigationBarHidden = false
+            navigationController?.popViewControllerAnimated(true)
             
         } else if self.status == .Still{
             
@@ -41,7 +42,6 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
                     self.cameraStill.image = nil;
                     self.status = .Preview
             })
-           
         }
     }
     
@@ -50,6 +50,7 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
         self.navigationController?.navigationBarHidden = true
         self.establishVideoPreviewArea()
     }
+    
     
     func initializeCamera() {
         self.cameraStatus.text = "Starting Camera"
@@ -88,44 +89,67 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
                     self.status = .Error
                 }
                 self.Cancle.setTitle("X", forState: UIControlState.Normal)
-                self.cameraCapture.setTitle("Reset", forState: UIControlState.Normal)
+                self.cameraCapture.setTitle("Save", forState: UIControlState.Normal)
             })
         } else if self.status == .Still || self.status == .Error {
-            UIView.animateWithDuration(0.225, animations: { () -> Void in
-                self.cameraStill.alpha = 0.0;
-                self.cameraStatus.alpha = 0.0;
-                self.cameraPreview.alpha = 1.0;
-                self.Cancle.setTitle("←Back", forState: UIControlState.Normal)
-                self.cameraCapture.setTitle("Capture", forState: UIControlState.Normal)
-                }, completion: { (done) -> Void in
-                    self.cameraStill.image = nil;
-                    self.status = .Preview
-            })
+            if !saveImageToSandBox() {
+                print("save image false")
+            }
+            self.Cancle.setTitle("←Back", forState: UIControlState.Normal)
+            self.cameraCapture.setTitle("Capture", forState: UIControlState.Normal)
+            self.cameraStill.image = nil;
+            self.status = .Preview
         }
     }
     
-    // MARK: Camera Delegate
-    
-    func cameraSessionConfigurationDidComplete() {
-        self.camera?.startCamera()
+    func saveImageToSandBox() -> Bool
+    {
+        if let image = self.cameraStill.image
+        {
+            if let imageData = UIImageJPEGRepresentation(image, 1.0)
+            {
+                let filManager = NSFileManager()
+                if let docsDir = filManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as NSURL!
+                {
+                    let unique = NSDate.timeIntervalSinceReferenceDate()
+                    let url = docsDir.URLByAppendingPathComponent("\(unique).jpg")
+                    // if let path = url.absoluteString as? String{
+                    if imageData.writeToURL(url, atomically: true)
+                    {
+                        print(url.absoluteString)
+                        return true
+                    }
+                    
+                    // }
+                    
+                }
+            }
+        }
+        return false
     }
     
-    func cameraSessionDidBegin() {
-        self.cameraStatus.text = ""
-        UIView.animateWithDuration(0.225, animations: { () -> Void in
-            self.cameraStatus.alpha = 0.0
-            self.cameraPreview.alpha = 1.0
-            self.cameraCapture.alpha = 1.0
-            self.cameraCaptureShadow.alpha = 0.4;
-        })
-    }
-    
-    func cameraSessionDidStop() {
-        self.cameraStatus.text = "Camera Stopped"
-        UIView.animateWithDuration(0.225, animations: { () -> Void in
-            self.cameraStatus.alpha = 1.0
-            self.cameraPreview.alpha = 0.0
-        })
-    }
+        // MARK: Camera Delegate
+        
+        func cameraSessionConfigurationDidComplete() {
+            self.camera?.startCamera()
+        }
+        
+        func cameraSessionDidBegin() {
+            self.cameraStatus.text = ""
+            UIView.animateWithDuration(0.225, animations: { () -> Void in
+                self.cameraStatus.alpha = 0.0
+                self.cameraPreview.alpha = 1.0
+                self.cameraCapture.alpha = 1.0
+                self.cameraCaptureShadow.alpha = 0.4;
+            })
+        }
+        
+        func cameraSessionDidStop() {
+            self.cameraStatus.text = "Camera Stopped"
+            UIView.animateWithDuration(0.225, animations: { () -> Void in
+                self.cameraStatus.alpha = 1.0
+                self.cameraPreview.alpha = 0.0
+            })
+        }
 }
 
