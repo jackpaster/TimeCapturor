@@ -12,6 +12,10 @@
 		FE56C1BB1C2B2D4500F24B32 /* UIImageExtentGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1BA1C2B2D4500F24B32 /* UIImageExtentGif.swift */; };
 		FE56C1BD1C2B2D6E00F24B32 /* GIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1BC1C2B2D6E00F24B32 /* GIFViewController.swift */; };
 		FE56C1BF1C2B2F3700F24B32 /* jeremy.gif in Resources */ = {isa = PBXBuildFile; fileRef = FE56C1BE1C2B2F3700F24B32 /* jeremy.gif */; };
+		FE56C1C11C2B4A4100F24B32 /* MagicMoveTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1C01C2B4A4100F24B32 /* MagicMoveTransion.swift */; };
+		FE56C1C31C2B4D0400F24B32 /* MagicMovePopTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1C21C2B4D0400F24B32 /* MagicMovePopTransion.swift */; };
+		FE56C1C61C2B599C00F24B32 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1C51C2B599C00F24B32 /* FadeAnimator.swift */; };
+		FE56C1C81C2B5F4A00F24B32 /* AlbumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1C71C2B5F4A00F24B32 /* AlbumData.swift */; };
 		FEA216E11C28626E008F07F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA216E01C28626E008F07F0 /* AppDelegate.swift */; };
 		FEA216E31C28626E008F07F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA216E21C28626E008F07F0 /* ViewController.swift */; };
 		FEA216E61C28626E008F07F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA216E41C28626E008F07F0 /* Main.storyboard */; };
@@ -27,6 +31,10 @@
 		FE56C1BA1C2B2D4500F24B32 /* UIImageExtentGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtentGif.swift; sourceTree = "<group>"; };
 		FE56C1BC1C2B2D6E00F24B32 /* GIFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFViewController.swift; sourceTree = "<group>"; };
 		FE56C1BE1C2B2F3700F24B32 /* jeremy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jeremy.gif; sourceTree = "<group>"; };
+		FE56C1C01C2B4A4100F24B32 /* MagicMoveTransion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicMoveTransion.swift; sourceTree = "<group>"; };
+		FE56C1C21C2B4D0400F24B32 /* MagicMovePopTransion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicMovePopTransion.swift; sourceTree = "<group>"; };
+		FE56C1C51C2B599C00F24B32 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
+		FE56C1C71C2B5F4A00F24B32 /* AlbumData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumData.swift; sourceTree = "<group>"; };
 		FEA216DD1C28626E008F07F0 /* TimeCapturor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCapturor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA216E01C28626E008F07F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEA216E21C28626E008F07F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +75,16 @@
 			name = gif;
 			sourceTree = "<group>";
 		};
+		FE56C1C41C2B591300F24B32 /* transition */ = {
+			isa = PBXGroup;
+			children = (
+				FE56C1C21C2B4D0400F24B32 /* MagicMovePopTransion.swift */,
+				FE56C1C01C2B4A4100F24B32 /* MagicMoveTransion.swift */,
+				FE56C1C51C2B599C00F24B32 /* FadeAnimator.swift */,
+			);
+			name = transition;
+			sourceTree = "<group>";
+		};
 		FEA216D41C28626E008F07F0 = {
 			isa = PBXGroup;
 			children = (
@@ -86,9 +104,11 @@
 		FEA216DF1C28626E008F07F0 /* TimeCapturor */ = {
 			isa = PBXGroup;
 			children = (
+				FE56C1C41C2B591300F24B32 /* transition */,
 				FE56C1B91C2B2D3300F24B32 /* gif */,
 				FE56C1B81C2B2D1000F24B32 /* camera */,
 				FEA216E01C28626E008F07F0 /* AppDelegate.swift */,
+				FE56C1C71C2B5F4A00F24B32 /* AlbumData.swift */,
 				FE56C1BE1C2B2F3700F24B32 /* jeremy.gif */,
 				FEA216E21C28626E008F07F0 /* ViewController.swift */,
 				FEA216E41C28626E008F07F0 /* Main.storyboard */,
@@ -174,13 +194,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE56C1C31C2B4D0400F24B32 /* MagicMovePopTransion.swift in Sources */,
 				FEA216E31C28626E008F07F0 /* ViewController.swift in Sources */,
 				FE4DDE731C29DDF400F7A328 /* XMCCamera.swift in Sources */,
 				FE56C1BB1C2B2D4500F24B32 /* UIImageExtentGif.swift in Sources */,
 				FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */,
+				FE56C1C81C2B5F4A00F24B32 /* AlbumData.swift in Sources */,
 				FEA216E11C28626E008F07F0 /* AppDelegate.swift in Sources */,
 				FEA216F31C28703B008F07F0 /* CollectionViewCell.swift in Sources */,
+				FE56C1C11C2B4A4100F24B32 /* MagicMoveTransion.swift in Sources */,
 				FE56C1BD1C2B2D6E00F24B32 /* GIFViewController.swift in Sources */,
+				FE56C1C61C2B599C00F24B32 /* FadeAnimator.swift in Sources */,
 				FEA216F51C287052008F07F0 /* NewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

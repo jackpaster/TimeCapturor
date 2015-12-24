@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewViewController: UIViewController {
+class NewViewController: UIViewController,UINavigationControllerDelegate{
 
     @IBOutlet weak var imageView: UIImageView!
     
@@ -19,10 +19,25 @@ class NewViewController: UIViewController {
         imageView.image = image
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.delegate = self
+       
+    }
+    
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == UINavigationControllerOperation.Pop {
+            return MagicMovePopTransion()
+        } else {
+            return nil
+        }
     }
     
 

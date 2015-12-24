@@ -19,13 +19,13 @@ extension UIImage {
         return UIImage.animatedImageWithSource(source)
     }
     
-    public class func gifWithName(name: String) -> UIImage? {
-        guard let bundleURL = NSBundle.mainBundle().URLForResource(name, withExtension: "gif") else {
-            print("SwiftGif: This image named \"\(name)\" does not exist")
-            return nil
-        }
+    public class func gifWithURL(bundleURL: NSURL) -> UIImage? {
+//        guard let bundleURL = NSBundle.mainBundle().URLForResource(name, withExtension: "gif") else {
+//            print("SwiftGif: This image named \"\(name)\" does not exist")
+//            return nil
+//        }
         guard let imageData = NSData(contentsOfURL: bundleURL) else {
-            print("SwiftGif: Cannot turn image named \"\(name)\" into NSData")
+            //print("SwiftGif: Cannot turn image named \"\(name)\" into NSData")
             return nil
         }
         return gifWithData(imageData)
@@ -156,6 +156,63 @@ extension UIImage {
             duration: Double(duration) / 1000.0)
         
         return animation
+    }
+    
+    
+    func fixOrientation() -> UIImage {
+        if (self.imageOrientation == .Up) {
+            return self
+        }
+        
+        var transform = CGAffineTransformIdentity
+        
+        switch (self.imageOrientation) {
+        case .Down, .DownMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, self.size.height)
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI))
+            
+        case .Left, .LeftMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, 0)
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI_2))
+            
+        case .Right, .RightMirrored:
+            transform = CGAffineTransformTranslate(transform, 0, self.size.height)
+            transform = CGAffineTransformRotate(transform, CGFloat(-M_PI_2))
+            
+        default:
+            break
+        }
+        
+        switch (self.imageOrientation) {
+        case .UpMirrored, .DownMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, 0)
+            transform = CGAffineTransformScale(transform, -1, 1)
+            
+        case .LeftMirrored, .RightMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.height, 0)
+            transform = CGAffineTransformScale(transform, -1, 1)
+            
+        default:
+            break
+        }
+        
+        let ctx = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height),
+            CGImageGetBitsPerComponent(self.CGImage), 0,
+            CGImageGetColorSpace(self.CGImage),
+            CGImageGetBitmapInfo(self.CGImage).rawValue)
+        CGContextConcatCTM(ctx, transform)
+        
+        switch (self.imageOrientation) {
+        case .Left, .LeftMirrored, .Right, .RightMirrored:
+            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.height,self.size.width), self.CGImage)
+            
+        default:
+            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.width,self.size.height), self.CGImage)
+        }
+        
+        // And now we just create a new UIImage from the drawing context
+        let cgimg = CGBitmapContextCreateImage(ctx)
+        return UIImage(CGImage: cgimg!)
     }
     
 }

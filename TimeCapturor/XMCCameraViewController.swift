@@ -114,7 +114,7 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
     {
         if let image = self.cameraStill.image
         {
-            if let imageData = UIImageJPEGRepresentation(image, 1.0)
+            if let imageData = UIImageJPEGRepresentation(image, 0.5)
             {
                 let filManager = NSFileManager()
                 if let docsDir = filManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as NSURL!
@@ -132,7 +132,7 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
                     // if let path = url.absoluteString as? String{
                     if imageData.writeToURL(url, atomically: true)
                     {
-                        print(url.absoluteString)
+                       // print(url.absoluteString)
                         return true
                     }
                     

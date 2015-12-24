@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var selectedCell: CollectionViewCell!
     @IBAction func btnTakingPhoto(sender: UIButton) {
         if (UIImagePickerController.isSourceTypeAvailable(.Camera))
         {
@@ -38,18 +38,21 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
     }
     
-    
+    var collectionData = Album()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cellData = getAllImage()
+        //cellData = getAllImage()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.delegate = self
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-         cellData = getAllImage()
+        collectionData.updateData()
         collectionView.reloadData()
     }
     override func didReceiveMemoryWarning() {
@@ -61,83 +64,98 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
   //  var ImageData=[UIImage]()
     
   
-    var cellData = [cellContents]()
+    //var cellData = [cellContents]()
    
-    struct cellContents {
-        var lableData: String
-        var ImageData: UIImage
-    }
-    
-    func getAllImage()->[cellContents]
-    {
-        
-        var data = [cellContents]()
-        let filManager = NSFileManager()
-        
-        if let docsDir = filManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as NSURL!
-        {
-        do {
-         //    print("\(docsDir.path)")
-           // print("\(filManager.fileExistsAtPath(docsDir.absoluteString) )")
-            //try filManager.createDirectoryAtPath(docsDir.path!, withIntermediateDirectories: true, attributes: nil)
-            //print("\(filManager.fileExistsAtPath(docsDir.absoluteString) )")
-            let items =  try filManager.contentsOfDirectoryAtPath(docsDir.path!)
-            // print("item number \(items.count)")
-            for item in items
-                {
-                 //   print("before select item \(item)")
-                    if item.hasSuffix(".jpg")
-                    {
-                   //     print("selected item \(docsDir)\(item)")
-                        //let test = NSURL(string: item)
-                        
-                       // let pathExtention = NSURL(string: item)!.pathExtension
-                        let dateData = (NSURL(string: item)!.URLByDeletingPathExtension?.absoluteString)! as NSString
-                        let date = NSDate(timeIntervalSinceReferenceDate: dateData.doubleValue).description as NSString
-                        let tempRange = date.rangeOfString(" ")
-                        let dateRang = NSMakeRange(0, tempRange.location)
-                        let photoDate = date.substringWithRange(dateRang)
-
-                        let itemOp = docsDir.absoluteString+item
-                        //print(itemOp)
-                        if let imageData = NSData(contentsOfURL: NSURL(string: itemOp)!)
-                        {
-                            //var imageData = UIImageJPEGRepresentation(item, 1.0)
-                            if let uiimageData = UIImage(data: imageData)
-                            {
-                              //  images.append(uiimageData)
-                                let cellContent = cellContents(lableData: photoDate, ImageData: uiimageData)
-                                data.append(cellContent)
-                            }
-                        }
-                    }
-                }
-            }catch  {
-                print ("Error: \(error)")
-            }
-        }
-        //print("return number \(images.count)")
-        return data
-        
-    }
+//    struct cellContents {
+//        var lableData: String
+//        var ImageData: UIImage
+//    }
+//    
+//    func getAllImage()->[cellContents]
+//    {
+//        
+//        var data = [cellContents]()
+//        let filManager = NSFileManager()
+//        
+//        if let docsDir = filManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as NSURL!
+//        {
+//        do {
+//         //    print("\(docsDir.path)")
+//           // print("\(filManager.fileExistsAtPath(docsDir.absoluteString) )")
+//            //try filManager.createDirectoryAtPath(docsDir.path!, withIntermediateDirectories: true, attributes: nil)
+//            //print("\(filManager.fileExistsAtPath(docsDir.absoluteString) )")
+//            let items =  try filManager.contentsOfDirectoryAtPath(docsDir.path!)
+//            // print("item number \(items.count)")
+//            for item in items
+//                {
+//                 //   print("before select item \(item)")
+//                    if item.hasSuffix(".jpg")
+//                    {
+//                   //     print("selected item \(docsDir)\(item)")
+//                        //let test = NSURL(string: item)
+//                        
+//                       // let pathExtention = NSURL(string: item)!.pathExtension
+//                        let dateData = (NSURL(string: item)!.URLByDeletingPathExtension?.absoluteString)! as NSString
+//                        let date = NSDate(timeIntervalSinceReferenceDate: dateData.doubleValue).description as NSString
+//                        let tempRange = date.rangeOfString(" ")
+//                        let dateRang = NSMakeRange(0, tempRange.location)
+//                        let photoDate = date.substringWithRange(dateRang)
+//
+//                        let itemOp = docsDir.absoluteString+item
+//                        //print(itemOp)
+//                        if let imageData = NSData(contentsOfURL: NSURL(string: itemOp)!)
+//                        {
+//                            //var imageData = UIImageJPEGRepresentation(item, 1.0)
+//                            if let uiimageData = UIImage(data: imageData)
+//                            {
+//                              //  images.append(uiimageData)
+//                                let cellContent = cellContents(lableData: photoDate, ImageData: uiimageData)
+//                                data.append(cellContent)
+//                            }
+//                        }
+//                    }
+//                }
+//            }catch  {
+//                print ("Error: \(error)")
+//            }
+//        }
+//        //print("return number \(images.count)")
+//        return data
+//        
+//    }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection: Int)->Int{
         //print(cellData.count)
-        return cellData.count
+        return collectionData.cellData.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath)->UICollectionViewCell{
         let cell: CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
        // print(indexPath.row)
-        cell.titleLable?.text = cellData[indexPath.row].lableData
-        cell.imageView?.image = cellData[indexPath.row].ImageData
+        cell.titleLable?.text = collectionData.cellData[indexPath.row].lableData
+        cell.imageView?.image = collectionData.cellData[indexPath.row].ImageData
 
        // print("11")
         return cell
         
     }
     
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if ((toVC as? NewViewController) != nil){
+            if operation == UINavigationControllerOperation.Push {
+                return MagicMoveTransion()
+            } else {
+                return nil
+            }
+        }else {
+            return FadeAnimator()
+        }
+    }
+
+    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.selectedCell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
+        
         self.performSegueWithIdentifier("showImage", sender: self)
     }
     
@@ -147,8 +165,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             let indexPath = indexPaths[0] as NSIndexPath
             let vc = segue.destinationViewController as! NewViewController
             
-            vc.image = self.cellData[indexPath.row].ImageData
-            vc.title = self.cellData[indexPath.row].lableData
+           // vc.image = self.cellData[indexPath.row].ImageData
+            vc.image = self.selectedCell.imageView.image!
+            vc.title = self.collectionData.cellData[indexPath.row].lableData
             
         }
     }
