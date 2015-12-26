@@ -39,6 +39,9 @@ class GIFViewController: UIViewController {
     
     var Image = Album().getAllImageAndDate().ImageData
    
+    @IBAction func back(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     @IBAction func btnGeneratGIF(sender: UIButton) {
         let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
         dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
@@ -51,8 +54,6 @@ class GIFViewController: UIViewController {
         }
                
       //  print("\(url)")
-        
-        
         
     }
     
@@ -87,7 +88,7 @@ class GIFViewController: UIViewController {
         let fileProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFLoopCount as String: loopCount]]
         let frameProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFDelayTime as String: frameDelay]]
         
-        let size = CGSizeMake(200, 200)
+        let size = CGSizeMake(192, 256)
         
         let documentsDirectory = NSTemporaryDirectory()
         let url = NSURL(fileURLWithPath: documentsDirectory).URLByAppendingPathComponent("animated.gif")
@@ -97,13 +98,11 @@ class GIFViewController: UIViewController {
             //print("1:\(gifdata)")
             for i in 0..<images.count {
                 autoreleasepool{
-                    
-                CGImageDestinationAddImage(destination!,images[i].fixOrientation().CGImage!, frameProperties)
-                print("\(i) Generating \(images[i].CGImage!)")
+                CGImageDestinationAddImage(destination!, ResizeImage(images[i],targetSize: size).fixOrientation().CGImage!, frameProperties)
+               // print("Generating \(images[i].CGImage!)")
                 }
                 
             }
-            
             if CGImageDestinationFinalize(destination!) {
                 print("finaliza success")
                // print("\(url)")

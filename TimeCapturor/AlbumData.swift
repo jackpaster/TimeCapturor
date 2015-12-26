@@ -26,7 +26,7 @@ class Album{
     }
     
     
-    func getAllImageAndDate()->(AllData:[cellContents],ImageData:[UIImage])
+    func getAllImageAndDate()->(AllData:[cellContents],ImageData:[UIImage],Number:Int)
     {
         
         var data = [cellContents]()
@@ -80,7 +80,7 @@ class Album{
             }
         }
         //print("return number \(images.count)")
-        return (data,imageOnly)
+        return (data,imageOnly,imageOnly.count)
         
     }
     

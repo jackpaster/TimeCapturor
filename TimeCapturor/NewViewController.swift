@@ -8,7 +8,11 @@
 
 import UIKit
 
-class NewViewController: UIViewController,UINavigationControllerDelegate{
+let screenWidth = UIScreen.mainScreen().bounds.width
+let screenHeight = UIScreen.mainScreen().bounds.height
+
+
+class NewViewController: UIViewController{
 
     @IBOutlet weak var imageView: UIImageView!
     
@@ -17,28 +21,31 @@ class NewViewController: UIViewController,UINavigationControllerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
-        // Do any additional setup after loading the view.
+            
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.delegate = self
+       // self.navigationController?.delegate = self
        
     }
     
-
+   
+    @IBAction func `return`(sender: UIButton) {
+         self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if operation == UINavigationControllerOperation.Pop {
-            return MagicMovePopTransion()
-        } else {
-            return nil
-        }
-    }
+//    
+//    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        if operation == UINavigationControllerOperation.Pop {
+//            return MagicMovePopTransion()
+//        } else {
+//            return nil
+//        }
+//    }
     
 
     /*

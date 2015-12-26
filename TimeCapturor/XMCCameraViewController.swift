@@ -28,7 +28,7 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
         
         if self.status == .Preview {
             self.navigationController?.navigationBarHidden = false
-            navigationController?.popViewControllerAnimated(true)
+            self.dismissViewControllerAnimated(true, completion: nil)
             
         } else if self.status == .Still{
             

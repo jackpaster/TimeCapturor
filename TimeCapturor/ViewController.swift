@@ -8,130 +8,148 @@
 
 import UIKit
 
-class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate{
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    var selectedCell: CollectionViewCell!
-    @IBAction func btnTakingPhoto(sender: UIButton) {
-        if (UIImagePickerController.isSourceTypeAvailable(.Camera))
-        {
-            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil
-            {
-                let imagePicker = UIImagePickerController()
-                imagePicker.allowsEditing = false
-                imagePicker.sourceType = .Camera
-                imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.Front
-                imagePicker.cameraCaptureMode = .Photo
-                presentViewController(imagePicker, animated: true, completion: nil)
-            }
-            else
-            {
-                print("Rear camera doesn't exist")
-            }
-        }
-        else
-        {
-            //print("\(ImageData[1])")
-            print("Camera inaccessable")
-        }
-        
-        
-    }
+    @IBOutlet weak var toolBar: UIToolbar!
+    var collectionView: UICollectionView!
+    var selectedCell: CollectionViewCell?
+    
+//    @IBAction func btnTakingPhoto(sender: UIButton) {
+//        if (UIImagePickerController.isSourceTypeAvailable(.Camera))
+//        {
+//            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil
+//            {
+//                let imagePicker = UIImagePickerController()
+//                imagePicker.allowsEditing = false
+//                imagePicker.sourceType = .Camera
+//                imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.Front
+//                imagePicker.cameraCaptureMode = .Photo
+//                presentViewController(imagePicker, animated: true, completion: nil)
+//            }
+//            else
+//            {
+//                print("Rear camera doesn't exist")
+//            }
+//        }
+//        else
+//        {
+//            //print("\(ImageData[1])")
+//            print("Camera inaccessable")
+//        }
+//        
+//        
+//    }
+    
+    //func layoutAttributesForElementsInRt
     
     var collectionData = Album()
     
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        // Do any additional setup after loading the view, typically from a nib.
+//    }
+ ///////////////////////////////////////////////////////////
+//    var collectionView: UICollectionView?
+
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //cellData = getAllImage()
+        // self.collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: MyFlowLayout())
+        screenSize = UIScreen.mainScreen().bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
         
-        // Do any additional setup after loading the view, typically from a nib.
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 5, bottom: 10, right: 5)
+        //layout.itemSize = CGSize(width: 150, height: 150)
+      //  print("screen width \(self.collectionView.frame)")
+        print("view width \(self.view.frame)")
+        print(screenWidth)
+        print(screenHeight)
+        //self.collectionView.frame = self.view.frame
+        layout.itemSize = CGSize(width: (screenWidth-20) / 3, height: (screenWidth-20) / 3)
+        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 5
+        let size = CGSize(width: view.frame.width, height: view.frame.height-toolBar.frame.height-0.7)
+        let frame = CGRect(origin: CGPointZero, size: size)
+        collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+       collectionView!.dataSource = self
+        collectionView!.delegate = self
+        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.backgroundColor = UIColor.whiteColor()
+        //collectionView.setCollectionViewLayout(layout, animated: false)
+        self.view.addSubview(collectionView!)
+       
     }
+        //self.view.addSubview(collectionView!)
+//        
+//        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+//        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+//        layout.itemSize = CGSize(width: CGFloat(screenWidth / 3), height: CGFloat(screenWidth / 3))
+//        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+//        print(collectionView)
+//        collectionView!.dataSource = self
+//        collectionView!.delegate = self
+//        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
+//        collectionView!.backgroundColor = UIColor.greenColor()
+//        self.view.addSubview(collectionView!)
+        
+        
+    
+//        
+    
+//
+//        // Do any additional setup after loading the view, typically from a nib
+//        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+//        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+//        layout.itemSize = CGSize(width: screenWidth / 3, height: screenWidth / 3)
+//        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+//        
+//        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
+//        collectionView!.backgroundColor = UIColor.greenColor()
+//        self.view.addSubview(collectionView!)
+   
+   
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.delegate = self
+       // self.navigationController?.delegate = self
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+         //self.navigationController?.navigationBarHidden = true
         collectionData.updateData()
         collectionView.reloadData()
+    
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-  //  let lableData = ["1","2","3","4","5","6","7","8","9","10"]
-  //  var ImageData=[UIImage]()
-    
-  
-    //var cellData = [cellContents]()
-   
-//    struct cellContents {
-//        var lableData: String
-//        var ImageData: UIImage
-//    }
-//    
-//    func getAllImage()->[cellContents]
-//    {
-//        
-//        var data = [cellContents]()
-//        let filManager = NSFileManager()
-//        
-//        if let docsDir = filManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as NSURL!
-//        {
-//        do {
-//         //    print("\(docsDir.path)")
-//           // print("\(filManager.fileExistsAtPath(docsDir.absoluteString) )")
-//            //try filManager.createDirectoryAtPath(docsDir.path!, withIntermediateDirectories: true, attributes: nil)
-//            //print("\(filManager.fileExistsAtPath(docsDir.absoluteString) )")
-//            let items =  try filManager.contentsOfDirectoryAtPath(docsDir.path!)
-//            // print("item number \(items.count)")
-//            for item in items
-//                {
-//                 //   print("before select item \(item)")
-//                    if item.hasSuffix(".jpg")
-//                    {
-//                   //     print("selected item \(docsDir)\(item)")
-//                        //let test = NSURL(string: item)
-//                        
-//                       // let pathExtention = NSURL(string: item)!.pathExtension
-//                        let dateData = (NSURL(string: item)!.URLByDeletingPathExtension?.absoluteString)! as NSString
-//                        let date = NSDate(timeIntervalSinceReferenceDate: dateData.doubleValue).description as NSString
-//                        let tempRange = date.rangeOfString(" ")
-//                        let dateRang = NSMakeRange(0, tempRange.location)
-//                        let photoDate = date.substringWithRange(dateRang)
-//
-//                        let itemOp = docsDir.absoluteString+item
-//                        //print(itemOp)
-//                        if let imageData = NSData(contentsOfURL: NSURL(string: itemOp)!)
-//                        {
-//                            //var imageData = UIImageJPEGRepresentation(item, 1.0)
-//                            if let uiimageData = UIImage(data: imageData)
-//                            {
-//                              //  images.append(uiimageData)
-//                                let cellContent = cellContents(lableData: photoDate, ImageData: uiimageData)
-//                                data.append(cellContent)
-//                            }
-//                        }
-//                    }
-//                }
-//            }catch  {
-//                print ("Error: \(error)")
-//            }
-//        }
-//        //print("return number \(images.count)")
-//        return data
-//        
-//    }
-    
+
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection: Int)->Int{
         //print(cellData.count)
         return collectionData.cellData.count
     }
+   
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath)->UICollectionViewCell{
         let cell: CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
-       // print(indexPath.row)
+        //cell.backgroundColor = UIColor.whiteColor()
+        //cell.layer.borderColor = UIColor.blackColor().CGColor
+        //cell.layer.borderWidth = 0.5
+        cell.layer.cornerRadius = CGFloat(4)
+        //cell.frame.size.width = screenWidth / 3
+        //cell.frame.size.height = screenWidth / 3
+     
+
+        
+        //cell.layer.borderWidth = 0.5
+       
         cell.titleLable?.text = collectionData.cellData[indexPath.row].lableData
         cell.imageView?.image = collectionData.cellData[indexPath.row].ImageData
 
@@ -140,21 +158,30 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
     }
     
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if ((toVC as? NewViewController) != nil){
-            if operation == UINavigationControllerOperation.Push {
-                return MagicMoveTransion()
-            } else {
-                return nil
-            }
-        }else {
-            return FadeAnimator()
-        }
+
+//    func animationControllerForPresentedController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        if ((toVC as? NewViewController) != nil){
+//            if operation == UINavigationControllerOperation.Push {
+//                print("1")
+//                return MagicMoveTransion()
+//            } else {
+//                print("2")
+//                return nil
+//            }
+//        }else {
+//            print("3")
+//            return FadeAnimator()
+//        }
+//    }
+    
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return MagicMoveTransion()
     }
 
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.selectedCell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
+        self.selectedCell = collectionView.cellForItemAtIndexPath(indexPath) as? CollectionViewCell
         
         self.performSegueWithIdentifier("showImage", sender: self)
     }
@@ -164,9 +191,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             let indexPaths = self.collectionView!.indexPathsForSelectedItems()!
             let indexPath = indexPaths[0] as NSIndexPath
             let vc = segue.destinationViewController as! NewViewController
-            
+            vc.transitioningDelegate = self
            // vc.image = self.cellData[indexPath.row].ImageData
-            vc.image = self.selectedCell.imageView.image!
+            vc.image = self.selectedCell!.imageView.image!
             vc.title = self.collectionData.cellData[indexPath.row].lableData
             
         }

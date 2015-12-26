@@ -10,7 +10,7 @@ import UIKit
 
 class FadeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
-    let duration = 1.0
+    let duration = 0.3
 
     // 指定转场动画持续的时间
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {

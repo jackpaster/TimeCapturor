@@ -15,6 +15,7 @@ class MagicMovePopTransion: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+       
         let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! NewViewController
         let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! ViewController
         let container = transitionContext.containerView()
@@ -24,16 +25,16 @@ class MagicMovePopTransion: NSObject, UIViewControllerAnimatedTransitioning {
         fromVC.imageView.hidden = true
         
         toVC.view.frame = transitionContext.finalFrameForViewController(toVC)
-        toVC.selectedCell.imageView.hidden = true
+        toVC.selectedCell!.imageView.hidden = true
         
         container!.insertSubview(toVC.view, belowSubview: fromVC.view)
         container!.addSubview(snapshotView)
-        
+        print("pop")
         UIView.animateWithDuration(transitionDuration(transitionContext), delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-            snapshotView.frame = container!.convertRect(toVC.selectedCell.imageView.frame, fromView: toVC.selectedCell)
+            snapshotView.frame = container!.convertRect(toVC.selectedCell!.imageView.frame, fromView: toVC.selectedCell)
             fromVC.view.alpha = 0
             }) { (finish: Bool) -> Void in
-                toVC.selectedCell.imageView.hidden = false
+                toVC.selectedCell!.imageView.hidden = false
                 snapshotView.removeFromSuperview()
                 fromVC.imageView.hidden = false
                 
