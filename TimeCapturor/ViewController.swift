@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import Photos
 
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate{
     
@@ -56,34 +57,78 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: MyFlowLayout())
+        
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
+        
+        // self.collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: MyFlowLayout())
+        let statusHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        let statusView = UIView(frame:
+            CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height:statusHeight) )
+        //statusView.backgroundColor = UIColor.whiteColor()
+    // statusView.backgroundColor = UIColor.redColor()
+        
+        // 1  add blur
+        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        // 2
+        let blurView = UIVisualEffectView(effect: darkBlur)
+        blurView.frame = statusView.bounds
+        // 3
+        statusView.addSubview(blurView)
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        let border = CALayer()
+        let width = CGFloat(0.6)
+        border.borderColor = UIColor.darkGrayColor().CGColor
+        border.frame = CGRect(x: 0, y: statusHeight, width:  screenWidth, height: 0.6)
+        
+        border.borderWidth = width
+        statusView.layer.addSublayer(border)
+        //statusView.layer.masksToBounds = true
+        
+        
+        navigationController?.navigationBar.barTintColor = UIColor.grayColor()
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 5, bottom: 10, right: 5)
         //layout.itemSize = CGSize(width: 150, height: 150)
       //  print("screen width \(self.collectionView.frame)")
-        print("view width \(self.view.frame)")
-        print(screenWidth)
-        print(screenHeight)
+       // print("view width \(self.view.frame)")
+        //print(screenWidth)
+       // print(screenHeight)
         //self.collectionView.frame = self.view.frame
         layout.itemSize = CGSize(width: (screenWidth-20) / 3, height: (screenWidth-20) / 3)
         layout.minimumInteritemSpacing = 5
         layout.minimumLineSpacing = 5
-        let size = CGSize(width: view.frame.width, height: view.frame.height-toolBar.frame.height-0.7)
-        let frame = CGRect(origin: CGPointZero, size: size)
+        
+        //let margins = view.layoutMarginsGuide
+        //self.collectionView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        // create the constraints with the constant value you want.
+        
+        
+        
+        let size = CGSize(width: view.frame.width, height: view.frame.height-toolBar.frame.height-0.7-statusHeight-0.6)
+        //let frame = CGRect(origin: CGPoint(x: 0.0, y: statusHeight+0.6), size: size)
+        let frame = CGRect(origin: CGPoint(x: 0.0, y: 0), size: size)
+        
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
        collectionView!.dataSource = self
         collectionView!.delegate = self
         collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.backgroundColor = UIColor.whiteColor()
+        
+        //collectionView.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor).active = true
+
         //collectionView.setCollectionViewLayout(layout, animated: false)
-        self.view.addSubview(collectionView!)
+     
+        
        
+          self.view.addSubview(collectionView!)
+        self.view.addSubview(statusView)
+        
     }
         //self.view.addSubview(collectionView!)
 //        
@@ -118,6 +163,10 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
        // self.navigationController?.delegate = self
+    
+            
+            navigationController?.hidesBarsOnSwipe = true
+    
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -193,8 +242,13 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             let vc = segue.destinationViewController as! NewViewController
             vc.transitioningDelegate = self
            // vc.image = self.cellData[indexPath.row].ImageData
-            vc.image = self.selectedCell!.imageView.image!
-            vc.title = self.collectionData.cellData[indexPath.row].lableData
+            
+            vc.index = indexPath.item
+            //vc.photoCollection = collectionData.getAllImageAndDate().ImageData
+           // vc.urlCollection = collectionData.getAllImageAndDate().groupNSURL
+            
+          //  vc.image = self.selectedCell!.imageView.image!
+            //vc.title = self.collectionData.cellData[indexPath.row].lableData
             
         }
     }

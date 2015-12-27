@@ -26,12 +26,14 @@ class Album{
     }
     
     
-    func getAllImageAndDate()->(AllData:[cellContents],ImageData:[UIImage],Number:Int)
+    func getAllImageAndDate()->(AllData:[cellContents],ImageData:[UIImage],groupNSURL:[NSURL],Number:Int)
     {
         
         var data = [cellContents]()
         var imageOnly = [UIImage]()
+        var imagesGroupNSURL = [NSURL]()
         let filManager = NSFileManager()
+        
         
         if let docsDir = filManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as NSURL!
         {
@@ -51,6 +53,7 @@ class Album{
                         //let test = NSURL(string: item)
                         
                         // let pathExtention = NSURL(string: item)!.pathExtension
+                       
                         let dateData = (NSURL(string: item)!.URLByDeletingPathExtension?.absoluteString)! as NSString
                         let date = NSDate(timeIntervalSinceReferenceDate: dateData.doubleValue).description as NSString
                         let tempRange = date.rangeOfString(" ")
@@ -58,7 +61,8 @@ class Album{
                         let photoDate = date.substringWithRange(dateRang)
                         
                         let itemOp = docsDir.absoluteString+item
-                        //print(itemOp)
+                        //print(itemOp) 
+                        imagesGroupNSURL.append(NSURL(string: itemOp)!)
                         if let imageData = NSData(contentsOfURL: NSURL(string: itemOp)!)
                         {
                             //var imageData = UIImageJPEGRepresentation(item, 1.0)
@@ -74,13 +78,13 @@ class Album{
                     }
                     
                 }
-                print(imageOnly.count)
+               // print(imageOnly.count)
             }catch  {
                 print ("Error: \(error)")
             }
         }
         //print("return number \(images.count)")
-        return (data,imageOnly,imageOnly.count)
+        return (data.reverse(),imageOnly.reverse(),imagesGroupNSURL.reverse(),imageOnly.count)
         
     }
     

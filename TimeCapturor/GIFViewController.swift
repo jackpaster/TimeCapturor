@@ -9,26 +9,25 @@
 import UIKit
 import MobileCoreServices
 import ImageIO
+import UCZProgressView
 
 class GIFViewController: UIViewController {
    
     @IBOutlet weak var gifimageView: UIImageView!
-    
+  
+  let progressView = UCZProgressView()
     override func viewDidLoad() {
         super.viewDidLoad()
        
-//        let jeremyGif = UIImage.gifWithName("jeremy")
-//        let imageView = UIImageView(image: jeremyGif)
-//        imageView.frame = CGRect(x: 0.0, y: 20.0, width: 350.0, height: 202.0)
-//        
-//        view.addSubview(imageView)
-//
-//        let imageData = NSData(contentsOfURL: NSBundle.mainBundle().URLForResource("adventure-time", withExtension: "gif")!)
-//        let advTimeGif = UIImage.gifWithData(imageData!)
-//        let imageView2 = UIImageView(image: advTimeGif)
-//        imageView2.frame = CGRect(x: 0.0, y: 222.0, width: 350.0, height: 202.0)
-//        
-//        view.addSubview(imageView2)
+        progressView.frame = gifimageView.frame
+        
+        progressView.indeterminate = false
+        progressView.showsText = true
+       progressView.center = view.center
+        //progressView.blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+       // progressView.setProgress(CGFloat(0), animated: false)
+       // view.addSubview(progressView)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,6 +38,9 @@ class GIFViewController: UIViewController {
     
     var Image = Album().getAllImageAndDate().ImageData
    
+    @IBAction func doneAction(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     @IBAction func back(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -48,10 +50,12 @@ class GIFViewController: UIViewController {
             let url = self.createGIF(with: self.Image, loopCount: 4,frameDelay: 0.1)
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let jeremyGif = UIImage.gifWithURL(url)
-                self.gifimageView.image = jeremyGif
+                let gif = UIImage.gifWithURL(url)
+                self.gifimageView.image = gif
+                self.gifimageView.hidden = false
             })
         }
+      
                
       //  print("\(url)")
         

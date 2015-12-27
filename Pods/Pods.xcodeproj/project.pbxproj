@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		058C49AF57938B6D8E4AC34456CDE3EA /* UCZProgressView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B1FD4C7BB2E91503A6DD56821CAB5A /* UCZProgressView-dummy.m */; };
+		2DAE3DE1836A378CCB8D55F144ED9CD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		5F229DE2D9D134F7B8F5BCB915320FC8 /* UCZProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0FA46E2A85A40A32C29A341A5B74E3B /* UCZProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		632E63CF35F002079B4BA1B5BA165CC1 /* Pods-TimeCapturor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BE17A1E85D6F50ED1CC59CB8655701F /* Pods-TimeCapturor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC77BB7B3A06D14F821A87FA249B2447 /* Pods-TimeCapturor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E078D562D7FB09EFEC2DC0B06ADFA5 /* Pods-TimeCapturor-dummy.m */; };
+		CBCB575F1947AEE14790AFCFFE7AED78 /* UCZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E73020A53A9A6E47750FD2C1881FE0 /* UCZProgressView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E844279973BE289BE829487B2BBD42AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		F6CB14AFA5B7745689D13013D991EA88 /* UCZProgressView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BACA66A3DCFBEF56F83F9164795F114 /* UCZProgressView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		452A6708E6D679DCE1B664D73E1F8E76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0A0BDCCAA1C1E2BCE7FC022A5BED11E;
+			remoteInfo = UCZProgressView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C5AB6A739CBA11F71EF643303C1816E /* Pods_TimeCapturor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCapturor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FCE318CCDA48FCE5B450171654BB6F2 /* UCZProgressView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = UCZProgressView.modulemap; sourceTree = "<group>"; };
+		26B1FD4C7BB2E91503A6DD56821CAB5A /* UCZProgressView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UCZProgressView-dummy.m"; sourceTree = "<group>"; };
+		364AE2203B948E252ACCD4E16CD4F685 /* Pods-TimeCapturor-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TimeCapturor-resources.sh"; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5BE17A1E85D6F50ED1CC59CB8655701F /* Pods-TimeCapturor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TimeCapturor-umbrella.h"; sourceTree = "<group>"; };
+		72E73020A53A9A6E47750FD2C1881FE0 /* UCZProgressView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UCZProgressView.m; path = Lib/UCZProgressView.m; sourceTree = "<group>"; };
+		775F05C7636AB3BB0BE22960E61B0E96 /* UCZProgressView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UCZProgressView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D9C046CA560054C683C946D97032CD0 /* UCZProgressView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UCZProgressView-prefix.pch"; sourceTree = "<group>"; };
+		8F3B7B69CFCCE17D1C00F6A56F965A29 /* Pods-TimeCapturor-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TimeCapturor-acknowledgements.plist"; sourceTree = "<group>"; };
+		8F5BBEDA305BFD85533D89F899E18E48 /* Pods-TimeCapturor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimeCapturor.debug.xcconfig"; sourceTree = "<group>"; };
+		93E078D562D7FB09EFEC2DC0B06ADFA5 /* Pods-TimeCapturor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TimeCapturor-dummy.m"; sourceTree = "<group>"; };
+		94A5A8108AD82BCE38ACEB20B2109052 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF868A38EF8764D276CB34EB297FBBB /* Pods-TimeCapturor-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TimeCapturor-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9BACA66A3DCFBEF56F83F9164795F114 /* UCZProgressView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UCZProgressView-umbrella.h"; sourceTree = "<group>"; };
+		AD2F6E42FCD40245A6EB8115FFA6F9BE /* Pods-TimeCapturor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TimeCapturor.modulemap"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C612AB762ABD911649FE7B11A32568A7 /* UCZProgressView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UCZProgressView.xcconfig; sourceTree = "<group>"; };
+		C6D1A53240C8302590B40B952A956911 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0FA46E2A85A40A32C29A341A5B74E3B /* UCZProgressView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UCZProgressView.h; path = Lib/UCZProgressView.h; sourceTree = "<group>"; };
+		D4737C3E8158FA05A9956E4DD7EB8BBA /* Pods-TimeCapturor-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TimeCapturor-frameworks.sh"; sourceTree = "<group>"; };
+		FE65BB805E6D48F68A82CD2F41A3A2F8 /* Pods-TimeCapturor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimeCapturor.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05BF4132C42866F33562B761414F8A4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E844279973BE289BE829487B2BBD42AB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F2A3F28E07772DCE096F20C3B9B4CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DAE3DE1836A378CCB8D55F144ED9CD6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C40A8FF1F35C4E2C353BB4C7F1C0806 /* UCZProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				D0FA46E2A85A40A32C29A341A5B74E3B /* UCZProgressView.h */,
+				72E73020A53A9A6E47750FD2C1881FE0 /* UCZProgressView.m */,
+				4DC9D3EB5A4F35A00972C683BC7B2FBF /* Support Files */,
+			);
+			path = UCZProgressView;
+			sourceTree = "<group>";
+		};
+		4B408682686B67E5A82DEDD9A3F44205 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C5AB6A739CBA11F71EF643303C1816E /* Pods_TimeCapturor.framework */,
+				775F05C7636AB3BB0BE22960E61B0E96 /* UCZProgressView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DC9D3EB5A4F35A00972C683BC7B2FBF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6D1A53240C8302590B40B952A956911 /* Info.plist */,
+				1FCE318CCDA48FCE5B450171654BB6F2 /* UCZProgressView.modulemap */,
+				C612AB762ABD911649FE7B11A32568A7 /* UCZProgressView.xcconfig */,
+				26B1FD4C7BB2E91503A6DD56821CAB5A /* UCZProgressView-dummy.m */,
+				7D9C046CA560054C683C946D97032CD0 /* UCZProgressView-prefix.pch */,
+				9BACA66A3DCFBEF56F83F9164795F114 /* UCZProgressView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UCZProgressView";
+			sourceTree = "<group>";
+		};
+		6E41D356FB8C2FD82D029FC4AA51DCFC /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE027F5DB15DD8E34AFF8AFFECBD4AAA /* Pods-TimeCapturor */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				BD71AC2042032055D42558187E2770D7 /* Pods */,
+				4B408682686B67E5A82DEDD9A3F44205 /* Products */,
+				6E41D356FB8C2FD82D029FC4AA51DCFC /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD71AC2042032055D42558187E2770D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C40A8FF1F35C4E2C353BB4C7F1C0806 /* UCZProgressView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CE027F5DB15DD8E34AFF8AFFECBD4AAA /* Pods-TimeCapturor */ = {
+			isa = PBXGroup;
+			children = (
+				94A5A8108AD82BCE38ACEB20B2109052 /* Info.plist */,
+				AD2F6E42FCD40245A6EB8115FFA6F9BE /* Pods-TimeCapturor.modulemap */,
+				9AF868A38EF8764D276CB34EB297FBBB /* Pods-TimeCapturor-acknowledgements.markdown */,
+				8F3B7B69CFCCE17D1C00F6A56F965A29 /* Pods-TimeCapturor-acknowledgements.plist */,
+				93E078D562D7FB09EFEC2DC0B06ADFA5 /* Pods-TimeCapturor-dummy.m */,
+				D4737C3E8158FA05A9956E4DD7EB8BBA /* Pods-TimeCapturor-frameworks.sh */,
+				364AE2203B948E252ACCD4E16CD4F685 /* Pods-TimeCapturor-resources.sh */,
+				5BE17A1E85D6F50ED1CC59CB8655701F /* Pods-TimeCapturor-umbrella.h */,
+				8F5BBEDA305BFD85533D89F899E18E48 /* Pods-TimeCapturor.debug.xcconfig */,
+				FE65BB805E6D48F68A82CD2F41A3A2F8 /* Pods-TimeCapturor.release.xcconfig */,
+			);
+			name = "Pods-TimeCapturor";
+			path = "Target Support Files/Pods-TimeCapturor";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B6825C06E978687EB2F024F1F756C467 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6CB14AFA5B7745689D13013D991EA88 /* UCZProgressView-umbrella.h in Headers */,
+				5F229DE2D9D134F7B8F5BCB915320FC8 /* UCZProgressView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6797971D30DF78EC3546EBB24BEB94C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				632E63CF35F002079B4BA1B5BA165CC1 /* Pods-TimeCapturor-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		913B96FBA309E3ECEF2BED0F057A4CB3 /* Pods-TimeCapturor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05ED677890D55AA6FA88707F853B7A3D /* Build configuration list for PBXNativeTarget "Pods-TimeCapturor" */;
+			buildPhases = (
+				53EDAE5CE0062997C062BF423D9053FB /* Sources */,
+				A1F2A3F28E07772DCE096F20C3B9B4CD /* Frameworks */,
+				F6797971D30DF78EC3546EBB24BEB94C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				411C2035FF7934BCD6911898FB802244 /* PBXTargetDependency */,
+			);
+			name = "Pods-TimeCapturor";
+			productName = "Pods-TimeCapturor";
+			productReference = 1C5AB6A739CBA11F71EF643303C1816E /* Pods_TimeCapturor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C0A0BDCCAA1C1E2BCE7FC022A5BED11E /* UCZProgressView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F043AD7568846963E12D02997048A2AE /* Build configuration list for PBXNativeTarget "UCZProgressView" */;
+			buildPhases = (
+				060A0873DCC7F91A69B7639203791DCB /* Sources */,
+				05BF4132C42866F33562B761414F8A4F /* Frameworks */,
+				B6825C06E978687EB2F024F1F756C467 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UCZProgressView;
+			productName = UCZProgressView;
+			productReference = 775F05C7636AB3BB0BE22960E61B0E96 /* UCZProgressView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 4B408682686B67E5A82DEDD9A3F44205 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				913B96FBA309E3ECEF2BED0F057A4CB3 /* Pods-TimeCapturor */,
+				C0A0BDCCAA1C1E2BCE7FC022A5BED11E /* UCZProgressView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		060A0873DCC7F91A69B7639203791DCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058C49AF57938B6D8E4AC34456CDE3EA /* UCZProgressView-dummy.m in Sources */,
+				CBCB575F1947AEE14790AFCFFE7AED78 /* UCZProgressView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53EDAE5CE0062997C062BF423D9053FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC77BB7B3A06D14F821A87FA249B2447 /* Pods-TimeCapturor-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		411C2035FF7934BCD6911898FB802244 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UCZProgressView;
+			target = C0A0BDCCAA1C1E2BCE7FC022A5BED11E /* UCZProgressView */;
+			targetProxy = 452A6708E6D679DCE1B664D73E1F8E76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2170E5D592652850D2E5900D82F94264 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C612AB762ABD911649FE7B11A32568A7 /* UCZProgressView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UCZProgressView/UCZProgressView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UCZProgressView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UCZProgressView/UCZProgressView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = UCZProgressView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9B282880EBBB692F963255CE3304C73D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE65BB805E6D48F68A82CD2F41A3A2F8 /* Pods-TimeCapturor.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimeCapturor/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimeCapturor/Pods-TimeCapturor.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_TimeCapturor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B17ED000E78C4A2FC13A9B74CE4FF668 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F5BBEDA305BFD85533D89F899E18E48 /* Pods-TimeCapturor.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimeCapturor/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimeCapturor/Pods-TimeCapturor.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_TimeCapturor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EE6A766AAB8D0E02531D6E9388B07BB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C612AB762ABD911649FE7B11A32568A7 /* UCZProgressView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UCZProgressView/UCZProgressView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UCZProgressView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UCZProgressView/UCZProgressView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = UCZProgressView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05ED677890D55AA6FA88707F853B7A3D /* Build configuration list for PBXNativeTarget "Pods-TimeCapturor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B17ED000E78C4A2FC13A9B74CE4FF668 /* Debug */,
+				9B282880EBBB692F963255CE3304C73D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F043AD7568846963E12D02997048A2AE /* Build configuration list for PBXNativeTarget "UCZProgressView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE6A766AAB8D0E02531D6E9388B07BB9 /* Debug */,
+				2170E5D592652850D2E5900D82F94264 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,9 +1,14 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '8.0'
+platform :ios, '8.0'
 # Uncomment this line if you're using Swift
-# use_frameworks!
+use_frameworks!
 
 target 'TimeCapturor' do
-pod 'UCZProgressView'
+pod 'UCZProgressView’
 end
+
+target 'TimeCapturor' do
+pod 'LLSimpleCamera’, '~> 4.0.0’
+end
+
 
