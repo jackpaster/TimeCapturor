@@ -84,8 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-TimeCapturor/LLSimpleCamera.framework"
+  install_framework "Pods-TimeCapturor/Spring.framework"
   install_framework "Pods-TimeCapturor/UCZProgressView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-TimeCapturor/LLSimpleCamera.framework"
+  install_framework "Pods-TimeCapturor/Spring.framework"
   install_framework "Pods-TimeCapturor/UCZProgressView.framework"
 fi

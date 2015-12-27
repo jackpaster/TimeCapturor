@@ -4,11 +4,9 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'TimeCapturor' do
-pod 'UCZProgressView’
-end
-
-target 'TimeCapturor' do
-pod 'LLSimpleCamera’, '~> 4.0.0’
+pod 'UCZProgressView'
+pod 'LLSimpleCamera', '~> 4.0.0'
+pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 end
 
 

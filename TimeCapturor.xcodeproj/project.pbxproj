@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		FAF9801AAC291C8780103A68 /* Pods_TimeCapturor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A988BEAF777D7974C65D7C /* Pods_TimeCapturor.framework */; };
+		FE0CF3471C2FC7090026CDEB /* GenereteVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0CF3461C2FC7090026CDEB /* GenereteVideo.swift */; };
+		FE397D5B1C30A82200C76CBE /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE397D5A1C30A82200C76CBE /* ProgressViewController.swift */; };
 		FE4DDE731C29DDF400F7A328 /* XMCCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */; };
 		FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */; };
 		FE56C1BB1C2B2D4500F24B32 /* UIImageExtentGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1BA1C2B2D4500F24B32 /* UIImageExtentGif.swift */; };
-		FE56C1BD1C2B2D6E00F24B32 /* GIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1BC1C2B2D6E00F24B32 /* GIFViewController.swift */; };
-		FE56C1BF1C2B2F3700F24B32 /* jeremy.gif in Resources */ = {isa = PBXBuildFile; fileRef = FE56C1BE1C2B2F3700F24B32 /* jeremy.gif */; };
+		FE56C1BD1C2B2D6E00F24B32 /* GeneratingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1BC1C2B2D6E00F24B32 /* GeneratingViewController.swift */; };
 		FE56C1C11C2B4A4100F24B32 /* MagicMoveTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1C01C2B4A4100F24B32 /* MagicMoveTransion.swift */; };
 		FE56C1C31C2B4D0400F24B32 /* MagicMovePopTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1C21C2B4D0400F24B32 /* MagicMovePopTransion.swift */; };
 		FE56C1C61C2B599C00F24B32 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1C51C2B599C00F24B32 /* FadeAnimator.swift */; };
@@ -30,11 +31,12 @@
 		0B82CAE82098F9942F5A410A /* Pods-TimeCapturor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeCapturor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeCapturor/Pods-TimeCapturor.debug.xcconfig"; sourceTree = "<group>"; };
 		2DAACF8754B67265522B5A8E /* Pods-TimeCapturor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeCapturor.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeCapturor/Pods-TimeCapturor.release.xcconfig"; sourceTree = "<group>"; };
 		79A988BEAF777D7974C65D7C /* Pods_TimeCapturor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCapturor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0CF3461C2FC7090026CDEB /* GenereteVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenereteVideo.swift; sourceTree = "<group>"; };
+		FE397D5A1C30A82200C76CBE /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCCamera.swift; sourceTree = "<group>"; };
 		FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCCameraViewController.swift; sourceTree = "<group>"; };
 		FE56C1BA1C2B2D4500F24B32 /* UIImageExtentGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtentGif.swift; sourceTree = "<group>"; };
-		FE56C1BC1C2B2D6E00F24B32 /* GIFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFViewController.swift; sourceTree = "<group>"; };
-		FE56C1BE1C2B2F3700F24B32 /* jeremy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jeremy.gif; sourceTree = "<group>"; };
+		FE56C1BC1C2B2D6E00F24B32 /* GeneratingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratingViewController.swift; sourceTree = "<group>"; };
 		FE56C1C01C2B4A4100F24B32 /* MagicMoveTransion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicMoveTransion.swift; sourceTree = "<group>"; };
 		FE56C1C21C2B4D0400F24B32 /* MagicMovePopTransion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicMovePopTransion.swift; sourceTree = "<group>"; };
 		FE56C1C51C2B599C00F24B32 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
@@ -79,6 +81,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE0CF3481C30A1A80026CDEB /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				FEA216F21C28703B008F07F0 /* CollectionViewCell.swift */,
+				FEA216E41C28626E008F07F0 /* Main.storyboard */,
+				FEA216E21C28626E008F07F0 /* ViewController.swift */,
+			);
+			name = MainPage;
+			sourceTree = "<group>";
+		};
+		FE0CF3491C30A1C40026CDEB /* ImageManage */ = {
+			isa = PBXGroup;
+			children = (
+				FEA216F41C287052008F07F0 /* NewViewController.swift */,
+			);
+			name = ImageManage;
+			sourceTree = "<group>";
+		};
+		FE0CF34A1C30A1E30026CDEB /* supportFile */ = {
+			isa = PBXGroup;
+			children = (
+				FEA216E01C28626E008F07F0 /* AppDelegate.swift */,
+				FEA216E71C28626E008F07F0 /* Assets.xcassets */,
+				FEA216EC1C28626E008F07F0 /* Info.plist */,
+				FEA216E91C28626E008F07F0 /* LaunchScreen.storyboard */,
+			);
+			name = supportFile;
+			sourceTree = "<group>";
+		};
+		FE397D591C30A3F300C76CBE /* DataModle */ = {
+			isa = PBXGroup;
+			children = (
+				FE56C1C71C2B5F4A00F24B32 /* AlbumData.swift */,
+			);
+			name = DataModle;
+			sourceTree = "<group>";
+		};
 		FE56C1B81C2B2D1000F24B32 /* camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,13 +127,15 @@
 			name = camera;
 			sourceTree = "<group>";
 		};
-		FE56C1B91C2B2D3300F24B32 /* gif */ = {
+		FE56C1B91C2B2D3300F24B32 /* generating */ = {
 			isa = PBXGroup;
 			children = (
-				FE56C1BC1C2B2D6E00F24B32 /* GIFViewController.swift */,
+				FE397D5A1C30A82200C76CBE /* ProgressViewController.swift */,
+				FE0CF3461C2FC7090026CDEB /* GenereteVideo.swift */,
+				FE56C1BC1C2B2D6E00F24B32 /* GeneratingViewController.swift */,
 				FE56C1BA1C2B2D4500F24B32 /* UIImageExtentGif.swift */,
 			);
-			name = gif;
+			name = generating;
 			sourceTree = "<group>";
 		};
 		FE56C1C41C2B591300F24B32 /* transition */ = {
@@ -128,19 +169,13 @@
 		FEA216DF1C28626E008F07F0 /* TimeCapturor */ = {
 			isa = PBXGroup;
 			children = (
+				FE397D591C30A3F300C76CBE /* DataModle */,
+				FE0CF34A1C30A1E30026CDEB /* supportFile */,
+				FE0CF3491C30A1C40026CDEB /* ImageManage */,
 				FE56C1C41C2B591300F24B32 /* transition */,
-				FE56C1B91C2B2D3300F24B32 /* gif */,
+				FE56C1B91C2B2D3300F24B32 /* generating */,
+				FE0CF3481C30A1A80026CDEB /* MainPage */,
 				FE56C1B81C2B2D1000F24B32 /* camera */,
-				FEA216E01C28626E008F07F0 /* AppDelegate.swift */,
-				FE56C1C71C2B5F4A00F24B32 /* AlbumData.swift */,
-				FE56C1BE1C2B2F3700F24B32 /* jeremy.gif */,
-				FEA216E21C28626E008F07F0 /* ViewController.swift */,
-				FEA216E41C28626E008F07F0 /* Main.storyboard */,
-				FEA216F21C28703B008F07F0 /* CollectionViewCell.swift */,
-				FEA216F41C287052008F07F0 /* NewViewController.swift */,
-				FEA216E71C28626E008F07F0 /* Assets.xcassets */,
-				FEA216E91C28626E008F07F0 /* LaunchScreen.storyboard */,
-				FEA216EC1C28626E008F07F0 /* Info.plist */,
 			);
 			path = TimeCapturor;
 			sourceTree = "<group>";
@@ -209,7 +244,6 @@
 			files = (
 				FEA216EB1C28626E008F07F0 /* LaunchScreen.storyboard in Resources */,
 				FEA216E81C28626E008F07F0 /* Assets.xcassets in Resources */,
-				FE56C1BF1C2B2F3700F24B32 /* jeremy.gif in Resources */,
 				FEA216E61C28626E008F07F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,13 +306,15 @@
 				FE56C1C31C2B4D0400F24B32 /* MagicMovePopTransion.swift in Sources */,
 				FEA216E31C28626E008F07F0 /* ViewController.swift in Sources */,
 				FE4DDE731C29DDF400F7A328 /* XMCCamera.swift in Sources */,
+				FE397D5B1C30A82200C76CBE /* ProgressViewController.swift in Sources */,
 				FE56C1BB1C2B2D4500F24B32 /* UIImageExtentGif.swift in Sources */,
+				FE0CF3471C2FC7090026CDEB /* GenereteVideo.swift in Sources */,
 				FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */,
 				FE56C1C81C2B5F4A00F24B32 /* AlbumData.swift in Sources */,
 				FEA216E11C28626E008F07F0 /* AppDelegate.swift in Sources */,
 				FEA216F31C28703B008F07F0 /* CollectionViewCell.swift in Sources */,
 				FE56C1C11C2B4A4100F24B32 /* MagicMoveTransion.swift in Sources */,
-				FE56C1BD1C2B2D6E00F24B32 /* GIFViewController.swift in Sources */,
+				FE56C1BD1C2B2D6E00F24B32 /* GeneratingViewController.swift in Sources */,
 				FE56C1C61C2B599C00F24B32 /* FadeAnimator.swift in Sources */,
 				FEA216F51C287052008F07F0 /* NewViewController.swift in Sources */,
 			);

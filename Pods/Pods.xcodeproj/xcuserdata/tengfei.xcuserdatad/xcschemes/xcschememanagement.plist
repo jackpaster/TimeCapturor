@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>LLSimpleCamera.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TimeCapturor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Spring.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>913B96FBA309E3ECEF2BED0F057A4CB3</key>
+		<key>204A2746AD94E14E3615A44A49FEF18B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C0A0BDCCAA1C1E2BCE7FC022A5BED11E</key>
+		<key>6FD20E6E186C90F4B77DC4C327C760C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE0CC7E2B5B550BC4172F6FF9CC5D50A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EFE892286C3ECA79DF61F53D9D5C47D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

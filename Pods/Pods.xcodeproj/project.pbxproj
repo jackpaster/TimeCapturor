@@ -7,102 +7,227 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		058C49AF57938B6D8E4AC34456CDE3EA /* UCZProgressView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B1FD4C7BB2E91503A6DD56821CAB5A /* UCZProgressView-dummy.m */; };
-		2DAE3DE1836A378CCB8D55F144ED9CD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		5F229DE2D9D134F7B8F5BCB915320FC8 /* UCZProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0FA46E2A85A40A32C29A341A5B74E3B /* UCZProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		632E63CF35F002079B4BA1B5BA165CC1 /* Pods-TimeCapturor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BE17A1E85D6F50ED1CC59CB8655701F /* Pods-TimeCapturor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BC77BB7B3A06D14F821A87FA249B2447 /* Pods-TimeCapturor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E078D562D7FB09EFEC2DC0B06ADFA5 /* Pods-TimeCapturor-dummy.m */; };
-		CBCB575F1947AEE14790AFCFFE7AED78 /* UCZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E73020A53A9A6E47750FD2C1881FE0 /* UCZProgressView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E844279973BE289BE829487B2BBD42AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		F6CB14AFA5B7745689D13013D991EA88 /* UCZProgressView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BACA66A3DCFBEF56F83F9164795F114 /* UCZProgressView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		057904A26E08793D4AFF3F6528E3DEAA /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21B4E7190E557811F5BAD27B885275 /* AsyncImageView.swift */; };
+		0CA3A3F98922E4064FBB099BB0E78BC3 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D483474BA9CC7096D560C3DDC2D7AB1F /* DesignableView.swift */; };
+		10D07EC8D2BBF2F41773210E68D7F3EE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC93988D7F091F0DEE5CF44506467A32 /* AVFoundation.framework */; };
+		1B62404CC3C79DA60603769925F00B3E /* Spring-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B553375BAEF0E011F7738EA4C3DAF79C /* Spring-dummy.m */; };
+		2CC73F6BE2BFADB0C5054EE6E7ADA29D /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495623312BCAF6053F79874FBEAAA135 /* SpringAnimation.swift */; };
+		34652577E69150C667F01E3B64A4E132 /* Pods-TimeCapturor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E078D562D7FB09EFEC2DC0B06ADFA5 /* Pods-TimeCapturor-dummy.m */; };
+		38BD0E541A952E8E21711974014641A6 /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77189475FAC7895AFB55240D0275DCA /* SpringImageView.swift */; };
+		3A52794B59BB7600E4C94CC0CB85FF12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764C93382B59CEE3ED12979B5766DD1E /* Foundation.framework */; };
+		3DFC6B3E6E6EEFD4480FE5227CB19082 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A70EE6E376EF88459C397AF0B4270 /* SpringView.swift */; };
+		4282BDA93BFB28FA64AA31C68E35F1F9 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFE802076522DA97B6C35AD5D1F1876 /* DesignableButton.swift */; };
+		43F07076B23D1099B63E9ABC0EAEE1C0 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976DB5E6AC3C042B2DEA44F15CC9DA2F /* DesignableLabel.swift */; };
+		47239048AB23BB41BB3769362B1B24C6 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA1C8B2F39687DDE37F137C4F61FFB5 /* SpringLabel.swift */; };
+		485C930EFE8957E8A377054490E31A5D /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7260264A742E6D13667A44DFB1F05E6 /* SpringTextView.swift */; };
+		4C911645D48F2FC7C9C39BAAECA66DA9 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A46D0727DE915478B3A526EB3715842 /* KeyboardLayoutConstraint.swift */; };
+		5601E39E250F58D80AC3AF4FC40B2841 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987B0B0129EB32AAB7F1C9D82FFD64D /* Misc.swift */; };
+		58E109613545E9B830341D9EC6A17F95 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD05F20796B098A77A40D01562AA813 /* DesignableImageView.swift */; };
+		5C020B5AF2985EA33C1C5A3A1D6A87E1 /* UCZProgressView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2680A568E0FAA00AE734CE5B2F4ED07F /* UCZProgressView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CA8BCBE8D912BA8500E198D4F47E1AE /* LLSimpleCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19FC7F3F4F396714C140161F4F2B67BC /* LLSimpleCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E3D71D11A9778CCAEE350748CD92286 /* LLSimpleCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 99040E2E2B0762314B50130775537C4E /* LLSimpleCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60BECFA566CBA5F1A030A33BCB4393CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764C93382B59CEE3ED12979B5766DD1E /* Foundation.framework */; };
+		6AD52D80E5C7AB3C0D28A2BB4FCAE074 /* LLSimpleCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2A72A752DE3296F8B858E7189B3363 /* LLSimpleCamera-dummy.m */; };
+		6DAE462F2116750EF25247A87A01F21D /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BAD29F44C77E5EC34781D334A188AF /* DesignableTextField.swift */; };
+		6DD9644F6BC247BD4E9F82D7DB553D21 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0709E74ED6ECE1890502212141CE8F /* TransitionManager.swift */; };
+		74039C54B8E55875AE358A5AE35FEEF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90A81EFD2952D345E374BAE54138E99 /* Images.xcassets */; };
+		7DCFC156CD72520EBE81EAC3F9C0D843 /* UCZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC1C4D75A2AD784E1BD186CEDC760A7 /* UCZProgressView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7FBA0FDABFE65D63F7F76E50659959D4 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861482CE129D3C1EECBAE9416EF7BEC6 /* SpringButton.swift */; };
+		8AC19179ACE4E531870D3123311551E2 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC1F0C037E9E4E819F3CFB4D8AE706F9 /* LoadingView.xib */; };
+		8CAC372B4D65D175A0574BB8D40FA96F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764C93382B59CEE3ED12979B5766DD1E /* Foundation.framework */; };
+		924E42C1512BA8B48BF2974343F4D1B4 /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9961A56220F87D75BAA8B93AE392D771 /* LLSimpleCamera.m */; };
+		93A65C4380703954DF5831808850E6D6 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9712388752DC0F118C028291160E5C72 /* UIImage+FixOrientation.m */; };
+		9A62D3DAD70F70BCBF0A09EFDC59322F /* Spring-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E40EA4A5FDDE2DFC3AA7631524154CE4 /* Spring-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A65E94B415FCC9FA706467B7CFB8CCCA /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E22C92936A55EEE728B05A3FAAC7974 /* Spring.swift */; };
+		A85719DCC7591FE6A649436C8EF8D7F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764C93382B59CEE3ED12979B5766DD1E /* Foundation.framework */; };
+		B467C67DECCD7A642403EEE03528D922 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961643C384A8DA514B6252D526C4CA1 /* DesignableTabBarController.swift */; };
+		B6F440AEBCEE9826727AF22BD3FD3FC5 /* UCZProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = F5696D2AFEEED93231C65702BD1A1374 /* UCZProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBDE5E979282BA91CA16F8BD292E5F47 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21079FF6692D4DDB2CC23DEF35FC291 /* ImageLoader.swift */; };
+		C14757AB0CE46731A8E1746CFC79D9A1 /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534C54939F0132016D5C6D754F0B954F /* SpringTextField.swift */; };
+		C3C101ACB04EDAC3BA7EC5F4C2984A94 /* UIImage+FixOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = AC8A641C9C35ABC36381EA0DDDE0234D /* UIImage+FixOrientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C61D9CC7D1779AB4621E11D9829EA0A7 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1051EDC64EF70E2D15C5DBBF684DF33C /* TransitionZoom.swift */; };
+		CFA50886BD463C9789FAE8D30A8E712C /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDE0EC92B4BDE8A0C2334D1E1D2DB6F /* SoundPlayer.swift */; };
+		D282A5F666F8A2441E336CD8D7A3CB37 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0765FBE6265C6AE985602840D73172 /* BlurView.swift */; };
+		DDC88997544AC7AB1FCAF8EDF2D421F4 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4078C52A882F519AE311115E16683C /* AutoTextView.swift */; };
+		DE67641BF4685559D266D330372328DD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55FD425471452F6E14E927CD48EF21F /* LoadingView.swift */; };
+		E3B75D800E5D7ECF6C281AD676115E44 /* UCZProgressView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7EDAF609FF58F15BA1A7D5D6E9726AC /* UCZProgressView-dummy.m */; };
+		E47F236303EE0172E1EA15EC78992473 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A295088077B742955A05FEC31ECEC6B0 /* AsyncButton.swift */; };
+		F50E74AEB86EFD8AAABAF8E8403C8668 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E939CA1298F61E085FF339850EFEC /* UnwindSegue.swift */; };
+		F766B3EB1B370A6D3A1162E01B68F1C4 /* Pods-TimeCapturor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BE17A1E85D6F50ED1CC59CB8655701F /* Pods-TimeCapturor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8F434C85D0E4C7EA7AD60CAFACB72E3 /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB4306E83097A24C44CC42C1F4C42A0 /* DesignableTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		452A6708E6D679DCE1B664D73E1F8E76 /* PBXContainerItemProxy */ = {
+		51DB44823CFE7C56863DA441A7D5AB55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C0A0BDCCAA1C1E2BCE7FC022A5BED11E;
+			remoteGlobalIDString = CE0CC7E2B5B550BC4172F6FF9CC5D50A;
+			remoteInfo = LLSimpleCamera;
+		};
+		9B7F544504CEB38A1F48C8E6F71266F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FD20E6E186C90F4B77DC4C327C760C0;
+			remoteInfo = Spring;
+		};
+		D6C83F898F642A47639BD9FF8F924026 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 204A2746AD94E14E3615A44A49FEF18B;
 			remoteInfo = UCZProgressView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1C5AB6A739CBA11F71EF643303C1816E /* Pods_TimeCapturor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCapturor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FCE318CCDA48FCE5B450171654BB6F2 /* UCZProgressView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = UCZProgressView.modulemap; sourceTree = "<group>"; };
-		26B1FD4C7BB2E91503A6DD56821CAB5A /* UCZProgressView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UCZProgressView-dummy.m"; sourceTree = "<group>"; };
+		1051EDC64EF70E2D15C5DBBF684DF33C /* TransitionZoom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionZoom.swift; path = Spring/TransitionZoom.swift; sourceTree = "<group>"; };
+		13AC27059C899D1147EF77D02FB987DC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19FC7F3F4F396714C140161F4F2B67BC /* LLSimpleCamera-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LLSimpleCamera-umbrella.h"; sourceTree = "<group>"; };
+		1E22C92936A55EEE728B05A3FAAC7974 /* Spring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spring.swift; path = Spring/Spring.swift; sourceTree = "<group>"; };
+		246373F1AE4498B703FB7AFE1BA27DEB /* UCZProgressView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UCZProgressView-prefix.pch"; sourceTree = "<group>"; };
+		2583F122EEAEA350F294F642C4348211 /* Spring.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spring.xcconfig; sourceTree = "<group>"; };
+		2680A568E0FAA00AE734CE5B2F4ED07F /* UCZProgressView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UCZProgressView-umbrella.h"; sourceTree = "<group>"; };
+		2A0709E74ED6ECE1890502212141CE8F /* TransitionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = Spring/TransitionManager.swift; sourceTree = "<group>"; };
+		2A46D0727DE915478B3A526EB3715842 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardLayoutConstraint.swift; path = Spring/KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		2EB4306E83097A24C44CC42C1F4C42A0 /* DesignableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextView.swift; path = Spring/DesignableTextView.swift; sourceTree = "<group>"; };
 		364AE2203B948E252ACCD4E16CD4F685 /* Pods-TimeCapturor-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TimeCapturor-resources.sh"; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		43F166142DFFDD4A99B2E88908A3DCE8 /* LLSimpleCamera.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LLSimpleCamera.modulemap; sourceTree = "<group>"; };
+		495623312BCAF6053F79874FBEAAA135 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringAnimation.swift; path = Spring/SpringAnimation.swift; sourceTree = "<group>"; };
+		4BFE802076522DA97B6C35AD5D1F1876 /* DesignableButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableButton.swift; path = Spring/DesignableButton.swift; sourceTree = "<group>"; };
+		534C54939F0132016D5C6D754F0B954F /* SpringTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextField.swift; path = Spring/SpringTextField.swift; sourceTree = "<group>"; };
+		569A70EE6E376EF88459C397AF0B4270 /* SpringView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringView.swift; path = Spring/SpringView.swift; sourceTree = "<group>"; };
+		571FA0C0A964DD24D4E5795DBB8D36C0 /* LLSimpleCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LLSimpleCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BE17A1E85D6F50ED1CC59CB8655701F /* Pods-TimeCapturor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TimeCapturor-umbrella.h"; sourceTree = "<group>"; };
-		72E73020A53A9A6E47750FD2C1881FE0 /* UCZProgressView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UCZProgressView.m; path = Lib/UCZProgressView.m; sourceTree = "<group>"; };
-		775F05C7636AB3BB0BE22960E61B0E96 /* UCZProgressView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UCZProgressView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D9C046CA560054C683C946D97032CD0 /* UCZProgressView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UCZProgressView-prefix.pch"; sourceTree = "<group>"; };
+		6ABA361DF3DA8417F214F95023E0DA9D /* Spring.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spring.modulemap; sourceTree = "<group>"; };
+		6AD05F20796B098A77A40D01562AA813 /* DesignableImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableImageView.swift; path = Spring/DesignableImageView.swift; sourceTree = "<group>"; };
+		6CA1C8B2F39687DDE37F137C4F61FFB5 /* SpringLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringLabel.swift; path = Spring/SpringLabel.swift; sourceTree = "<group>"; };
+		764C93382B59CEE3ED12979B5766DD1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		77714EC4CE3C9082B1C0857E78392410 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		861482CE129D3C1EECBAE9416EF7BEC6 /* SpringButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringButton.swift; path = Spring/SpringButton.swift; sourceTree = "<group>"; };
+		8CDE0EC92B4BDE8A0C2334D1E1D2DB6F /* SoundPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoundPlayer.swift; path = Spring/SoundPlayer.swift; sourceTree = "<group>"; };
+		8DB924F76459FBC421891A159352AF67 /* LLSimpleCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LLSimpleCamera.xcconfig; sourceTree = "<group>"; };
 		8F3B7B69CFCCE17D1C00F6A56F965A29 /* Pods-TimeCapturor-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TimeCapturor-acknowledgements.plist"; sourceTree = "<group>"; };
 		8F5BBEDA305BFD85533D89F899E18E48 /* Pods-TimeCapturor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimeCapturor.debug.xcconfig"; sourceTree = "<group>"; };
 		93E078D562D7FB09EFEC2DC0B06ADFA5 /* Pods-TimeCapturor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TimeCapturor-dummy.m"; sourceTree = "<group>"; };
 		94A5A8108AD82BCE38ACEB20B2109052 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9712388752DC0F118C028291160E5C72 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FixOrientation.m"; path = "LLSimpleCamera/UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		976DB5E6AC3C042B2DEA44F15CC9DA2F /* DesignableLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableLabel.swift; path = Spring/DesignableLabel.swift; sourceTree = "<group>"; };
+		99040E2E2B0762314B50130775537C4E /* LLSimpleCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LLSimpleCamera.h; path = LLSimpleCamera/LLSimpleCamera.h; sourceTree = "<group>"; };
+		9961A56220F87D75BAA8B93AE392D771 /* LLSimpleCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LLSimpleCamera.m; path = LLSimpleCamera/LLSimpleCamera.m; sourceTree = "<group>"; };
 		9AF868A38EF8764D276CB34EB297FBBB /* Pods-TimeCapturor-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TimeCapturor-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9BACA66A3DCFBEF56F83F9164795F114 /* UCZProgressView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UCZProgressView-umbrella.h"; sourceTree = "<group>"; };
+		9D2A72A752DE3296F8B858E7189B3363 /* LLSimpleCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LLSimpleCamera-dummy.m"; sourceTree = "<group>"; };
+		9F21B4E7190E557811F5BAD27B885275 /* AsyncImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncImageView.swift; path = Spring/AsyncImageView.swift; sourceTree = "<group>"; };
+		A295088077B742955A05FEC31ECEC6B0 /* AsyncButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncButton.swift; path = Spring/AsyncButton.swift; sourceTree = "<group>"; };
+		AC5E939CA1298F61E085FF339850EFEC /* UnwindSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnwindSegue.swift; path = Spring/UnwindSegue.swift; sourceTree = "<group>"; };
+		AC8A641C9C35ABC36381EA0DDDE0234D /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+FixOrientation.h"; path = "LLSimpleCamera/UIImage+FixOrientation.h"; sourceTree = "<group>"; };
 		AD2F6E42FCD40245A6EB8115FFA6F9BE /* Pods-TimeCapturor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TimeCapturor.modulemap"; sourceTree = "<group>"; };
+		B1BAD29F44C77E5EC34781D334A188AF /* DesignableTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextField.swift; path = Spring/DesignableTextField.swift; sourceTree = "<group>"; };
+		B21079FF6692D4DDB2CC23DEF35FC291 /* ImageLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = Spring/ImageLoader.swift; sourceTree = "<group>"; };
+		B2D03F8DD701B362588DFE81868D7DCB /* Pods_TimeCapturor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCapturor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B553375BAEF0E011F7738EA4C3DAF79C /* Spring-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spring-dummy.m"; sourceTree = "<group>"; };
+		B55FD425471452F6E14E927CD48EF21F /* LoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = Spring/LoadingView.swift; sourceTree = "<group>"; };
+		B961643C384A8DA514B6252D526C4CA1 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTabBarController.swift; path = Spring/DesignableTabBarController.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C612AB762ABD911649FE7B11A32568A7 /* UCZProgressView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UCZProgressView.xcconfig; sourceTree = "<group>"; };
-		C6D1A53240C8302590B40B952A956911 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0FA46E2A85A40A32C29A341A5B74E3B /* UCZProgressView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UCZProgressView.h; path = Lib/UCZProgressView.h; sourceTree = "<group>"; };
+		BB99A50FD2D29A039F413B184E7766FB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDA2AEB504650BE09F1A9C07957501EF /* Spring-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-prefix.pch"; sourceTree = "<group>"; };
+		CA0377C94EF7FEFB61E6452C8B93D554 /* Spring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC1F0C037E9E4E819F3CFB4D8AE706F9 /* LoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LoadingView.xib; path = Spring/LoadingView.xib; sourceTree = "<group>"; };
+		CC93988D7F091F0DEE5CF44506467A32 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		D4737C3E8158FA05A9956E4DD7EB8BBA /* Pods-TimeCapturor-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TimeCapturor-frameworks.sh"; sourceTree = "<group>"; };
+		D483474BA9CC7096D560C3DDC2D7AB1F /* DesignableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableView.swift; path = Spring/DesignableView.swift; sourceTree = "<group>"; };
+		D5A5DE5119EC1E31D6F184B1518A9089 /* UCZProgressView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UCZProgressView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7EDAF609FF58F15BA1A7D5D6E9726AC /* UCZProgressView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UCZProgressView-dummy.m"; sourceTree = "<group>"; };
+		DA888DC2348B473661D27135CB20145A /* LLSimpleCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LLSimpleCamera-prefix.pch"; sourceTree = "<group>"; };
+		E2AE02924E9718FFAC23AD1777003AC8 /* UCZProgressView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UCZProgressView.xcconfig; sourceTree = "<group>"; };
+		E40EA4A5FDDE2DFC3AA7631524154CE4 /* Spring-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-umbrella.h"; sourceTree = "<group>"; };
+		E7260264A742E6D13667A44DFB1F05E6 /* SpringTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextView.swift; path = Spring/SpringTextView.swift; sourceTree = "<group>"; };
+		E77189475FAC7895AFB55240D0275DCA /* SpringImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringImageView.swift; path = Spring/SpringImageView.swift; sourceTree = "<group>"; };
+		E90A81EFD2952D345E374BAE54138E99 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpringApp/Images.xcassets; sourceTree = "<group>"; };
+		EDC1C4D75A2AD784E1BD186CEDC760A7 /* UCZProgressView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UCZProgressView.m; path = Lib/UCZProgressView.m; sourceTree = "<group>"; };
+		F5696D2AFEEED93231C65702BD1A1374 /* UCZProgressView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UCZProgressView.h; path = Lib/UCZProgressView.h; sourceTree = "<group>"; };
+		F84D5C59608A2ECD7BA4F96BBA205B36 /* UCZProgressView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = UCZProgressView.modulemap; sourceTree = "<group>"; };
+		F987B0B0129EB32AAB7F1C9D82FFD64D /* Misc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Misc.swift; path = Spring/Misc.swift; sourceTree = "<group>"; };
+		FE0765FBE6265C6AE985602840D73172 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Spring/BlurView.swift; sourceTree = "<group>"; };
+		FE4078C52A882F519AE311115E16683C /* AutoTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoTextView.swift; path = Spring/AutoTextView.swift; sourceTree = "<group>"; };
 		FE65BB805E6D48F68A82CD2F41A3A2F8 /* Pods-TimeCapturor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimeCapturor.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		05BF4132C42866F33562B761414F8A4F /* Frameworks */ = {
+		42B1C09FA49EC551A9BB46E594E7FC63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E844279973BE289BE829487B2BBD42AB /* Foundation.framework in Frameworks */,
+				10D07EC8D2BBF2F41773210E68D7F3EE /* AVFoundation.framework in Frameworks */,
+				8CAC372B4D65D175A0574BB8D40FA96F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1F2A3F28E07772DCE096F20C3B9B4CD /* Frameworks */ = {
+		5A0DDF349F8023390478DDD2ECFEB133 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DAE3DE1836A378CCB8D55F144ED9CD6 /* Foundation.framework in Frameworks */,
+				3A52794B59BB7600E4C94CC0CB85FF12 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC24B7CFDAE9C25896106F9BDB5DB8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60BECFA566CBA5F1A030A33BCB4393CE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2BD7D0DD288B8CC982851AB0E1C2254 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A85719DCC7591FE6A649436C8EF8D7F5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3C40A8FF1F35C4E2C353BB4C7F1C0806 /* UCZProgressView */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0FA46E2A85A40A32C29A341A5B74E3B /* UCZProgressView.h */,
-				72E73020A53A9A6E47750FD2C1881FE0 /* UCZProgressView.m */,
-				4DC9D3EB5A4F35A00972C683BC7B2FBF /* Support Files */,
+				502F60075FC4331F755C37AE61C739B8 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		439DB0EBB3D6B8A49E7FA36390F49B02 /* UCZProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				F5696D2AFEEED93231C65702BD1A1374 /* UCZProgressView.h */,
+				EDC1C4D75A2AD784E1BD186CEDC760A7 /* UCZProgressView.m */,
+				B5A50C9BED698149A8D33F1FD00B7DA3 /* Support Files */,
 			);
 			path = UCZProgressView;
 			sourceTree = "<group>";
 		};
-		4B408682686B67E5A82DEDD9A3F44205 /* Products */ = {
+		47A17F05C12ECDC5035D6EFCCC3AC70E /* LLSimpleCamera */ = {
 			isa = PBXGroup;
 			children = (
-				1C5AB6A739CBA11F71EF643303C1816E /* Pods_TimeCapturor.framework */,
-				775F05C7636AB3BB0BE22960E61B0E96 /* UCZProgressView.framework */,
+				99040E2E2B0762314B50130775537C4E /* LLSimpleCamera.h */,
+				9961A56220F87D75BAA8B93AE392D771 /* LLSimpleCamera.m */,
+				AC8A641C9C35ABC36381EA0DDDE0234D /* UIImage+FixOrientation.h */,
+				9712388752DC0F118C028291160E5C72 /* UIImage+FixOrientation.m */,
+				C88EC779B29213A7E66B3C75496DDFAF /* Support Files */,
 			);
-			name = Products;
+			path = LLSimpleCamera;
 			sourceTree = "<group>";
 		};
-		4DC9D3EB5A4F35A00972C683BC7B2FBF /* Support Files */ = {
+		502F60075FC4331F755C37AE61C739B8 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C6D1A53240C8302590B40B952A956911 /* Info.plist */,
-				1FCE318CCDA48FCE5B450171654BB6F2 /* UCZProgressView.modulemap */,
-				C612AB762ABD911649FE7B11A32568A7 /* UCZProgressView.xcconfig */,
-				26B1FD4C7BB2E91503A6DD56821CAB5A /* UCZProgressView-dummy.m */,
-				7D9C046CA560054C683C946D97032CD0 /* UCZProgressView-prefix.pch */,
-				9BACA66A3DCFBEF56F83F9164795F114 /* UCZProgressView-umbrella.h */,
+				CC93988D7F091F0DEE5CF44506467A32 /* AVFoundation.framework */,
+				764C93382B59CEE3ED12979B5766DD1E /* Foundation.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/UCZProgressView";
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		6E41D356FB8C2FD82D029FC4AA51DCFC /* Targets Support Files */ = {
@@ -117,35 +242,105 @@
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				BD71AC2042032055D42558187E2770D7 /* Pods */,
-				4B408682686B67E5A82DEDD9A3F44205 /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				80425E40A18D326388D1A24B175129A9 /* Pods */,
+				AF4A232DBE85CC35A5FC47092C96D15F /* Products */,
 				6E41D356FB8C2FD82D029FC4AA51DCFC /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		7E5CD45792B508A35B487E27F3F874B7 /* Spring */ = {
 			isa = PBXGroup;
 			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+				A295088077B742955A05FEC31ECEC6B0 /* AsyncButton.swift */,
+				9F21B4E7190E557811F5BAD27B885275 /* AsyncImageView.swift */,
+				FE4078C52A882F519AE311115E16683C /* AutoTextView.swift */,
+				FE0765FBE6265C6AE985602840D73172 /* BlurView.swift */,
+				4BFE802076522DA97B6C35AD5D1F1876 /* DesignableButton.swift */,
+				6AD05F20796B098A77A40D01562AA813 /* DesignableImageView.swift */,
+				976DB5E6AC3C042B2DEA44F15CC9DA2F /* DesignableLabel.swift */,
+				B961643C384A8DA514B6252D526C4CA1 /* DesignableTabBarController.swift */,
+				B1BAD29F44C77E5EC34781D334A188AF /* DesignableTextField.swift */,
+				2EB4306E83097A24C44CC42C1F4C42A0 /* DesignableTextView.swift */,
+				D483474BA9CC7096D560C3DDC2D7AB1F /* DesignableView.swift */,
+				B21079FF6692D4DDB2CC23DEF35FC291 /* ImageLoader.swift */,
+				2A46D0727DE915478B3A526EB3715842 /* KeyboardLayoutConstraint.swift */,
+				B55FD425471452F6E14E927CD48EF21F /* LoadingView.swift */,
+				F987B0B0129EB32AAB7F1C9D82FFD64D /* Misc.swift */,
+				8CDE0EC92B4BDE8A0C2334D1E1D2DB6F /* SoundPlayer.swift */,
+				1E22C92936A55EEE728B05A3FAAC7974 /* Spring.swift */,
+				495623312BCAF6053F79874FBEAAA135 /* SpringAnimation.swift */,
+				861482CE129D3C1EECBAE9416EF7BEC6 /* SpringButton.swift */,
+				E77189475FAC7895AFB55240D0275DCA /* SpringImageView.swift */,
+				6CA1C8B2F39687DDE37F137C4F61FFB5 /* SpringLabel.swift */,
+				534C54939F0132016D5C6D754F0B954F /* SpringTextField.swift */,
+				E7260264A742E6D13667A44DFB1F05E6 /* SpringTextView.swift */,
+				569A70EE6E376EF88459C397AF0B4270 /* SpringView.swift */,
+				2A0709E74ED6ECE1890502212141CE8F /* TransitionManager.swift */,
+				1051EDC64EF70E2D15C5DBBF684DF33C /* TransitionZoom.swift */,
+				AC5E939CA1298F61E085FF339850EFEC /* UnwindSegue.swift */,
+				BEBF53A6B9689D07AE7D64058C69AC98 /* Resources */,
+				DCD9C15195AEA47A9ED2E3FADCD490A5 /* Support Files */,
 			);
-			name = Frameworks;
+			path = Spring;
 			sourceTree = "<group>";
 		};
-		BD71AC2042032055D42558187E2770D7 /* Pods */ = {
+		80425E40A18D326388D1A24B175129A9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3C40A8FF1F35C4E2C353BB4C7F1C0806 /* UCZProgressView */,
+				47A17F05C12ECDC5035D6EFCCC3AC70E /* LLSimpleCamera */,
+				7E5CD45792B508A35B487E27F3F874B7 /* Spring */,
+				439DB0EBB3D6B8A49E7FA36390F49B02 /* UCZProgressView */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+		AF4A232DBE85CC35A5FC47092C96D15F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+				571FA0C0A964DD24D4E5795DBB8D36C0 /* LLSimpleCamera.framework */,
+				B2D03F8DD701B362588DFE81868D7DCB /* Pods_TimeCapturor.framework */,
+				CA0377C94EF7FEFB61E6452C8B93D554 /* Spring.framework */,
+				D5A5DE5119EC1E31D6F184B1518A9089 /* UCZProgressView.framework */,
 			);
-			name = iOS;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5A50C9BED698149A8D33F1FD00B7DA3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				13AC27059C899D1147EF77D02FB987DC /* Info.plist */,
+				F84D5C59608A2ECD7BA4F96BBA205B36 /* UCZProgressView.modulemap */,
+				E2AE02924E9718FFAC23AD1777003AC8 /* UCZProgressView.xcconfig */,
+				D7EDAF609FF58F15BA1A7D5D6E9726AC /* UCZProgressView-dummy.m */,
+				246373F1AE4498B703FB7AFE1BA27DEB /* UCZProgressView-prefix.pch */,
+				2680A568E0FAA00AE734CE5B2F4ED07F /* UCZProgressView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UCZProgressView";
+			sourceTree = "<group>";
+		};
+		BEBF53A6B9689D07AE7D64058C69AC98 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E90A81EFD2952D345E374BAE54138E99 /* Images.xcassets */,
+				CC1F0C037E9E4E819F3CFB4D8AE706F9 /* LoadingView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C88EC779B29213A7E66B3C75496DDFAF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB99A50FD2D29A039F413B184E7766FB /* Info.plist */,
+				43F166142DFFDD4A99B2E88908A3DCE8 /* LLSimpleCamera.modulemap */,
+				8DB924F76459FBC421891A159352AF67 /* LLSimpleCamera.xcconfig */,
+				9D2A72A752DE3296F8B858E7189B3363 /* LLSimpleCamera-dummy.m */,
+				DA888DC2348B473661D27135CB20145A /* LLSimpleCamera-prefix.pch */,
+				19FC7F3F4F396714C140161F4F2B67BC /* LLSimpleCamera-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LLSimpleCamera";
 			sourceTree = "<group>";
 		};
 		CE027F5DB15DD8E34AFF8AFFECBD4AAA /* Pods-TimeCapturor */ = {
@@ -166,54 +361,68 @@
 			path = "Target Support Files/Pods-TimeCapturor";
 			sourceTree = "<group>";
 		};
+		DCD9C15195AEA47A9ED2E3FADCD490A5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				77714EC4CE3C9082B1C0857E78392410 /* Info.plist */,
+				6ABA361DF3DA8417F214F95023E0DA9D /* Spring.modulemap */,
+				2583F122EEAEA350F294F642C4348211 /* Spring.xcconfig */,
+				B553375BAEF0E011F7738EA4C3DAF79C /* Spring-dummy.m */,
+				BDA2AEB504650BE09F1A9C07957501EF /* Spring-prefix.pch */,
+				E40EA4A5FDDE2DFC3AA7631524154CE4 /* Spring-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Spring";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		B6825C06E978687EB2F024F1F756C467 /* Headers */ = {
+		3CCC3AAF8F87F8D1B6851D6A685CC141 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6CB14AFA5B7745689D13013D991EA88 /* UCZProgressView-umbrella.h in Headers */,
-				5F229DE2D9D134F7B8F5BCB915320FC8 /* UCZProgressView.h in Headers */,
+				5CA8BCBE8D912BA8500E198D4F47E1AE /* LLSimpleCamera-umbrella.h in Headers */,
+				5E3D71D11A9778CCAEE350748CD92286 /* LLSimpleCamera.h in Headers */,
+				C3C101ACB04EDAC3BA7EC5F4C2984A94 /* UIImage+FixOrientation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F6797971D30DF78EC3546EBB24BEB94C /* Headers */ = {
+		67CCFC60604219F187393C2459061BCA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				632E63CF35F002079B4BA1B5BA165CC1 /* Pods-TimeCapturor-umbrella.h in Headers */,
+				F766B3EB1B370A6D3A1162E01B68F1C4 /* Pods-TimeCapturor-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82AB0AA75E355AA454C823ECF43E49F3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C020B5AF2985EA33C1C5A3A1D6A87E1 /* UCZProgressView-umbrella.h in Headers */,
+				B6F440AEBCEE9826727AF22BD3FD3FC5 /* UCZProgressView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9D4919874430B06F28D45F820880D1C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A62D3DAD70F70BCBF0A09EFDC59322F /* Spring-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		913B96FBA309E3ECEF2BED0F057A4CB3 /* Pods-TimeCapturor */ = {
+		204A2746AD94E14E3615A44A49FEF18B /* UCZProgressView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 05ED677890D55AA6FA88707F853B7A3D /* Build configuration list for PBXNativeTarget "Pods-TimeCapturor" */;
+			buildConfigurationList = 84397970A2BB878C6D57AEA3BEDA602A /* Build configuration list for PBXNativeTarget "UCZProgressView" */;
 			buildPhases = (
-				53EDAE5CE0062997C062BF423D9053FB /* Sources */,
-				A1F2A3F28E07772DCE096F20C3B9B4CD /* Frameworks */,
-				F6797971D30DF78EC3546EBB24BEB94C /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				411C2035FF7934BCD6911898FB802244 /* PBXTargetDependency */,
-			);
-			name = "Pods-TimeCapturor";
-			productName = "Pods-TimeCapturor";
-			productReference = 1C5AB6A739CBA11F71EF643303C1816E /* Pods_TimeCapturor.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		C0A0BDCCAA1C1E2BCE7FC022A5BED11E /* UCZProgressView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F043AD7568846963E12D02997048A2AE /* Build configuration list for PBXNativeTarget "UCZProgressView" */;
-			buildPhases = (
-				060A0873DCC7F91A69B7639203791DCB /* Sources */,
-				05BF4132C42866F33562B761414F8A4F /* Frameworks */,
-				B6825C06E978687EB2F024F1F756C467 /* Headers */,
+				A7F749A8964175A3845B8DA26D91E5B8 /* Sources */,
+				5FC24B7CFDAE9C25896106F9BDB5DB8A /* Frameworks */,
+				82AB0AA75E355AA454C823ECF43E49F3 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -221,7 +430,62 @@
 			);
 			name = UCZProgressView;
 			productName = UCZProgressView;
-			productReference = 775F05C7636AB3BB0BE22960E61B0E96 /* UCZProgressView.framework */;
+			productReference = D5A5DE5119EC1E31D6F184B1518A9089 /* UCZProgressView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6FD20E6E186C90F4B77DC4C327C760C0 /* Spring */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CF4471ABD6E6774EDD1AAD9CBD9D97D /* Build configuration list for PBXNativeTarget "Spring" */;
+			buildPhases = (
+				EC12E439AC85715C9CAF9FACFA1DCF1E /* Sources */,
+				5A0DDF349F8023390478DDD2ECFEB133 /* Frameworks */,
+				CA737A6A940B364065E1C88230FA96BF /* Resources */,
+				D9D4919874430B06F28D45F820880D1C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spring;
+			productName = Spring;
+			productReference = CA0377C94EF7FEFB61E6452C8B93D554 /* Spring.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CE0CC7E2B5B550BC4172F6FF9CC5D50A /* LLSimpleCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A9E0881D54953A1A29D9CED7E22EE96 /* Build configuration list for PBXNativeTarget "LLSimpleCamera" */;
+			buildPhases = (
+				CDDF6909A7A8BB8CD9AF07F2A7166828 /* Sources */,
+				42B1C09FA49EC551A9BB46E594E7FC63 /* Frameworks */,
+				3CCC3AAF8F87F8D1B6851D6A685CC141 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LLSimpleCamera;
+			productName = LLSimpleCamera;
+			productReference = 571FA0C0A964DD24D4E5795DBB8D36C0 /* LLSimpleCamera.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EFE892286C3ECA79DF61F53D9D5C47D9 /* Pods-TimeCapturor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E41766D2E974990D738C9F681BF8F851 /* Build configuration list for PBXNativeTarget "Pods-TimeCapturor" */;
+			buildPhases = (
+				9C55D2C0C2DE26968E41F842238A83E3 /* Sources */,
+				D2BD7D0DD288B8CC982851AB0E1C2254 /* Frameworks */,
+				67CCFC60604219F187393C2459061BCA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41A8B7023A5F4F3C51624BE5FAD89CE2 /* PBXTargetDependency */,
+				C547FA16D1CB423CDD24B01F8DD8262C /* PBXTargetDependency */,
+				90BB7F6B57721081A35B3A53247C4741 /* PBXTargetDependency */,
+			);
+			name = "Pods-TimeCapturor";
+			productName = "Pods-TimeCapturor";
+			productReference = B2D03F8DD701B362588DFE81868D7DCB /* Pods_TimeCapturor.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -241,74 +505,118 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4B408682686B67E5A82DEDD9A3F44205 /* Products */;
+			productRefGroup = AF4A232DBE85CC35A5FC47092C96D15F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				913B96FBA309E3ECEF2BED0F057A4CB3 /* Pods-TimeCapturor */,
-				C0A0BDCCAA1C1E2BCE7FC022A5BED11E /* UCZProgressView */,
+				CE0CC7E2B5B550BC4172F6FF9CC5D50A /* LLSimpleCamera */,
+				EFE892286C3ECA79DF61F53D9D5C47D9 /* Pods-TimeCapturor */,
+				6FD20E6E186C90F4B77DC4C327C760C0 /* Spring */,
+				204A2746AD94E14E3615A44A49FEF18B /* UCZProgressView */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		060A0873DCC7F91A69B7639203791DCB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		CA737A6A940B364065E1C88230FA96BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				058C49AF57938B6D8E4AC34456CDE3EA /* UCZProgressView-dummy.m in Sources */,
-				CBCB575F1947AEE14790AFCFFE7AED78 /* UCZProgressView.m in Sources */,
+				74039C54B8E55875AE358A5AE35FEEF2 /* Images.xcassets in Resources */,
+				8AC19179ACE4E531870D3123311551E2 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		53EDAE5CE0062997C062BF423D9053FB /* Sources */ = {
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C55D2C0C2DE26968E41F842238A83E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC77BB7B3A06D14F821A87FA249B2447 /* Pods-TimeCapturor-dummy.m in Sources */,
+				34652577E69150C667F01E3B64A4E132 /* Pods-TimeCapturor-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F749A8964175A3845B8DA26D91E5B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3B75D800E5D7ECF6C281AD676115E44 /* UCZProgressView-dummy.m in Sources */,
+				7DCFC156CD72520EBE81EAC3F9C0D843 /* UCZProgressView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDDF6909A7A8BB8CD9AF07F2A7166828 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AD52D80E5C7AB3C0D28A2BB4FCAE074 /* LLSimpleCamera-dummy.m in Sources */,
+				924E42C1512BA8B48BF2974343F4D1B4 /* LLSimpleCamera.m in Sources */,
+				93A65C4380703954DF5831808850E6D6 /* UIImage+FixOrientation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC12E439AC85715C9CAF9FACFA1DCF1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E47F236303EE0172E1EA15EC78992473 /* AsyncButton.swift in Sources */,
+				057904A26E08793D4AFF3F6528E3DEAA /* AsyncImageView.swift in Sources */,
+				DDC88997544AC7AB1FCAF8EDF2D421F4 /* AutoTextView.swift in Sources */,
+				D282A5F666F8A2441E336CD8D7A3CB37 /* BlurView.swift in Sources */,
+				4282BDA93BFB28FA64AA31C68E35F1F9 /* DesignableButton.swift in Sources */,
+				58E109613545E9B830341D9EC6A17F95 /* DesignableImageView.swift in Sources */,
+				43F07076B23D1099B63E9ABC0EAEE1C0 /* DesignableLabel.swift in Sources */,
+				B467C67DECCD7A642403EEE03528D922 /* DesignableTabBarController.swift in Sources */,
+				6DAE462F2116750EF25247A87A01F21D /* DesignableTextField.swift in Sources */,
+				F8F434C85D0E4C7EA7AD60CAFACB72E3 /* DesignableTextView.swift in Sources */,
+				0CA3A3F98922E4064FBB099BB0E78BC3 /* DesignableView.swift in Sources */,
+				BBDE5E979282BA91CA16F8BD292E5F47 /* ImageLoader.swift in Sources */,
+				4C911645D48F2FC7C9C39BAAECA66DA9 /* KeyboardLayoutConstraint.swift in Sources */,
+				DE67641BF4685559D266D330372328DD /* LoadingView.swift in Sources */,
+				5601E39E250F58D80AC3AF4FC40B2841 /* Misc.swift in Sources */,
+				CFA50886BD463C9789FAE8D30A8E712C /* SoundPlayer.swift in Sources */,
+				1B62404CC3C79DA60603769925F00B3E /* Spring-dummy.m in Sources */,
+				A65E94B415FCC9FA706467B7CFB8CCCA /* Spring.swift in Sources */,
+				2CC73F6BE2BFADB0C5054EE6E7ADA29D /* SpringAnimation.swift in Sources */,
+				7FBA0FDABFE65D63F7F76E50659959D4 /* SpringButton.swift in Sources */,
+				38BD0E541A952E8E21711974014641A6 /* SpringImageView.swift in Sources */,
+				47239048AB23BB41BB3769362B1B24C6 /* SpringLabel.swift in Sources */,
+				C14757AB0CE46731A8E1746CFC79D9A1 /* SpringTextField.swift in Sources */,
+				485C930EFE8957E8A377054490E31A5D /* SpringTextView.swift in Sources */,
+				3DFC6B3E6E6EEFD4480FE5227CB19082 /* SpringView.swift in Sources */,
+				6DD9644F6BC247BD4E9F82D7DB553D21 /* TransitionManager.swift in Sources */,
+				C61D9CC7D1779AB4621E11D9829EA0A7 /* TransitionZoom.swift in Sources */,
+				F50E74AEB86EFD8AAABAF8E8403C8668 /* UnwindSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		411C2035FF7934BCD6911898FB802244 /* PBXTargetDependency */ = {
+		41A8B7023A5F4F3C51624BE5FAD89CE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LLSimpleCamera;
+			target = CE0CC7E2B5B550BC4172F6FF9CC5D50A /* LLSimpleCamera */;
+			targetProxy = 51DB44823CFE7C56863DA441A7D5AB55 /* PBXContainerItemProxy */;
+		};
+		90BB7F6B57721081A35B3A53247C4741 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = UCZProgressView;
-			target = C0A0BDCCAA1C1E2BCE7FC022A5BED11E /* UCZProgressView */;
-			targetProxy = 452A6708E6D679DCE1B664D73E1F8E76 /* PBXContainerItemProxy */;
+			target = 204A2746AD94E14E3615A44A49FEF18B /* UCZProgressView */;
+			targetProxy = D6C83F898F642A47639BD9FF8F924026 /* PBXContainerItemProxy */;
+		};
+		C547FA16D1CB423CDD24B01F8DD8262C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spring;
+			target = 6FD20E6E186C90F4B77DC4C327C760C0 /* Spring */;
+			targetProxy = 9B7F544504CEB38A1F48C8E6F71266F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2170E5D592652850D2E5900D82F94264 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C612AB762ABD911649FE7B11A32568A7 /* UCZProgressView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/UCZProgressView/UCZProgressView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UCZProgressView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/UCZProgressView/UCZProgressView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = UCZProgressView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9B282880EBBB692F963255CE3304C73D /* Release */ = {
+		04505CA9370A3D35D04578DA37EE4DF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE65BB805E6D48F68A82CD2F41A3A2F8 /* Pods-TimeCapturor.release.xcconfig */;
 			buildSettings = {
@@ -337,6 +645,60 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		2EDD16BB301360E150AF2E8967C81B5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2583F122EEAEA350F294F642C4348211 /* Spring.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Spring;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		94BBC8829ACD88D9CD196EB624E79A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DB924F76459FBC421891A159352AF67 /* LLSimpleCamera.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LLSimpleCamera/LLSimpleCamera-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LLSimpleCamera/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LLSimpleCamera/LLSimpleCamera.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LLSimpleCamera;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -377,7 +739,7 @@
 			};
 			name = Debug;
 		};
-		B17ED000E78C4A2FC13A9B74CE4FF668 /* Debug */ = {
+		A9BB0AA4589F5ABA3C56613E73F36F9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F5BBEDA305BFD85533D89F899E18E48 /* Pods-TimeCapturor.debug.xcconfig */;
 			buildSettings = {
@@ -401,15 +763,98 @@
 				PRODUCT_NAME = Pods_TimeCapturor;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		EE6A766AAB8D0E02531D6E9388B07BB9 /* Debug */ = {
+		AA73BEABF752DDF39F81BD1FFB2DD8CF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C612AB762ABD911649FE7B11A32568A7 /* UCZProgressView.xcconfig */;
+			baseConfigurationReference = 8DB924F76459FBC421891A159352AF67 /* LLSimpleCamera.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LLSimpleCamera/LLSimpleCamera-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LLSimpleCamera/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LLSimpleCamera/LLSimpleCamera.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = LLSimpleCamera;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B0F2A101AC6735132C48AC37C3154E1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2583F122EEAEA350F294F642C4348211 /* Spring.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Spring;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B6ECD59F684BE7376755E0ADAF4002AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2AE02924E9718FFAC23AD1777003AC8 /* UCZProgressView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UCZProgressView/UCZProgressView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UCZProgressView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UCZProgressView/UCZProgressView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = UCZProgressView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B8F1853B30A7EF43F76224E4BC20E9A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2AE02924E9718FFAC23AD1777003AC8 /* UCZProgressView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -471,11 +916,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		05ED677890D55AA6FA88707F853B7A3D /* Build configuration list for PBXNativeTarget "Pods-TimeCapturor" */ = {
+		1A9E0881D54953A1A29D9CED7E22EE96 /* Build configuration list for PBXNativeTarget "LLSimpleCamera" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B17ED000E78C4A2FC13A9B74CE4FF668 /* Debug */,
-				9B282880EBBB692F963255CE3304C73D /* Release */,
+				94BBC8829ACD88D9CD196EB624E79A99 /* Debug */,
+				AA73BEABF752DDF39F81BD1FFB2DD8CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -489,11 +934,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F043AD7568846963E12D02997048A2AE /* Build configuration list for PBXNativeTarget "UCZProgressView" */ = {
+		3CF4471ABD6E6774EDD1AAD9CBD9D97D /* Build configuration list for PBXNativeTarget "Spring" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EE6A766AAB8D0E02531D6E9388B07BB9 /* Debug */,
-				2170E5D592652850D2E5900D82F94264 /* Release */,
+				B0F2A101AC6735132C48AC37C3154E1D /* Debug */,
+				2EDD16BB301360E150AF2E8967C81B5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84397970A2BB878C6D57AEA3BEDA602A /* Build configuration list for PBXNativeTarget "UCZProgressView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8F1853B30A7EF43F76224E4BC20E9A0 /* Debug */,
+				B6ECD59F684BE7376755E0ADAF4002AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E41766D2E974990D738C9F681BF8F851 /* Build configuration list for PBXNativeTarget "Pods-TimeCapturor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9BB0AA4589F5ABA3C56613E73F36F9F /* Debug */,
+				04505CA9370A3D35D04578DA37EE4DF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

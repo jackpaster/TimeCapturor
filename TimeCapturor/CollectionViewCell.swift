@@ -24,7 +24,7 @@ class CollectionViewCell: UICollectionViewCell {
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
         imageView.clipsToBounds  = true
         contentView.addSubview(imageView)
-        print("frame with \(frame.size.width)")
+       // print("frame with \(frame.size.width)")
         let textFrame = CGRect(x: 0, y: 32, width: frame.size.width, height: frame.size.height/3)
         titleLable = UILabel(frame: textFrame)
         titleLable.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())

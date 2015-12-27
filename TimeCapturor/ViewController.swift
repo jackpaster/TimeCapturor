@@ -79,7 +79,17 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         blurView.frame = statusView.bounds
         // 3
         statusView.addSubview(blurView)
+        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+       // UIApplication.sharedApplication().statusBarStyle = .BlackOpaque
+        
+        
+        // change title color and drop the shadow like it's hot
+        let shadow = NSShadow()
+        shadow.shadowColor = UIColor.blackColor();
+        shadow.shadowOffset = CGSizeMake(1,2);
+        UINavigationBar.appearance().titleTextAttributes = NSDictionary(objects: [UIColor.whiteColor(), shadow], forKeys: [NSForegroundColorAttributeName, NSShadowAttributeName]) as? [String : AnyObject];
+        
         let border = CALayer()
         let width = CGFloat(0.6)
         border.borderColor = UIColor.darkGrayColor().CGColor
@@ -89,8 +99,13 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         statusView.layer.addSublayer(border)
         //statusView.layer.masksToBounds = true
         
+      
         
-        navigationController?.navigationBar.barTintColor = UIColor.grayColor()
+        // self.navigationController?.navigationBar.tintColor = UIColor.grayColor()
+        
+      //  self.navigationController?.navigationBar.translucent = true
+        
+        
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 5, bottom: 10, right: 5)

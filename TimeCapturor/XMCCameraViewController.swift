@@ -1,6 +1,8 @@
 
 import UIKit
 import AVFoundation
+import CoreFoundation
+import ImageIO
 
 enum Status: Int {
     case Preview, Still, Error
@@ -112,7 +114,7 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
     
     func saveImageToSandBox() -> Bool
     {
-        if let image = self.cameraStill.image
+        if let image = self.cameraStill.image?.fixOrientation()
         {
             if let imageData = UIImageJPEGRepresentation(image, 0.5)
             {
@@ -130,9 +132,11 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
                  //   print(s)
                     let url = docsDir.URLByAppendingPathComponent("\(unique).jpg")
                     // if let path = url.absoluteString as? String{
+                    
                     if imageData.writeToURL(url, atomically: true)
                     {
                        // print(url.absoluteString)
+                       // getEXIF(url)
                         return true
                     }
                     
@@ -167,5 +171,15 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
                 self.cameraPreview.alpha = 0.0
             })
         }
+    
+    func getEXIF(url:NSURL){
+    //var  myImageSofunvurce:CGImageSource
+    let myImageSource = CGImageSourceCreateWithURL(url, nil)
+    //let ns = NSDictionary()
+    let imageProperties = (CGImageSourceCopyPropertiesAtIndex(myImageSource!,0,nil))! as Dictionary
+
+    print(imageProperties)
+    }
+    
 }
 

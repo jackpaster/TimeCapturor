@@ -26,14 +26,14 @@ class Album{
     }
     
     
-    func getAllImageAndDate()->(AllData:[cellContents],ImageData:[UIImage],groupNSURL:[NSURL],Number:Int)
+    func getAllImageAndDate()->(AllData:[cellContents],ImageData:[UIImage],groupNSURL:[NSURL],Number:Int,urlString:[String])
     {
         
         var data = [cellContents]()
         var imageOnly = [UIImage]()
         var imagesGroupNSURL = [NSURL]()
         let filManager = NSFileManager()
-        
+        var imageURLString = [String]()
         
         if let docsDir = filManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as NSURL!
         {
@@ -63,6 +63,7 @@ class Album{
                         let itemOp = docsDir.absoluteString+item
                         //print(itemOp) 
                         imagesGroupNSURL.append(NSURL(string: itemOp)!)
+                        imageURLString.append(itemOp)
                         if let imageData = NSData(contentsOfURL: NSURL(string: itemOp)!)
                         {
                             //var imageData = UIImageJPEGRepresentation(item, 1.0)
@@ -84,7 +85,7 @@ class Album{
             }
         }
         //print("return number \(images.count)")
-        return (data.reverse(),imageOnly.reverse(),imagesGroupNSURL.reverse(),imageOnly.count)
+        return (data.reverse(),imageOnly.reverse(),imagesGroupNSURL.reverse(),imageOnly.count,imageURLString)
         
     }
     
