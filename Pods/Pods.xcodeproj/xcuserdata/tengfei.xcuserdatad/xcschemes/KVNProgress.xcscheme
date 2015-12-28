@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5F50A43B7ECCDD5B131B97BE'
-               BlueprintName = 'LLSimpleCamera'
+               BlueprintIdentifier = '4D49F490E8A0499831139466'
+               BlueprintName = 'KVNProgress'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'LLSimpleCamera.framework'>
+               BuildableName = 'KVNProgress.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

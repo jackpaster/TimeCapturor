@@ -1,9 +1,11 @@
 PODS:
+  - KVNProgress (2.2.2)
   - LLSimpleCamera (4.0.0)
   - Spring (1.0.3)
   - UCZProgressView (1.0.2)
 
 DEPENDENCIES:
+  - KVNProgress
   - LLSimpleCamera (~> 4.0.0)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
   - UCZProgressView
@@ -19,6 +21,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
+  KVNProgress: 4697347e21e37fdaa5264ebc24e377c205a50328
   LLSimpleCamera: 4acecd6fabca1cb5841302ee03e03123e290af3d
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   UCZProgressView: 55836987c15ee6efb7cd6dfe297556602ee46c94

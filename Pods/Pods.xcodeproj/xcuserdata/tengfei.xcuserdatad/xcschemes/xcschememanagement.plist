@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>KVNProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LLSimpleCamera.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>204A2746AD94E14E3615A44A49FEF18B</key>
+		<key>0186EE20AB4D310515B8041966DB7AEB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6FD20E6E186C90F4B77DC4C327C760C0</key>
+		<key>56DB42268E64559BA2ACD418BE8A69A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>59E6FE011C183C94D1E005BFBC020B12</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EFE892286C3ECA79DF61F53D9D5C47D9</key>
+		<key>F0207F81A02CD1702D1673E732F5F770</key>
 		<dict>
 			<key>primary</key>
 			<true/>

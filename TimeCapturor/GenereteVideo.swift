@@ -23,7 +23,7 @@ class TimeLapseBuilder: NSObject {
     }
     
     
-    func build(progress: (NSProgress -> Void), success: (NSURL -> Void), failure: (NSError -> Void)) {
+    func build(progress: (CGFloat -> Void), success: (NSURL -> Void), failure: (NSError -> Void)) {
         let inputSize = CGSize(width: 960, height: 1280)
         let outputSize = CGSize(width: 960, height: 1280)
         var error: NSError?
@@ -81,14 +81,14 @@ class TimeLapseBuilder: NSObject {
                     ///////////////////////////mark /////
                     let fps: Int32 = 10
                     let frameDuration = CMTimeMake(1, fps)
-                    let currentProgress = NSProgress(totalUnitCount: Int64(self.photoURLs.count))
+                    let currentProgress = self.photoURLs.count
                     
-                    var frameCount: Int64 = 0
+                    var frameCount: Int = 0
                     var remainingPhotoURLs = [String](self.photoURLs)
                     
                     while (videoWriterInput.readyForMoreMediaData && !remainingPhotoURLs.isEmpty) {
                         let nextPhotoURL = remainingPhotoURLs.removeAtIndex(0)
-                        let lastFrameTime = CMTimeMake(frameCount, fps)
+                        let lastFrameTime = CMTimeMake(Int64(frameCount), fps)
                         let presentationTime = frameCount == 0 ? lastFrameTime : CMTimeAdd(lastFrameTime, frameDuration)
                         
                         
@@ -107,8 +107,8 @@ class TimeLapseBuilder: NSObject {
                         
                         frameCount++
                         
-                        currentProgress.completedUnitCount = frameCount
-                        progress(currentProgress)
+                        //currentProgress.completedUnitCount = frameCount
+                        progress(CGFloat(Double(frameCount) / Double(currentProgress) ) )
                     }
                     
                     videoWriterInput.markAsFinished()
