@@ -8,81 +8,221 @@
 
 import UIKit
 //import Photos
+import LiquidFloatingActionButton
 
-class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate{
+class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate,LiquidFloatingActionButtonDataSource,LiquidFloatingActionButtonDelegate,UIGestureRecognizerDelegate{
     
     @IBOutlet weak var toolBar: UIToolbar!
     var collectionView: UICollectionView!
     var selectedCell: CollectionViewCell?
     
-//    @IBAction func btnTakingPhoto(sender: UIButton) {
-//        if (UIImagePickerController.isSourceTypeAvailable(.Camera))
-//        {
-//            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil
-//            {
-//                let imagePicker = UIImagePickerController()
-//                imagePicker.allowsEditing = false
-//                imagePicker.sourceType = .Camera
-//                imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.Front
-//                imagePicker.cameraCaptureMode = .Photo
-//                presentViewController(imagePicker, animated: true, completion: nil)
-//            }
-//            else
-//            {
-//                print("Rear camera doesn't exist")
-//            }
+//    @IBOutlet var tapView: UIView?{
+//        didSet{
+//            let recognizer =  UITapGestureRecognizer(target: self, action: "Tap")
+//            tapView?.addGestureRecognizer(recognizer)
 //        }
-//        else
-//        {
-//            //print("\(ImageData[1])")
-//            print("Camera inaccessable")
-//        }
-//        
-//        
 //    }
+//    
+//    func Tap(gesture :UIGestureRecognizer){
+//        print("www")
+//    }
+    
+    var cells: [LiquidFloatingCell] = []
+    var floatingActionButton: LiquidFloatingActionButton!
+    
+    @IBOutlet weak var cameraButton: UIButton!
+    
+    func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
+        return cells.count
+    }
+    
+    func cellForIndex(index: Int) -> LiquidFloatingCell {
+        return cells[index]
+    }
+    
+    func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+        print("did Tapped! \(index)")
+        liquidFloatingActionButton.close()
+    }
+    
+    var buttonLeft = LiquidFloatingActionButton()
+    var buttonRight = LiquidFloatingActionButton()
+    
+
+    func createButton() ->(buttonLeft:LiquidFloatingActionButton,buttonRight:LiquidFloatingActionButton){
+        let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
+            let floatingActionButton = LiquidFloatingActionButton(frame: frame)
+            floatingActionButton.animateStyle = style
+            floatingActionButton.color = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)
+            floatingActionButton.dataSource = self
+            floatingActionButton.delegate = self
+            return floatingActionButton
+        }
+        
+        let cellFactory: (String) -> LiquidFloatingCell = { (iconName) in
+            return LiquidFloatingCell(icon: UIImage(named: iconName)!)
+        }
+        cells.append(cellFactory("ic_reminder"))
+        cells.append(cellFactory("ic_store"))
+        cells.append(cellFactory("ic_info"))
+        cells.append(cellFactory("ic_mp4"))
+        cells.append(cellFactory("ic_gif"))
+        cells.append(cellFactory("ic_setting"))
+       //let x = (self.view.frame.width/2 - self.cameraButton.frame.width/2-self.view.frame.width - 56)
+        let floatingFrame = CGRect(x: self.view.frame.width - 56 - 25 , y: self.view.frame.height - 56 - 16, width: 56, height: 56)
+        let bottomRightButton = createButton(floatingFrame, .Up)
+        
+        let floatingFrame2 = CGRect(x: -25+56 , y: self.view.frame.height - 56 - 16, width: 56, height: 56)
+        let bottomLeftButton = createButton(floatingFrame2, .Up)
+        
+       // buttonLeft = bottomLeftButton
+        //buttonRight = bottomRightButton
+       bottomRightButton.identifier = "button1"
+        
+         //self.view.addSubview(bottomRightButton)
+         //self.view.addSubview(bottomLeftButton)
+        return (bottomLeftButton,bottomRightButton)
+    }
+    
+    //    @IBAction func btnTakingPhoto(sender: UIButton) {
+    //        if (UIImagePickerController.isSourceTypeAvailable(.Camera))
+    //        {
+    //            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil
+    //            {
+    //                let imagePicker = UIImagePickerController()
+    //                imagePicker.allowsEditing = false
+    //                imagePicker.sourceType = .Camera
+    //                imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.Front
+    //                imagePicker.cameraCaptureMode = .Photo
+    //                presentViewController(imagePicker, animated: true, completion: nil)
+    //            }
+    //            else
+    //            {
+    //                print("Rear camera doesn't exist")
+    //            }
+    //        }
+    //        else
+    //        {
+    //            //print("\(ImageData[1])")
+    //            print("Camera inaccessable")
+    //        }
+    //
+    //
+    //    }
     
     //func layoutAttributesForElementsInRt
     
+    
+//    .setBackgroundImage (UIImage(),forToolbarPosition: UIBarPosition.Any,
+//    barMetrics: UIBarMetrics.Default)
+//    self.toolbar.setShadowImage(UIImage(),
+//    forToolbarPosition: UIBarPosition.Any)
+    
+    
     var collectionData = Album()
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        // Do any additional setup after loading the view, typically from a nib.
-//    }
- ///////////////////////////////////////////////////////////
-//    var collectionView: UICollectionView?
-
+    //    override func viewDidLoad() {
+    //        super.viewDidLoad()
+    //
+    //        // Do any additional setup after loading the view, typically from a nib.
+    //    }
+    ///////////////////////////////////////////////////////////
+    //    var collectionView: UICollectionView?
+    
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
+   // var navBar:UINavigationBar=UINavigationBar()
+    
+    @IBOutlet weak var SettingButton: UIButton!
+    
+    func handleTap(sender: UITapGestureRecognizer? = nil) {
+        print("left")
+        
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC)))
+        
+        if(buttonRight.isClosed == false){
+            buttonRight.close()
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                self.buttonLeft.didTapped()
+            }
+        }else{
+            self.buttonLeft.didTapped()
+        }
+        
+                    
+        
+
+    
+    }
+    func handleTap2(sender: UITapGestureRecognizer? = nil) {
+        print("right")
+        
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC)))
+        
+        if(buttonLeft.isClosed == false){
+            buttonLeft.close()
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                self.buttonRight.didTapped()
+            }
+        }else{
+            self.buttonRight.didTapped()
+        }
+        
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cameraButton.layer.shadowColor = UIColor.blackColor().CGColor
+        cameraButton.layer.shadowOffset = CGSizeMake(4, 4)
+        cameraButton.layer.shadowRadius = 2
+        cameraButton.layer.shadowOpacity = 0.5
+        cameraButton.layer.masksToBounds = false
+        
+        
+        cameraButton.backgroundColor = UIColor(red: 240 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)
+        cameraButton.layer.cornerRadius = 28
+        //cameraButton.layer.borderWidth = 1
+        //cameraButton.layer.borderColor = UIColor.blackColor().CGColor
+        
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
+        
+        toolBar.setBackgroundImage(UIImage(), forToolbarPosition: UIBarPosition.Any, barMetrics: UIBarMetrics.Default)
+        toolBar.setShadowImage(UIImage(),forToolbarPosition: UIBarPosition.Any)
+        
+        //    .setBackgroundImage (UIImage(),forToolbarPosition: UIBarPosition.Any,
+        //    barMetrics: UIBarMetrics.Default)
+        //    self.toolbar.setShadowImage(UIImage(),
+        //    forToolbarPosition: UIBarPosition.Any)
         
         // self.collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: MyFlowLayout())
         let statusHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         let statusView = UIView(frame:
             CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height:statusHeight) )
         //statusView.backgroundColor = UIColor.whiteColor()
-    // statusView.backgroundColor = UIColor.redColor()
+        // statusView.backgroundColor = UIColor.redColor()
         
         // 1  add blur
-        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+       // let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         // 2
-        let blurView = UIVisualEffectView(effect: darkBlur)
-        blurView.frame = statusView.bounds
+       // let blurView = UIVisualEffectView(effect: darkBlur)
+       // blurView.frame = statusView.bounds
         // 3
-        statusView.addSubview(blurView)
+        //statusView.addSubview(blurView)rgb(231, 76, 60)rgb(192, 57, 43)
+     
+        statusView.backgroundColor = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 0.97)
+
+        
+       // self.view.addSubview(statusBackView)
+        
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-       // UIApplication.sharedApplication().statusBarStyle = .BlackOpaque
-        
+        // UIApplication.sharedApplication().statusBarStyle = .BlackOpaque
+        //UIApplication.sharedApplication()
         
         // change title color and drop the shadow like it's hot
         let shadow = NSShadow()
@@ -96,28 +236,28 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         border.frame = CGRect(x: 0, y: statusHeight, width:  screenWidth, height: 0.6)
         
         border.borderWidth = width
-        statusView.layer.addSublayer(border)
+        //statusView.layer.addSublayer(border)
         //statusView.layer.masksToBounds = true
         
-      
         
-        // self.navigationController?.navigationBar.tintColor = UIColor.grayColor()
         
-      //  self.navigationController?.navigationBar.translucent = true
+         navigationController?.navigationBar.barTintColor = UIColor(red: 240 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)
+        
+        // self.navigationController?.navigationBar.translucent = true192
         
         
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 5, bottom: 10, right: 5)
+        layout.sectionInset = UIEdgeInsets(top: 3, left: 4, bottom: 75, right: 4)
         //layout.itemSize = CGSize(width: 150, height: 150)
-      //  print("screen width \(self.collectionView.frame)")
-       // print("view width \(self.view.frame)")
+        //  print("screen width \(self.collectionView.frame)")
+        // print("view width \(self.view.frame)")
         //print(screenWidth)
-       // print(screenHeight)
+        // print(screenHeight)
         //self.collectionView.frame = self.view.frame
-        layout.itemSize = CGSize(width: (screenWidth-20) / 3, height: (screenWidth-20) / 3)
-        layout.minimumInteritemSpacing = 5
-        layout.minimumLineSpacing = 5
+        layout.itemSize = CGSize(width: (screenWidth-14) / 3, height: (screenWidth-14) / 3)
+        layout.minimumInteritemSpacing = 3
+        layout.minimumLineSpacing = 3
         
         //let margins = view.layoutMarginsGuide
         //self.collectionView.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -125,124 +265,183 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         
         
-        let size = CGSize(width: view.frame.width, height: view.frame.height-toolBar.frame.height-0.7-statusHeight-0.6)
+        let size = CGSize(width: view.frame.width, height: view.frame.height)
         //let frame = CGRect(origin: CGPoint(x: 0.0, y: statusHeight+0.6), size: size)
-        let frame = CGRect(origin: CGPoint(x: 0.0, y: 0), size: size)
+        let frame = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
         
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
-       collectionView!.dataSource = self
+        collectionView!.dataSource = self
         collectionView!.delegate = self
         collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.backgroundColor = UIColor.whiteColor()
+        collectionView.backgroundColor = UIColor(red: 52 / 255.0, green: 73 / 255.0, blue: 94 / 255.0, alpha: 0.97)
         
         //collectionView.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor).active = true
-
+        //rgb(149, 165, 166)rgb(52, 73, 94)rgb(127, 140, 141)
         //collectionView.setCollectionViewLayout(layout, animated: false)
-     
+        navigationController?.navigationBar.tintAdjustmentMode = .Normal
+        //navigationController?.navigationBar.barTintColor = [UIColor blackColor];
+        navigationController?.navigationBar.translucent = true
         
+        //navBar.frame=CGRectMake(0, 0, screenWidth, 50)
+        //navBar.backgroundColor=(UIColor .blackColor())
+        
+        let bar:UINavigationBar! =  self.navigationController?.navigationBar
+        
+        bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        bar.shadowImage = UIImage()
+        bar.backgroundColor = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 0.97)
+        //bar.frame.origin.y = -50
+        //bar.frame = CGRect(x: bar.frame.origin.x , y: bar.frame.origin.y-20, width: bar.frame.size.width, height: bar.frame.size.height)
+        self.view.addSubview(collectionView!)
+        self.view.bringSubviewToFront(toolBar)
+        
+        let buttons = createButton()
+        buttonLeft = buttons.buttonLeft
+        buttonRight = buttons.buttonRight
+        
+
+        let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        let tap2 = UITapGestureRecognizer(target: self, action: Selector("handleTap2:"))
+        // we use our delegate
+        tap.delegate = self
+        tap2.delegate = self
+        // allow for user interaction
        
-          self.view.addSubview(collectionView!)
+        // buttonLeft.userInteractionEnabled = true
+        //buttonRight.userInteractionEnabled = true
+        
+        // add tap as a gestureRecognizer to tapView
+        
+        //buttonLeft.addGestureRecognizer(tap)
+        //buttonRight.addGestureRecognizer(tap2)
+
+        
+        self.view.addSubview(buttonLeft)
+        self.view.addSubview(buttonRight)
+        
+
         self.view.addSubview(statusView)
         
-    }
-        //self.view.addSubview(collectionView!)
-//        
-//        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
-//        layout.itemSize = CGSize(width: CGFloat(screenWidth / 3), height: CGFloat(screenWidth / 3))
-//        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-//        print(collectionView)
-//        collectionView!.dataSource = self
-//        collectionView!.delegate = self
-//        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
-//        collectionView!.backgroundColor = UIColor.greenColor()
-//        self.view.addSubview(collectionView!)
+        // an action we'll call "handleTap:"
         
         
-    
-//        
-    
-//
-//        // Do any additional setup after loading the view, typically from a nib
-//        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
-//        layout.itemSize = CGSize(width: screenWidth / 3, height: screenWidth / 3)
-//        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-//        
-//        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
-//        collectionView!.backgroundColor = UIColor.greenColor()
-//        self.view.addSubview(collectionView!)
-   
-   
+       // buttonLeft as UIButton).addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
 
+        
+       
+        
+    }
+    
+    
+      //self.view.addSubview(collectionView!)
+    //
+    //        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    //        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+    //        layout.itemSize = CGSize(width: CGFloat(screenWidth / 3), height: CGFloat(screenWidth / 3))
+    //        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+    //        print(collectionView)
+    //        collectionView!.dataSource = self
+    //        collectionView!.delegate = self
+    //        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
+    //        collectionView!.backgroundColor = UIColor.greenColor()
+    //        self.view.addSubview(collectionView!)
+    
+    
+    
+    //
+    
+    //
+    //        // Do any additional setup after loading the view, typically from a nib
+    //        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    //        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+    //        layout.itemSize = CGSize(width: screenWidth / 3, height: screenWidth / 3)
+    //        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+    //
+    //        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
+    //        collectionView!.backgroundColor = UIColor.greenColor()
+    //        self.view.addSubview(collectionView!)
+    
+    
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-       // self.navigationController?.delegate = self
-    
-            
-            navigationController?.hidesBarsOnSwipe = true
-    
+        // self.navigationController?.delegate = self
+        
+        
+        
+        navigationController?.hidesBarsOnSwipe = true
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-         //self.navigationController?.navigationBarHidden = true
+    
         collectionData.updateData()
         collectionView.reloadData()
-    
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection: Int)->Int{
         //print(cellData.count)
         return collectionData.cellData.count
     }
-   
+    
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath)->UICollectionViewCell{
         let cell: CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
-        //cell.backgroundColor = UIColor.whiteColor()
-        //cell.layer.borderColor = UIColor.blackColor().CGColor
-        //cell.layer.borderWidth = 0.5
-        cell.layer.cornerRadius = CGFloat(4)
+        //cell.backgroundColor = UIColor.whiteColor()rgb(189, 195, 199)rgb(44, 62, 80)
+         cell.layer.borderColor = UIColor(red: 44 / 255.0, green: 62 / 255.0, blue: 80 / 255.0, alpha: 1).CGColor
+        cell.layer.borderWidth = 0.5
+       cell.layer.cornerRadius = CGFloat(1.8)
         //cell.frame.size.width = screenWidth / 3
         //cell.frame.size.height = screenWidth / 3
-     
-
+        
+        
         
         //cell.layer.borderWidth = 0.5
-       
-        cell.titleLable?.text = collectionData.cellData[indexPath.row].lableData
+        
+        cell.titleLable?.text = dateGenerating(collectionData.cellData[indexPath.row].lableData)
         cell.imageView?.image = collectionData.cellData[indexPath.row].ImageData
-
-       // print("11")
+        
+        // print("11")
         return cell
         
     }
     
-
-//    func animationControllerForPresentedController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        if ((toVC as? NewViewController) != nil){
-//            if operation == UINavigationControllerOperation.Push {
-//                print("1")
-//                return MagicMoveTransion()
-//            } else {
-//                print("2")
-//                return nil
-//            }
-//        }else {
-//            print("3")
-//            return FadeAnimator()
-//        }
-//    }
+    func dateGenerating(date:NSString)->String{
+                        let tempRange = date.rangeOfString(" ")
+                       let dateRang = NSMakeRange(0, tempRange.location)
+                      var photoDate = date.substringWithRange(dateRang)
+        
+                    var myDate = photoDate.componentsSeparatedByString("-")
+                photoDate = myDate[1]+"/"+myDate[2]+"/"+myDate[0]
+        return photoDate
+    }
+    
+    
+    //    func animationControllerForPresentedController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    //        if ((toVC as? NewViewController) != nil){
+    //            if operation == UINavigationControllerOperation.Push {
+    //                print("1")
+    //                return MagicMoveTransion()
+    //            } else {
+    //                print("2")
+    //                return nil
+    //            }
+    //        }else {
+    //            print("3")
+    //            return FadeAnimator()
+    //        }
+    //    }
     
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return MagicMoveTransion()
     }
-
+    
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         self.selectedCell = collectionView.cellForItemAtIndexPath(indexPath) as? CollectionViewCell
@@ -256,13 +455,13 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             let indexPath = indexPaths[0] as NSIndexPath
             let vc = segue.destinationViewController as! NewViewController
             vc.transitioningDelegate = self
-           // vc.image = self.cellData[indexPath.row].ImageData
+            // vc.image = self.cellData[indexPath.row].ImageData
             
             vc.index = indexPath.item
             //vc.photoCollection = collectionData.getAllImageAndDate().ImageData
-           // vc.urlCollection = collectionData.getAllImageAndDate().groupNSURL
+            // vc.urlCollection = collectionData.getAllImageAndDate().groupNSURL
             
-          //  vc.image = self.selectedCell!.imageView.image!
+            //  vc.image = self.selectedCell!.imageView.image!
             //vc.title = self.collectionData.cellData[indexPath.row].lableData
             
         }

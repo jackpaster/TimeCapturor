@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1T-wh-smK">
-                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="528" width="600" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Vx2-GO-HLk"/>
+                                    <constraint firstAttribute="height" constant="56" id="Vx2-GO-HLk"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" id="ilY-9J-iBr">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mAk-0c-Mmr">
-                                            <rect key="frame" x="20" y="0.0" width="100" height="50"/>
+                                            <rect key="frame" x="20" y="0.0" width="96" height="56"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.98830154122467273" green="0.70165410465301759" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -39,7 +39,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mIa-DU-Eyz"/>
                                     <barButtonItem style="plain" id="IEq-zw-Ku2">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hco-iC-JGB">
-                                            <rect key="frame" x="221" y="0.0" width="157" height="50"/>
+                                            <rect key="frame" x="210" y="0.0" width="179" height="56"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="1" green="0.67524521882271893" blue="0.96581637738515713" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -52,26 +52,27 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="AlS-SF-3Y7"/>
                                     <barButtonItem style="plain" id="LVH-0w-B7P">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1W6-mS-9jg">
-                                            <rect key="frame" x="480" y="0.0" width="100" height="50"/>
+                                            <rect key="frame" x="485" y="0.0" width="95" height="56"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="0.59662919658682023" blue="0.92532698711069827" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                            <state key="normal" title="Setting"/>
                                         </button>
                                     </barButtonItem>
                                 </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="D1T-wh-smK" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="8ig-fJ-fYs"/>
+                            <constraint firstItem="D1T-wh-smK" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-16" id="8ig-fJ-fYs"/>
                             <constraint firstItem="D1T-wh-smK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GiG-0e-LHS"/>
                             <constraint firstAttribute="trailing" secondItem="D1T-wh-smK" secondAttribute="trailing" id="glC-cm-KUS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TimeCapturor" id="hTk-aN-CCR"/>
                     <connections>
-                        <outlet property="toolBar" destination="D1T-wh-smK" id="FnP-3k-xvJ"/>
+                        <outlet property="SettingButton" destination="1W6-mS-9jg" id="sn8-BJ-z2e"/>
+                        <outlet property="cameraButton" destination="hco-iC-JGB" id="KqB-hI-tvg"/>
+                        <outlet property="toolBar" destination="D1T-wh-smK" id="ciQ-Zf-fwi"/>
                         <segue destination="Es8-jg-TjO" kind="presentation" identifier="showImage" id="9xn-1n-vuH"/>
                     </connections>
                 </viewController>
@@ -136,7 +137,6 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="6Ys-wh-6d9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="79j-Of-0lT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

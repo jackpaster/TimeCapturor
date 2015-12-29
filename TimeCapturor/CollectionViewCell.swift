@@ -23,12 +23,16 @@ class CollectionViewCell: UICollectionViewCell {
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
         imageView.clipsToBounds  = true
+        imageView.layer.cornerRadius = 2
         contentView.addSubview(imageView)
        // print("frame with \(frame.size.width)")
-        let textFrame = CGRect(x: 0, y: 32, width: frame.size.width, height: frame.size.height/3)
+        print(frame.size.height)
+        print(frame.size.width)
+        let textFrame = CGRect(x: 0, y: frame.size.width-frame.size.width/5 , width: frame.size.width-5, height: frame.size.height/5)
         titleLable = UILabel(frame: textFrame)
-        titleLable.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())
-        titleLable.textAlignment = .Center
+        titleLable.font = UIFont(name: titleLable.font.fontName, size: 15) //rgb(127, 140, 141)
+        titleLable.textColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
+        titleLable.textAlignment = .Right
         contentView.addSubview(titleLable)
     }
 

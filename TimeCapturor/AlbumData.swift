@@ -25,6 +25,7 @@ class Album{
         cellData = getAllImageAndDate().AllData
     }
     
+
     
     func getAllImageAndDate()->(AllData:[cellContents],ImageData:[UIImage],groupNSURL:[NSURL],Number:Int,urlString:[String])
     {
@@ -58,7 +59,10 @@ class Album{
                         let date = NSDate(timeIntervalSinceReferenceDate: dateData.doubleValue).description as NSString
                         let tempRange = date.rangeOfString(" ")
                         let dateRang = NSMakeRange(0, tempRange.location)
-                        let photoDate = date.substringWithRange(dateRang)
+                        var photoDate = date.substringWithRange(dateRang)
+                        
+                        var myDate = photoDate.componentsSeparatedByString("-")
+                        photoDate = myDate[1]+"/"+myDate[2]+"/"+myDate[0]
                         
                         let itemOp = docsDir.absoluteString+item
                         //print(itemOp) 
@@ -70,7 +74,7 @@ class Album{
                             if let uiimageData = UIImage(data: imageData)
                             {
                                 imageOnly.append(uiimageData)
-                                let cellContent = cellContents(lableData: photoDate, ImageData: uiimageData)
+                                let cellContent = cellContents(lableData: date as String, ImageData: uiimageData)
                                 
                                 data.append(cellContent)
                             }
@@ -85,7 +89,8 @@ class Album{
             }
         }
         //print("return number \(images.count)")
-        return (data.reverse(),imageOnly.reverse(),imagesGroupNSURL.reverse(),imageOnly.count,imageURLString)
+        data.sortInPlace({ $0.lableData > $1.lableData })
+        return (data,imageOnly.reverse(),imagesGroupNSURL.reverse(),imageOnly.count,imageURLString)
         
     }
     

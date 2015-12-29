@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LiquidFloatingActionButton-LiquidFloatingActionButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LiquidFloatingActionButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TimeCapturor.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>56DB42268E64559BA2ACD418BE8A69A0</key>
+		<key>2E4A37C88D68A62EA5C1BC7A2A4D19AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59E6FE011C183C94D1E005BFBC020B12</key>
+		<key>6BB8F11E4679691CB0322238D53C1A8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8C6A41B3451FEAC3FCB6D5AC6B3A3BC5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F0207F81A02CD1702D1673E732F5F770</key>
+		<key>EA2E390AB20710D7E8E804E336295456</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECB4143196184B0E0EA02182DB2B9CCA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
