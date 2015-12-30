@@ -30,6 +30,8 @@ public enum LiquidFloatingActionButtonAnimateStyle : Int {
 @IBDesignable
 public class LiquidFloatingActionButton : UIView {
 
+    public var identifier = String()
+    
     private let internalRadiusRatio: CGFloat = 20.0 / 56.0
     public var cellRadiusRatio: CGFloat      = 0.38
     public var animateStyle: LiquidFloatingActionButtonAnimateStyle = .Up {
@@ -93,11 +95,22 @@ public class LiquidFloatingActionButton : UIView {
     
     private func cellArray() -> [LiquidFloatingCell] {
         var result: [LiquidFloatingCell] = []
-        if let source = dataSource {
-            for i in 0..<source.numberOfCells(self) {
-                result.append(source.cellForIndex(i))
+        
+        if identifier == "button1"{
+            if let source = dataSource {
+                for i in 0..<3 {
+                    result.append(source.cellForIndex(i))
+                }
+            }
+        }else{
+            if let source = dataSource {
+                for i in 3..<source.numberOfCells(self) {
+                    result.append(source.cellForIndex(i))
+                }
             }
         }
+        
+        
         return result
     }
 
@@ -244,7 +257,7 @@ public class LiquidFloatingActionButton : UIView {
         circleLayer.addSublayer(plusLayer)
     }
 
-    private func didTapped() {
+    public func didTapped() {
         if isClosed {
             open()
         } else {
@@ -255,10 +268,16 @@ public class LiquidFloatingActionButton : UIView {
     public func didTappedCell(target: LiquidFloatingCell) {
         if let _ = dataSource {
             let cells = cellArray()
+            
+
             for i in 0..<cells.count {
                 let cell = cells[i]
                 if target === cell {
+                    if identifier == "button1"{
                     delegate?.liquidFloatingActionButton?(self, didSelectItemAtIndex: i)
+                    } else{
+                    delegate?.liquidFloatingActionButton?(self, didSelectItemAtIndex: i+3)
+                     }
                 }
             }
         }
