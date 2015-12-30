@@ -31,9 +31,6 @@
                                             <color key="backgroundColor" red="0.98830154122467273" green="0.70165410465301759" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <state key="normal" title="GIF"/>
-                                            <connections>
-                                                <segue destination="xCh-Z9-ngS" kind="show" id="iLl-jc-D8B"/>
-                                            </connections>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mIa-DU-Eyz"/>
@@ -60,17 +57,26 @@
                                 </items>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rus-Iw-47T">
+                                <rect key="frame" x="0.0" y="584" width="600" height="16"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="D1T-wh-smK" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-16" id="8ig-fJ-fYs"/>
+                            <constraint firstItem="Rus-Iw-47T" firstAttribute="top" secondItem="D1T-wh-smK" secondAttribute="bottom" id="9bK-IJ-tsV"/>
+                            <constraint firstItem="Rus-Iw-47T" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Ba8-KB-pyy"/>
+                            <constraint firstItem="Rus-Iw-47T" firstAttribute="trailing" secondItem="D1T-wh-smK" secondAttribute="trailing" id="Fjg-fK-bpZ"/>
                             <constraint firstItem="D1T-wh-smK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GiG-0e-LHS"/>
+                            <constraint firstItem="Rus-Iw-47T" firstAttribute="leading" secondItem="D1T-wh-smK" secondAttribute="leading" id="gAU-aw-eHA"/>
                             <constraint firstAttribute="trailing" secondItem="D1T-wh-smK" secondAttribute="trailing" id="glC-cm-KUS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TimeCapturor" id="hTk-aN-CCR"/>
                     <connections>
                         <outlet property="SettingButton" destination="1W6-mS-9jg" id="sn8-BJ-z2e"/>
+                        <outlet property="bottomView" destination="Rus-Iw-47T" id="9g8-jD-Yqs"/>
                         <outlet property="cameraButton" destination="hco-iC-JGB" id="KqB-hI-tvg"/>
                         <outlet property="toolBar" destination="D1T-wh-smK" id="ciQ-Zf-fwi"/>
                         <segue destination="Es8-jg-TjO" kind="presentation" identifier="showImage" id="9xn-1n-vuH"/>
@@ -79,6 +85,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1005" y="95"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="GbE-bx-F6E">
+            <objects>
+                <viewController id="a27-hg-QkQ" customClass="SettingViewController" customModule="TimeCapturor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HLW-a7-AJJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="XXe-xi-K8V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7lp-gv-xYy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbh-Yy-liE">
+                                <rect key="frame" x="285" y="479" width="30" height="30"/>
+                                <state key="normal" title="GIF"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvL-xR-w6B">
+                                <rect key="frame" x="280" y="522" width="40" height="30"/>
+                                <state key="normal" title="Video"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting a speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHa-ku-UTr">
+                                <rect key="frame" x="240" y="68" width="120" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="XJ8-Ws-yXe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nvL-xR-w6B" firstAttribute="top" secondItem="qbh-Yy-liE" secondAttribute="bottom" constant="13" id="Dnr-pG-0bV"/>
+                            <constraint firstItem="XXe-xi-K8V" firstAttribute="top" secondItem="qbh-Yy-liE" secondAttribute="bottom" constant="91" id="ehd-kc-bFQ"/>
+                            <constraint firstItem="XHa-ku-UTr" firstAttribute="top" secondItem="HLW-a7-AJJ" secondAttribute="bottom" constant="48" id="gXc-XU-te6"/>
+                            <constraint firstItem="XHa-ku-UTr" firstAttribute="centerX" secondItem="qbh-Yy-liE" secondAttribute="centerX" id="tBA-Xm-qEb"/>
+                            <constraint firstItem="qbh-Yy-liE" firstAttribute="centerX" secondItem="7lp-gv-xYy" secondAttribute="centerX" id="tiW-ff-cPC"/>
+                            <constraint firstItem="nvL-xR-w6B" firstAttribute="centerX" secondItem="qbh-Yy-liE" secondAttribute="centerX" id="wyE-Un-Lq0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01Z-bJ-izq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="885"/>
         </scene>
         <!--New View Controller-->
         <scene sceneID="Lrl-3Q-i6x">
@@ -219,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGJ-l3-FpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185" y="1714"/>
+            <point key="canvasLocation" x="817" y="1670"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="TYb-ee-16F">
@@ -337,7 +388,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yO-Tw-hWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="934"/>
+            <point key="canvasLocation" x="152" y="1676"/>
         </scene>
     </scenes>
 </document>

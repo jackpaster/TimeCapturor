@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>EFCircularSlider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KVNProgress.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,27 +52,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>05516AD18935EA188E67A02E44DA59A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0A553B647447226A207E710D3FC053DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>190D63557CBC9A591589F57F4E4140A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2E4A37C88D68A62EA5C1BC7A2A4D19AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6BB8F11E4679691CB0322238D53C1A8F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8C6A41B3451FEAC3FCB6D5AC6B3A3BC5</key>
+		<key>C627015BE5F68AFB47C818ECC9BAB9EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>CE0CC7E2B5B550BC4172F6FF9CC5D50A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EA2E390AB20710D7E8E804E336295456</key>
 		<dict>
 			<key>primary</key>
 			<true/>

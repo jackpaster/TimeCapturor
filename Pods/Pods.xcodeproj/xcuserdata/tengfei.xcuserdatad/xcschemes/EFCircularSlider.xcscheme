@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '062120ADBEEB2F47CCFE7782'
-               BlueprintName = 'LLSimpleCamera'
+               BlueprintIdentifier = '94D9B76AC5953064C3A0F917'
+               BlueprintName = 'EFCircularSlider'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'LLSimpleCamera.framework'>
+               BuildableName = 'EFCircularSlider.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

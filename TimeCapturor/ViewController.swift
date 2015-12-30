@@ -12,6 +12,7 @@ import LiquidFloatingActionButton
 
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate,LiquidFloatingActionButtonDataSource,LiquidFloatingActionButtonDelegate,UIGestureRecognizerDelegate{
     
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var toolBar: UIToolbar!
     var collectionView: UICollectionView!
     var selectedCell: CollectionViewCell?
@@ -181,6 +182,20 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cameraButton.layer.shadowOpacity = 0.5
         cameraButton.layer.masksToBounds = false
         
+        navigationController?.navigationBar.layer.shadowColor = UIColor.blackColor().CGColor
+        navigationController?.navigationBar.layer.shadowOffset = CGSizeMake(4, 4)
+        navigationController?.navigationBar.layer.shadowRadius = 2
+        navigationController?.navigationBar.layer.shadowOpacity = 0.5
+        navigationController?.navigationBar.layer.masksToBounds = false
+        
+        
+        cameraButton.layer.shadowColor = UIColor.blackColor().CGColor
+        cameraButton.layer.shadowOffset = CGSizeMake(4, 4)
+        cameraButton.layer.shadowRadius = 2
+        cameraButton.layer.shadowOpacity = 0.5
+        cameraButton.layer.masksToBounds = false
+        
+        
         
         cameraButton.backgroundColor = UIColor(red: 240 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)
         cameraButton.layer.cornerRadius = 28
@@ -294,7 +309,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         //bar.frame = CGRect(x: bar.frame.origin.x , y: bar.frame.origin.y-20, width: bar.frame.size.width, height: bar.frame.size.height)
         self.view.addSubview(collectionView!)
         self.view.bringSubviewToFront(toolBar)
-        
+        self.view.bringSubviewToFront(bottomView)
         let buttons = createButton()
         buttonLeft = buttons.buttonLeft
         buttonRight = buttons.buttonRight

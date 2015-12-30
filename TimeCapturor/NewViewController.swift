@@ -66,7 +66,7 @@ class NewViewController: UIViewController{
                     // SweetAlert().showAlert("Cancelled!", subTitle: "Your imaginary file is safe", style: AlertStyle.Error)
                     // dispatch_async(dispatch_get_main_queue(), {
                     // self.index++
-                    SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
+                   
                     self.displayPhoto()
                     
                 }catch  {
@@ -86,14 +86,19 @@ class NewViewController: UIViewController{
         urlCollection = Album().getAllImageAndDate().groupNSURL
        // print(index)
         if(photoCollection.count == 0){
-            print("No Images Left!!")
-            self.navigationController?.popToRootViewControllerAnimated(true)
+            SweetAlert().showAlert("Empty!", subTitle: "Your album is empty", style: AlertStyle.None,buttonTitle: "Return"){ (isOtherButton) -> Void in
+                
+                     self.dismissViewControllerAnimated(true, completion: nil)
+            }
+
+            
         }else{
+             SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
             if(index >= photoCollection.count){
                 index = photoCollection.count - 1
             }
            
-        }
+        
         // })
 //        //淡出动画
 //        UIView.beginAnimations(nil, context: nil)
@@ -121,12 +126,9 @@ class NewViewController: UIViewController{
         UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
         UIView.commitAnimations()
 
-        
-       
-        
-
-
+    
         imageView.image = photoCollection[index]
+        }
     }
     
     override func viewDidLoad() {

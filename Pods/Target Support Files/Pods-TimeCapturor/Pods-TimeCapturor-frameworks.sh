@@ -84,6 +84,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-TimeCapturor/EFCircularSlider.framework"
   install_framework "Pods-TimeCapturor/KVNProgress.framework"
   install_framework "Pods-TimeCapturor/LLSimpleCamera.framework"
   install_framework "Pods-TimeCapturor/LiquidFloatingActionButton.framework"
@@ -91,6 +92,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-TimeCapturor/UCZProgressView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-TimeCapturor/EFCircularSlider.framework"
   install_framework "Pods-TimeCapturor/KVNProgress.framework"
   install_framework "Pods-TimeCapturor/LLSimpleCamera.framework"
   install_framework "Pods-TimeCapturor/LiquidFloatingActionButton.framework"

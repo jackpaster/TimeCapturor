@@ -29,8 +29,6 @@ public enum LiquidFloatingActionButtonAnimateStyle : Int {
 
 @IBDesignable
 public class LiquidFloatingActionButton : UIView {
-    
-    public var identifier = String()
 
     private let internalRadiusRatio: CGFloat = 20.0 / 56.0
     public var cellRadiusRatio: CGFloat      = 0.38
@@ -67,7 +65,6 @@ public class LiquidFloatingActionButton : UIView {
     }
 
     private let plusLayer   = CAShapeLayer()
-    private let playLayer   = CAShapeLayer()
     private let circleLayer = CAShapeLayer()
 
     private var touching = false
@@ -96,21 +93,11 @@ public class LiquidFloatingActionButton : UIView {
     
     private func cellArray() -> [LiquidFloatingCell] {
         var result: [LiquidFloatingCell] = []
-        if identifier == "button1"{
-            if let source = dataSource {
-                for i in 0..<3 {
-                    result.append(source.cellForIndex(i))
-                }
+        if let source = dataSource {
+            for i in 0..<source.numberOfCells(self) {
+                result.append(source.cellForIndex(i))
             }
-        }else{
-            if let source = dataSource {
-                for i in 3..<source.numberOfCells(self) {
-                    result.append(source.cellForIndex(i))
-                }
-            }
-            
         }
-
         return result
     }
 
@@ -158,7 +145,6 @@ public class LiquidFloatingActionButton : UIView {
     }
     
     private func drawPlus(rotation: CGFloat) {
-        
         plusLayer.frame = CGRect(origin: CGPointZero, size: self.frame.size)
         plusLayer.lineCap = kCALineCapRound
         plusLayer.strokeColor = UIColor.whiteColor().CGColor // TODO: customizable
@@ -167,21 +153,13 @@ public class LiquidFloatingActionButton : UIView {
         plusLayer.path = pathPlus(rotation).CGPath
     }
     
-//    private func drawPlay(rotation: CGFloat) {
-//        playLayer.frame = CGRect(origin: CGPointZero, size: self.frame.size)
-//        playLayer.lineCap = kCALineCapRound
-//        playLayer.strokeColor = UIColor.whiteColor().CGColor // TODO: customizable
-//        playLayer.lineWidth = 3.0
-//        
-//        playLayer.path = pathPlay(rotation).CGPath
-//    }
-    
     private func drawShadow() {
         if enableShadow {
             circleLayer.appendShadow()
         }
     }
     
+    // draw button plus or close face
     private func pathPlus(rotation: CGFloat) -> UIBezierPath {
         let radius = self.frame.width * internalRadiusRatio * 0.5
         let center = self.center.minus(self.frame.origin)
@@ -198,25 +176,6 @@ public class LiquidFloatingActionButton : UIView {
         path.addLineToPoint(points[3])
         return path
     }
-
-    
-    // draw button plus or close face
-//    private func pathPlus(rotation: CGFloat) -> UIBezierPath {
-//        let radius = self.frame.width * internalRadiusRatio * 0.5
-//        let center = self.center.minus(self.frame.origin)
-//        let points = [
-//            CGMath.circlePoint(center, radius: radius, rad: rotation),
-//            CGMath.circlePoint(center, radius: radius, rad: CGFloat(M_PI_2) + rotation),
-//            CGMath.circlePoint(center, radius: radius, rad: CGFloat(M_PI_2) * 2 + rotation),
-//            CGMath.circlePoint(center, radius: radius, rad: CGFloat(M_PI_2) * 3 + rotation)
-//        ]
-//        let path = UIBezierPath()
-//        path.moveToPoint(points[0])
-//        path.addLineToPoint(points[2])
-//        path.moveToPoint(points[1])
-//        path.addLineToPoint(points[3])
-//        return path
-//    }
     
     private func plusKeyframe(closed: Bool) -> CAKeyframeAnimation {
         let paths = closed ? [
@@ -285,7 +244,7 @@ public class LiquidFloatingActionButton : UIView {
         circleLayer.addSublayer(plusLayer)
     }
 
-    public func didTapped() {
+    private func didTapped() {
         if isClosed {
             open()
         } else {
@@ -299,11 +258,7 @@ public class LiquidFloatingActionButton : UIView {
             for i in 0..<cells.count {
                 let cell = cells[i]
                 if target === cell {
-                    if identifier == "button1"{
                     delegate?.liquidFloatingActionButton?(self, didSelectItemAtIndex: i)
-                    }else{
-                        delegate?.liquidFloatingActionButton?(self, didSelectItemAtIndex: i+3)
-                    }
                 }
             }
         }
@@ -576,7 +531,6 @@ public class LiquidFloatingCell : LiquittableCircle {
             setNeedsDisplay()
         }
     }
-    
     
     public override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         if responsible {

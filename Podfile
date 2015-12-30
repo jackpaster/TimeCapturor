@@ -6,6 +6,7 @@ use_frameworks!
 target 'TimeCapturor' do
 pod 'UCZProgressView'
 #pod 'AMScrollingNavbar', '~> 2.0.1'
+pod "EFCircularSlider", '> 0.1.0'
 #pod 'CRGradientNavigationBar'
 pod 'LLSimpleCamera', '~> 4.0.0'
 pod 'KVNProgress'
