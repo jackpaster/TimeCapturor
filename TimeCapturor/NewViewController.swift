@@ -74,7 +74,7 @@ class NewViewController: UIViewController{
                 }
                 
             }
-        }
+          }
 
         
         

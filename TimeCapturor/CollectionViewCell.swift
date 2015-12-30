@@ -28,11 +28,13 @@ class CollectionViewCell: UICollectionViewCell {
        // print("frame with \(frame.size.width)")
         print(frame.size.height)
         print(frame.size.width)
-        let textFrame = CGRect(x: 0, y: frame.size.width-frame.size.width/5 , width: frame.size.width-5, height: frame.size.height/5)
+        let textFrame = CGRect(x: 0, y: frame.size.width-frame.size.width/7.5 , width: frame.size.width, height: frame.size.height/7.5)
         titleLable = UILabel(frame: textFrame)
-        titleLable.font = UIFont(name: titleLable.font.fontName, size: 15) //rgb(127, 140, 141)
+        titleLable.font = UIFont(name: titleLable.font.fontName, size: 11) //rgb(127, 140, 141)
         titleLable.textColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
         titleLable.textAlignment = .Right
+        titleLable.backgroundColor = UIColor(red: 44 / 255.0, green: 62 / 255.0, blue: 80 / 255.0, alpha: 0.3)//rgb(44, 62, 80)
+
         contentView.addSubview(titleLable)
     }
 

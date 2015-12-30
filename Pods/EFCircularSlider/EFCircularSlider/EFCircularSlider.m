@@ -30,14 +30,24 @@
 
 - (void)defaults {
     // Defaults
-    _maximumValue = 100.0f;
+    _maximumValue = 28.0f;
     _minimumValue = 0.0f;
     _currentValue = 0.0f;
     _lineWidth = 5;
     _lineRadiusDisplacement = 0;
-    _unfilledColor = [UIColor blackColor];
-    _filledColor = [UIColor redColor];
-    _handleColor = _filledColor;
+    _unfilledColor = [UIColor colorWithRed:189.0f/255.0f
+                                     green:195.0f/255.0f
+                                      blue:199.0f/255.0f
+                                     alpha:1.0f]; //rgb(189, 195, 199)
+    _filledColor = [UIColor colorWithRed:192.0f/255.0f
+                                   green:57.0f/255.0f
+                                    blue:43.0f/255.0f
+                                   alpha:1.0f];    //rgb(192, 57, 43)
+
+    _handleColor = [UIColor colorWithRed:231.0f/255.0f
+                                   green:76.0f/255.0f
+                                    blue:60.0f/255.0f
+                                   alpha:1.0f];
     _labelFont = [UIFont systemFontOfSize:10.0f];
     _snapToLabels = NO;
     _handleType = EFSemiTransparentWhiteCircle;
@@ -77,7 +87,8 @@
 
 - (CGFloat)radius {
     //radius = self.frame.size.height/2 - [self circleDiameter]/2;
-    return self.frame.size.height/2 - _lineWidth/2 - ([self circleDiameter]-_lineWidth) - _lineRadiusDisplacement;
+    //return self.frame.size.height/2 - _lineWidth/2 - ([self circleDiameter]-_lineWidth) - _lineRadiusDisplacement;
+    return self.frame.size.width/4;
 }
 
 - (void)setCurrentValue:(float)currentValue {
@@ -132,8 +143,8 @@
     CGContextSaveGState(ctx);
     CGPoint handleCenter =  [self pointFromAngle: angle];
     if(_handleType == EFSemiTransparentWhiteCircle) {
-        [[UIColor colorWithWhite:1.0 alpha:0.7] set];
-        CGContextFillEllipseInRect(ctx, CGRectMake(handleCenter.x, handleCenter.y, _lineWidth, _lineWidth));
+        [[UIColor colorWithWhite:1.0 alpha:1] set];
+        CGContextFillEllipseInRect(ctx, CGRectMake(handleCenter.x, handleCenter.y, _lineWidth+4, _lineWidth+4));
     } else if(_handleType == EFSemiTransparentBlackCircle) {
         [[UIColor colorWithWhite:0.0 alpha:0.7] set];
         CGContextFillEllipseInRect(ctx, CGRectMake(handleCenter.x, handleCenter.y, _lineWidth, _lineWidth));
@@ -269,7 +280,7 @@
 -(CGPoint)pointFromAngle:(int)angleInt{
     
     //Define the Circle center
-    CGPoint centerPoint = CGPointMake(self.frame.size.width/2 - _lineWidth/2, self.frame.size.height/2 - _lineWidth/2);
+    CGPoint centerPoint = CGPointMake(self.frame.size.width/2-4 , self.frame.size.height/2-4);
     
     //Define The point position on the circumference
     CGPoint result;
@@ -282,14 +293,14 @@
 -(CGPoint)pointFromAngle:(int)angleInt withObjectSize:(CGSize)size{
     
     //Define the Circle center
-    CGPoint centerPoint = CGPointMake(self.frame.size.width/2 - size.width/2, self.frame.size.height/2 - size.height/2);
+    CGPoint centerPoint = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
     
     //Define The point position on the circumference
     CGPoint result;
     result.y = round(centerPoint.y + self.radius * sin(ToRad(-angleInt-90))) ;
     result.x = round(centerPoint.x + self.radius * cos(ToRad(-angleInt-90)));
     
-    return result;
+    return centerPoint;
 }
 
 - (CGFloat)circleDiameter {

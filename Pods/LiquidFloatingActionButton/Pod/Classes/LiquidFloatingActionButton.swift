@@ -118,8 +118,11 @@ public class LiquidFloatingActionButton : UIView {
     public func open() {
         // rotate plus icon
         self.plusLayer.addAnimation(plusKeyframe(true), forKey: "plusRot")
-        self.plusRotation = CGFloat(M_PI * 0.25) // 45 degree
-
+        if( identifier == "button1"){
+            self.plusRotation = CGFloat(M_PI * 0.25) // 45 degree
+        }else {
+            self.plusRotation = CGFloat(-M_PI * 0.5) // -90 degree
+        }
         let cells = cellArray()
         for cell in cells {
             insertCell(cell)
@@ -162,8 +165,12 @@ public class LiquidFloatingActionButton : UIView {
         plusLayer.lineCap = kCALineCapRound
         plusLayer.strokeColor = UIColor.whiteColor().CGColor // TODO: customizable
         plusLayer.lineWidth = 3.0
-
-        plusLayer.path = pathPlus(rotation).CGPath
+        if(identifier == "button1"){
+            plusLayer.path = pathPlus(rotation).CGPath
+        }else{
+            plusLayer.path = pathPlay(rotation).CGPath
+        }
+        
     }
     
     private func drawShadow() {
@@ -190,8 +197,31 @@ public class LiquidFloatingActionButton : UIView {
         return path
     }
     
+    //////////////////////drawPlay///////////////////////////////////////////
+    private func pathPlay(rotation: CGFloat) -> UIBezierPath {
+        let radius = self.frame.width * internalRadiusRatio * 0.5
+        let center = self.center.minus(self.frame.origin)
+        let points = [
+            CGMath.circlePoint(center, radius: radius, rad: CGFloat( -M_PI_2/90.0 ) + rotation),
+            CGMath.circlePoint(center, radius: radius, rad: CGFloat( M_PI_2/90.0 ) + rotation),
+            CGMath.circlePoint(center, radius: radius, rad: CGFloat( -(M_PI_2)*(2.5/2.0) ) + rotation),
+            CGMath.circlePoint(center, radius: radius, rad: CGFloat( (M_PI_2)*(2.5/2.0) ) + rotation),
+                    ]
+        let path = UIBezierPath()
+        path.moveToPoint(points[0])
+        path.addLineToPoint(points[2])
+        path.moveToPoint(points[1])
+        path.addLineToPoint(points[3])
+        return path
+    }
+    ///////////////////////////////////////////////////////////////////
+    
+    
+    
     private func plusKeyframe(closed: Bool) -> CAKeyframeAnimation {
-        let paths = closed ? [
+        var paths = [UIBezierPath()]
+        if(identifier == "button1"){
+               paths = closed ? [
                 pathPlus(CGFloat(M_PI * 0)),
                 pathPlus(CGFloat(M_PI * 0.125)),
                 pathPlus(CGFloat(M_PI * 0.25)),
@@ -200,6 +230,20 @@ public class LiquidFloatingActionButton : UIView {
                 pathPlus(CGFloat(M_PI * 0.125)),
                 pathPlus(CGFloat(M_PI * 0)),
         ]
+        }else{
+                paths = closed ? [
+                pathPlay(CGFloat(M_PI * 0)),
+                pathPlay(CGFloat(-M_PI * 0.25)),
+                pathPlay(CGFloat(-M_PI * 0.5)),
+                ] : [
+                    pathPlay(CGFloat(-M_PI * 0.5)),
+                    pathPlay(CGFloat(-M_PI * 0.25)),
+                    pathPlay(CGFloat(M_PI * 0)),
+            ]
+
+            
+        }
+        
         let anim = CAKeyframeAnimation(keyPath: "path")
         anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         anim.values = paths.map { $0.CGPath }

@@ -43,6 +43,37 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
         print("did Tapped! \(index)")
+        switch index {
+        case 0:
+            
+            performSegueWithIdentifier("mySegueID", sender: nil)
+            break
+        case 1:
+            
+            performSegueWithIdentifier("mySegueID", sender: nil)
+            break
+        case 2:
+            
+            performSegueWithIdentifier("mySegueID", sender: nil)
+            break
+        case 3:
+            
+            performSegueWithIdentifier("mySegueID", sender: nil)
+            break
+        case 4:
+            
+            
+            performSegueWithIdentifier("mySegueID", sender: nil)
+            break
+        case 5:
+            
+            
+            performSegueWithIdentifier("setting", sender: nil)
+            break
+            
+            
+        default:break
+        }
         liquidFloatingActionButton.close()
     }
     
@@ -73,7 +104,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         let floatingFrame = CGRect(x: self.view.frame.width - 56 - 25 , y: self.view.frame.height - 56 - 16, width: 56, height: 56)
         let bottomRightButton = createButton(floatingFrame, .Up)
         
-        let floatingFrame2 = CGRect(x: -25+56 , y: self.view.frame.height - 56 - 16, width: 56, height: 56)
+        let floatingFrame2 = CGRect(x: 25 , y: self.view.frame.height - 56 - 16, width: 56, height: 56)
         let bottomLeftButton = createButton(floatingFrame2, .Up)
         
        // buttonLeft = bottomLeftButton
@@ -183,7 +214,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cameraButton.layer.masksToBounds = false
         
         navigationController?.navigationBar.layer.shadowColor = UIColor.blackColor().CGColor
-        navigationController?.navigationBar.layer.shadowOffset = CGSizeMake(4, 4)
+        navigationController?.navigationBar.layer.shadowOffset = CGSizeMake(0, 4)
         navigationController?.navigationBar.layer.shadowRadius = 2
         navigationController?.navigationBar.layer.shadowOpacity = 0.5
         navigationController?.navigationBar.layer.masksToBounds = false
@@ -288,7 +319,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         collectionView!.dataSource = self
         collectionView!.delegate = self
         collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.backgroundColor = UIColor(red: 52 / 255.0, green: 73 / 255.0, blue: 94 / 255.0, alpha: 0.97)
+        collectionView.backgroundColor = UIColor(red: 52 / 255.0, green: 73 / 255.0, blue: 94 / 255.0, alpha: 1)
         
         //collectionView.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor).active = true
         //rgb(149, 165, 166)rgb(52, 73, 94)rgb(127, 140, 141)
@@ -375,7 +406,14 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     //        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
     //        collectionView!.backgroundColor = UIColor.greenColor()
     //        self.view.addSubview(collectionView!)
+    override func viewWillDisappear(animated: Bool) {
+
+            super.viewWillDisappear(animated)
+            
+         //   UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+            
     
+    }
     
     
     override func viewDidAppear(animated: Bool) {
