@@ -11,12 +11,71 @@ import EFCircularSlider
 
 class SettingViewController: UIViewController {
     
+    @IBOutlet weak var gifButton: UIButton!
+    @IBOutlet weak var videoButton: UIButton!
     
     @IBOutlet weak var subTitle: UILabel!
     @IBOutlet weak var valueLable: UILabel!
 
+    @IBOutlet weak var returnButton: UIButton!
+    
+    @IBAction func btnReturn(sender: UIButton) {
+        
+        //navigationController?.popToRootViewControllerAnimated(true)\
+        //navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    let backBtton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+    func back(sender:UIButton){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // get a reference to the previous VC
+        //var prevVC: UITabBarController = self.navigationController!.viewControllers[currentVCIndex - 1] as! UITabBarController
+        // get the VC shown by the previous VC
+        //var prevShownVC: EventInformationViewController = prevVC.selectedViewController as! EventInformationViewController
+       // prevShownVC.performSelector("rateCurrentEvent:")
+        
+        
+       // backButton.image = UIImage(named: "ic_back")
+        //let backBtton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        backBtton.setImage(UIImage(named: "ic_back"), forState: UIControlState.Normal)
+        backBtton.addTarget(self, action: Selector("back:"), forControlEvents:  UIControlEvents.TouchUpInside)
+        let item = UIBarButtonItem(customView: backBtton)
+        self.navigationItem.leftBarButtonItem = item
+        
+        gifButton.layer.shadowColor = UIColor.blackColor().CGColor
+        gifButton.layer.shadowOffset = CGSizeMake(0, 4)
+        gifButton.layer.shadowRadius = 2
+        gifButton.layer.shadowOpacity = 0.5
+        gifButton.layer.masksToBounds = false
+       // print(gifButton.frame)
+        //gifButton.setImage(UIImage(named: "ic_gif"), forState: .Normal)
+        //gifButton.centerLabelVerticallyWithPadding(0)
+        gifButton.setTitleColor(UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
+        gifButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
+        gifButton.layer.cornerRadius = 28
+        
+        ///////////////////////////////////////////////////////////////////////////////
+        
+        videoButton.layer.shadowColor = UIColor.blackColor().CGColor
+        videoButton.layer.shadowOffset = CGSizeMake(0, 4)
+        videoButton.layer.shadowRadius = 2
+        videoButton.layer.shadowOpacity = 0.5
+        videoButton.layer.masksToBounds = false
+        // print(gifButton.frame)
+        //gifButton.setImage(UIImage(named: "ic_gif"), forState: .Normal)
+        //gifButton.centerLabelVerticallyWithPadding(1)
+        videoButton.setTitleColor(UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
+        videoButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
+        videoButton.layer.cornerRadius = 28
+        ///////////////////////////////////////////////////////////////////////////////
+        
         
         subTitle.textColor = UIColor(red: 189 / 255.0, green: 195 / 255.0, blue: 199 / 255.0, alpha: 1)//rgb(189, 195, 199)
         valueLable.textColor = UIColor(red: 189 / 255.0, green: 195 / 255.0, blue: 199 / 255.0, alpha: 1)//rgb(236, 240, 241)

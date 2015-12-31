@@ -11,6 +11,7 @@
 		FE0CF3471C2FC7090026CDEB /* GenereteVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0CF3461C2FC7090026CDEB /* GenereteVideo.swift */; };
 		FE11814A1C333D5500FECF8A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1181491C333D5500FECF8A /* SettingViewController.swift */; };
 		FE11814C1C33EEF300FECF8A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE11814B1C33EEF300FECF8A /* VideoViewController.swift */; };
+		FE11814E1C34897D00FECF8A /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE11814D1C34897D00FECF8A /* UIButtonExt.swift */; };
 		FE397D5B1C30A82200C76CBE /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE397D5A1C30A82200C76CBE /* ProgressViewController.swift */; };
 		FE4DDE731C29DDF400F7A328 /* XMCCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */; };
 		FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */; };
@@ -37,6 +38,7 @@
 		FE0CF3461C2FC7090026CDEB /* GenereteVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenereteVideo.swift; sourceTree = "<group>"; };
 		FE1181491C333D5500FECF8A /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FE11814B1C33EEF300FECF8A /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		FE11814D1C34897D00FECF8A /* UIButtonExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 		FE397D5A1C30A82200C76CBE /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCCamera.swift; sourceTree = "<group>"; };
 		FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCCameraViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				FE1181491C333D5500FECF8A /* SettingViewController.swift */,
 				FE56C1BC1C2B2D6E00F24B32 /* GIFViewController.swift */,
 				FE11814B1C33EEF300FECF8A /* VideoViewController.swift */,
+				FE11814D1C34897D00FECF8A /* UIButtonExt.swift */,
 			);
 			name = generating;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				FE397D5B1C30A82200C76CBE /* ProgressViewController.swift in Sources */,
 				FE56C1BB1C2B2D4500F24B32 /* UIImageExtentGif.swift in Sources */,
 				FE0CF3471C2FC7090026CDEB /* GenereteVideo.swift in Sources */,
+				FE11814E1C34897D00FECF8A /* UIButtonExt.swift in Sources */,
 				FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */,
 				FE11814C1C33EEF300FECF8A /* VideoViewController.swift in Sources */,
 				FE56C1C81C2B5F4A00F24B32 /* AlbumData.swift in Sources */,

@@ -90,6 +90,7 @@ class Album{
         }
         //print("return number \(images.count)")
         data.sortInPlace({ $0.lableData > $1.lableData })
+        //imagesGroupNSURL.sort({ $0 > $1 })
         return (data,imageOnly.reverse(),imagesGroupNSURL.reverse(),imageOnly.count,imageURLString)
         
     }

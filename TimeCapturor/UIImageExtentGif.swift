@@ -11,6 +11,8 @@ import ImageIO
 
 extension UIImage {
     
+    
+    
     public class func gifWithData(data: NSData) -> UIImage? {
         guard let source = CGImageSourceCreateWithData(data, nil) else {
             print("SwiftGif: Source for the image does not exist")

@@ -46,24 +46,24 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         switch index {
         case 0:
             
-            performSegueWithIdentifier("mySegueID", sender: nil)
+            performSegueWithIdentifier("reminder", sender: nil)
             break
         case 1:
             
-            performSegueWithIdentifier("mySegueID", sender: nil)
+            performSegueWithIdentifier("store", sender: nil)
             break
         case 2:
             
-            performSegueWithIdentifier("mySegueID", sender: nil)
+            performSegueWithIdentifier("info", sender: nil)
             break
         case 3:
             
-            performSegueWithIdentifier("mySegueID", sender: nil)
+            performSegueWithIdentifier("video", sender: nil)
             break
         case 4:
             
             
-            performSegueWithIdentifier("mySegueID", sender: nil)
+            performSegueWithIdentifier("gif", sender: nil)
             break
         case 5:
             
@@ -219,16 +219,19 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         navigationController?.navigationBar.layer.shadowOpacity = 0.5
         navigationController?.navigationBar.layer.masksToBounds = false
         
+
         
-        cameraButton.layer.shadowColor = UIColor.blackColor().CGColor
-        cameraButton.layer.shadowOffset = CGSizeMake(4, 4)
-        cameraButton.layer.shadowRadius = 2
-        cameraButton.layer.shadowOpacity = 0.5
-        cameraButton.layer.masksToBounds = false
+//        var attachment = NSTextAttachment()
+//        attachment.image = UIImage(named: "ic_camera")
+//        var attachmentString = NSAttributedString(attachment: attachment)
+//        var myString = NSMutableAttributedString(string: "")
+//        myString.appendAttributedString(attachmentString)
+        //lable.setattribute = attachmenrstring
         
+        cameraButton.setImage(UIImage(named: "ic_camera"), forState: .Normal)
+        cameraButton.centerLabelVerticallyWithPadding(1)
         
-        
-        cameraButton.backgroundColor = UIColor(red: 240 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)
+        cameraButton.backgroundColor = UIColor(red: 240 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)//rgb(44, 62, 80)
         cameraButton.layer.cornerRadius = 28
         //cameraButton.layer.borderWidth = 1
         //cameraButton.layer.borderColor = UIColor.blackColor().CGColor
@@ -411,7 +414,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             super.viewWillDisappear(animated)
             
          //   UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
-            
+            self.navigationController?.navigationBarHidden = false
     
     }
     
@@ -422,12 +425,13 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         
         
-        navigationController?.hidesBarsOnSwipe = true
+        //navigationController?.hidesBarsOnSwipe = true
         
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     
+        self.navigationController?.hidesBarsOnSwipe = true
         collectionData.updateData()
         collectionView.reloadData()
         
