@@ -10,7 +10,84 @@ import UIKit
 //import Photos
 import LiquidFloatingActionButton
 
-class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate,LiquidFloatingActionButtonDataSource,LiquidFloatingActionButtonDelegate,UIGestureRecognizerDelegate{
+class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate,LiquidFloatingActionButtonDataSource,LiquidFloatingActionButtonDelegate,UIGestureRecognizerDelegate,KPTimePickerDelegate{
+    
+    
+    var timePicker = KPTimePicker()
+    
+    @IBOutlet weak var setTimeButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
+    var longPressGestureRecognizer = UILongPressGestureRecognizer()
+    var panRecognizer = UIPanGestureRecognizer()
+    
+    func timePicker(timePicker: KPTimePicker!, selectedDate date: NSDate!, switchButton: Bool) {
+        // NSLog(switchButton ? "Yes" : "No")
+        print(switchButton)
+        self.show(false, timePickerAnimated: true)
+        if date != nil {
+            let dateFormatter: NSDateFormatter = NSDateFormatter()
+            dateFormatter.locale = NSLocale.currentLocale()
+            dateFormatter.dateStyle = .NoStyle
+            dateFormatter.timeStyle = .ShortStyle
+            //self.statusLabel.text = dateFormatter.stringFromDate(date).lowercaseString
+            print(dateFormatter.stringFromDate(date).lowercaseString)
+        }
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if otherGestureRecognizer.isEqual(self.panRecognizer){
+            return false
+        }
+        return true
+    }
+    
+    func longPressRecognized(sender: UILongPressGestureRecognizer) {
+        if sender.state == .Began {
+            self.show(true, timePickerAnimated: true)
+        }
+    }
+    
+    func panRecognized(sender: UIPanGestureRecognizer) {
+        
+        self.timePicker.forwardGesture(sender)
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
+    func show(show: Bool, timePickerAnimated animated: Bool) {
+        if show {
+            self.navigationController?.hidesBarsOnSwipe = false
+            
+            self.timePicker.pickingDate = NSDate()
+            self.view!.addSubview(self.timePicker)
+            
+            self.timePicker.alpha = 0.0
+            UIView.animateWithDuration(0.4,
+                animations: {
+                    self.navigationController?.navigationBarHidden = true
+                    self.timePicker.alpha = 1.0
+                }, completion: nil)
+            
+        }
+        else {
+            self.navigationController?.hidesBarsOnSwipe = true
+
+            self.timePicker.alpha = 1
+            UIView.animateWithDuration(0.4,
+                animations: {
+                    self.timePicker.alpha = 0
+                    self.navigationController?.navigationBarHidden = false
+                }, completion: {_ in                     
+                 self.timePicker.removeFromSuperview()})
+
+            
+            
+        }
+    }
+
+    
     
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var toolBar: UIToolbar!
@@ -45,8 +122,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         print("did Tapped! \(index)")
         switch index {
         case 0:
-            
-            performSegueWithIdentifier("reminder", sender: nil)
+           
+             self.show(true, timePickerAnimated: true)
+           // performSegueWithIdentifier("reminder", sender: nil)
             break
         case 1:
             
@@ -116,39 +194,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         return (bottomLeftButton,bottomRightButton)
     }
     
-    //    @IBAction func btnTakingPhoto(sender: UIButton) {
-    //        if (UIImagePickerController.isSourceTypeAvailable(.Camera))
-    //        {
-    //            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil
-    //            {
-    //                let imagePicker = UIImagePickerController()
-    //                imagePicker.allowsEditing = false
-    //                imagePicker.sourceType = .Camera
-    //                imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.Front
-    //                imagePicker.cameraCaptureMode = .Photo
-    //                presentViewController(imagePicker, animated: true, completion: nil)
-    //            }
-    //            else
-    //            {
-    //                print("Rear camera doesn't exist")
-    //            }
-    //        }
-    //        else
-    //        {
-    //            //print("\(ImageData[1])")
-    //            print("Camera inaccessable")
-    //        }
-    //
-    //
-    //    }
-    
-    //func layoutAttributesForElementsInRt
-    
-    
-//    .setBackgroundImage (UIImage(),forToolbarPosition: UIBarPosition.Any,
-//    barMetrics: UIBarMetrics.Default)
-//    self.toolbar.setShadowImage(UIImage(),
-//    forToolbarPosition: UIBarPosition.Any)
     
     
     var collectionData = Album()
@@ -206,6 +251,28 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.respondsToSelector("setNeedsStatusBarAppearanceUpdate") {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+        //self.view.backgroundColor = UIColor(red: 36, green: 40, blue: 46, alpha: 1)
+       // self.setTimeButton.layer.cornerRadius = 10
+       // self.setTimeButton.layer.borderColor = UIColor.whiteColor().CGColor
+       // self.setTimeButton.layer.borderWidth = 2
+        self.timePicker = KPTimePicker(frame: self.view.bounds)
+        self.timePicker.delegate = self
+        self.timePicker.minimumDate = self.timePicker.pickingDate.dateAtStartOfDay()
+        self.timePicker.maximumDate = self.timePicker.pickingDate.dateByAddingMinutes((60 * 24)).dateAtStartOfDay().dateBySubtractingMinutes(5)
+        self.longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressRecognized:")
+        self.longPressGestureRecognizer.allowableMovement = 44.0
+        self.longPressGestureRecognizer.delegate = self
+        self.longPressGestureRecognizer.minimumPressDuration = 0.6
+      //  self.setTimeButton.addGestureRecognizer(self.longPressGestureRecognizer)
+        self.panRecognizer = UIPanGestureRecognizer(target: self, action: "panRecognized:")
+        
+
+        
+        
         
         cameraButton.layer.shadowColor = UIColor.blackColor().CGColor
         cameraButton.layer.shadowOffset = CGSizeMake(4, 4)
@@ -321,9 +388,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView!.dataSource = self
         collectionView!.delegate = self
-        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.backgroundColor = UIColor(red: 52 / 255.0, green: 73 / 255.0, blue: 94 / 255.0, alpha: 1)
-        
+        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")//rgb(29, 78, 111)
+        //collectionView.backgroundColor = UIColor(red: 52 / 255.0, green: 73 / 255.0, blue: 94 / 255.0, alpha: 1)
+        collectionView.backgroundColor = UIColor(red: 29 / 255.0, green: 78 / 255.0, blue: 111 / 255.0, alpha: 1)
         //collectionView.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor).active = true
         //rgb(149, 165, 166)rgb(52, 73, 94)rgb(127, 140, 141)
         //collectionView.setCollectionViewLayout(layout, animated: false)

@@ -12,6 +12,21 @@
 		FE11814A1C333D5500FECF8A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1181491C333D5500FECF8A /* SettingViewController.swift */; };
 		FE11814C1C33EEF300FECF8A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE11814B1C33EEF300FECF8A /* VideoViewController.swift */; };
 		FE11814E1C34897D00FECF8A /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE11814D1C34897D00FECF8A /* UIButtonExt.swift */; };
+		FE1181981C36648B00FECF8A /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1181951C36648B00FECF8A /* Categories.m */; };
+		FE1181991C36648B00FECF8A /* KPTimePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1181971C36648B00FECF8A /* KPTimePicker.m */; };
+		FE1181A81C3664BB00FECF8A /* checkmark_icon_white.png in Resources */ = {isa = PBXBuildFile; fileRef = FE11819B1C3664BB00FECF8A /* checkmark_icon_white.png */; };
+		FE1181A91C3664BB00FECF8A /* checkmark_icon_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE11819C1C3664BB00FECF8A /* checkmark_icon_white@2x.png */; };
+		FE1181AA1C3664BB00FECF8A /* picker_wheel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE11819D1C3664BB00FECF8A /* picker_wheel@2x.png */; };
+		FE1181AB1C3664BB00FECF8A /* picker_wheel_ip4.png in Resources */ = {isa = PBXBuildFile; fileRef = FE11819E1C3664BB00FECF8A /* picker_wheel_ip4.png */; };
+		FE1181AC1C3664BB00FECF8A /* picker_wheel_ip4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE11819F1C3664BB00FECF8A /* picker_wheel_ip4@2x.png */; };
+		FE1181AD1C3664BB00FECF8A /* round_backarrow_big-high.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1181A01C3664BB00FECF8A /* round_backarrow_big-high.png */; };
+		FE1181AE1C3664BB00FECF8A /* round_backarrow_big-high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1181A11C3664BB00FECF8A /* round_backarrow_big-high@2x.png */; };
+		FE1181AF1C3664BB00FECF8A /* round_backarrow_big.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1181A21C3664BB00FECF8A /* round_backarrow_big.png */; };
+		FE1181B01C3664BB00FECF8A /* round_backarrow_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1181A31C3664BB00FECF8A /* round_backarrow_big@2x.png */; };
+		FE1181B11C3664BB00FECF8A /* schedule_image_moon-high.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1181A41C3664BB00FECF8A /* schedule_image_moon-high.png */; };
+		FE1181B21C3664BB00FECF8A /* schedule_image_moon-high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1181A51C3664BB00FECF8A /* schedule_image_moon-high@2x.png */; };
+		FE1181B31C3664BB00FECF8A /* schedule_image_sun-high.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1181A61C3664BB00FECF8A /* schedule_image_sun-high.png */; };
+		FE1181B41C3664BB00FECF8A /* schedule_image_sun-high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1181A71C3664BB00FECF8A /* schedule_image_sun-high@2x.png */; };
 		FE397D5B1C30A82200C76CBE /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE397D5A1C30A82200C76CBE /* ProgressViewController.swift */; };
 		FE4DDE731C29DDF400F7A328 /* XMCCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */; };
 		FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */; };
@@ -39,6 +54,24 @@
 		FE1181491C333D5500FECF8A /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FE11814B1C33EEF300FECF8A /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		FE11814D1C34897D00FECF8A /* UIButtonExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		FE1181931C36648A00FECF8A /* TimeCapturor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimeCapturor-Bridging-Header.h"; sourceTree = "<group>"; };
+		FE1181941C36648B00FECF8A /* Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
+		FE1181951C36648B00FECF8A /* Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categories.m; sourceTree = "<group>"; };
+		FE1181961C36648B00FECF8A /* KPTimePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPTimePicker.h; sourceTree = "<group>"; };
+		FE1181971C36648B00FECF8A /* KPTimePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPTimePicker.m; sourceTree = "<group>"; };
+		FE11819B1C3664BB00FECF8A /* checkmark_icon_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark_icon_white.png; sourceTree = "<group>"; };
+		FE11819C1C3664BB00FECF8A /* checkmark_icon_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark_icon_white@2x.png"; sourceTree = "<group>"; };
+		FE11819D1C3664BB00FECF8A /* picker_wheel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picker_wheel@2x.png"; sourceTree = "<group>"; };
+		FE11819E1C3664BB00FECF8A /* picker_wheel_ip4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picker_wheel_ip4.png; sourceTree = "<group>"; };
+		FE11819F1C3664BB00FECF8A /* picker_wheel_ip4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picker_wheel_ip4@2x.png"; sourceTree = "<group>"; };
+		FE1181A01C3664BB00FECF8A /* round_backarrow_big-high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "round_backarrow_big-high.png"; sourceTree = "<group>"; };
+		FE1181A11C3664BB00FECF8A /* round_backarrow_big-high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "round_backarrow_big-high@2x.png"; sourceTree = "<group>"; };
+		FE1181A21C3664BB00FECF8A /* round_backarrow_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round_backarrow_big.png; sourceTree = "<group>"; };
+		FE1181A31C3664BB00FECF8A /* round_backarrow_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "round_backarrow_big@2x.png"; sourceTree = "<group>"; };
+		FE1181A41C3664BB00FECF8A /* schedule_image_moon-high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_image_moon-high.png"; sourceTree = "<group>"; };
+		FE1181A51C3664BB00FECF8A /* schedule_image_moon-high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_image_moon-high@2x.png"; sourceTree = "<group>"; };
+		FE1181A61C3664BB00FECF8A /* schedule_image_sun-high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_image_sun-high.png"; sourceTree = "<group>"; };
+		FE1181A71C3664BB00FECF8A /* schedule_image_sun-high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_image_sun-high@2x.png"; sourceTree = "<group>"; };
 		FE397D5A1C30A82200C76CBE /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCCamera.swift; sourceTree = "<group>"; };
 		FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCCameraViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +151,39 @@
 			name = supportFile;
 			sourceTree = "<group>";
 		};
+		FE1181921C36645800FECF8A /* TimePicker */ = {
+			isa = PBXGroup;
+			children = (
+				FE11819A1C3664A800FECF8A /* images */,
+				FE1181941C36648B00FECF8A /* Categories.h */,
+				FE1181951C36648B00FECF8A /* Categories.m */,
+				FE1181961C36648B00FECF8A /* KPTimePicker.h */,
+				FE1181971C36648B00FECF8A /* KPTimePicker.m */,
+				FE1181931C36648A00FECF8A /* TimeCapturor-Bridging-Header.h */,
+			);
+			name = TimePicker;
+			sourceTree = "<group>";
+		};
+		FE11819A1C3664A800FECF8A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				FE11819B1C3664BB00FECF8A /* checkmark_icon_white.png */,
+				FE11819C1C3664BB00FECF8A /* checkmark_icon_white@2x.png */,
+				FE11819D1C3664BB00FECF8A /* picker_wheel@2x.png */,
+				FE11819E1C3664BB00FECF8A /* picker_wheel_ip4.png */,
+				FE11819F1C3664BB00FECF8A /* picker_wheel_ip4@2x.png */,
+				FE1181A01C3664BB00FECF8A /* round_backarrow_big-high.png */,
+				FE1181A11C3664BB00FECF8A /* round_backarrow_big-high@2x.png */,
+				FE1181A21C3664BB00FECF8A /* round_backarrow_big.png */,
+				FE1181A31C3664BB00FECF8A /* round_backarrow_big@2x.png */,
+				FE1181A41C3664BB00FECF8A /* schedule_image_moon-high.png */,
+				FE1181A51C3664BB00FECF8A /* schedule_image_moon-high@2x.png */,
+				FE1181A61C3664BB00FECF8A /* schedule_image_sun-high.png */,
+				FE1181A71C3664BB00FECF8A /* schedule_image_sun-high@2x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		FE397D591C30A3F300C76CBE /* DataModle */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +247,7 @@
 		FEA216DF1C28626E008F07F0 /* TimeCapturor */ = {
 			isa = PBXGroup;
 			children = (
+				FE1181921C36645800FECF8A /* TimePicker */,
 				FE397D591C30A3F300C76CBE /* DataModle */,
 				FE0CF34A1C30A1E30026CDEB /* supportFile */,
 				FE0CF3491C30A1C40026CDEB /* ImageManage */,
@@ -254,9 +321,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE1181B31C3664BB00FECF8A /* schedule_image_sun-high.png in Resources */,
+				FE1181AA1C3664BB00FECF8A /* picker_wheel@2x.png in Resources */,
+				FE1181AB1C3664BB00FECF8A /* picker_wheel_ip4.png in Resources */,
+				FE1181AC1C3664BB00FECF8A /* picker_wheel_ip4@2x.png in Resources */,
+				FE1181B01C3664BB00FECF8A /* round_backarrow_big@2x.png in Resources */,
+				FE1181A81C3664BB00FECF8A /* checkmark_icon_white.png in Resources */,
 				FEA216EB1C28626E008F07F0 /* LaunchScreen.storyboard in Resources */,
+				FE1181B11C3664BB00FECF8A /* schedule_image_moon-high.png in Resources */,
+				FE1181AF1C3664BB00FECF8A /* round_backarrow_big.png in Resources */,
+				FE1181B21C3664BB00FECF8A /* schedule_image_moon-high@2x.png in Resources */,
+				FE1181A91C3664BB00FECF8A /* checkmark_icon_white@2x.png in Resources */,
 				FEA216E81C28626E008F07F0 /* Assets.xcassets in Resources */,
+				FE1181B41C3664BB00FECF8A /* schedule_image_sun-high@2x.png in Resources */,
+				FE1181AE1C3664BB00FECF8A /* round_backarrow_big-high@2x.png in Resources */,
 				FEA216E61C28626E008F07F0 /* Main.storyboard in Resources */,
+				FE1181AD1C3664BB00FECF8A /* round_backarrow_big-high.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +400,7 @@
 				FE4DDE731C29DDF400F7A328 /* XMCCamera.swift in Sources */,
 				FE11814A1C333D5500FECF8A /* SettingViewController.swift in Sources */,
 				FE397D5B1C30A82200C76CBE /* ProgressViewController.swift in Sources */,
+				FE1181991C36648B00FECF8A /* KPTimePicker.m in Sources */,
 				FE56C1BB1C2B2D4500F24B32 /* UIImageExtentGif.swift in Sources */,
 				FE0CF3471C2FC7090026CDEB /* GenereteVideo.swift in Sources */,
 				FE11814E1C34897D00FECF8A /* UIButtonExt.swift in Sources */,
@@ -333,6 +414,7 @@
 				FE56C1BD1C2B2D6E00F24B32 /* GIFViewController.swift in Sources */,
 				FE56C1C61C2B599C00F24B32 /* FadeAnimator.swift in Sources */,
 				FEA216F51C287052008F07F0 /* NewViewController.swift in Sources */,
+				FE1181981C36648B00FECF8A /* Categories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,11 +528,13 @@
 			baseConfigurationReference = 0B82CAE82098F9942F5A410A /* Pods-TimeCapturor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TimeCapturor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Tengfei-Yang.TimeCapturor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TimeCapturor/TimeCapturor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -459,11 +543,12 @@
 			baseConfigurationReference = 2DAACF8754B67265522B5A8E /* Pods-TimeCapturor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TimeCapturor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Tengfei-Yang.TimeCapturor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TimeCapturor/TimeCapturor-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -67,7 +67,6 @@
                         <segue destination="467-92-u1b" kind="show" identifier="video" id="rqR-Jw-0YP"/>
                         <segue destination="cyy-zD-ioL" kind="show" identifier="info" id="PzU-KF-wQ8"/>
                         <segue destination="L6R-zP-abe" kind="show" identifier="store" id="nNC-3X-sfh"/>
-                        <segue destination="FGk-3i-zlP" kind="show" identifier="reminder" id="Dzg-9Z-m6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -319,24 +318,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACl-FC-2rZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="466" y="1399"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="SZY-kP-I1a">
-            <objects>
-                <viewController id="FGk-3i-zlP" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wD0-Ry-P2R"/>
-                        <viewControllerLayoutGuide type="bottom" id="YBg-Vx-rcz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JJD-Zd-79f">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Saq-sp-I0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1204" y="1613"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="DRD-I9-pe0">
@@ -640,7 +621,6 @@
         <!--Navigation Controller-->
         <scene sceneID="UG0-3a-FPv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ne-vM-j5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hn3-Oy-Gjh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ogp-qt-Fs0">
@@ -652,6 +632,7 @@
                         <segue destination="a27-hg-QkQ" kind="relationship" relationship="rootViewController" id="7ke-iV-NZy"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ne-vM-j5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2445" y="592"/>
         </scene>
