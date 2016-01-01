@@ -19,6 +19,8 @@
         
          var previousPage = 0
         
+        @IBOutlet weak var sharButton: UIButton!
+        @IBOutlet weak var createNewButton: UIButton!
         @IBOutlet weak var gifimageView: UIImageView!
         
         //let progressView = UCZProgressView()
@@ -30,6 +32,36 @@
         }
         
         override func viewDidLoad() {
+            
+            createNewButton.layer.shadowColor = UIColor.blackColor().CGColor
+            createNewButton.layer.shadowOffset = CGSizeMake(0, 4)
+            createNewButton.layer.shadowRadius = 2
+            createNewButton.layer.shadowOpacity = 0.5
+            createNewButton.layer.masksToBounds = false
+            // print(gifButton.frame)
+            //gifButton.setImage(UIImage(named: "ic_gif"), forState: .Normal)
+            //gifButton.centerLabelVerticallyWithPadding(0)
+            createNewButton.setTitleColor(UIColor(red: 195 / 255.0, green: 57 / 255.0, blue: 43 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
+            createNewButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
+            createNewButton.layer.cornerRadius = 28
+            
+            
+            sharButton.layer.shadowColor = UIColor.blackColor().CGColor
+            sharButton.layer.shadowOffset = CGSizeMake(0, 4)
+            sharButton.layer.shadowRadius = 2
+            sharButton.layer.shadowOpacity = 0.5
+            sharButton.layer.masksToBounds = false
+            // print(gifButton.frame)
+            //gifButton.setImage(UIImage(named: "ic_gif"), forState: .Normal)
+            //gifButton.centerLabelVerticallyWithPadding(0)
+            sharButton.setTitleColor(UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
+            sharButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
+            sharButton.layer.cornerRadius = 28
+            
+
+            
+            
+            
             let statusHeight = UIApplication.sharedApplication().statusBarFrame.size.height
             let statusView = UIView(frame:
                 CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height:statusHeight) )
@@ -138,14 +170,6 @@
         var Image = Album().getAllImageAndDate().ImageData
        // var ImageURLs = Album().getAllImageAndDate().urlString
        
-        
-        @IBAction func doneAction(sender: UIBarButtonItem) {
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
-        @IBAction func back(sender: UIButton) {
-            //self.dismissViewControllerAnimated(true, completion: nil)
-            navigationController?.popToRootViewControllerAnimated(true)
-        }
         @IBAction func btnGeneratGIF(sender: UIButton) {
             let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
             dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
@@ -164,7 +188,12 @@
         }
         
         
-              
+        
+        @IBAction func btnShare(sender: UIButton) {
+            
+            
+            
+        }
         
         
                

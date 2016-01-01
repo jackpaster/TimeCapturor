@@ -13,6 +13,15 @@ import MediaPlayer
 
 class VideoViewController: UIViewController {
     
+    @IBOutlet weak var createNewButton: UIButton!
+    @IBOutlet weak var sharButton: UIButton!
+    
+    @IBAction func btnCreatNew(sender: UIButton) {
+    }
+    
+    @IBAction func btnShare(sender: UIButton) {
+    }
+    
     
     func backMain(sender:UIButton){
         navigationController?.popToRootViewControllerAnimated(true)
@@ -20,6 +29,34 @@ class VideoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createNewButton.layer.shadowColor = UIColor.blackColor().CGColor
+        createNewButton.layer.shadowOffset = CGSizeMake(0, 4)
+        createNewButton.layer.shadowRadius = 2
+        createNewButton.layer.shadowOpacity = 0.5
+        createNewButton.layer.masksToBounds = false
+        // print(gifButton.frame)
+        //gifButton.setImage(UIImage(named: "ic_gif"), forState: .Normal)
+        //gifButton.centerLabelVerticallyWithPadding(0)
+        createNewButton.setTitleColor(UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
+        createNewButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
+        createNewButton.layer.cornerRadius = 28
+        
+        
+        sharButton.layer.shadowColor = UIColor.blackColor().CGColor
+        sharButton.layer.shadowOffset = CGSizeMake(0, 4)
+        sharButton.layer.shadowRadius = 2
+        sharButton.layer.shadowOpacity = 0.5
+        sharButton.layer.masksToBounds = false
+        // print(gifButton.frame)
+        //gifButton.setImage(UIImage(named: "ic_gif"), forState: .Normal)
+        //gifButton.centerLabelVerticallyWithPadding(0)
+        sharButton.setTitleColor(UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
+        sharButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
+        sharButton.layer.cornerRadius = 28
+        
+        
+        
         
         if let _ = self.navigationController!.viewControllers[0] as? SettingViewController{
             let backBtton = UIButton(frame: CGRect(x: 0, y: 0, width: 90, height: 20))
@@ -69,8 +106,12 @@ class VideoViewController: UIViewController {
         playButton.centerLabelVerticallyWithPadding(1)
         playButton.backgroundColor = UIColor(red: 189/255.0, green: 195/255.0, blue: 199/255.0, alpha: 0.5) //rgb(189, 195, 199)
         self.customConfiguration = self.customKVNProgressUIConfiguration()
+        if(Album().getAllImageAndDate().AllData.count != 0 ){
+            previewVideoView.image = Album().getAllImageAndDate().AllData[0].ImageData
+        }else{
+            //previewVideoView.image
+        }
         
-        previewVideoView.image = firstFrame
         // Do any additional setup after loading the view.
         //btnGenerateVideo(UIButton())
         playButton.hidden = true
@@ -140,7 +181,7 @@ class VideoViewController: UIViewController {
         
     }
     //var Image = Album().getAllImageAndDate().ImageData
-    var firstFrame = Album().getAllImageAndDate().AllData[0].ImageData
+    //var firstFrame = Album().getAllImageAndDate().AllData[0].ImageData
     var ImageURLs = Album().getAllImageAndDate().urlString
     var videoURL = NSURL()
     

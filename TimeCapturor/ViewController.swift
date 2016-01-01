@@ -95,7 +95,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             return LiquidFloatingCell(icon: UIImage(named: iconName)!)
         }
         cells.append(cellFactory("ic_reminder"))
-        cells.append(cellFactory("ic_store"))
+        cells.append(cellFactory("ic_share"))
         cells.append(cellFactory("ic_info"))
         cells.append(cellFactory("ic_mp4"))
         cells.append(cellFactory("ic_gif"))
