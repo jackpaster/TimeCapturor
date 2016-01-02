@@ -24,6 +24,7 @@
 @property (nonatomic,strong) NSDate *pickingDate;
 @property (nonatomic,strong) NSDate *minimumDate;
 @property (nonatomic,strong) NSDate *maximumDate;
+@property (nonatomic)        BOOL  switcher;
 
 @property (nonatomic) UIColor *lightColor;
 @property (nonatomic) UIColor *darkColor;

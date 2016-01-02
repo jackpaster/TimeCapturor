@@ -17,6 +17,7 @@ class Album{
     struct cellContents {
         var lableData: String
         var ImageData: UIImage
+       // var thumbnail: UIImage
     }
 
     var cellData = [cellContents]()
@@ -35,6 +36,37 @@ class Album{
         var imagesGroupNSURL = [NSURL]()
         let filManager = NSFileManager()
         var imageURLString = [String]()
+        
+        let size = CGSizeMake(192, 256)
+        
+        func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+            let size = image.size
+            
+            let widthRatio  = targetSize.width  / image.size.width
+            let heightRatio = targetSize.height / image.size.height
+            
+            // Figure out what our orientation is, and use that to form the rectangle
+            var newSize: CGSize
+            if(widthRatio > heightRatio) {
+                newSize = CGSizeMake(size.width * heightRatio, size.height * heightRatio)
+            } else {
+                newSize = CGSizeMake(size.width * widthRatio,  size.height * widthRatio)
+            }
+            
+            // This is the rect that we've calculated out and this is what is actually used below
+            let rect = CGRectMake(0, 0, newSize.width, newSize.height)
+            
+            // Actually do the resizing to the rect using the ImageContext stuff
+            UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+            image.drawInRect(rect)
+            let newImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            return newImage
+        }
+        
+
+
         
         if let docsDir = filManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as NSURL!
         {
@@ -88,7 +120,8 @@ class Album{
                 print ("Error: \(error)")
             }
         }
-        //print("return number \(images.count)")
+        
+        
         data.sortInPlace({ $0.lableData > $1.lableData })
         //imagesGroupNSURL.sort({ $0 > $1 })
         return (data,imageOnly.reverse(),imagesGroupNSURL.reverse(),imageOnly.count,imageURLString)

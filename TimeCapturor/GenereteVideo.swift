@@ -17,9 +17,10 @@ let kFailedToAppendPixelBufferError = 1
 class TimeLapseBuilder: NSObject {
     let photoURLs: [String]
     var videoWriter: AVAssetWriter?
-    
-    init(photoURLs: [String]) {
+    var framePerSecond : Float
+    init(photoURLs: [String],framePerSecond : Float) {
         self.photoURLs = photoURLs
+        self.framePerSecond = framePerSecond
     }
     
     
@@ -32,8 +33,12 @@ class TimeLapseBuilder: NSObject {
         let videoOutputURL = NSURL(fileURLWithPath: documentsPath.stringByAppendingPathComponent("AssembledVideo.mov"))
         
         do {
+            
             try NSFileManager.defaultManager().removeItemAtURL(videoOutputURL)
-        } catch {}
+            print("deleted")
+        } catch {
+            print("not deleted")
+        }
         
         do {
             try videoWriter = AVAssetWriter(URL: videoOutputURL, fileType: AVFileTypeQuickTimeMovie)
@@ -77,16 +82,25 @@ class TimeLapseBuilder: NSObject {
                 let media_queue = dispatch_queue_create("mediaInputQueue", nil)
                 
                 videoWriterInput.requestMediaDataWhenReadyOnQueue(media_queue, usingBlock: { () -> Void in
-                  
+                    
                     ///////////////////////////mark /////
-                    let fps: Int32 = 10
+                    let fps: Int32 = Int32(self.framePerSecond)
                     let frameDuration = CMTimeMake(1, fps)
                     let currentProgress = self.photoURLs.count
                     
                     var frameCount: Int = 0
                     var remainingPhotoURLs = [String](self.photoURLs)
                     
-                    while (videoWriterInput.readyForMoreMediaData && !remainingPhotoURLs.isEmpty) {
+                    while ( !remainingPhotoURLs.isEmpty) {
+                       // print( "before loop \(videoWriterInput.readyForMoreMediaData )" )
+                       
+                        while (videoWriterInput.readyForMoreMediaData == false) {
+                          //  print("looping")
+                            let maxDate: NSDate = NSDate(timeIntervalSinceNow: 0.1)
+                            NSRunLoop.currentRunLoop().runUntilDate(maxDate)
+                        }
+                       // print( "after loop \(videoWriterInput.readyForMoreMediaData )" )
+                        
                         let nextPhotoURL = remainingPhotoURLs.removeAtIndex(0)
                         let lastFrameTime = CMTimeMake(Int64(frameCount), fps)
                         let presentationTime = frameCount == 0 ? lastFrameTime : CMTimeAdd(lastFrameTime, frameDuration)
@@ -105,10 +119,13 @@ class TimeLapseBuilder: NSObject {
                             break
                         }
                         
-                        frameCount++
                         
-                        //currentProgress.completedUnitCount = frameCount
-                        progress(CGFloat(Double(frameCount) / Double(currentProgress) ) )
+                    frameCount++
+                  //  print( videoWriterInput.readyForMoreMediaData )
+                //    print( "\(remainingPhotoURLs.count)  + after appen  \(videoWriterInput.readyForMoreMediaData) ")
+                    //currentProgress.completedUnitCount = frameCount
+                    progress(CGFloat(Double(frameCount) / Double(currentProgress) ) )
+                   
                     }
                     
                     videoWriterInput.markAsFinished()
@@ -165,7 +182,7 @@ class TimeLapseBuilder: NSObject {
                     pixelBufferPointer.dealloc(1)
             }
         }
-        
+        print("append  \(appendSucceeded)")
         return appendSucceeded
     }
     

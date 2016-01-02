@@ -525,7 +525,7 @@ static KVNProgressConfiguration *configuration;
 		
 		UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, nil);
 		
-		[UIApplication sharedApplication].statusBarStyle = [self sharedView].rootControllerStatusBarStyle;
+		//[UIApplication sharedApplication].statusBarStyle = [self sharedView].rootControllerStatusBarStyle;
 	}
 	
 	if (completion) {
@@ -549,25 +549,25 @@ static KVNProgressConfiguration *configuration;
 
 - (void)setupStatusBar
 {
-	self.rootControllerStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
-	
-	if (![self isFullScreen]) {
-		return;
-	}
-	
-	UIColor *backgroundColor;
-	switch (self.backgroundType) {
-		case KVNProgressBackgroundTypeBlurred: {
-			backgroundColor = self.configuration.backgroundTintColor;
-			break;
-		}
-		case KVNProgressBackgroundTypeSolid: {
-			backgroundColor = self.configuration.backgroundFillColor;
-			break;
-		}
-	}
-	
-	[UIApplication sharedApplication].statusBarStyle = [backgroundColor statusBarStyleConstrastStyle];
+//	self.rootControllerStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
+//	
+//	if (![self isFullScreen]) {
+//		return;
+//	}
+//	
+//	UIColor *backgroundColor;
+//	switch (self.backgroundType) {
+//		case KVNProgressBackgroundTypeBlurred: {
+//			backgroundColor = self.configuration.backgroundTintColor;
+//			break;
+//		}
+//		case KVNProgressBackgroundTypeSolid: {
+//			backgroundColor = self.configuration.backgroundFillColor;
+//			break;
+//		}
+//	}
+//	
+//	[UIApplication sharedApplication].statusBarStyle = [backgroundColor statusBarStyleConstrastStyle];
 }
 
 - (void)setupGestures

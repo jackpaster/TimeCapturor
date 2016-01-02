@@ -7,8 +7,7 @@
     //
     
     import UIKit
-    import MobileCoreServices
-    import ImageIO
+
     import AVFoundation
     //import UCZProgressView
    // import AVKit
@@ -68,7 +67,7 @@
             statusView.backgroundColor = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 0.97)
             self.view.addSubview(statusView)
             
-            view.backgroundColor = UIColor(red: 52 / 255.0, green: 73 / 255.0, blue: 94 / 255.0, alpha: 1)
+            view.backgroundColor =  UIColor(red: 29 / 255.0, green: 78 / 255.0, blue: 111 / 255.0, alpha: 1)
             
             if let _ = self.navigationController!.viewControllers[0] as? SettingViewController{
                let backBtton = UIButton(frame: CGRect(x: 0, y: 0, width: 90, height: 20))
@@ -121,12 +120,12 @@
             configuration.circleStrokeBackgroundColor = UIColor(white: 1.0, alpha: 0.3)
             configuration.circleFillBackgroundColor = UIColor(white: 1.0, alpha: 0.1)
             configuration.backgroundFillColor = UIColor(red: 0.173, green: 0.263, blue: 0.856, alpha: 0.9)
-            configuration.backgroundTintColor = UIColor(red: 0.173, green: 0.263, blue: 0.856, alpha: 0.4)
+            configuration.backgroundTintColor = UIColor(red: 236/255.0, green: 240/255.0, blue: 241/255.0, alpha: 0.4)
             configuration.successColor = UIColor.whiteColor()
             configuration.errorColor = UIColor.whiteColor()
             configuration.stopColor = UIColor.whiteColor()//stop button color
             configuration.circleSize = 110.0
-            configuration.fullScreen = false
+            configuration.fullScreen = true
             
             //        let blockSelf: ViewController = self
             //
@@ -171,19 +170,49 @@
        // var ImageURLs = Album().getAllImageAndDate().urlString
        
         @IBAction func btnGeneratGIF(sender: UIButton) {
+           
+            let GIFGenerator = GifBiulder(images: Image, frameDelay: 7.0)
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            if let speed = defaults.valueForKey("speed") as? Float
+            {
+             GIFGenerator.frameDelay = (1 / Double(speed))
+                //print(speed)
+               // print(GIFGenerator.frameDelay)
+            }
+                        //print(ImageURLs)
+            // KVNProgress.showProgress(0, status: "laoding...",onView: view)
+            KVNProgress.showProgress(0, status:"Generating... 0%")
+            // [KVNProgress showWithStatus:@"Loading" onView:view];
             let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
             dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
-                let url = self.createGIF(with: self.Image, loopCount: 4,frameDelay: 0.1)
                 
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    let gif = UIImage.gifWithURL(url)
-                    self.gifimageView.image = gif
-                    self.gifimageView.hidden = false
-                })
+                GIFGenerator.build({ (progress) -> Void in
+                    
+                    print(progress)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        KVNProgress.updateProgress(progress, animated: true)
+                        KVNProgress.updateStatus("Generating... \(Int(progress*100))%")
+                        
+                    })
+                    }, success: { (gif) -> Void in
+                        
+                        dispatch_async(dispatch_get_main_queue(), {
+                            
+                            KVNProgress.showSuccessWithStatus("Success")
+
+                            let gif = UIImage.gifWithURL(gif)
+                            self.gifimageView.image = gif
+
+                        })
+                        
+                        
+                    }) { (error) -> Void in
+                        print("error")
+                }
+                
             }
             
-            
-            //  print("\(url)")
             
         }
         
@@ -198,70 +227,6 @@
         
                
         
-        
-        func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
-            let size = image.size
             
-            let widthRatio  = targetSize.width  / image.size.width
-            let heightRatio = targetSize.height / image.size.height
-            
-            // Figure out what our orientation is, and use that to form the rectangle
-            var newSize: CGSize
-            if(widthRatio > heightRatio) {
-                newSize = CGSizeMake(size.width * heightRatio, size.height * heightRatio)
-            } else {
-                newSize = CGSizeMake(size.width * widthRatio,  size.height * widthRatio)
-            }
-            
-            // This is the rect that we've calculated out and this is what is actually used below
-            let rect = CGRectMake(0, 0, newSize.width, newSize.height)
-            
-            // Actually do the resizing to the rect using the ImageContext stuff
-            UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-            image.drawInRect(rect)
-            let newImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            
-            return newImage
-        }
-        
-        
-        func createGIF(with images: [UIImage], loopCount: Int = 0, frameDelay: Double) ->NSURL{
-            let fileProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFLoopCount as String: loopCount]]
-            let frameProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFDelayTime as String: frameDelay]]
-            
-            let size = CGSizeMake(192, 256)
-            
-            let documentsDirectory = NSTemporaryDirectory()
-            let url = NSURL(fileURLWithPath: documentsDirectory).URLByAppendingPathComponent("animated.gif")
-            if url != NSURL() {
-                let destination = CGImageDestinationCreateWithURL(url, kUTTypeGIF, images.count, nil)
-                CGImageDestinationSetProperties(destination!, fileProperties)
-                //print("1:\(gifdata)")
-                for i in 0..<images.count {
-                    autoreleasepool{
-                        CGImageDestinationAddImage(destination!, ResizeImage(images[i],targetSize: size).CGImage!, frameProperties)
-                        // print("Generating \(images[i].CGImage!)")
-                    }
-                    
-                }
-                if CGImageDestinationFinalize(destination!) {
-                    print("finaliza success")
-                    // print("\(url)")
-                    return url
-                    
-                } else {
-                    
-                    print("error")
-                    return NSURL()
-                }
-            } else  {
-                
-                print("error")
-                return NSURL()
-            }
-        }
-        
-        
         
     }

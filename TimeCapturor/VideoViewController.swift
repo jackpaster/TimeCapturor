@@ -17,19 +17,83 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var sharButton: UIButton!
     
     @IBAction func btnCreatNew(sender: UIButton) {
+        
+        
+        let videoGenerator = TimeLapseBuilder(photoURLs: ImageURLs,framePerSecond: 7)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let speed = defaults.valueForKey("speed") as? Float
+        {
+            videoGenerator.framePerSecond = speed
+            
+        }
+        
+        KVNProgress.showProgress(0, status:"Generating... 0%")
+        // [KVNProgress showWithStatus:@"Loading" onView:view];
+        let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
+        dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
+            
+            videoGenerator.build({ (progress) -> Void in
+                
+                print(progress)
+                dispatch_async(dispatch_get_main_queue(), {
+                    KVNProgress.updateProgress(progress, animated: true)
+                    KVNProgress.updateStatus("Generating... \(Int(progress*100))%")
+                    
+                })
+                }, success: { (video) -> Void in
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        
+                        KVNProgress.showSuccessWithStatus("Success")
+                        self.playButton.hidden = false
+                        
+                    })
+                    
+                    print(video)
+                    
+                    
+                    self.videoURL = video
+                    //self.playVideo(video)
+                    
+                }) { (error) -> Void in
+                    print("error")
+            }
+            
+        }
+        
+        
     }
     
     @IBAction func btnShare(sender: UIButton) {
+        
+        let textToShare = "Swift is awesome!  Check out this website about it!"
+        
+        if let myWebsite = NSURL(string: "http://www.codingexplorer.com/")
+        {
+            let objectsToShare = [textToShare, myWebsite]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        }
+        
+        
     }
     
     
     func backMain(sender:UIButton){
         navigationController?.popToRootViewControllerAnimated(true)
     }
-
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //KVNProgress.setConfiguration(self.customConfiguration)
+    
+        //UIApplication.sharedApplication().setStatusBarStyle(.LightContent , animated: false)
+       // UIViewController.preferredStatusBarStyle(.LightContent)
         createNewButton.layer.shadowColor = UIColor.blackColor().CGColor
         createNewButton.layer.shadowOffset = CGSizeMake(0, 4)
         createNewButton.layer.shadowRadius = 2
@@ -72,11 +136,13 @@ class VideoViewController: UIViewController {
             
             let item = UIBarButtonItem(customView: backBtton)
             self.navigationItem.leftBarButtonItems = [spacer,item]
-            
+            self.title = "Video"
+            //self.navigationController!.viewControllers.topItem.title = "some title"
+            // self.navigationController?.title = "Video"
             //self.navigationItem.leftBarButtonItem = item
             
             
-           // print("setting")
+            // print("setting")
             ////////------=-=-=-=-=-=--=--=-=-==-=-=--==-=--=
             
             
@@ -85,11 +151,13 @@ class VideoViewController: UIViewController {
             backBtton.setImage(UIImage(named: "ic_back"), forState: UIControlState.Normal)
             backBtton.addTarget(self, action: Selector("backMain:"), forControlEvents:  UIControlEvents.TouchUpInside)
             let item = UIBarButtonItem(customView: backBtton)
+            //self.navigationController?.title = "Video"
+            self.title = "Video"
             self.navigationItem.leftBarButtonItem = item
             //print("main")
         }
         
-
+        
         
         
         let statusHeight = UIApplication.sharedApplication().statusBarFrame.size.height
@@ -98,13 +166,13 @@ class VideoViewController: UIViewController {
         statusView.backgroundColor = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 0.97)
         self.view.addSubview(statusView)
         
-        view.backgroundColor = UIColor(red: 52 / 255.0, green: 73 / 255.0, blue: 94 / 255.0, alpha: 1)
+        view.backgroundColor =  UIColor(red: 29 / 255.0, green: 78 / 255.0, blue: 111 / 255.0, alpha: 1)
         
         
         
         playButton.setImage(UIImage(named: "ic_play"), forState: .Normal)
         playButton.centerLabelVerticallyWithPadding(1)
-        playButton.backgroundColor = UIColor(red: 189/255.0, green: 195/255.0, blue: 199/255.0, alpha: 0.5) //rgb(189, 195, 199)
+        playButton.backgroundColor = UIColor(red: 189/255.0, green: 195/255.0, blue: 199/255.0, alpha: 0.6) //rrgb(52, 73, 94)
         self.customConfiguration = self.customKVNProgressUIConfiguration()
         if(Album().getAllImageAndDate().AllData.count != 0 ){
             previewVideoView.image = Album().getAllImageAndDate().AllData[0].ImageData
@@ -135,13 +203,13 @@ class VideoViewController: UIViewController {
         configuration.circleStrokeBackgroundColor = UIColor(white: 1.0, alpha: 0.3)
         configuration.circleFillBackgroundColor = UIColor(white: 1.0, alpha: 0.1)
         configuration.backgroundFillColor = UIColor(red: 0.173, green: 0.263, blue: 0.856, alpha: 0.9)
-        configuration.backgroundTintColor = UIColor(red: 0.173, green: 0.263, blue: 0.856, alpha: 0.4)
+        configuration.backgroundTintColor = UIColor(red: 236/255.0, green: 240/255.0, blue: 241/255.0, alpha: 0.4) //rgb(236, 240, 241)
         configuration.successColor = UIColor.whiteColor()
         configuration.errorColor = UIColor.whiteColor()
         //print("My")
         configuration.stopColor = UIColor.whiteColor()//stop button color
         configuration.circleSize = 110.0
-        configuration.fullScreen = false
+        configuration.fullScreen = true
         
         //        let blockSelf: ViewController = self
         //
@@ -149,32 +217,35 @@ class VideoViewController: UIViewController {
         //            blockSelf.basicConfiguration.tapBlock = nil
         //            KVNProgress.dismiss()
         //        }
+        configuration.backgroundType = .Blurred
+        
         configuration.stopRelativeHeight = 0.3
         // configuration.stopColor = [UIColor whiteColor];
         
         
-        configuration.tapBlock = {(Progress) in
-            // Do what you want
-            KVNProgress.dismiss()
-            
-        }
-        configuration.showStop = true
+        //        configuration.tapBlock = {(Progress) in
+        //            // Do what you want
+        //            KVNProgress.dismiss()
+        //            //shouldCancle = true
+        //
+        //
+        //        }
+        configuration.showStop = false
         
         return configuration
     }
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBOutlet weak var previewVideoView: UIImageView!
-
+    
     @IBOutlet weak var playButton: UIButton!
-
+    
     @IBAction func btnPlayVideo(sender: UIButton) {
-        
         
         playVideo(videoURL)
         
@@ -185,48 +256,48 @@ class VideoViewController: UIViewController {
     var ImageURLs = Album().getAllImageAndDate().urlString
     var videoURL = NSURL()
     
-     var customConfiguration = KVNProgressConfiguration()
+    var customConfiguration = KVNProgressConfiguration()
     
-    @IBAction func btnGenerateVideo(sender: UIButton) {
-        
-        let videoGenerator = TimeLapseBuilder(photoURLs: ImageURLs)
-        
-        print(ImageURLs)
-        KVNProgress.showProgress(0, status: "laoding...",onView: view)
-        
-        // [KVNProgress showWithStatus:@"Loading" onView:view];
-        
-        videoGenerator.build({ (progress) -> Void in
-            
-            print(progress)
-            dispatch_async(dispatch_get_main_queue(), {
-               // KVNProgress.showProgress(progress, status:"Generating... \(Int(progress*100))%",onView: self.view)
-            })
-            }, success: { (video) -> Void in
-                // dispatch_async(dispatch_get_main_queue(), {
-                
-                dispatch_async(dispatch_get_main_queue(), {
-                    KVNProgress.showSuccessWithStatus("Success",onView: self.view)
-                    self.playButton.hidden = false
-                })
-                
-                // KVNProgress.dismiss()
-                //   })
-                
-                // print(video)
-                
-               
-                self.videoURL = video
-                //self.playVideo(video)
-                
-            }) { (error) -> Void in
-                print("error")
-        }
-        
-        
-    }
+    //    @IBAction func btnGenerateVideo(sender: UIButton) {
+    //
+    //        let videoGenerator = TimeLapseBuilder(photoURLs: ImageURLs)
+    //
+    //        print(ImageURLs)
+    //        KVNProgress.showProgress(0, status: "laoding...",onView: view)
+    //
+    //        // [KVNProgress showWithStatus:@"Loading" onView:view];
+    //
+    //        videoGenerator.build({ (progress) -> Void in
+    //
+    //            print(progress)
+    //            dispatch_async(dispatch_get_main_queue(), {
+    //                // KVNProgress.showProgress(progress, status:"Generating... \(Int(progress*100))%",onView: self.view)
+    //            })
+    //            }, success: { (video) -> Void in
+    //                // dispatch_async(dispatch_get_main_queue(), {
+    //
+    //                dispatch_async(dispatch_get_main_queue(), {
+    //                    KVNProgress.showSuccessWithStatus("Success",onView: self.view)
+    //                    self.playButton.hidden = false
+    //                })
+    //
+    //                // KVNProgress.dismiss()
+    //                //   })
+    //
+    //                // print(video)
+    //
+    //
+    //                self.videoURL = video
+    //                //self.playVideo(video)
+    //
+    //            }) { (error) -> Void in
+    //                print("error")
+    //        }
+    //
+    //
+    //    }
     
-
+    
     
     
     private func playVideo(v:NSURL) {
@@ -243,9 +314,9 @@ class VideoViewController: UIViewController {
         
         
     }
-
     
     
     
-
+    
+    
 }

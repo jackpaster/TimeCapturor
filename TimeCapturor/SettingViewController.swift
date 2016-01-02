@@ -31,6 +31,13 @@ class SettingViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func gifButton(sender: UIButton) {
+       
+    }
+    
+    @IBAction func videoButton(sender: UIButton) {
+       
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,7 +104,7 @@ class SettingViewController: UIViewController {
         statusView.backgroundColor = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 0.97)
         self.view.addSubview(statusView)
 
-        view.backgroundColor = UIColor(red: 52 / 255.0, green: 73 / 255.0, blue: 94 / 255.0, alpha: 1)
+        view.backgroundColor =  UIColor(red: 29 / 255.0, green: 78 / 255.0, blue: 111 / 255.0, alpha: 1)
         
         let sliderFrame = CGRectMake(0, 150, UIScreen.mainScreen().bounds.width, 250);
         let circularSlider:EFCircularSlider = EFCircularSlider(frame: sliderFrame)
@@ -105,13 +112,23 @@ class SettingViewController: UIViewController {
         circularSlider.addTarget(self, action: "valueChanged:", forControlEvents: .ValueChanged)
         
         self.view.addSubview(circularSlider)
-        circularSlider.currentValue = 7
+        //circularSlider.currentValue = 7
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let speed = defaults.valueForKey("speed") as? Float
+        {
+            circularSlider.currentValue  = speed
+        }else{
+            circularSlider.currentValue = 7
+        }
+        
         
         // Do any additional setup after loading the view.
     }
-    
+    let userdefault = NSUserDefaults.standardUserDefaults()
+
     func valueChanged(slider:EFCircularSlider) {
         valueLable.text = String(Int(ceil(slider.currentValue))) + " fps"
+        userdefault.setValue(slider.currentValue, forKey: "speed")
     }
 
     override func didReceiveMemoryWarning() {

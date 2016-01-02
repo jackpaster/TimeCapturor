@@ -12,7 +12,7 @@ import LiquidFloatingActionButton
 
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate,LiquidFloatingActionButtonDataSource,LiquidFloatingActionButtonDelegate,UIGestureRecognizerDelegate,KPTimePickerDelegate{
     
-    
+    let notification = UILocalNotification()
     var timePicker = KPTimePicker()
     
     @IBOutlet weak var setTimeButton: UIButton!
@@ -22,16 +22,47 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     func timePicker(timePicker: KPTimePicker!, selectedDate date: NSDate!, switchButton: Bool) {
         // NSLog(switchButton ? "Yes" : "No")
-        print(switchButton)
+       // print(switchButton)
         self.show(false, timePickerAnimated: true)
-        if date != nil {
-            let dateFormatter: NSDateFormatter = NSDateFormatter()
-            dateFormatter.locale = NSLocale.currentLocale()
-            dateFormatter.dateStyle = .NoStyle
-            dateFormatter.timeStyle = .ShortStyle
-            //self.statusLabel.text = dateFormatter.stringFromDate(date).lowercaseString
-            print(dateFormatter.stringFromDate(date).lowercaseString)
+        let userdefault = NSUserDefaults.standardUserDefaults()
+        userdefault.setValue(switchButton, forKey: "switchStatus")
+        
+        if switchButton == true {
+            if(date != nil){
+//                print(date)
+//                let GMTdate: NSDate = NSDate()
+//                let zone: NSTimeZone = NSTimeZone.systemTimeZone()
+//                let interval = zone.secondsFromGMTForDate(GMTdate)
+//                let localeDate: NSDate = date.dateByAddingTimeInterval(Double(interval))
+//                print(localeDate)
+                userdefault.setValue(date, forKey: "reminderTime")
+                cancelNotification()
+                //print(dateLocal)
+                scheduleLocal(date)
+            }
+        
+        }else{
+            if(date != nil){
+                userdefault.setValue(true, forKey: "switchStatus")
+                userdefault.setValue(date, forKey: "reminderTime")
+                cancelNotification()
+                //print(dateLocal)
+                scheduleLocal(date)
+                
+            }else{
+            cancelNotification()
+            }
+            
         }
+//        self.show(false, timePickerAnimated: true)
+//        if date != nil {
+//            let dateFormatter: NSDateFormatter = NSDateFormatter()
+//            dateFormatter.locale = NSLocale.currentLocale()
+//            dateFormatter.dateStyle = .NoStyle
+//            dateFormatter.timeStyle = .ShortStyle
+//            //self.statusLabel.text = dateFormatter.stringFromDate(date).lowercaseString
+//            print(dateFormatter.stringFromDate(date).lowercaseString)
+//        }
     }
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -45,6 +76,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         if sender.state == .Began {
             self.show(true, timePickerAnimated: true)
         }
+        
     }
     
     func panRecognized(sender: UIPanGestureRecognizer) {
@@ -58,9 +90,29 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     func show(show: Bool, timePickerAnimated animated: Bool) {
         if show {
+            if let settings = UIApplication.sharedApplication().currentUserNotificationSettings(){
+                if settings.types == .None {
+                    permissonNotification()
+                }
+            }
+            
             self.navigationController?.hidesBarsOnSwipe = false
             
-            self.timePicker.pickingDate = NSDate()
+            let defaults = NSUserDefaults.standardUserDefaults()
+            if let time = defaults.valueForKey("reminderTime") as? NSDate
+            {
+                 self.timePicker.pickingDate = time
+            }else{
+               self.timePicker.pickingDate = NSDate()
+            }
+             //self.timePicker.pickingDate =
+            if let onoff = defaults.valueForKey("switchStatus") as? Bool
+            {
+               self.timePicker.switcher = onoff
+            }else{
+                self.timePicker.switcher = true
+            }
+
             self.view!.addSubview(self.timePicker)
             
             self.timePicker.alpha = 0.0
@@ -136,12 +188,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             break
         case 3:
             
-            performSegueWithIdentifier("video", sender: nil)
+            performSegueWithIdentifier("gif", sender: nil)
             break
         case 4:
             
-            
-            performSegueWithIdentifier("gif", sender: nil)
+            performSegueWithIdentifier("video", sender: nil)
             break
         case 5:
             
@@ -175,8 +226,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cells.append(cellFactory("ic_reminder"))
         cells.append(cellFactory("ic_share"))
         cells.append(cellFactory("ic_info"))
-        cells.append(cellFactory("ic_mp4"))
         cells.append(cellFactory("ic_gif"))
+        cells.append(cellFactory("ic_mp4"))
         cells.append(cellFactory("ic_setting"))
        //let x = (self.view.frame.width/2 - self.cameraButton.frame.width/2-self.view.frame.width - 56)
         let floatingFrame = CGRect(x: self.view.frame.width - 56 - 25 , y: self.view.frame.height - 56 - 16, width: 56, height: 56)
@@ -248,13 +299,23 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
     }
     
+    func appMovedToForeground() {
+       // print("App moved to foreground!")
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if self.respondsToSelector("setNeedsStatusBarAppearanceUpdate") {
-            self.setNeedsStatusBarAppearanceUpdate()
-        }
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "appMovedToForeground", name: UIApplicationWillEnterForegroundNotification , object: nil)
+        
+
+//        
+//        if self.respondsToSelector("setNeedsStatusBarAppearanceUpdate") {
+//            self.setNeedsStatusBarAppearanceUpdate()
+//        }
         //self.view.backgroundColor = UIColor(red: 36, green: 40, blue: 46, alpha: 1)
        // self.setTimeButton.layer.cornerRadius = 10
        // self.setTimeButton.layer.borderColor = UIColor.whiteColor().CGColor
@@ -497,11 +558,10 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-    
+        self.collectionData.updateData()
+        self.collectionView.reloadData()
         self.navigationController?.hidesBarsOnSwipe = true
-        collectionData.updateData()
-        collectionView.reloadData()
-        
+       
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -523,8 +583,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         //cell.frame.size.width = screenWidth / 3
         //cell.frame.size.height = screenWidth / 3
         
-        
-        
+        cell.layer.shouldRasterize = true //make collection view scroll smooth
+        cell.layer.rasterizationScale = UIScreen.mainScreen().scale //as above
         //cell.layer.borderWidth = 0.5
         
         cell.titleLable?.text = dateGenerating(collectionData.cellData[indexPath.row].lableData)

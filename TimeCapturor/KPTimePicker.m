@@ -99,6 +99,12 @@
         [self updateForDate:pickingDate];
     }
 }
+
+-(void)setSwitcher:(BOOL)switcher{
+    
+    self.onoff.on = switcher;
+}
+
 -(void)setIsInConfirmButton:(BOOL)isInConfirmButton{
     if(_isInConfirmButton != isInConfirmButton){
         _isInConfirmButton = isInConfirmButton;

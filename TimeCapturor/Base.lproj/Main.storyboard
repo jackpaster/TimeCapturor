@@ -86,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvL-xR-w6B">
-                                <rect key="frame" x="350" y="458" width="56" height="56"/>
+                                <rect key="frame" x="194" y="458" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.23129663063114914" green="0.79907831089562076" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="E2M-b9-WxH"/>
@@ -103,6 +103,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="videoButton:" destination="a27-hg-QkQ" eventType="touchUpInside" id="8Lj-Sm-yu9"/>
                                     <segue destination="467-92-u1b" kind="show" id="2aE-hS-PFS"/>
                                 </connections>
                             </button>
@@ -134,7 +135,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbh-Yy-liE">
-                                <rect key="frame" x="194" y="458" width="56" height="56"/>
+                                <rect key="frame" x="350" y="458" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.23129663063114914" green="0.79907831089562076" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="Jj9-wI-3m0"/>
@@ -143,6 +144,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="GIF"/>
                                 <connections>
+                                    <action selector="gifButton:" destination="a27-hg-QkQ" eventType="touchUpInside" id="zpD-Il-nM0"/>
                                     <segue destination="p3c-WG-bjN" kind="show" id="fks-tq-UcP"/>
                                 </connections>
                             </button>
@@ -157,10 +159,10 @@
                             <constraint firstItem="WFf-ua-rUr" firstAttribute="centerX" secondItem="7lp-gv-xYy" secondAttribute="centerX" id="JJc-yq-3DF"/>
                             <constraint firstItem="XXe-xi-K8V" firstAttribute="top" secondItem="nvL-xR-w6B" secondAttribute="bottom" constant="78" id="KKF-wk-YbB"/>
                             <constraint firstItem="XXe-xi-K8V" firstAttribute="top" secondItem="tCg-iM-ZEX" secondAttribute="bottom" constant="86" id="U2Q-z6-Arv"/>
-                            <constraint firstItem="nvL-xR-w6B" firstAttribute="leading" secondItem="tCg-iM-ZEX" secondAttribute="trailing" constant="8" id="fWb-ln-eol"/>
+                            <constraint firstItem="nvL-xR-w6B" firstAttribute="leading" secondItem="tCg-iM-ZEX" secondAttribute="trailing" constant="-148" id="fWb-ln-eol"/>
                             <constraint firstItem="XHa-ku-UTr" firstAttribute="top" secondItem="HLW-a7-AJJ" secondAttribute="bottom" constant="48" id="hWs-Xw-MzY"/>
                             <constraint firstItem="WFf-ua-rUr" firstAttribute="top" secondItem="XHa-ku-UTr" secondAttribute="bottom" constant="68" id="kMY-Il-fjW"/>
-                            <constraint firstItem="tCg-iM-ZEX" firstAttribute="leading" secondItem="qbh-Yy-liE" secondAttribute="trailing" constant="8" id="lAO-Nj-zqL"/>
+                            <constraint firstItem="tCg-iM-ZEX" firstAttribute="leading" secondItem="qbh-Yy-liE" secondAttribute="trailing" constant="-148" id="lAO-Nj-zqL"/>
                             <constraint firstItem="nvL-xR-w6B" firstAttribute="centerY" secondItem="tCg-iM-ZEX" secondAttribute="centerY" id="lwK-vw-9vo"/>
                             <constraint firstItem="nvL-xR-w6B" firstAttribute="top" secondItem="HLW-a7-AJJ" secondAttribute="bottom" constant="402" id="y20-KD-nav"/>
                         </constraints>
@@ -319,7 +321,7 @@
             </objects>
             <point key="canvasLocation" x="466" y="1399"/>
         </scene>
-        <!--View Controller-->
+        <!--GIF-->
         <scene sceneID="DRD-I9-pe0">
             <objects>
                 <viewController id="p3c-WG-bjN" customClass="GIFViewController" customModule="TimeCapturor" customModuleProvider="target" sceneMemberID="viewController">
@@ -360,7 +362,7 @@
                                     <constraint firstAttribute="width" constant="100" id="8XH-m7-nnW"/>
                                     <constraint firstAttribute="height" constant="56" id="E0X-hE-ZUE"/>
                                 </constraints>
-                                <state key="normal" title="Share With"/>
+                                <state key="normal" title="Share To"/>
                                 <connections>
                                     <action selector="btnShare:" destination="p3c-WG-bjN" eventType="touchUpInside" id="a49-BB-AJI"/>
                                 </connections>
@@ -412,7 +414,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="c4f-uF-tmc"/>
+                    <navigationItem key="navigationItem" title="GIF" id="c4f-uF-tmc"/>
                     <connections>
                         <outlet property="createNewButton" destination="237-Uw-tho" id="38b-6r-KvU"/>
                         <outlet property="gifimageView" destination="4xj-u7-yTF" id="aAd-I5-Crf"/>
@@ -458,7 +460,7 @@
                                     <constraint firstAttribute="width" constant="100" id="OJA-s6-57W"/>
                                     <constraint firstAttribute="height" constant="56" id="gH8-aa-f8i"/>
                                 </constraints>
-                                <state key="normal" title="Share With"/>
+                                <state key="normal" title="Share To"/>
                                 <connections>
                                     <action selector="btnShare:" destination="467-92-u1b" eventType="touchUpInside" id="HKW-oR-DEm"/>
                                 </connections>
@@ -638,7 +640,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rqR-Jw-0YP"/>
-        <segue reference="gFQ-Wj-W8p"/>
+        <segue reference="fks-tq-UcP"/>
+        <segue reference="2aE-hS-PFS"/>
     </inferredMetricsTieBreakers>
 </document>

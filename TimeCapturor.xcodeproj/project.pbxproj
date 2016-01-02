@@ -44,6 +44,8 @@
 		FEA216EB1C28626E008F07F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA216E91C28626E008F07F0 /* LaunchScreen.storyboard */; };
 		FEA216F31C28703B008F07F0 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA216F21C28703B008F07F0 /* CollectionViewCell.swift */; };
 		FEA216F51C287052008F07F0 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA216F41C287052008F07F0 /* NewViewController.swift */; };
+		FEF0DC241C373D82002BBE67 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0DC231C373D81002BBE67 /* LocalNotification.swift */; };
+		FEF0DC261C37D3DE002BBE67 /* GenereteGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0DC251C37D3DD002BBE67 /* GenereteGIF.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,8 @@
 		FEA216EC1C28626E008F07F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEA216F21C28703B008F07F0 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FEA216F41C287052008F07F0 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		FEF0DC231C373D81002BBE67 /* LocalNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
+		FEF0DC251C37D3DD002BBE67 /* GenereteGIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenereteGIF.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 				FE1181961C36648B00FECF8A /* KPTimePicker.h */,
 				FE1181971C36648B00FECF8A /* KPTimePicker.m */,
 				FE1181931C36648A00FECF8A /* TimeCapturor-Bridging-Header.h */,
+				FEF0DC231C373D81002BBE67 /* LocalNotification.swift */,
 			);
 			name = TimePicker;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			children = (
 				FE397D5A1C30A82200C76CBE /* ProgressViewController.swift */,
 				FE0CF3461C2FC7090026CDEB /* GenereteVideo.swift */,
+				FEF0DC251C37D3DD002BBE67 /* GenereteGIF.swift */,
 				FE56C1BA1C2B2D4500F24B32 /* UIImageExtentGif.swift */,
 				FE1181491C333D5500FECF8A /* SettingViewController.swift */,
 				FE56C1BC1C2B2D6E00F24B32 /* GIFViewController.swift */,
@@ -406,6 +412,7 @@
 				FE11814E1C34897D00FECF8A /* UIButtonExt.swift in Sources */,
 				FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */,
 				FE11814C1C33EEF300FECF8A /* VideoViewController.swift in Sources */,
+				FEF0DC241C373D82002BBE67 /* LocalNotification.swift in Sources */,
 				FE56C1C81C2B5F4A00F24B32 /* AlbumData.swift in Sources */,
 				FEA216E11C28626E008F07F0 /* AppDelegate.swift in Sources */,
 				FEA216F31C28703B008F07F0 /* CollectionViewCell.swift in Sources */,
@@ -414,6 +421,7 @@
 				FE56C1BD1C2B2D6E00F24B32 /* GIFViewController.swift in Sources */,
 				FE56C1C61C2B599C00F24B32 /* FadeAnimator.swift in Sources */,
 				FEA216F51C287052008F07F0 /* NewViewController.swift in Sources */,
+				FEF0DC261C37D3DE002BBE67 /* GenereteGIF.swift in Sources */,
 				FE1181981C36648B00FECF8A /* Categories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
