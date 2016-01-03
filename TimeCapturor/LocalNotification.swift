@@ -31,7 +31,7 @@ extension ViewController {
 //                return
 //            }
             notification.fireDate = time
-            notification.alertBody = "Hey you! Yeah you! Swipe to unlock!"
+            notification.alertBody = "It's time to capture your momoent!"
             notification.alertAction = "be awesome!"
             notification.soundName = UILocalNotificationDefaultSoundName
             notification.timeZone = NSCalendar.currentCalendar().timeZone

@@ -37,6 +37,7 @@
 		FE56C1C31C2B4D0400F24B32 /* MagicMovePopTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1C21C2B4D0400F24B32 /* MagicMovePopTransion.swift */; };
 		FE56C1C61C2B599C00F24B32 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1C51C2B599C00F24B32 /* FadeAnimator.swift */; };
 		FE56C1C81C2B5F4A00F24B32 /* AlbumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE56C1C71C2B5F4A00F24B32 /* AlbumData.swift */; };
+		FE96F3921C391FF00000C70B /* DKCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FE96F3911C391FF00000C70B /* DKCircleButton.m */; };
 		FEA216E11C28626E008F07F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA216E01C28626E008F07F0 /* AppDelegate.swift */; };
 		FEA216E31C28626E008F07F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA216E21C28626E008F07F0 /* ViewController.swift */; };
 		FEA216E61C28626E008F07F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA216E41C28626E008F07F0 /* Main.storyboard */; };
@@ -84,6 +85,8 @@
 		FE56C1C21C2B4D0400F24B32 /* MagicMovePopTransion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicMovePopTransion.swift; sourceTree = "<group>"; };
 		FE56C1C51C2B599C00F24B32 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
 		FE56C1C71C2B5F4A00F24B32 /* AlbumData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumData.swift; sourceTree = "<group>"; };
+		FE96F3901C391FF00000C70B /* DKCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCircleButton.h; sourceTree = "<group>"; };
+		FE96F3911C391FF00000C70B /* DKCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCircleButton.m; sourceTree = "<group>"; };
 		FEA216DD1C28626E008F07F0 /* TimeCapturor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCapturor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA216E01C28626E008F07F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEA216E21C28626E008F07F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +235,15 @@
 			name = transition;
 			sourceTree = "<group>";
 		};
+		FE96F38F1C391FDB0000C70B /* CircleButton */ = {
+			isa = PBXGroup;
+			children = (
+				FE96F3901C391FF00000C70B /* DKCircleButton.h */,
+				FE96F3911C391FF00000C70B /* DKCircleButton.m */,
+			);
+			name = CircleButton;
+			sourceTree = "<group>";
+		};
 		FEA216D41C28626E008F07F0 = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +265,7 @@
 		FEA216DF1C28626E008F07F0 /* TimeCapturor */ = {
 			isa = PBXGroup;
 			children = (
+				FE96F38F1C391FDB0000C70B /* CircleButton */,
 				FE1181921C36645800FECF8A /* TimePicker */,
 				FE397D591C30A3F300C76CBE /* DataModle */,
 				FE0CF34A1C30A1E30026CDEB /* supportFile */,
@@ -411,6 +424,7 @@
 				FE0CF3471C2FC7090026CDEB /* GenereteVideo.swift in Sources */,
 				FE11814E1C34897D00FECF8A /* UIButtonExt.swift in Sources */,
 				FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */,
+				FE96F3921C391FF00000C70B /* DKCircleButton.m in Sources */,
 				FE11814C1C33EEF300FECF8A /* VideoViewController.swift in Sources */,
 				FEF0DC241C373D82002BBE67 /* LocalNotification.swift in Sources */,
 				FE56C1C81C2B5F4A00F24B32 /* AlbumData.swift in Sources */,

@@ -373,14 +373,16 @@ static KVNProgressConfiguration *configuration;
 					// So logically, we do not display the new HUD that is already dismissed (before even being displayed)
 					return;
 				}
-				
-				[KVNBlockSelf showProgress:progress
+                
+               [KVNBlockSelf showProgress:progress
 									status:status
 									 style:style
 							backgroundType:backgroundType
 								fullScreen:fullScreen
 									  view:superview
 								completion:completion];
+
+                
 			});
 			
 			return;
@@ -985,6 +987,13 @@ static KVNProgressConfiguration *configuration;
 	[[self sharedView] updateStatus:status];
 }
 
++ (void)updateToInfinite
+{
+    
+    [[self sharedView] updateProgress:KVNProgressIndeterminate
+                             animated:true];
+}
+
 - (void)updateStatus:(NSString *)status
 {
 	if ([self.class isVisible]) {
@@ -1038,8 +1047,11 @@ static KVNProgressConfiguration *configuration;
 	}
 	
 	// Boundry correctness
-	progress = MIN(progress, 1.0f);
-	progress = MAX(progress, 0.0f);
+
+        progress = MIN(progress, 1.0f);
+	    progress = MAX(progress, 0.0f);
+
+	
 	
 	if (animated) {
 		CABasicAnimation *progressAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];

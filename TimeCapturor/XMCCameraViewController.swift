@@ -10,12 +10,20 @@ enum Status: Int {
 
 class XMCCameraViewController: UIViewController, XMCCameraDelegate {
     
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
+    
+    
     @IBOutlet weak var cameraStill: UIImageView!
     @IBOutlet weak var cameraPreview: UIView!
-    @IBOutlet weak var cameraStatus: UILabel!
-    @IBOutlet weak var cameraCapture: UIButton!
-    @IBOutlet weak var cameraCaptureShadow: UILabel!
-    @IBOutlet weak var Cancle: UIButton!
+    //@IBOutlet weak var cameraStatus: UILabel!
+   // @IBOutlet weak var cameraCapture: UIButton!
+    //@IBOutlet weak var cameraCaptureShadow: UILabel!
+    let Cancle = UIButton(type: UIButtonType.System) as UIButton
+    let captureButton: DKCircleButton = DKCircleButton(frame: CGRectMake(0, 0, 70, 70))
+
+    
     var preview: AVCaptureVideoPreviewLayer?
     
     var camera: XMCCamera?
@@ -24,9 +32,33 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initializeCamera()
+        
+        
+        
+        screenSize = UIScreen.mainScreen().bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        
+        Cancle.frame = CGRect(x: screenSize.width/2 - 130, y: screenSize.height - 95, width: 80, height: 50)
+        Cancle.titleLabel?.font = UIFont(name: (Cancle.titleLabel?.font?.fontName)! , size: 18)
+        Cancle.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        Cancle.addTarget(self, action: "btnCancel:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.Cancle.setTitle("Return", forState: UIControlState.Normal)
+
+        captureButton.center = CGPointMake(screenSize.width/2, screenSize.height - 70)
+        captureButton.titleLabel!.font = UIFont.systemFontOfSize(22)
+        captureButton.animateTap = true
+        captureButton.displayShading = true
+       // button1.setImage(UIImage(named: "ic_camera"),animated: true)
+        captureButton.addTarget(self, action: "captureFrame:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        view.addSubview(Cancle)
+        view.addSubview(captureButton)
+        
+        
     }
     
-    @IBAction func btnCancel(sender: UIButton) {
+    func btnCancel(sender: UIButton) {
         
         if self.status == .Preview {
             self.navigationController?.navigationBarHidden = false
@@ -36,10 +68,10 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
             
             UIView.animateWithDuration(0.225, animations: { () -> Void in
                 self.cameraStill.alpha = 0.0;
-                self.cameraStatus.alpha = 0.0;
+               // self.cameraStatus.alpha = 0.0;
                 self.cameraPreview.alpha = 1.0;
-                self.Cancle.setTitle("←Back", forState: UIControlState.Normal)
-                self.cameraCapture.setTitle("Capture", forState: UIControlState.Normal)
+                self.Cancle.setTitle("Return", forState: UIControlState.Normal)
+                self.captureButton.setImage(nil, animated: false)
                 }, completion: { (done) -> Void in
                     self.cameraStill.image = nil;
                     self.status = .Preview
@@ -55,7 +87,7 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
     
     
     func initializeCamera() {
-        self.cameraStatus.text = "Starting Camera"
+    //    self.cameraStatus.text = "Starting Camera"
         self.camera = XMCCamera(sender: self)
     }
     
@@ -69,29 +101,33 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
     
     // MARK: Button Actions
     
-    @IBAction func captureFrame(sender: AnyObject) {
+    func captureFrame(sender: AnyObject) {
         if self.status == .Preview {
-            self.cameraStatus.text = "Capturing Photo"
+          //  self.cameraStatus.text = "Capturing Photo"
+            
             UIView.animateWithDuration(0.225, animations: { () -> Void in
                 self.cameraPreview.alpha = 0.0;
-                self.cameraStatus.alpha = 1.0
+           //     self.cameraStatus.alpha = 1.0
             })
             
             self.camera?.captureStillImage({ (image) -> Void in
                 if image != nil {
                     self.cameraStill.image = image;
-                    
+                     //self.captureButton.setTitle("⤓", forState: UIControlState.Normal)
+                    //self.captureButton.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+                    //self.captureButton.tintColor = UIColor.whiteColor()
+                   
                     UIView.animateWithDuration(0.225, animations: { () -> Void in
                         self.cameraStill.alpha = 1.0;
-                        self.cameraStatus.alpha = 0.0;
+             //           self.cameraStatus.alpha = 0.0;
                     })
                     self.status = .Still
                 } else {
-                    self.cameraStatus.text = "Uh oh! Something went wrong. Try it again."
+           //         self.cameraStatus.text = "Uh oh! Something went wrong. Try it again."
                     self.status = .Error
                 }
-                self.Cancle.setTitle("X", forState: UIControlState.Normal)
-                self.cameraCapture.setTitle("Save", forState: UIControlState.Normal)
+                self.Cancle.setTitle("Cancle", forState: UIControlState.Normal)
+                 self.captureButton.setImage(UIImage(named: "ic_save"), animated: false)
             })
         } else if self.status == .Still || self.status == .Error {
             if !saveImageToSandBox() {
@@ -99,10 +135,10 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
             }else{
                 UIView.animateWithDuration(0.225, animations: { () -> Void in
                     self.cameraStill.alpha = 0.0;
-                    self.cameraStatus.alpha = 0.0;
+               //     self.cameraStatus.alpha = 0.0;
                     self.cameraPreview.alpha = 1.0;
-                    self.Cancle.setTitle("←Back", forState: UIControlState.Normal)
-                    self.cameraCapture.setTitle("Capture", forState: UIControlState.Normal)
+                    self.Cancle.setTitle("Return", forState: UIControlState.Normal)
+                     self.captureButton.setImage(nil, animated: false)
                     }, completion: { (done) -> Void in
                         self.cameraStill.image = nil;
                         self.status = .Preview
@@ -155,19 +191,17 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
         }
         
         func cameraSessionDidBegin() {
-            self.cameraStatus.text = ""
+         //   self.cameraStatus.text = ""
             UIView.animateWithDuration(0.225, animations: { () -> Void in
-                self.cameraStatus.alpha = 0.0
+           //     self.cameraStatus.alpha = 0.0
                 self.cameraPreview.alpha = 1.0
-                self.cameraCapture.alpha = 1.0
-                self.cameraCaptureShadow.alpha = 0.4;
             })
         }
         
         func cameraSessionDidStop() {
-            self.cameraStatus.text = "Camera Stopped"
+     //       self.cameraStatus.text = "Camera Stopped"
             UIView.animateWithDuration(0.225, animations: { () -> Void in
-                self.cameraStatus.alpha = 1.0
+        //        self.cameraStatus.alpha = 1.0
                 self.cameraPreview.alpha = 0.0
             })
         }

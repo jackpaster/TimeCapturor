@@ -35,9 +35,9 @@ class TimeLapseBuilder: NSObject {
         do {
             
             try NSFileManager.defaultManager().removeItemAtURL(videoOutputURL)
-            print("deleted")
+           // print("deleted")
         } catch {
-            print("not deleted")
+            //print("not deleted")
         }
         
         do {
@@ -182,7 +182,7 @@ class TimeLapseBuilder: NSObject {
                     pixelBufferPointer.dealloc(1)
             }
         }
-        print("append  \(appendSucceeded)")
+        //print("append  \(appendSucceeded)")
         return appendSucceeded
     }
     

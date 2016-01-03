@@ -36,7 +36,7 @@
         _stopColor = [_statusColor copy];
 		
 		_minimumDisplayTime = 0.3f;
-		_minimumSuccessDisplayTime = 2.0f;
+		_minimumSuccessDisplayTime = 1.4f;
 		_minimumErrorDisplayTime = 1.3f;
 		
 		_tapBlock = nil;

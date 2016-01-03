@@ -28,14 +28,27 @@ class GifBiulder: NSObject {
 
             let fileProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFLoopCount as String: loopCount]]
             let frameProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFDelayTime as String: frameDelay]]
-            print(frameDelay)
+            //print(frameDelay)
             let size = CGSizeMake(192*2, 256*2)
+            //let size = CGSizeMake(960, 1280)
+        
+           let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+           let url = NSURL(fileURLWithPath: documentsDirectory.stringByAppendingPathComponent("AssembledGIF.gif"))
+        
+        do {
             
-            let documentsDirectory = NSTemporaryDirectory()
-            let url = NSURL(fileURLWithPath: documentsDirectory).URLByAppendingPathComponent("animated.gif")
+            try NSFileManager.defaultManager().removeItemAtURL(url)
+            // print("deleted")
+        } catch {
+            //print("not deleted")
+        }
+
+            //let documentsDirectory = NSTemporaryDirectory()
+            //let url = NSURL(fileURLWithPath: documentsDirectory).URLByAppendingPathComponent("AssembledGIF.gif")
             if url != NSURL() {
                 let destination = CGImageDestinationCreateWithURL(url, kUTTypeGIF, images.count, nil)
                 CGImageDestinationSetProperties(destination!, fileProperties)
+               
                 //print("1:\(gifdata)")
                 for i in 0..<images.count {
                     autoreleasepool{
@@ -45,6 +58,8 @@ class GifBiulder: NSObject {
                     progress( CGFloat(i)/CGFloat(totalNumber) )
                     
                 }
+                progress(101) // means its in finalize status
+                
                 if CGImageDestinationFinalize(destination!) {
                    // print("finaliza success")
                     // print("\(url)")
@@ -69,6 +84,9 @@ class GifBiulder: NSObject {
                 
                 let widthRatio  = targetSize.width  / image.size.width
                 let heightRatio = targetSize.height / image.size.height
+               // print(size)
+                //print(widthRatio)
+               // print(heightRatio)
                 
                 // Figure out what our orientation is, and use that to form the rectangle
                 var newSize: CGSize
@@ -77,7 +95,7 @@ class GifBiulder: NSObject {
                 } else {
                     newSize = CGSizeMake(size.width * widthRatio,  size.height * widthRatio)
                 }
-                
+                //print(newSize)
                 // This is the rect that we've calculated out and this is what is actually used below
                 let rect = CGRectMake(0, 0, newSize.width, newSize.height)
                 

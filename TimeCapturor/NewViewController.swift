@@ -26,10 +26,10 @@ class NewViewController: UIViewController,UINavigationBarDelegate{
 
     @IBAction func deleteAction(sender: UIButton) {
         
-        SweetAlert().showAlert("Are you sure?", subTitle: "You file will permanently delete!", style: AlertStyle.Warning, buttonTitle:"No, cancel it!", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "Yes, delete it!", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
+        SweetAlert().showAlert("Are you sure?", subTitle: "This image will permanently delete!", style: AlertStyle.Warning, buttonTitle:"No, cancel it!", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "Yes, delete it!", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
             if isOtherButton == true {
                 
-                SweetAlert().showAlert("Cancelled!", subTitle: "Your imaginary file is safe", style: AlertStyle.Error)
+                SweetAlert().showAlert("Cancelled!", subTitle: "Your file is safe", style: AlertStyle.Error)
             }
             else {
     
@@ -66,7 +66,7 @@ class NewViewController: UIViewController,UINavigationBarDelegate{
 
             
         }else{
-             SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
+             SweetAlert().showAlert("Deleted!", subTitle: "The file has been deleted!", style: AlertStyle.Success)
             if(index >= photoCollection.count){
                 index = photoCollection.count - 1
             }

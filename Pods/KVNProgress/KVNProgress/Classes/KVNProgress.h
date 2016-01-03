@@ -182,6 +182,8 @@ typedef void (^KVNCompletionBlock)(void);
  */
 + (void)updateStatus:(NSString*)status;
 
++ (void)updateToInfinite;
+
 /**
  Update the progress loader while HUD is displayed
  Nothing happens when progress view is not displayed.

@@ -16,7 +16,15 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var createNewButton: UIButton!
     @IBOutlet weak var sharButton: UIButton!
     
+    @IBOutlet weak var dateLable: UILabel!
     @IBAction func btnCreatNew(sender: UIButton) {
+        
+        if (ImageURLs.count<2){
+            
+            SweetAlert().showAlert("At least two photos",subTitle: "Take more photos to create an amazing video :)",style: AlertStyle.Warning)
+            
+            return
+        }
         
         
         let videoGenerator = TimeLapseBuilder(photoURLs: ImageURLs,framePerSecond: 7)
@@ -35,7 +43,7 @@ class VideoViewController: UIViewController {
             
             videoGenerator.build({ (progress) -> Void in
                 
-                print(progress)
+                //print(progress)
                 dispatch_async(dispatch_get_main_queue(), {
                     KVNProgress.updateProgress(progress, animated: true)
                     KVNProgress.updateStatus("Generating... \(Int(progress*100))%")
@@ -49,11 +57,16 @@ class VideoViewController: UIViewController {
                         self.playButton.hidden = false
                         
                     })
+                    //print("video")
+                    //print(video)
                     
-                    print(video)
-                    
-                    
+                    defaults.setURL(video, forKey: "AssembedVideoURL")
+                    defaults.setValue(self.getCurrentDate(), forKey: "VideoCreatedTime")
+                    //print(NSURL.isFileReferenceURL(video))
+                    self.dateLable.text = self.getCurrentDate()
+                    self.dateLable.hidden = false
                     self.videoURL = video
+                    
                     //self.playVideo(video)
                     
                 }) { (error) -> Void in
@@ -87,11 +100,53 @@ class VideoViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
+
+    
+    func firstFrameOfVideo(path:NSURL)->UIImage{
+        let asset: AVURLAsset = AVURLAsset(URL: path)
+        let imageGenerator: AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+        let  timeScale =  asset.duration.timescale
+        let frame = try! imageGenerator.copyCGImageAtTime(CMTimeMake(1, timeScale), actualTime: nil)
+        //var image: UIImage = UIImage.imageWithCGImage(frame, actualTime: nil)
+       // videoFrame.image = image
+        let frameImg : UIImage = UIImage(CGImage: frame)
+        return frameImg
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let videoURL = defaults.URLForKey("AssembedVideoURL")
+        {
+            let fileExist = NSFileManager.defaultManager().fileExistsAtPath(videoURL.path!)
+            if fileExist == true{
+                self.videoURL = videoURL
+                previewVideoView.image = firstFrameOfVideo(videoURL)
+                playButton.hidden = false
+                
+                dateLable.hidden = false
+                dateLable.text = defaults.valueForKey("VideoCreatedTime") as? String
+                dateLable.font = UIFont(name: dateLable.font.fontName, size: 11) //rgb(127, 140, 141)
+                dateLable.textColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
+                dateLable.textAlignment = .Right
+                dateLable.backgroundColor = UIColor(red: 44 / 255.0, green: 62 / 255.0, blue: 80 / 255.0, alpha: 0.1)//rgb(44, 62, 80)
+                view.addSubview(dateLable)
+
+              }
+        }else{
+           // previewVideoView.image = video hasn't generated'
+            playButton.hidden = true
+            dateLable.hidden = true
+        }
+        
+        
+        
         //KVNProgress.setConfiguration(self.customConfiguration)
-    
+        
+         //NSURL.isFileReferenceURL()
+        
+        
         //UIApplication.sharedApplication().setStatusBarStyle(.LightContent , animated: false)
        // UIViewController.preferredStatusBarStyle(.LightContent)
         createNewButton.layer.shadowColor = UIColor.blackColor().CGColor
@@ -169,20 +224,13 @@ class VideoViewController: UIViewController {
         view.backgroundColor =  UIColor(red: 29 / 255.0, green: 78 / 255.0, blue: 111 / 255.0, alpha: 1)
         
         
-        
+        playButton.tintColor = UIColor(red: 41 / 255.0, green: 128 / 255.0, blue: 185 / 255.0, alpha: 1)//rgb(41, 128, 185)
         playButton.setImage(UIImage(named: "ic_play"), forState: .Normal)
         playButton.centerLabelVerticallyWithPadding(1)
         playButton.backgroundColor = UIColor(red: 189/255.0, green: 195/255.0, blue: 199/255.0, alpha: 0.6) //rrgb(52, 73, 94)
+       
         self.customConfiguration = self.customKVNProgressUIConfiguration()
-        if(Album().getAllImageAndDate().AllData.count != 0 ){
-            previewVideoView.image = Album().getAllImageAndDate().AllData[0].ImageData
-        }else{
-            //previewVideoView.image
-        }
         
-        // Do any additional setup after loading the view.
-        //btnGenerateVideo(UIButton())
-        playButton.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -247,7 +295,14 @@ class VideoViewController: UIViewController {
     
     @IBAction func btnPlayVideo(sender: UIButton) {
         
-        playVideo(videoURL)
+        let fileExist = NSFileManager.defaultManager().fileExistsAtPath(videoURL.path!)
+        if fileExist == true{
+            playVideo(videoURL)
+        }else{
+            SweetAlert().showAlert("Video file doesn't exist!", subTitle: "You should create one first", style: AlertStyle.Error)
+        }
+        
+        
         
         
     }
@@ -296,7 +351,24 @@ class VideoViewController: UIViewController {
     //
     //
     //    }
-    
+    func getCurrentDate()->String{
+        //            let GMTdate: NSDate = NSDate()
+        //            let zone: NSTimeZone = NSTimeZone.systemTimeZone()
+        //            let interval = zone.secondsFromGMTForDate(GMTdate)
+        //            let localeDate: NSDate = GMTdate.dateByAddingTimeInterval(Double(interval))
+        //            return localeDate
+        let todaysDate:NSDate = NSDate()
+        let dateFormatter:NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm MM/dd/yyyy"
+        let DateInFormat:String = dateFormatter.stringFromDate(todaysDate)
+        return DateInFormat
+        //            let date = NSDate()
+        //            let formatter = NSDateFormatter()
+        //            formatter.timeStyle = .ShortStyle
+        //            formatter.stringFromDate(date)
+        //            return date
+    }
+
     
     
     
