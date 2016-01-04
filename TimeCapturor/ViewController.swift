@@ -180,7 +180,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             break
         case 1:
             
-            performSegueWithIdentifier("store", sender: nil)
+            performSegueWithIdentifier("self", sender: nil)
             break
         case 2:
             
@@ -224,7 +224,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             return LiquidFloatingCell(icon: UIImage(named: iconName)!)
         }
         cells.append(cellFactory("ic_reminder"))
-        cells.append(cellFactory("ic_share"))
+        cells.append(cellFactory("ic_user"))
         cells.append(cellFactory("ic_info"))
         cells.append(cellFactory("ic_gif"))
         cells.append(cellFactory("ic_mp4"))

@@ -66,7 +66,7 @@
                         <segue destination="p3c-WG-bjN" kind="show" identifier="gif" id="gFQ-Wj-W8p"/>
                         <segue destination="467-92-u1b" kind="show" identifier="video" id="rqR-Jw-0YP"/>
                         <segue destination="cyy-zD-ioL" kind="show" identifier="info" id="PzU-KF-wQ8"/>
-                        <segue destination="L6R-zP-abe" kind="show" identifier="store" id="nNC-3X-sfh"/>
+                        <segue destination="L6R-zP-abe" kind="show" identifier="self" id="nNC-3X-sfh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

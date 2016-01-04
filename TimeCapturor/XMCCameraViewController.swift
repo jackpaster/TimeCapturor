@@ -13,7 +13,9 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
+
     
+   
     
     @IBOutlet weak var cameraStill: UIImageView!
     @IBOutlet weak var cameraPreview: UIView!
@@ -22,8 +24,7 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
     //@IBOutlet weak var cameraCaptureShadow: UILabel!
     let Cancle = UIButton(type: UIButtonType.System) as UIButton
     let captureButton: DKCircleButton = DKCircleButton(frame: CGRectMake(0, 0, 70, 70))
-
-    
+    var baseLines : UIImageView!
     var preview: AVCaptureVideoPreviewLayer?
     
     var camera: XMCCamera?
@@ -33,11 +34,47 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
         super.viewDidLoad()
         self.initializeCamera()
         
-        
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
+
         
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
+        
+    baseLines = UIImageView(frame: CGRectMake(0, 0, screenWidth, screenHeight))
+
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: screenWidth, height: screenHeight), false, 0)
+        let context = UIGraphicsGetCurrentContext()
+        
+        let points = [ CGPoint(x: screenWidth/2 - 90,y: screenHeight/5.0 + 40),
+            CGPoint(x: screenWidth/2 - 45, y: screenHeight/5.0*2),
+            CGPoint(x: screenWidth/2 + 45, y: screenHeight/5.0*2),
+            CGPoint(x: screenWidth/2 + 90, y: screenHeight/5.0 + 40),
+            CGPoint(x: screenWidth/2, y: 50),
+            CGPoint(x: screenWidth/2, y: screenHeight-150)]
+        
+        CGContextMoveToPoint( context, points[0].x, points[0].y)
+        CGContextAddLineToPoint(context,points[3].x,points[3].y)
+        
+        CGContextMoveToPoint( context, points[1].x, points[1].y)
+        CGContextAddLineToPoint(context,points[2].x,points[2].y)
+        
+        CGContextMoveToPoint( context, points[4].x, points[4].y)
+        CGContextAddLineToPoint(context,points[5].x,points[5].y)
+        
+        
+        CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
+        CGContextStrokePath(context)
+        
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //view.addSubview(UIImage)
+        baseLines.image = img
+        
+        view.addSubview(baseLines)
+
+        
         
         Cancle.frame = CGRect(x: screenSize.width/2 - 130, y: screenSize.height - 95, width: 80, height: 50)
         Cancle.titleLabel?.font = UIFont(name: (Cancle.titleLabel?.font?.fontName)! , size: 18)
@@ -69,6 +106,7 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
             UIView.animateWithDuration(0.225, animations: { () -> Void in
                 self.cameraStill.alpha = 0.0;
                // self.cameraStatus.alpha = 0.0;
+                self.baseLines.alpha = 1
                 self.cameraPreview.alpha = 1.0;
                 self.Cancle.setTitle("Return", forState: UIControlState.Normal)
                 self.captureButton.setImage(nil, animated: false)
@@ -83,6 +121,11 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBarHidden = true
         self.establishVideoPreviewArea()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.sharedApplication().statusBarHidden = false
     }
     
     
@@ -107,6 +150,7 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
             
             UIView.animateWithDuration(0.225, animations: { () -> Void in
                 self.cameraPreview.alpha = 0.0;
+                self.baseLines.alpha = 0.0
            //     self.cameraStatus.alpha = 1.0
             })
             
@@ -133,16 +177,20 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
             if !saveImageToSandBox() {
                 print("save image false")
             }else{
-                UIView.animateWithDuration(0.225, animations: { () -> Void in
-                    self.cameraStill.alpha = 0.0;
-               //     self.cameraStatus.alpha = 0.0;
-                    self.cameraPreview.alpha = 1.0;
-                    self.Cancle.setTitle("Return", forState: UIControlState.Normal)
-                     self.captureButton.setImage(nil, animated: false)
-                    }, completion: { (done) -> Void in
-                        self.cameraStill.image = nil;
-                        self.status = .Preview
-                })
+                
+                self.navigationController?.navigationBarHidden = false
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+//                UIView.animateWithDuration(0.225, animations: { () -> Void in
+//                    self.cameraStill.alpha = 0.0;
+//               //     self.cameraStatus.alpha = 0.0;
+//                    self.cameraPreview.alpha = 1.0;
+//                    self.Cancle.setTitle("Return", forState: UIControlState.Normal)
+//                     self.captureButton.setImage(nil, animated: false)
+//                    }, completion: { (done) -> Void in
+//                        self.cameraStill.image = nil;
+//                        self.status = .Preview
+//                })
 
             }
         }
