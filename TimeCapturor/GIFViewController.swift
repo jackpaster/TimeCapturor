@@ -66,7 +66,7 @@ import AVFoundation
             //gifButton.centerLabelVerticallyWithPadding(0)
             createNewButton.setTitleColor(UIColor(red: 195 / 255.0, green: 57 / 255.0, blue: 43 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
             createNewButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
-            createNewButton.layer.cornerRadius = 28
+            createNewButton.layer.cornerRadius = 25
             
             
             sharButton.layer.shadowColor = UIColor.blackColor().CGColor
@@ -79,7 +79,7 @@ import AVFoundation
             //gifButton.centerLabelVerticallyWithPadding(0)
             sharButton.setTitleColor(UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
             sharButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
-            sharButton.layer.cornerRadius = 28
+            sharButton.layer.cornerRadius = 25
             
             
             let statusHeight = UIApplication.sharedApplication().statusBarFrame.size.height
@@ -200,14 +200,17 @@ import AVFoundation
             }
             
            
-            let GIFGenerator = GifBiulder(images: Image, frameDelay: 7.0)
+            var GIFGenerator :GifBiulder
             
             let defaults = NSUserDefaults.standardUserDefaults()
             if let speed = defaults.valueForKey("speed") as? Float
             {
-             GIFGenerator.frameDelay = (1 / Double(speed))
+             //GIFGenerator.frameDelay = (1 / Double(speed))
+                GIFGenerator = GifBiulder(images: Image, frameDelay: (1 / Double(speed)))
                 //print(speed)
                // print(GIFGenerator.frameDelay)
+            }else{
+                GIFGenerator = GifBiulder(images: Image, frameDelay: 7.0)
             }
                         //print(ImageURLs)
             // KVNProgress.showProgress(0, status: "laoding...",onView: view)

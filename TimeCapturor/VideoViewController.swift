@@ -67,6 +67,7 @@ class VideoViewController: UIViewController {
                     self.dateLable.hidden = false
                     self.videoURL = video
                     
+                    
                     //self.playVideo(video)
                     
                 }) { (error) -> Void in
@@ -159,7 +160,7 @@ class VideoViewController: UIViewController {
         //gifButton.centerLabelVerticallyWithPadding(0)
         createNewButton.setTitleColor(UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
         createNewButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
-        createNewButton.layer.cornerRadius = 28
+        createNewButton.layer.cornerRadius = 25
         
         
         sharButton.layer.shadowColor = UIColor.blackColor().CGColor
@@ -172,7 +173,7 @@ class VideoViewController: UIViewController {
         //gifButton.centerLabelVerticallyWithPadding(0)
         sharButton.setTitleColor(UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
         sharButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
-        sharButton.layer.cornerRadius = 28
+        sharButton.layer.cornerRadius = 25
         
         
         

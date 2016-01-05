@@ -311,6 +311,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "appMovedToForeground", name: UIApplicationWillEnterForegroundNotification , object: nil)
         
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
+        
 
 //        
 //        if self.respondsToSelector("setNeedsStatusBarAppearanceUpdate") {
@@ -640,7 +642,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             let vc = segue.destinationViewController as! NewViewController
             vc.transitioningDelegate = self
             // vc.image = self.cellData[indexPath.row].ImageData
-            
             vc.index = indexPath.item
             //vc.photoCollection = collectionData.getAllImageAndDate().ImageData
             // vc.urlCollection = collectionData.getAllImageAndDate().groupNSURL
