@@ -60,6 +60,7 @@
                     <connections>
                         <outlet property="bottomView" destination="Rus-Iw-47T" id="9g8-jD-Yqs"/>
                         <outlet property="cameraButton" destination="hco-iC-JGB" id="KqB-hI-tvg"/>
+                        <outlet property="camraBarButton" destination="IEq-zw-Ku2" id="0Ks-Y9-dIb"/>
                         <outlet property="toolBar" destination="D1T-wh-smK" id="ciQ-Zf-fwi"/>
                         <segue destination="Es8-jg-TjO" kind="presentation" identifier="showImage" id="9xn-1n-vuH"/>
                         <segue destination="Hn3-Oy-Gjh" kind="presentation" identifier="setting" id="KM7-nJ-2rc"/>
@@ -305,10 +306,10 @@
             </objects>
             <point key="canvasLocation" x="200" y="145"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="rSr-M5-Wlr">
             <objects>
-                <viewController id="cyy-zD-ioL" sceneMemberID="viewController">
+                <viewController id="cyy-zD-ioL" customClass="InfoViewController" customModule="TimeCapturor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tnK-r2-gfl"/>
                         <viewControllerLayoutGuide type="bottom" id="8u9-T6-DCU"/>
@@ -323,10 +324,10 @@
             </objects>
             <point key="canvasLocation" x="66" y="1231"/>
         </scene>
-        <!--View Controller-->
+        <!--Self View Controller-->
         <scene sceneID="RP1-di-T8s">
             <objects>
-                <viewController id="L6R-zP-abe" sceneMemberID="viewController">
+                <viewController id="L6R-zP-abe" customClass="SelfViewController" customModule="TimeCapturor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IJc-Jt-pdD"/>
                         <viewControllerLayoutGuide type="bottom" id="9E9-QO-InL"/>
@@ -389,7 +390,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4xj-u7-yTF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4xj-u7-yTF">
                                 <rect key="frame" x="0.0" y="82" width="600" height="422"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -401,6 +402,16 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, No available video was found Please create new" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4k-tc-ya7">
+                                <rect key="frame" x="161" y="236" width="279" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="279" id="gIb-df-euE"/>
+                                    <constraint firstAttribute="height" constant="52" id="nER-tx-q0b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -410,11 +421,14 @@
                             <constraint firstItem="udQ-kn-0L9" firstAttribute="top" secondItem="4xj-u7-yTF" secondAttribute="bottom" constant="16" id="5qM-VW-K4K"/>
                             <constraint firstItem="4xj-u7-yTF" firstAttribute="leading" secondItem="Oqc-jq-Eht" secondAttribute="leadingMargin" constant="-10" id="ETh-Fh-FZY"/>
                             <constraint firstItem="4xj-u7-yTF" firstAttribute="leading" secondItem="Oqc-jq-Eht" secondAttribute="leadingMargin" constant="-10" id="FN3-JT-16b"/>
+                            <constraint firstItem="Z4k-tc-ya7" firstAttribute="top" secondItem="Tzb-dS-0AH" secondAttribute="bottom" constant="146" id="FvR-j7-Lsb"/>
                             <constraint firstItem="4xj-u7-yTF" firstAttribute="leading" secondItem="Oqc-jq-Eht" secondAttribute="leading" id="Hfc-SC-XJU"/>
                             <constraint firstItem="4xj-u7-yTF" firstAttribute="leading" secondItem="Oqc-jq-Eht" secondAttribute="leadingMargin" id="Huo-Mw-NCe"/>
+                            <constraint firstItem="4xj-u7-yTF" firstAttribute="top" secondItem="Z4k-tc-ya7" secondAttribute="bottom" constant="-206" id="IoY-GH-lFu"/>
                             <constraint firstItem="4xj-u7-yTF" firstAttribute="top" secondItem="Tzb-dS-0AH" secondAttribute="bottom" constant="18" id="JQm-aR-BOP"/>
                             <constraint firstItem="4xj-u7-yTF" firstAttribute="leading" secondItem="Oqc-jq-Eht" secondAttribute="leading" id="JoB-UK-MDp"/>
                             <constraint firstItem="Muf-m6-Geg" firstAttribute="baseline" secondItem="udQ-kn-0L9" secondAttribute="baseline" constant="-22.5" id="K3G-HU-TIm"/>
+                            <constraint firstItem="Z4k-tc-ya7" firstAttribute="centerX" secondItem="Oqc-jq-Eht" secondAttribute="centerX" id="NHY-kk-Bjc"/>
                             <constraint firstItem="udQ-kn-0L9" firstAttribute="leading" secondItem="237-Uw-tho" secondAttribute="trailing" constant="8" id="OdL-ka-Iwn"/>
                             <constraint firstItem="tuQ-hI-Kdd" firstAttribute="top" secondItem="Muf-m6-Geg" secondAttribute="bottom" constant="23" id="Q8x-Us-leL"/>
                             <constraint firstItem="eDH-yr-tYV" firstAttribute="trailing" secondItem="4xj-u7-yTF" secondAttribute="trailing" id="QKZ-Rf-nO3"/>
@@ -429,6 +443,7 @@
                             <constraint firstItem="4xj-u7-yTF" firstAttribute="leading" secondItem="Oqc-jq-Eht" secondAttribute="leading" id="fOI-GO-Wj8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4xj-u7-yTF" secondAttribute="trailing" id="fxU-dn-UxP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4xj-u7-yTF" secondAttribute="trailing" id="ggi-n9-zas"/>
+                            <constraint firstItem="Z4k-tc-ya7" firstAttribute="centerX" secondItem="eDH-yr-tYV" secondAttribute="centerX" id="ifb-Za-ViO"/>
                             <constraint firstItem="eDH-yr-tYV" firstAttribute="leading" secondItem="4xj-u7-yTF" secondAttribute="leading" id="jqV-h2-dtT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4xj-u7-yTF" secondAttribute="trailing" id="lJa-fg-H8b"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4xj-u7-yTF" secondAttribute="leading" id="p4F-Ep-J9s"/>
@@ -451,6 +466,8 @@
                                 <exclude reference="ggi-n9-zas"/>
                                 <exclude reference="lJa-fg-H8b"/>
                                 <exclude reference="p4F-Ep-J9s"/>
+                                <exclude reference="FvR-j7-Lsb"/>
+                                <exclude reference="ifb-Za-ViO"/>
                                 <exclude reference="Xvs-eP-MAF"/>
                                 <exclude reference="5qM-VW-K4K"/>
                                 <exclude reference="Q8x-Us-leL"/>
@@ -468,6 +485,7 @@
                         <outlet property="createNewButton" destination="237-Uw-tho" id="38b-6r-KvU"/>
                         <outlet property="dateLable" destination="eDH-yr-tYV" id="VPQ-7f-pnA"/>
                         <outlet property="gifimageView" destination="4xj-u7-yTF" id="aAd-I5-Crf"/>
+                        <outlet property="noFileMessage" destination="Z4k-tc-ya7" id="cfT-G7-p6N"/>
                         <outlet property="sharButton" destination="Muf-m6-Geg" id="xrm-xg-9Pj"/>
                     </connections>
                 </viewController>
@@ -537,6 +555,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, No available video was found Please create new" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSC-7U-d7V">
+                                <rect key="frame" x="161" y="237" width="278" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="R03-gf-zjV"/>
+                                    <constraint firstAttribute="width" constant="278" id="kSI-V2-zkL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -544,11 +572,16 @@
                             <constraint firstItem="fW8-rs-6kV" firstAttribute="top" secondItem="b6a-Nz-3ls" secondAttribute="bottom" constant="19" id="5x9-Gw-P3C"/>
                             <constraint firstItem="T98-aO-Odv" firstAttribute="leading" secondItem="RxN-m0-E4p" secondAttribute="trailing" constant="8" id="8Zq-bU-aOc"/>
                             <constraint firstItem="J8P-ju-SKM" firstAttribute="trailing" secondItem="c0c-qu-dym" secondAttribute="trailing" id="ATj-q7-qZ9"/>
+                            <constraint firstItem="c0c-qu-dym" firstAttribute="top" secondItem="dSC-7U-d7V" secondAttribute="bottom" constant="-206" id="B7Q-dd-Bq6"/>
                             <constraint firstItem="RxN-m0-E4p" firstAttribute="baseline" secondItem="T98-aO-Odv" secondAttribute="baseline" constant="-22" id="FiI-Gn-zEd"/>
+                            <constraint firstItem="dSC-7U-d7V" firstAttribute="centerX" secondItem="Xzj-td-QmK" secondAttribute="centerX" id="Gz2-j6-Fg2"/>
                             <constraint firstItem="c0c-qu-dym" firstAttribute="trailing" secondItem="fW8-rs-6kV" secondAttribute="trailing" id="KNl-qz-xsg"/>
                             <constraint firstItem="c0c-qu-dym" firstAttribute="top" secondItem="fW8-rs-6kV" secondAttribute="top" id="N91-NB-Zuf"/>
                             <constraint firstItem="fW8-rs-6kV" firstAttribute="leading" secondItem="Xzj-td-QmK" secondAttribute="leading" id="OoR-tQ-05V"/>
+                            <constraint firstItem="dSC-7U-d7V" firstAttribute="top" secondItem="b6a-Nz-3ls" secondAttribute="bottom" constant="147" id="QdP-Rb-oWM"/>
                             <constraint firstItem="J8P-ju-SKM" firstAttribute="bottom" secondItem="fW8-rs-6kV" secondAttribute="bottom" id="U4B-Ah-5L2"/>
+                            <constraint firstItem="c0c-qu-dym" firstAttribute="top" secondItem="dSC-7U-d7V" secondAttribute="bottom" constant="-206" id="UVB-zD-UBV"/>
+                            <constraint firstItem="dSC-7U-d7V" firstAttribute="centerX" secondItem="J8P-ju-SKM" secondAttribute="centerX" id="ZhQ-vM-wQP"/>
                             <constraint firstItem="RxN-m0-E4p" firstAttribute="baseline" secondItem="T98-aO-Odv" secondAttribute="baseline" constant="-22.5" id="bhu-Jg-i60"/>
                             <constraint firstItem="c0c-qu-dym" firstAttribute="bottom" secondItem="fW8-rs-6kV" secondAttribute="bottom" id="d5f-wU-Zag"/>
                             <constraint firstItem="RxN-m0-E4p" firstAttribute="baseline" secondItem="fwO-cB-9vY" secondAttribute="baseline" id="e4e-fI-xwM"/>
@@ -562,6 +595,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="B7Q-dd-Bq6"/>
+                                <exclude reference="QdP-Rb-oWM"/>
+                                <exclude reference="ZhQ-vM-wQP"/>
                                 <exclude reference="FiI-Gn-zEd"/>
                                 <exclude reference="bhu-Jg-i60"/>
                             </mask>
@@ -570,6 +606,7 @@
                     <connections>
                         <outlet property="createNewButton" destination="RxN-m0-E4p" id="iLw-NB-4WL"/>
                         <outlet property="dateLable" destination="J8P-ju-SKM" id="rVT-lB-yy4"/>
+                        <outlet property="noFileMessage" destination="dSC-7U-d7V" id="Qjq-m0-LDm"/>
                         <outlet property="playButton" destination="c0c-qu-dym" id="KIV-Ls-1eL"/>
                         <outlet property="previewVideoView" destination="fW8-rs-6kV" id="Y10-az-pwe"/>
                         <outlet property="sharButton" destination="fwO-cB-9vY" id="x0W-ln-oDk"/>

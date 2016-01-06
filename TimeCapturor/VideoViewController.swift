@@ -13,9 +13,9 @@ import MediaPlayer
 
 class VideoViewController: UIViewController {
     
+    @IBOutlet weak var noFileMessage: UILabel!
     @IBOutlet weak var createNewButton: UIButton!
     @IBOutlet weak var sharButton: UIButton!
-    
     @IBOutlet weak var dateLable: UILabel!
     @IBAction func btnCreatNew(sender: UIButton) {
         
@@ -54,28 +54,33 @@ class VideoViewController: UIViewController {
                     dispatch_async(dispatch_get_main_queue(), {
                         
                         KVNProgress.showSuccessWithStatus("Success")
-                        self.playButton.hidden = false
+                        
+                        self.videoURL = video
+                        self.previewVideoView.image = self.firstFrameOfVideo(self.videoURL)
                         
                     })
+                   
                     //print("video")
                     //print(video)
                     
                     defaults.setURL(video, forKey: "AssembedVideoURL")
                     defaults.setValue(self.getCurrentDate(), forKey: "VideoCreatedTime")
-                    //print(NSURL.isFileReferenceURL(video))
-                    self.dateLable.text = self.getCurrentDate()
-                    self.dateLable.hidden = false
-                    self.videoURL = video
                     
-                    
-                    //self.playVideo(video)
+                                        //self.playVideo(video)
                     
                 }) { (error) -> Void in
                     print("error")
             }
+           
+            
             
         }
-        
+         //print(NSURL.isFileReferenceURL(video))
+        self.dateLable.text = self.getCurrentDate()
+        self.dateLable.hidden = false
+        self.noFileMessage.hidden = true
+        self.playButton.hidden = false
+
         
     }
     
@@ -83,13 +88,13 @@ class VideoViewController: UIViewController {
         
         let textToShare = "Swift is awesome!  Check out this website about it!"
         
-        if let myWebsite = NSURL(string: "http://www.codingexplorer.com/")
-        {
+        let myWebsite = videoURL
+        
             let objectsToShare = [textToShare, myWebsite]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             
             self.presentViewController(activityVC, animated: true, completion: nil)
-        }
+        
         
         
     }
@@ -125,24 +130,25 @@ class VideoViewController: UIViewController {
                 self.videoURL = videoURL
                 previewVideoView.image = firstFrameOfVideo(videoURL)
                 playButton.hidden = false
-                
+                noFileMessage.hidden = true
                 dateLable.hidden = false
-                dateLable.text = defaults.valueForKey("VideoCreatedTime") as? String
-                dateLable.font = UIFont(name: dateLable.font.fontName, size: 11) //rgb(127, 140, 141)
-                dateLable.textColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
-                dateLable.textAlignment = .Right
-                dateLable.backgroundColor = UIColor(red: 44 / 255.0, green: 62 / 255.0, blue: 80 / 255.0, alpha: 0.1)//rgb(44, 62, 80)
-                view.addSubview(dateLable)
-
+                
               }
         }else{
            // previewVideoView.image = video hasn't generated'
             playButton.hidden = true
             dateLable.hidden = true
+            noFileMessage.hidden = false
+
         }
         
-        
-        
+        dateLable.text = defaults.valueForKey("VideoCreatedTime") as? String
+        dateLable.font = UIFont(name: dateLable.font.fontName, size: 11) //rgb(127, 140, 141)
+        dateLable.textColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
+        dateLable.textAlignment = .Right
+        dateLable.backgroundColor = UIColor(red: 44 / 255.0, green: 62 / 255.0, blue: 80 / 255.0, alpha: 0.1)//rgb(44, 62, 80)
+        view.addSubview(dateLable)
+
         //KVNProgress.setConfiguration(self.customConfiguration)
         
          //NSURL.isFileReferenceURL()

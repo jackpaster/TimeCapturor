@@ -209,6 +209,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var buttonLeft = LiquidFloatingActionButton()
     var buttonRight = LiquidFloatingActionButton()
     
+    @IBOutlet weak var camraBarButton: UIBarButtonItem!
 
     func createButton() ->(buttonLeft:LiquidFloatingActionButton,buttonRight:LiquidFloatingActionButton){
         let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
@@ -230,11 +231,24 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cells.append(cellFactory("ic_mp4"))
         cells.append(cellFactory("ic_setting"))
        //let x = (self.view.frame.width/2 - self.cameraButton.frame.width/2-self.view.frame.width - 56)
-        let floatingFrame = CGRect(x: self.view.frame.width - 56 - 25 , y: self.view.frame.height - 56 - 16, width: 56, height: 56)
-        let bottomRightButton = createButton(floatingFrame, .Up)
+        var bottomRightButton :LiquidFloatingActionButton
+        var bottomLeftButton :LiquidFloatingActionButton
+        if(screenWidth == 320){
+            let floatingFrame = CGRect(x: screenWidth/2 +  cameraButton.frame.width/2 + 10 , y: self.view.frame.height - 56 - 10, width: 44, height: 44)
+             bottomRightButton = createButton(floatingFrame, .Up)
+            
+            let floatingFrame2 = CGRect(x: screenWidth/2 - cameraButton.frame.width/2 - 10 - 44 , y: self.view.frame.height - 56 - 10, width: 44, height: 44)
+             bottomLeftButton = createButton(floatingFrame2, .Up)
+            
+            
+        }
+        else{
+        let floatingFrame = CGRect(x: screenWidth/2 +  cameraButton.frame.width/2 + 15 , y: self.view.frame.height - 56 - 16, width: 56, height: 56)
+         bottomRightButton = createButton(floatingFrame, .Up)
         
-        let floatingFrame2 = CGRect(x: 25 , y: self.view.frame.height - 56 - 16, width: 56, height: 56)
-        let bottomLeftButton = createButton(floatingFrame2, .Up)
+        let floatingFrame2 = CGRect(x: screenWidth/2 - cameraButton.frame.width/2 - 15 - 56 , y: self.view.frame.height - 56 - 16, width: 56, height: 56)
+         bottomLeftButton = createButton(floatingFrame2, .Up)
+        }
         
        // buttonLeft = bottomLeftButton
         //buttonRight = bottomRightButton
@@ -242,7 +256,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
          //self.view.addSubview(bottomRightButton)
          //self.view.addSubview(bottomLeftButton)
-        return (bottomLeftButton,bottomRightButton)
+       return (bottomLeftButton,bottomRightButton)
     }
     
     
@@ -314,7 +328,10 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
         
 
-//        
+        screenSize = UIScreen.mainScreen().bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+//
 //        if self.respondsToSelector("setNeedsStatusBarAppearanceUpdate") {
 //            self.setNeedsStatusBarAppearanceUpdate()
 //        }
@@ -350,25 +367,35 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         navigationController?.navigationBar.layer.masksToBounds = false
         
 
-        
+       // print(screenWidth)
 //        var attachment = NSTextAttachment()
 //        attachment.image = UIImage(named: "ic_camera")
 //        var attachmentString = NSAttributedString(attachment: attachment)
 //        var myString = NSMutableAttributedString(string: "")
 //        myString.appendAttributedString(attachmentString)
         //lable.setattribute = attachmenrstring
-        
+        if(screenWidth == 320){
+            
+            cameraButton.setImage(UIImage(named: "ic_camera"), forState: .Normal)
+            cameraButton.centerLabelVerticallyWithPadding(0)
+            cameraButton.imageView?.contentMode = .ScaleAspectFit
+            // cameraButton.frame.width = ( screenWidth - 112 - 20 )/2.0
+            cameraButton.frame = CGRectMake(cameraButton.frame.origin.x, cameraButton.frame.origin.y , (view.frame.width - 100 - 50), 44)
+            cameraButton.backgroundColor = UIColor(red: 240 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)//rgb(44, 62, 80)
+            cameraButton.layer.cornerRadius = 22
+            
+        }else{
         cameraButton.setImage(UIImage(named: "ic_camera"), forState: .Normal)
         cameraButton.centerLabelVerticallyWithPadding(1)
-        
+       // cameraButton.frame.width = ( screenWidth - 112 - 20 )/2.0
+        cameraButton.frame = CGRectMake(cameraButton.frame.origin.x, cameraButton.frame.origin.y, (view.frame.width - 112 - 80), cameraButton.frame.size.height)
         cameraButton.backgroundColor = UIColor(red: 240 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)//rgb(44, 62, 80)
         cameraButton.layer.cornerRadius = 28
-        //cameraButton.layer.borderWidth = 1
+        }
+        //cameraButton.layer.borderWidth = 1camraBarButton
         //cameraButton.layer.borderColor = UIColor.blackColor().CGColor
         
-        screenSize = UIScreen.mainScreen().bounds
-        screenWidth = screenSize.width
-        screenHeight = screenSize.height
+      
         
         toolBar.setBackgroundImage(UIImage(), forToolbarPosition: UIBarPosition.Any, barMetrics: UIBarMetrics.Default)
         toolBar.setShadowImage(UIImage(),forToolbarPosition: UIBarPosition.Any)

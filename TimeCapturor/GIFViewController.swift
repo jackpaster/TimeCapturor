@@ -18,6 +18,7 @@ import AVFoundation
         
          var previousPage = 0
         
+        @IBOutlet weak var noFileMessage: UILabel!
         @IBOutlet weak var dateLable: UILabel!
         @IBOutlet weak var sharButton: UIButton!
         @IBOutlet weak var createNewButton: UIButton!
@@ -40,20 +41,23 @@ import AVFoundation
                     self.gifimageView.image = gif
                    
                     dateLable.hidden = false
+                    noFileMessage.hidden = true
                     dateLable.text = defaults.valueForKey("GifCreatedTime") as? String
-                    dateLable.font = UIFont(name: dateLable.font.fontName, size: 11) //rgb(127, 140, 141)
-                    dateLable.textColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
-                    dateLable.textAlignment = .Right
-                    dateLable.backgroundColor = UIColor(red: 44 / 255.0, green: 62 / 255.0, blue: 80 / 255.0, alpha: 0.3)//rgb(44, 62, 80)
-                    view.addSubview(dateLable)
 
-                    
                 }
             }else{
                 dateLable.hidden = true
+                noFileMessage.hidden = false
                 // previewVideoView.image = video hasn't generated'
                 
             }
+            
+            
+            dateLable.font = UIFont(name: dateLable.font.fontName, size: 11) //rgb(127, 140, 141)
+            dateLable.textColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
+            dateLable.textAlignment = .Right
+            dateLable.backgroundColor = UIColor(red: 44 / 255.0, green: 62 / 255.0, blue: 80 / 255.0, alpha: 0.3)//rgb(44, 62, 80)
+            view.addSubview(dateLable)
             
             
             createNewButton.layer.shadowColor = UIColor.blackColor().CGColor
@@ -190,7 +194,7 @@ import AVFoundation
         var Image = Album().getAllImageAndDate().ImageData
        // var ImageURLs = Album().getAllImageAndDate().urlString
        
-        @IBAction func btnGeneratGIF(sender: UIButton) {
+@IBAction func btnGeneratGIF(sender: UIButton) {
             
             if (Image.count<2){
                 
@@ -210,7 +214,7 @@ import AVFoundation
                 //print(speed)
                // print(GIFGenerator.frameDelay)
             }else{
-                GIFGenerator = GifBiulder(images: Image, frameDelay: 7.0)
+                GIFGenerator = GifBiulder(images: Image, frameDelay: 1/7.0)
             }
                         //print(ImageURLs)
             // KVNProgress.showProgress(0, status: "laoding...",onView: view)
@@ -242,8 +246,7 @@ import AVFoundation
                             //print(gif)
                             defaults.setValue(self.getCurrentDate(), forKey: "GifCreatedTime")
                             defaults.setURL(gif, forKey: "AssembedGifURL")
-                            self.dateLable.text = self.getCurrentDate()
-                            self.dateLable.hidden = false
+
                             let gif = UIImage.gifWithURL(gif)
                             self.gifimageView.image = gif
 
@@ -256,7 +259,9 @@ import AVFoundation
                 
             }
             
-            
+    self.dateLable.text = self.getCurrentDate()
+    self.dateLable.hidden = false
+    self.noFileMessage.hidden = true
         }
         
         func getCurrentDate()->String{
