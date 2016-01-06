@@ -10,13 +10,15 @@ import UIKit
 import KVNProgress
 import AVKit
 import MediaPlayer
+import MessageUI
 
-class VideoViewController: UIViewController {
+class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate {
     
     @IBOutlet weak var noFileMessage: UILabel!
     @IBOutlet weak var createNewButton: UIButton!
     @IBOutlet weak var sharButton: UIButton!
     @IBOutlet weak var dateLable: UILabel!
+    
     @IBAction func btnCreatNew(sender: UIButton) {
         
         if (ImageURLs.count<2){
@@ -59,43 +61,107 @@ class VideoViewController: UIViewController {
                         self.previewVideoView.image = self.firstFrameOfVideo(self.videoURL)
                         
                     })
-                   
+                    
                     //print("video")
                     //print(video)
                     
                     defaults.setURL(video, forKey: "AssembedVideoURL")
                     defaults.setValue(self.getCurrentDate(), forKey: "VideoCreatedTime")
                     
-                                        //self.playVideo(video)
+                    //self.playVideo(video)
                     
                 }) { (error) -> Void in
                     print("error")
             }
-           
+            
             
             
         }
-         //print(NSURL.isFileReferenceURL(video))
+        //print(NSURL.isFileReferenceURL(video))
         self.dateLable.text = self.getCurrentDate()
         self.dateLable.hidden = false
         self.noFileMessage.hidden = true
         self.playButton.hidden = false
-
+    }
+    
+    func createShareBubble(){
+        let shareBubbles = AAShareBubbles.init(centeredInWindowWithRadius: 150)
+        shareBubbles.delegate = self
+        shareBubbles.bubbleRadius = 30; // Default is 40
+        shareBubbles.showMailBubble = true
+        shareBubbles.showFacebookBubble = true
+        shareBubbles.showTwitterBubble = true
+        shareBubbles.showInsBubble = true
+        //shareBubbles.showInstagramBubble = true
+        shareBubbles.showSinaBubble = true
+        shareBubbles.showQQBubble = true
+        shareBubbles.showQzoneBubble = true
+        shareBubbles.showWechatBubble = true
+        shareBubbles.showMessageBubble = true
+        // add custom buttons -- buttonId for custom buttons MUST be greater than or equal to 100
+        // shareBubbles.addCustomButtonWithIcon(<#T##icon: UIImage!##UIImage!#>, backgroundColor: <#T##UIColor!#>, andButtonId: <#T##Int32#>)
+        shareBubbles.show()
         
     }
     
+    
+    
+    func aaShareBubbles(shareBubbles: AAShareBubbles!, tappedBubbleWithType bubbleType: Int32) {
+        switch bubbleType {
+        case AAShareBubbleTypeFacebook.rawValue:
+            InformShareError()
+            NSLog("Facebook")
+            break
+        case AAShareBubbleTypeTwitter.rawValue:
+            InformShareError()
+            NSLog("Twitter")
+            break
+        case AAShareBubbleTypeMail.rawValue:
+            ShareViaEmail()
+            NSLog("Email")
+            break
+        case AAShareBubbleTypeIns.rawValue:
+            InformShareError()
+            NSLog("Ins")
+            break
+        case AAShareBubbleTypeMessage.rawValue:
+            ShareViaMessage()
+            NSLog("Message")
+            break
+        case AAShareBubbleTypeQQ.rawValue:
+            InformShareError()
+            NSLog("QQ")
+            break
+        case AAShareBubbleTypeQzone.rawValue:
+            InformShareError()
+            NSLog("Qzone")
+            break
+        case AAShareBubbleTypeSina.rawValue:
+            InformShareError()
+            NSLog("Sina")
+            break
+        case AAShareBubbleTypeWechat.rawValue:
+            ShareViaWechat()
+            NSLog("Wechat")
+            break
+        case 100:
+            // custom buttons have type >= 100
+            NSLog("Custom Button With Type 100")
+        default:
+            break
+        }
+    }
+    
+    
+    func aaShareBubblesDidHide(bubbles: AAShareBubbles) {
+        NSLog("All Bubbles hidden")
+    }
+    
+    
+    
     @IBAction func btnShare(sender: UIButton) {
         
-        let textToShare = "Swift is awesome!  Check out this website about it!"
-        
-        let myWebsite = videoURL
-        
-            let objectsToShare = [textToShare, myWebsite]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            
-            self.presentViewController(activityVC, animated: true, completion: nil)
-        
-        
+        createShareBubble()
         
     }
     
@@ -106,7 +172,7 @@ class VideoViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
-
+    
     
     func firstFrameOfVideo(path:NSURL)->UIImage{
         let asset: AVURLAsset = AVURLAsset(URL: path)
@@ -114,14 +180,14 @@ class VideoViewController: UIViewController {
         let  timeScale =  asset.duration.timescale
         let frame = try! imageGenerator.copyCGImageAtTime(CMTimeMake(1, timeScale), actualTime: nil)
         //var image: UIImage = UIImage.imageWithCGImage(frame, actualTime: nil)
-       // videoFrame.image = image
+        // videoFrame.image = image
         let frameImg : UIImage = UIImage(CGImage: frame)
         return frameImg
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         if let videoURL = defaults.URLForKey("AssembedVideoURL")
         {
@@ -133,13 +199,13 @@ class VideoViewController: UIViewController {
                 noFileMessage.hidden = true
                 dateLable.hidden = false
                 
-              }
+            }
         }else{
-           // previewVideoView.image = video hasn't generated'
+            // previewVideoView.image = video hasn't generated'
             playButton.hidden = true
             dateLable.hidden = true
             noFileMessage.hidden = false
-
+            
         }
         
         dateLable.text = defaults.valueForKey("VideoCreatedTime") as? String
@@ -148,14 +214,14 @@ class VideoViewController: UIViewController {
         dateLable.textAlignment = .Right
         dateLable.backgroundColor = UIColor(red: 44 / 255.0, green: 62 / 255.0, blue: 80 / 255.0, alpha: 0.1)//rgb(44, 62, 80)
         view.addSubview(dateLable)
-
+        
         //KVNProgress.setConfiguration(self.customConfiguration)
         
-         //NSURL.isFileReferenceURL()
+        //NSURL.isFileReferenceURL()
         
         
         //UIApplication.sharedApplication().setStatusBarStyle(.LightContent , animated: false)
-       // UIViewController.preferredStatusBarStyle(.LightContent)
+        // UIViewController.preferredStatusBarStyle(.LightContent)
         createNewButton.layer.shadowColor = UIColor.blackColor().CGColor
         createNewButton.layer.shadowOffset = CGSizeMake(0, 4)
         createNewButton.layer.shadowRadius = 2
@@ -235,7 +301,7 @@ class VideoViewController: UIViewController {
         playButton.setImage(UIImage(named: "ic_play"), forState: .Normal)
         playButton.centerLabelVerticallyWithPadding(1)
         playButton.backgroundColor = UIColor(red: 189/255.0, green: 195/255.0, blue: 199/255.0, alpha: 0.6) //rrgb(52, 73, 94)
-       
+        
         self.customConfiguration = self.customKVNProgressUIConfiguration()
         
     }
@@ -375,7 +441,7 @@ class VideoViewController: UIViewController {
         //            formatter.stringFromDate(date)
         //            return date
     }
-
+    
     
     
     
@@ -394,6 +460,114 @@ class VideoViewController: UIViewController {
         
     }
     
+    
+    func ShareViaWechat() {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let videoURL = defaults.URLForKey("AssembedVideoURL")
+        {
+            let message =  WXMediaMessage()
+            message.title = "TimeCapturorExport.mov"
+            message.description = "It's my time"
+            message.setThumbImage(UIImage(named:"logo"))
+            
+            let ext =  WXFileObject()
+            ext.fileExtension = "mov"
+            //let filePath = NSBundle.mainBundle().pathForResource("ML", ofType: "pdf")
+            ext.fileData = NSData(contentsOfFile:videoURL.path!)
+            message.mediaObject = ext
+            
+            let req =  SendMessageToWXReq()
+            req.bText = false
+            req.message = message
+            req.scene = Int32(WXSceneSession.rawValue)
+            WXApi.sendReq(req)
+        }else{
+            SweetAlert().showAlert("Video doesn't exist", subTitle: "Please create one first", style: AlertStyle.Error)
+        }
+        
+    }
+    
+    func ShareViaEmail(){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let videoURL = defaults.URLForKey("AssembedVideoURL")
+        {
+            
+            if( MFMailComposeViewController.canSendMail() ) {
+                print("Can send email.")
+                
+                let mailComposer = MFMailComposeViewController()
+                mailComposer.mailComposeDelegate = self
+                
+                //Set the subject and message of the email
+                mailComposer.setSubject("Have you heard about TimeCapturor?")
+                mailComposer.setMessageBody("This is the amazing video it produced!", isHTML: false)
+                
+                if let fileData = NSData(contentsOfFile: videoURL.path!) {
+                    print("File data loaded.")
+                    mailComposer.addAttachmentData(fileData, mimeType: "mov", fileName: "TimeCapturorExport.mov")
+                }
+                
+                self.presentViewController(mailComposer, animated: true, completion: nil)
+            }else{
+                print("please set up your email first")
+                SweetAlert().showAlert("Email is not available", subTitle: "Please set up your email first", style: AlertStyle.Error)
+            }
+        }else{
+            SweetAlert().showAlert("Video doesn't exist", subTitle: "Please create one first", style: AlertStyle.Error)
+        }
+        
+        
+    }
+    
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    // Configures and returns a MFMessageComposeViewController instance
+    func ShareViaMessage() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let videoURL = defaults.URLForKey("AssembedVideoURL")
+        {
+            if( MFMessageComposeViewController.canSendText() ) {
+                print("Can send email.")
+                
+                let messageComposeVC = MFMessageComposeViewController()
+                messageComposeVC.messageComposeDelegate = self
+                
+                if let fileData = NSData(contentsOfFile: videoURL.path!) {
+                    print("File data loaded.")
+                    messageComposeVC.addAttachmentData(fileData, typeIdentifier: "mov", filename: "TimeCapturorExport.mov")
+                }
+                
+                
+                messageComposeVC.body = "Check this out! I cerated using TimeCapturor!"
+                
+                
+                self.presentViewController(messageComposeVC, animated: true, completion: nil)
+                
+            }else{
+                SweetAlert().showAlert("Message is not available", subTitle: "Please set up your message first", style: AlertStyle.Error)
+            }
+        }
+            
+        else{
+            SweetAlert().showAlert("Video doesn't exist", subTitle: "Please create one first", style: AlertStyle.Error)
+            
+        }
+    }
+    
+    // MFMessageComposeViewControllerDelegate callback - dismisses the view controller when the user is finished with it
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func InformShareError(){
+        SweetAlert().showAlert("Not available", subTitle: "Please share via Wechat, Email, Message.This platform is coming soon.", style: AlertStyle.Warning)
+        
+    }
     
     
     

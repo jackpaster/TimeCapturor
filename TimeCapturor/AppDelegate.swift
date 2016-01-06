@@ -16,6 +16,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        ShareSDK.registerApp("e460ee2dc4b8", activePlatforms: [ SSDKPlatformType.SubTypeQZone.rawValue ,SSDKPlatformType.TypeFacebook.rawValue,SSDKPlatformType.TypeMail.rawValue,SSDKPlatformType.TypeSMS.rawValue, SSDKPlatformType.TypeQQ.rawValue , SSDKPlatformType.TypeSinaWeibo.rawValue,SSDKPlatformType.TypeWechat.rawValue], onImport: {(platformType: SSDKPlatformType) -> Void in
+            switch platformType {
+            case SSDKPlatformType.TypeWechat:
+                ShareSDKConnector.connectWeChat(WXApi.classForCoder())
+                break
+            case SSDKPlatformType.TypeQQ:
+                ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
+                break
+            case SSDKPlatformType.TypeSinaWeibo:
+                ShareSDKConnector.connectWeibo(WeiboSDK.classForCoder())
+                break
+            default:
+                break
+            }
+            },  onConfiguration: {(platform : SSDKPlatformType,appInfo : NSMutableDictionary!) -> Void in
+                switch platform {
+                    
+                case SSDKPlatformType.TypeSinaWeibo:
+                    //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                    appInfo.SSDKSetupSinaWeiboByAppKey("3954647548",
+                        appSecret : "0633c28358b81f14bc3ff26a9bfeaed3",
+                        redirectUri : "http://www.sharesdk.cn",
+                        authType : SSDKAuthTypeBoth)
+                    break
+                    
+                case SSDKPlatformType.TypeWechat:
+                    //设置微信应用信息
+                    appInfo.SSDKSetupWeChatByAppId("wx8c1bfe6751c32d4d", appSecret: "7e8d51cc5d4154d3fe51fb0ea3738efc")
+                    break
+                case SSDKPlatformType.TypeQQ:
+                    appInfo.SSDKSetupQQByAppId("1105013379", appKey: "k2F5ppN68zcXUxbi", authType: SSDKAuthTypeBoth)
+                    break
+                    
+                case SSDKPlatformType.TypeFacebook:
+                    //设置Facebook应用信息，其中authType设置为只用SSO形式授权
+                    appInfo.SSDKSetupFacebookByApiKey("1072947386089573", appSecret: "8e1448c7440e759fe3c86920c65fa7ec", authType: SSDKAuthTypeBoth)
+                    
+                    break
+                    
+                    
+                default:
+                    break
+                    
+                }
+        })
+
+        
+        
+        
+        
         return true
     }
 
