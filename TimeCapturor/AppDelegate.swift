@@ -16,7 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let launchTimes = defaults.valueForKey("launchTimes") as? Int
+        {
+            defaults.setInteger(launchTimes+1, forKey: "launchTimes")
+            
+        }else{
+            defaults.setInteger(1, forKey: "launchTimes")
+        }
         
         ShareSDK.registerApp("e460ee2dc4b8", activePlatforms: [ SSDKPlatformType.SubTypeQZone.rawValue ,SSDKPlatformType.TypeFacebook.rawValue,SSDKPlatformType.TypeMail.rawValue,SSDKPlatformType.TypeSMS.rawValue, SSDKPlatformType.TypeQQ.rawValue , SSDKPlatformType.TypeSinaWeibo.rawValue,SSDKPlatformType.TypeWechat.rawValue], onImport: {(platformType: SSDKPlatformType) -> Void in
             switch platformType {

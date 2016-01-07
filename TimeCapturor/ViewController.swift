@@ -116,7 +116,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             self.view!.addSubview(self.timePicker)
             
             self.timePicker.alpha = 0.0
-            UIView.animateWithDuration(0.4,
+            UIView.animateWithDuration(0.5,
                 animations: {
                     self.navigationController?.navigationBarHidden = true
                     self.timePicker.alpha = 1.0
@@ -127,7 +127,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             self.navigationController?.hidesBarsOnSwipe = true
 
             self.timePicker.alpha = 1
-            UIView.animateWithDuration(0.4,
+            UIView.animateWithDuration(0.5,
                 animations: {
                     self.timePicker.alpha = 0
                     self.navigationController?.navigationBarHidden = false
@@ -179,8 +179,15 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
            // performSegueWithIdentifier("reminder", sender: nil)
             break
         case 1:
+            let inforView = selfInfo(frame: self.view.frame)
+            view.addSubview(inforView)
+            inforView.alpha = 0.0
+            UIView.animateWithDuration(0.5,
+                animations: {
+                    inforView.alpha = 1.0
+                }, completion: nil)
             
-            performSegueWithIdentifier("self", sender: nil)
+            //performSegueWithIdentifier("self", sender: nil)
             break
         case 2:
             
@@ -322,8 +329,65 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "appMovedToForeground", name: UIApplicationWillEnterForegroundNotification , object: nil)
+        
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if var WeekTimeDic = defaults.dictionaryForKey("WeekTimeDic") as? [String:String]
+        {
+            let cal = NSCalendar.currentCalendar()
+            let date = cal.startOfDayForDate(NSDate())
+            let CurrentWeekday = String(cal.component(.Weekday, fromDate: date))
+            
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = NSDateFormatterStyle.ShortStyle
+            let currentDate = formatter.stringFromDate(NSDate())
+            
+
+            if(WeekTimeDic[CurrentWeekday] != currentDate){
+                WeekTimeDic[CurrentWeekday] = currentDate
+                
+                var WeekCountDic = defaults.dictionaryForKey("WeekCountDic") as? [String:String]
+                WeekCountDic![CurrentWeekday] = "0"
+                
+                defaults.setObject(WeekCountDic, forKey: "WeekCountDic")
+                defaults.setObject(WeekTimeDic, forKey: "WeekTimeDic")
+            }
+        }else{
+            let WeekCountDic : [String : String] = [
+                "1" : "0",
+                "2" : "0",
+                "3" : "0",
+                "4" : "0",
+                "5" : "0",
+                "6" : "0",
+                "7" : "0"
+            ]
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = NSDateFormatterStyle.ShortStyle
+            let dateString = formatter.stringFromDate(NSDate())
+            //print(dateString )
+            
+            let WeekTimeDic : [String : String] = [
+                "1" : dateString,
+                "2" : dateString,
+                "3" : dateString,
+                "4" : dateString,
+                "5" : dateString,
+                "6" : dateString,
+                "7" : dateString
+            ]
+            
+            defaults.setObject(WeekCountDic, forKey: "WeekCountDic")
+            defaults.setObject(WeekTimeDic, forKey: "WeekTimeDic")
+           // var isOk = userDefaults.synchronize()
+        }
+        
+        defaults.setInteger(collectionData.getAllImageAndDate().Number, forKey: "photoNumber")
+
+        
         
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
         

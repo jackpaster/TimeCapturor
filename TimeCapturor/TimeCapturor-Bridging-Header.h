@@ -7,7 +7,7 @@
 #import "KPTimePicker.h"
 #import "DKCircleButton.h"
 #import "AAShareBubbles.h"
-#import "PNChart.h"
+#import "PNChartSwift.h"
 
 
 //新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"

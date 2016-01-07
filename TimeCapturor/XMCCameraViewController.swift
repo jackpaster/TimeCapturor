@@ -196,8 +196,32 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
         }
     }
     
-    func saveImageToSandBox() -> Bool
-    {
+    func saveImageToSandBox() -> Bool{
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if var WeekCountDic = defaults.dictionaryForKey("WeekCountDic") as? [String:String]
+        {
+            let cal = NSCalendar.currentCalendar()
+            let date = cal.startOfDayForDate(NSDate())
+            let CurrentWeekday = String(cal.component(.Weekday, fromDate: date))
+            //print(WeekCountDic[CurrentWeekday]!)
+            let count = (WeekCountDic[CurrentWeekday]! as NSString).intValue
+            print(count)
+            WeekCountDic[CurrentWeekday] = String(Int(count) + 1)
+            print(WeekCountDic[CurrentWeekday])
+            defaults.setObject(WeekCountDic, forKey: "WeekCountDic")
+        }
+        
+        if let _ = defaults.valueForKey("firstMoment"){
+            
+        }else{
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "HH:mm:ss MMMM/dd/yyyy"
+            let currentDate = formatter.stringFromDate(NSDate())
+            defaults.setValue(currentDate, forKey: "firstMoment")
+            print(currentDate)
+        }
+        
         if let image = self.cameraStill.image?.fixOrientation()
         {
             if let imageData = UIImageJPEGRepresentation(image, 0.5)

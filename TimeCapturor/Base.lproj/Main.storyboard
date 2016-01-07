@@ -67,7 +67,6 @@
                         <segue destination="p3c-WG-bjN" kind="show" identifier="gif" id="gFQ-Wj-W8p"/>
                         <segue destination="467-92-u1b" kind="show" identifier="video" id="rqR-Jw-0YP"/>
                         <segue destination="cyy-zD-ioL" kind="show" identifier="info" id="PzU-KF-wQ8"/>
-                        <segue destination="L6R-zP-abe" kind="show" identifier="self" id="nNC-3X-sfh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -323,24 +322,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83h-be-VAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="66" y="1231"/>
-        </scene>
-        <!--Self View Controller-->
-        <scene sceneID="RP1-di-T8s">
-            <objects>
-                <viewController id="L6R-zP-abe" customClass="SelfViewController" customModule="TimeCapturor" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IJc-Jt-pdD"/>
-                        <viewControllerLayoutGuide type="bottom" id="9E9-QO-InL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gr4-zA-QCG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ACl-FC-2rZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="830" y="1403"/>
         </scene>
         <!--GIF-->
         <scene sceneID="DRD-I9-pe0">
