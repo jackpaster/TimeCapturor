@@ -13,6 +13,10 @@ class SelfViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let barChart = PNBarChart()    // initWithFrame:CGRectMake(0, 135.0, SCREEN_WIDTH, 200.0)];
+        [barChart setXLabels:@[@"SEP 1",@"SEP 2",@"SEP 3",@"SEP 4",@"SEP 5"]];
+        [barChart setYValues:@[@1,  @10, @2, @6, @3]];
+        [barChart strokeChart];
         // Do any additional setup after loading the view.
     }
 

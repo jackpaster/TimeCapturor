@@ -113,7 +113,9 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
             NSLog("Facebook")
             break
         case AAShareBubbleTypeTwitter.rawValue:
-            InformShareError()
+            
+            self.InformShareError()
+            
             NSLog("Twitter")
             break
         case AAShareBubbleTypeMail.rawValue:
@@ -471,11 +473,18 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
             message.description = "It's my time"
             message.setThumbImage(UIImage(named:"logo"))
             
-            let ext =  WXFileObject()
-            ext.fileExtension = "mov"
-            //let filePath = NSBundle.mainBundle().pathForResource("ML", ofType: "pdf")
-            ext.fileData = NSData(contentsOfFile:videoURL.path!)
-            message.mediaObject = ext
+            
+            let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
+            
+            dispatch_async(dispatch_get_global_queue(qos, 0)) {
+                
+                let ext =  WXFileObject()
+                ext.fileExtension = "mov"
+                //let filePath = NSBundle.mainBundle().pathForResource("ML", ofType: "pdf")
+                ext.fileData = NSData(contentsOfFile:videoURL.path!)
+                message.mediaObject = ext
+                
+            }
             
             let req =  SendMessageToWXReq()
             req.bText = false
@@ -489,6 +498,7 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
     }
     
     func ShareViaEmail(){
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         if let videoURL = defaults.URLForKey("AssembedVideoURL")
         {
@@ -501,13 +511,18 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
                 
                 //Set the subject and message of the email
                 mailComposer.setSubject("Have you heard about TimeCapturor?")
-                mailComposer.setMessageBody("This is the amazing video it produced!", isHTML: false)
+                mailComposer.setMessageBody("This is the amazing video I created using TimeCapturor!", isHTML: false)
                 
-                if let fileData = NSData(contentsOfFile: videoURL.path!) {
-                    print("File data loaded.")
-                    mailComposer.addAttachmentData(fileData, mimeType: "mov", fileName: "TimeCapturorExport.mov")
+                let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
+                
+                dispatch_async(dispatch_get_global_queue(qos, 0)) {
+                    
+                    if let fileData = NSData(contentsOfFile: videoURL.path!) {
+                        print("File data loaded.")
+                        mailComposer.addAttachmentData(fileData, mimeType: "mov", fileName: "TimeCapturorExport.mov")
+                    }
+                    
                 }
-                
                 self.presentViewController(mailComposer, animated: true, completion: nil)
             }else{
                 print("please set up your email first")
@@ -516,6 +531,8 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         }else{
             SweetAlert().showAlert("Video doesn't exist", subTitle: "Please create one first", style: AlertStyle.Error)
         }
+        
+        
         
         
     }
@@ -537,11 +554,15 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
                 let messageComposeVC = MFMessageComposeViewController()
                 messageComposeVC.messageComposeDelegate = self
                 
-                if let fileData = NSData(contentsOfFile: videoURL.path!) {
-                    print("File data loaded.")
-                    messageComposeVC.addAttachmentData(fileData, typeIdentifier: "mov", filename: "TimeCapturorExport.mov")
+                let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
+                dispatch_async(dispatch_get_global_queue(qos, 0)) {
+                    
+                    if let fileData = NSData(contentsOfFile: videoURL.path!) {
+                        print("File data loaded.")
+                        messageComposeVC.addAttachmentData(fileData, typeIdentifier: "mov", filename: "TimeCapturorExport.mov")
+                    }
+                    
                 }
-                
                 
                 messageComposeVC.body = "Check this out! I cerated using TimeCapturor!"
                 
@@ -565,7 +586,7 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
     }
     
     func InformShareError(){
-        SweetAlert().showAlert("Not available", subTitle: "Please share via Wechat, Email, Message.This platform is coming soon.", style: AlertStyle.Warning)
+        SweetAlert().showAlert("Coming soon", subTitle: "Please use Wechat, Email, Message to share your time.", style: AlertStyle.Warning)
         
     }
     

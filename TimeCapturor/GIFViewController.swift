@@ -369,11 +369,17 @@
                 message.description = "It's my time"
                 message.setThumbImage(UIImage(named:"logo"))
                 
-                let ext =  WXFileObject()
-                ext.fileExtension = "gif"
-                //let filePath = NSBundle.mainBundle().pathForResource("ML", ofType: "pdf")
-                ext.fileData = NSData(contentsOfFile:gifURL.path!)
-                message.mediaObject = ext
+                
+                let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
+                dispatch_async(dispatch_get_global_queue(qos, 0)) {
+                    
+                    let ext =  WXFileObject()
+                    ext.fileExtension = "gif"
+                    //let filePath = NSBundle.mainBundle().pathForResource("ML", ofType: "pdf")
+                    ext.fileData = NSData(contentsOfFile:gifURL.path!)
+                    message.mediaObject = ext
+                    
+                }
                 
                 let req =  SendMessageToWXReq()
                 req.bText = false
@@ -403,9 +409,13 @@
                     mailComposer.setSubject("Have you heard about TimeCapturor?")
                     mailComposer.setMessageBody("This is the amazing video it produced!", isHTML: false)
                     
-                    if let fileData = NSData(contentsOfFile: gifURL.path!) {
-                        print("File data loaded.")
-                        mailComposer.addAttachmentData(fileData, mimeType: "gif", fileName: "TimeCapturorExport.gif")
+                    let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
+                    dispatch_async(dispatch_get_global_queue(qos, 0)) {
+                        
+                        if let fileData = NSData(contentsOfFile: gifURL.path!) {
+                            print("File data loaded.")
+                            mailComposer.addAttachmentData(fileData, mimeType: "gif", fileName: "TimeCapturorExport.gif")
+                        }
                     }
                     
                     self.presentViewController(mailComposer, animated: true, completion: nil)
@@ -441,9 +451,15 @@
                     let messageComposeVC = MFMessageComposeViewController()
                     messageComposeVC.messageComposeDelegate = self
                     
-                    if let fileData = NSData(contentsOfFile: gifURL.path!) {
-                        print("File data loaded.")
-                        messageComposeVC.addAttachmentData(fileData, typeIdentifier: "gif", filename: "TimeCapturorExport.gif")
+                    let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
+                    dispatch_async(dispatch_get_global_queue(qos, 0)) {
+                        
+                        
+                        if let fileData = NSData(contentsOfFile: gifURL.path!) {
+                            print("File data loaded.")
+                            messageComposeVC.addAttachmentData(fileData, typeIdentifier: "gif", filename: "TimeCapturorExport.gif")
+                        }
+                        
                     }
                     
                     
@@ -470,7 +486,7 @@
         
         
         func InformShareError(){
-            SweetAlert().showAlert("Not available", subTitle: "Please share via Wechat, Email, Message.This platform is coming soon.", style: AlertStyle.Warning)
+            SweetAlert().showAlert("Coming soon", subTitle: "Please use Wechat, Email, Message to share your time.", style: AlertStyle.Warning)
             
         }
         
