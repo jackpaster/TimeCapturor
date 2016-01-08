@@ -16,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        var viewController: UIViewController = UIViewController()
+        viewController.view!.backgroundColor = UIColor.greenColor()
+        //  Temporary iOS8 fix for 'presentation lag' on launch
+        self.window!.addSubview(viewController.view!)
+        self.window!.rootViewController!.presentViewController(viewController, animated: false, completion: { _ in })
+        
         let defaults = NSUserDefaults.standardUserDefaults()
+        
         if let launchTimes = defaults.valueForKey("launchTimes") as? Int
         {
             defaults.setInteger(launchTimes+1, forKey: "launchTimes")

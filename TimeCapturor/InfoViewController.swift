@@ -57,6 +57,8 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         self.navigationController?.hidesBarsOnSwipe = false
+        
         let backBtton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         backBtton.setImage(UIImage(named: "ic_back"), forState: UIControlState.Normal)
         backBtton.addTarget(self, action: Selector("backMain:"), forControlEvents:  UIControlEvents.TouchUpInside)
@@ -114,18 +116,97 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
         cell.textLabel?.text = self.items[indexPath.row]
+        if(indexPath.row == 4){
+          cell.textLabel?.textColor = UIColor.lightGrayColor()
+         cell.selectionStyle =  UITableViewCellSelectionStyle.None
+        }else{
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        }
         return cell
         
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You selected cell #\(indexPath.row)!")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let selection:Int = indexPath.row
+        switch selection {
+        case 0:
+            
+            break
+        case 1:
+            reportIssue()
+            break
+        case 2:
+            rateInAppStore()
+            break
+        case 3:
+            shareApp()
+            break
+        default:break
+            
+        }
+       // print("You selected cell #\(indexPath.row)!")
     }
     
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func rateInAppStore(){
+        UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/")!)
+    }
+    
+    func shareApp(){
+        // The output below is limited by 1 KB.
+        // Please Sign Up (Free!) to remove this limitation.
+        let shareParames = NSMutableDictionary()
+        
+        shareParames.SSDKSetupShareParamsByText("Check this App out,TimeCapturor(http://mob.com), I highly recommend it to you!",
+            images : UIImage(named: "logo_HD"),
+            url : NSURL(string:"http://mob.com"),
+            title : "Let's capture time!",
+            type : SSDKContentType.Auto)
+        
+        
+        
+        ShareSDK.showShareActionSheet(tableView, items: nil, shareParams: shareParames) { (state:SSDKResponseState, platformType:SSDKPlatformType, userData:[NSObject : AnyObject]!, contentEntity:SSDKContentEntity!, error:NSError!, end:Bool) -> Void in
+            
+            switch state{
+                
+            case SSDKResponseState.Success:
+                print("分享成功")
+                let alert = UIAlertView(title: "分享成功", message: "分享成功", delegate: self, cancelButtonTitle: "取消")
+                alert.show()
+            case SSDKResponseState.Fail:    print("分享失败,错误描述:\(error)")
+            case SSDKResponseState.Cancel:  print("分享取消")
+                
+            default:
+                break
+            }
+        }
+        
+        
+    }
+    
+    func reportIssue(){
+        
+        if( MFMailComposeViewController.canSendMail() ) {
+            print("Can send email.")
+            
+            let mailComposer = MFMailComposeViewController()
+            mailComposer.mailComposeDelegate = self
+            //Set the subject and message of the email
+            mailComposer.setToRecipients(["tengfeiyang2010@gmail.com"])
+            mailComposer.setSubject("TimeCapturor Issue and Idear")
+            mailComposer.setMessageBody("I am using TimeCapturor version 1.0.0", isHTML: false)
+            self.presentViewController(mailComposer, animated: true, completion: nil)
+            
+        }else{
+            SweetAlert().showAlert("Email not setup", subTitle: "Please setup your email account in system", style: AlertStyle.Error)
+        }
+        
+        
     }
     
     

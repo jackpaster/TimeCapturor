@@ -10,7 +10,13 @@ import UIKit
 //import Photos
 import LiquidFloatingActionButton
 
-class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate,LiquidFloatingActionButtonDataSource,LiquidFloatingActionButtonDelegate,UIGestureRecognizerDelegate,KPTimePickerDelegate{
+class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate,LiquidFloatingActionButtonDataSource,LiquidFloatingActionButtonDelegate,UIGestureRecognizerDelegate,KPTimePickerDelegate,superViewController,BWWalkthroughViewControllerDelegate{
+    
+    
+    func getSuperViewController(sender: UIView) -> UIViewController? {
+        print("send selfto")
+        return self
+    }
     
     let notification = UILocalNotification()
     var timePicker = KPTimePicker()
@@ -179,7 +185,10 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
            // performSegueWithIdentifier("reminder", sender: nil)
             break
         case 1:
+            
             let inforView = selfInfo(frame: self.view.frame)
+            inforView.viewController = self
+            self.navigationController?.hidesBarsOnSwipe = false
             view.addSubview(inforView)
             inforView.alpha = 0.0
             UIView.animateWithDuration(0.5,
@@ -324,10 +333,47 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
        // print("App moved to foreground!")
         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
     }
+    
+    func showWalkthrough(){
+        
+        // Get view controllers and build the walkthrough
+        let stb = UIStoryboard(name: "Walkthrough", bundle: nil)
+        let walkthrough = stb.instantiateViewControllerWithIdentifier("walk") as! BWWalkthroughViewController
+        let page_zero = stb.instantiateViewControllerWithIdentifier("walk0")
+        let page_one = stb.instantiateViewControllerWithIdentifier("walk1")
+        let page_two = stb.instantiateViewControllerWithIdentifier("walk2")
+        let page_three = stb.instantiateViewControllerWithIdentifier("walk3")
+        
+        // Attach the pages to the master
+        walkthrough.delegate = self
+        walkthrough.addViewController(page_one)
+        walkthrough.addViewController(page_two)
+        walkthrough.addViewController(page_three)
+        walkthrough.addViewController(page_zero)
+        
+        self.presentViewController(walkthrough, animated: false, completion: nil)
+    }
+    
+    
+    // MARK: - Walkthrough delegate -
+    
+    func walkthroughPageDidChange(pageNumber: Int) {
+        print("Current Page \(pageNumber)")
+    }
+    
+    func walkthroughCloseButtonPressed() {
+        view.alpha = 1
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         view.alpha = 0
+        
+         showWalkthrough()
         
         
         let notificationCenter = NSNotificationCenter.defaultCenter()
@@ -335,6 +381,15 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         
         let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if !defaults.boolForKey("walkthroughPresented") {
+            
+           // showWalkthrough()
+            
+            defaults.setBool(true, forKey: "walkthroughPresented")
+            defaults.synchronize()
+        }
+        
         if var WeekTimeDic = defaults.dictionaryForKey("WeekTimeDic") as? [String:String]
         {
             let cal = NSCalendar.currentCalendar()

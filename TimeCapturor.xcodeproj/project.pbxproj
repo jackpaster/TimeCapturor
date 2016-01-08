@@ -28,6 +28,18 @@
 		FE1181B31C3664BB00FECF8A /* schedule_image_sun-high.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1181A61C3664BB00FECF8A /* schedule_image_sun-high.png */; };
 		FE1181B41C3664BB00FECF8A /* schedule_image_sun-high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1181A71C3664BB00FECF8A /* schedule_image_sun-high@2x.png */; };
 		FE397D5B1C30A82200C76CBE /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE397D5A1C30A82200C76CBE /* ProgressViewController.swift */; };
+		FE4D25971C3F8E2C00019C5E /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D25941C3F8E2C00019C5E /* BWWalkthroughPageViewController.swift */; };
+		FE4D25981C3F8E2C00019C5E /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D25951C3F8E2C00019C5E /* BWWalkthroughViewController.swift */; };
+		FE4D259A1C3F8ECA00019C5E /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D25991C3F8ECA00019C5E /* Walkthrough.storyboard */; };
+		FE4D259C1C3F8FA400019C5E /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D259B1C3F8FA400019C5E /* CustomPageViewController.swift */; };
+		FE4D25A71C3F902500019C5E /* iPhoneScreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE4D259D1C3F902500019C5E /* iPhoneScreen@2x.png */; };
+		FE4D25A81C3F902500019C5E /* cloud1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE4D259E1C3F902500019C5E /* cloud1@2x.png */; };
+		FE4D25A91C3F902500019C5E /* cloud3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE4D259F1C3F902500019C5E /* cloud3@2x.png */; };
+		FE4D25AA1C3F902500019C5E /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE4D25A11C3F902500019C5E /* bg@2x.jpg */; };
+		FE4D25AB1C3F902500019C5E /* iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE4D25A21C3F902500019C5E /* iPhone@2x.png */; };
+		FE4D25AC1C3F902500019C5E /* img3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE4D25A31C3F902500019C5E /* img3@2x.png */; };
+		FE4D25AD1C3F902500019C5E /* rightarrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE4D25A41C3F902500019C5E /* rightarrow@2x.png */; };
+		FE4D25AE1C3F902500019C5E /* leftarrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE4D25A51C3F902500019C5E /* leftarrow@2x.png */; };
 		FE4DDE731C29DDF400F7A328 /* XMCCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */; };
 		FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */; };
 		FE55C22C1C312CC300ADCE6F /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55C22B1C312CC300ADCE6F /* SweetAlert.swift */; };
@@ -107,6 +119,18 @@
 		FE1181A61C3664BB00FECF8A /* schedule_image_sun-high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_image_sun-high.png"; sourceTree = "<group>"; };
 		FE1181A71C3664BB00FECF8A /* schedule_image_sun-high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_image_sun-high@2x.png"; sourceTree = "<group>"; };
 		FE397D5A1C30A82200C76CBE /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		FE4D25941C3F8E2C00019C5E /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		FE4D25951C3F8E2C00019C5E /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
+		FE4D25991C3F8ECA00019C5E /* Walkthrough.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
+		FE4D259B1C3F8FA400019C5E /* CustomPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
+		FE4D259D1C3F902500019C5E /* iPhoneScreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhoneScreen@2x.png"; sourceTree = "<group>"; };
+		FE4D259E1C3F902500019C5E /* cloud1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud1@2x.png"; sourceTree = "<group>"; };
+		FE4D259F1C3F902500019C5E /* cloud3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud3@2x.png"; sourceTree = "<group>"; };
+		FE4D25A11C3F902500019C5E /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
+		FE4D25A21C3F902500019C5E /* iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone@2x.png"; sourceTree = "<group>"; };
+		FE4D25A31C3F902500019C5E /* img3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img3@2x.png"; sourceTree = "<group>"; };
+		FE4D25A41C3F902500019C5E /* rightarrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightarrow@2x.png"; sourceTree = "<group>"; };
+		FE4D25A51C3F902500019C5E /* leftarrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leftarrow@2x.png"; sourceTree = "<group>"; };
 		FE4DDE711C29DDF400F7A328 /* XMCCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCCamera.swift; sourceTree = "<group>"; };
 		FE4DDE721C29DDF400F7A328 /* XMCCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCCameraViewController.swift; sourceTree = "<group>"; };
 		FE55C22B1C312CC300ADCE6F /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
@@ -236,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				FEA216F21C28703B008F07F0 /* CollectionViewCell.swift */,
+				FE4D25991C3F8ECA00019C5E /* Walkthrough.storyboard */,
 				FEA216E41C28626E008F07F0 /* Main.storyboard */,
 				FEA216E21C28626E008F07F0 /* ViewController.swift */,
 			);
@@ -303,6 +328,42 @@
 			name = DataModle;
 			sourceTree = "<group>";
 		};
+		FE4D25961C3F8E2C00019C5E /* BWWalkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				FE4D25A61C3F902500019C5E /* assets */,
+				FE4D25941C3F8E2C00019C5E /* BWWalkthroughPageViewController.swift */,
+				FE4D259B1C3F8FA400019C5E /* CustomPageViewController.swift */,
+				FE4D25951C3F8E2C00019C5E /* BWWalkthroughViewController.swift */,
+			);
+			name = BWWalkthrough;
+			path = "../../../Downloads/BWWalkthrough-master/BWWalkthrough";
+			sourceTree = "<group>";
+		};
+		FE4D25A01C3F902500019C5E /* tiles */ = {
+			isa = PBXGroup;
+			children = (
+				FE4D259D1C3F902500019C5E /* iPhoneScreen@2x.png */,
+				FE4D259E1C3F902500019C5E /* cloud1@2x.png */,
+				FE4D259F1C3F902500019C5E /* cloud3@2x.png */,
+			);
+			path = tiles;
+			sourceTree = "<group>";
+		};
+		FE4D25A61C3F902500019C5E /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				FE4D25A01C3F902500019C5E /* tiles */,
+				FE4D25A11C3F902500019C5E /* bg@2x.jpg */,
+				FE4D25A21C3F902500019C5E /* iPhone@2x.png */,
+				FE4D25A31C3F902500019C5E /* img3@2x.png */,
+				FE4D25A41C3F902500019C5E /* rightarrow@2x.png */,
+				FE4D25A51C3F902500019C5E /* leftarrow@2x.png */,
+			);
+			name = assets;
+			path = ../BWWalkthroughExample;
+			sourceTree = "<group>";
+		};
 		FE56C1B81C2B2D1000F24B32 /* camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,8 +379,8 @@
 				FE397D5A1C30A82200C76CBE /* ProgressViewController.swift */,
 				FE0CF3461C2FC7090026CDEB /* GenereteVideo.swift */,
 				FEF0DC251C37D3DD002BBE67 /* GenereteGIF.swift */,
-				FE56C1BA1C2B2D4500F24B32 /* UIImageExtentGif.swift */,
 				FE1181491C333D5500FECF8A /* SettingViewController.swift */,
+				FE56C1BA1C2B2D4500F24B32 /* UIImageExtentGif.swift */,
 				FE56C1BC1C2B2D6E00F24B32 /* GIFViewController.swift */,
 				FE11814B1C33EEF300FECF8A /* VideoViewController.swift */,
 				FE11814D1C34897D00FECF8A /* UIButtonExt.swift */,
@@ -469,6 +530,7 @@
 		FEA216DF1C28626E008F07F0 /* TimeCapturor */ = {
 			isa = PBXGroup;
 			children = (
+				FE4D25961C3F8E2C00019C5E /* BWWalkthrough */,
 				FE97FB881C3DED6900FB01F1 /* Chart */,
 				FE97FA9C1C3CF9D000FB01F1 /* libraries */,
 				FE97FA991C3CCD4B00FB01F1 /* AAShareBubbles */,
@@ -548,14 +610,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE4D25AC1C3F902500019C5E /* img3@2x.png in Resources */,
 				FE1181B31C3664BB00FECF8A /* schedule_image_sun-high.png in Resources */,
 				FE97FABF1C3CF9D000FB01F1 /* WeiboSDK.bundle in Resources */,
 				FE1181AA1C3664BB00FECF8A /* picker_wheel@2x.png in Resources */,
+				FE4D259A1C3F8ECA00019C5E /* Walkthrough.storyboard in Resources */,
+				FE4D25AD1C3F902500019C5E /* rightarrow@2x.png in Resources */,
 				FE1181AB1C3664BB00FECF8A /* picker_wheel_ip4.png in Resources */,
+				FE4D25AB1C3F902500019C5E /* iPhone@2x.png in Resources */,
 				FE1181AC1C3664BB00FECF8A /* picker_wheel_ip4@2x.png in Resources */,
 				FE1181B01C3664BB00FECF8A /* round_backarrow_big@2x.png in Resources */,
 				FE1181A81C3664BB00FECF8A /* checkmark_icon_white.png in Resources */,
 				FE97FABD1C3CF9D000FB01F1 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				FE4D25AA1C3F902500019C5E /* bg@2x.jpg in Resources */,
 				FE97FAC71C3CF9D100FB01F1 /* ShareSDKUI.bundle in Resources */,
 				FEA216EB1C28626E008F07F0 /* LaunchScreen.storyboard in Resources */,
 				FE1181B11C3664BB00FECF8A /* schedule_image_moon-high.png in Resources */,
@@ -563,9 +630,13 @@
 				FE1181AF1C3664BB00FECF8A /* round_backarrow_big.png in Resources */,
 				FE1181B21C3664BB00FECF8A /* schedule_image_moon-high@2x.png in Resources */,
 				FE1181A91C3664BB00FECF8A /* checkmark_icon_white@2x.png in Resources */,
+				FE4D25A81C3F902500019C5E /* cloud1@2x.png in Resources */,
 				FEA216E81C28626E008F07F0 /* Assets.xcassets in Resources */,
+				FE4D25AE1C3F902500019C5E /* leftarrow@2x.png in Resources */,
 				FE97FAC11C3CF9D000FB01F1 /* read_me.txt in Resources */,
 				FE1181B41C3664BB00FECF8A /* schedule_image_sun-high@2x.png in Resources */,
+				FE4D25A91C3F902500019C5E /* cloud3@2x.png in Resources */,
+				FE4D25A71C3F902500019C5E /* iPhoneScreen@2x.png in Resources */,
 				FE97FA9B1C3CCD4B00FB01F1 /* AAShareBubbles.bundle in Resources */,
 				FE1181AE1C3664BB00FECF8A /* round_backarrow_big-high@2x.png in Resources */,
 				FEA216E61C28626E008F07F0 /* Main.storyboard in Resources */,
@@ -634,6 +705,7 @@
 				FE4DDE731C29DDF400F7A328 /* XMCCamera.swift in Sources */,
 				FE11814A1C333D5500FECF8A /* SettingViewController.swift in Sources */,
 				FE97FB901C3DEF9700FB01F1 /* PNChartLabel.swift in Sources */,
+				FE4D25971C3F8E2C00019C5E /* BWWalkthroughPageViewController.swift in Sources */,
 				FE397D5B1C30A82200C76CBE /* ProgressViewController.swift in Sources */,
 				FE96F3941C39E0660000C70B /* ARNTransitionAnimator.swift in Sources */,
 				FE1181991C36648B00FECF8A /* KPTimePicker.m in Sources */,
@@ -643,6 +715,7 @@
 				FE11814E1C34897D00FECF8A /* UIButtonExt.swift in Sources */,
 				FE4DDE741C29DDF400F7A328 /* XMCCameraViewController.swift in Sources */,
 				FE97FB8B1C3DEE1C00FB01F1 /* PNBar.swift in Sources */,
+				FE4D25981C3F8E2C00019C5E /* BWWalkthroughViewController.swift in Sources */,
 				FE96F3921C391FF00000C70B /* DKCircleButton.m in Sources */,
 				FE11814C1C33EEF300FECF8A /* VideoViewController.swift in Sources */,
 				FEF0DC241C373D82002BBE67 /* LocalNotification.swift in Sources */,
@@ -659,6 +732,7 @@
 				FEA216F51C287052008F07F0 /* NewViewController.swift in Sources */,
 				FEF0DC261C37D3DE002BBE67 /* GenereteGIF.swift in Sources */,
 				FE1181981C36648B00FECF8A /* Categories.m in Sources */,
+				FE4D259C1C3F8FA400019C5E /* CustomPageViewController.swift in Sources */,
 				FE97FB8C1C3DEE1C00FB01F1 /* PNBarChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

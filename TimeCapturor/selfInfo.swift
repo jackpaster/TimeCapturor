@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol superViewController:class{
+    func getSuperViewController(sender:UIView)->UIViewController?
+}
+
 class selfInfo:UIView{
+    
+    weak var viewController : superViewController?
     
     override init(frame: CGRect) {
         
@@ -16,6 +22,7 @@ class selfInfo:UIView{
         setBlur()
         addChart()
         createButton()
+        
         var launchtime = 0
         var photonumber = 0
         var firstmoments = "No Record"
@@ -64,8 +71,10 @@ class selfInfo:UIView{
             animations: {
                 self.alpha = 0
             }, completion: {_ in
+                print(self.viewController?.getSuperViewController(self))
+                self.viewController?.getSuperViewController(self)?.navigationController?.hidesBarsOnSwipe = true
                 self.removeFromSuperview()})
-
+        
     }
     
     func setBlur(){
