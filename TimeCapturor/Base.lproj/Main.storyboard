@@ -316,12 +316,131 @@
                     <view key="view" contentMode="scaleToFill" id="G3i-dB-S5F">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="l1p-GD-tDe">
+                                <rect key="frame" x="270" y="90" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="WKt-bt-TpM"/>
+                                    <constraint firstAttribute="width" constant="60" id="sOP-0n-Wk6"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1g-ab-8hp">
+                                <rect key="frame" x="171" y="215" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="GUE-LQ-tRd"/>
+                                    <constraint firstAttribute="height" constant="50" id="tfH-BM-7No"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="mailAction:" destination="cyy-zD-ioL" eventType="touchUpInside" id="GKa-db-j9H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mmh-n6-yIn">
+                                <rect key="frame" x="379" y="215" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TRT-fm-ch8"/>
+                                    <constraint firstAttribute="width" constant="50" id="Zeu-Oo-o1E"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="weiboAction:" destination="cyy-zD-ioL" eventType="touchUpInside" id="0Wq-rc-7AT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6C-KB-BM6">
+                                <rect key="frame" x="186.5" y="176" width="227" height="20"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="TimeCapturor ">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="by">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" Tengfei Yang">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PV-Gh-QVV">
+                                <rect key="frame" x="275" y="215" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JI9-ga-mN2"/>
+                                    <constraint firstAttribute="width" constant="50" id="lLB-0c-kII"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="linkedinAction:" destination="cyy-zD-ioL" eventType="touchUpInside" id="msd-i8-XQQ"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="myG-F6-cgX">
+                                <rect key="frame" x="0.0" y="293" width="600" height="214"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="Tal-gH-NbE"/>
+                                </constraints>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.78823529410000004" green="0.80392156859999997" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="cyy-zD-ioL" id="MeV-I7-KbB"/>
+                                    <outlet property="delegate" destination="cyy-zD-ioL" id="PlF-7W-q7n"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3PV-Gh-QVV" firstAttribute="leading" secondItem="g1g-ab-8hp" secondAttribute="trailing" constant="54" id="6R7-yl-rmt"/>
+                            <constraint firstItem="l1p-GD-tDe" firstAttribute="centerX" secondItem="G3i-dB-S5F" secondAttribute="centerX" id="Amm-3b-1cB"/>
+                            <constraint firstItem="u6C-KB-BM6" firstAttribute="top" secondItem="l1p-GD-tDe" secondAttribute="bottom" constant="26" id="Ijo-qD-JRQ"/>
+                            <constraint firstItem="myG-F6-cgX" firstAttribute="top" secondItem="Mmh-n6-yIn" secondAttribute="bottom" constant="35" id="MeK-Oq-rSB"/>
+                            <constraint firstItem="u6C-KB-BM6" firstAttribute="centerX" secondItem="G3i-dB-S5F" secondAttribute="centerX" id="RlK-Rm-wTm"/>
+                            <constraint firstItem="3PV-Gh-QVV" firstAttribute="top" secondItem="u6C-KB-BM6" secondAttribute="bottom" constant="19.5" id="SIV-Ar-cep"/>
+                            <constraint firstItem="g1g-ab-8hp" firstAttribute="centerY" secondItem="3PV-Gh-QVV" secondAttribute="centerY" id="Sn7-ib-Ak1"/>
+                            <constraint firstItem="myG-F6-cgX" firstAttribute="top" secondItem="3PV-Gh-QVV" secondAttribute="bottom" constant="28" id="UY6-Wn-Xdd"/>
+                            <constraint firstItem="3PV-Gh-QVV" firstAttribute="centerX" secondItem="G3i-dB-S5F" secondAttribute="centerX" id="YVU-rc-1Ad"/>
+                            <constraint firstItem="8u9-T6-DCU" firstAttribute="top" secondItem="myG-F6-cgX" secondAttribute="bottom" constant="159" id="Zo0-Zp-oyz"/>
+                            <constraint firstItem="Mmh-n6-yIn" firstAttribute="leading" secondItem="3PV-Gh-QVV" secondAttribute="trailing" constant="54" id="dBS-Tg-pOL"/>
+                            <constraint firstItem="l1p-GD-tDe" firstAttribute="top" secondItem="tnK-r2-gfl" secondAttribute="bottom" constant="26" id="eCc-NU-EB1"/>
+                            <constraint firstItem="Mmh-n6-yIn" firstAttribute="centerY" secondItem="3PV-Gh-QVV" secondAttribute="centerY" id="fVJ-MI-Qwa"/>
+                            <constraint firstItem="myG-F6-cgX" firstAttribute="centerX" secondItem="l1p-GD-tDe" secondAttribute="centerX" id="ivb-oB-E5u"/>
+                            <constraint firstItem="myG-F6-cgX" firstAttribute="leading" secondItem="G3i-dB-S5F" secondAttribute="leading" id="j9x-vX-96F"/>
+                            <constraint firstItem="8u9-T6-DCU" firstAttribute="top" secondItem="myG-F6-cgX" secondAttribute="bottom" constant="159" id="je6-hg-CaO"/>
+                            <constraint firstItem="8u9-T6-DCU" firstAttribute="top" secondItem="myG-F6-cgX" secondAttribute="bottom" constant="157" id="oQE-NV-bER"/>
+                            <constraint firstItem="myG-F6-cgX" firstAttribute="centerX" secondItem="3PV-Gh-QVV" secondAttribute="centerX" id="qdv-H4-Tho"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MeK-Oq-rSB"/>
+                                <exclude reference="ivb-oB-E5u"/>
+                                <exclude reference="Zo0-Zp-oyz"/>
+                                <exclude reference="je6-hg-CaO"/>
+                                <exclude reference="oQE-NV-bER"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="linkedinButton" destination="3PV-Gh-QVV" id="zqx-yV-Dac"/>
+                        <outlet property="mailButton" destination="g1g-ab-8hp" id="5KT-MM-Uvi"/>
+                        <outlet property="namelable" destination="u6C-KB-BM6" id="cmh-pt-Ra9"/>
+                        <outlet property="tableView" destination="myG-F6-cgX" id="Ifu-M0-sTj"/>
+                        <outlet property="weiboButton" destination="Mmh-n6-yIn" id="I6c-yE-TMX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83h-be-VAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="66" y="1231"/>
+            <point key="canvasLocation" x="712" y="1205"/>
         </scene>
         <!--GIF-->
         <scene sceneID="DRD-I9-pe0">
@@ -663,6 +782,9 @@
             <point key="canvasLocation" x="2445" y="592"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="90" height="90"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fks-tq-UcP"/>
         <segue reference="2aE-hS-PFS"/>

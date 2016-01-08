@@ -7,104 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		003915FEC4E4D226090937C5870D1C89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C07C7A1DAFFE2AE0B16D68F022DB644A /* Images.xcassets */; };
-		020A0B366969D565FD7F10C5A233B7E5 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62256F00DF8A27F9889BFC2E7AD5A475 /* Spring.swift */; };
-		021F41674FEDC147D1CF6701880CCB48 /* EFCircularSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A71E38BC946D5232080B04EE5BD616E2 /* EFCircularSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05AE1C04014A62B08DBE476BCF6D6E95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D523200973B87018345C92AE4DDC1A /* Foundation.framework */; };
-		066AEF6A1B987399C90F7B3AF53579F5 /* KVNProgressConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 914553027862727D712E233A118845DD /* KVNProgressConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		086E951555CEC2F39C621193DABBA789 /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51FDE5CC2A9AF3765051F3E46D16892 /* SpringTextField.swift */; };
-		0B6AE3DCDBCE4F29BEB47B4F2C45965C /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D431882A11EE21B688625388FE0ABC7 /* SpringAnimation.swift */; };
-		0E697617D95A143F2BBA23F382B4DAC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D523200973B87018345C92AE4DDC1A /* Foundation.framework */; };
-		0EE9D85E3C609CF07EE82AD2AAC58BAD /* KVNProgressConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 420681BC054C34A97C0489F914D2542D /* KVNProgressConfiguration.m */; };
-		10D07EC8D2BBF2F41773210E68D7F3EE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBFD675F416D5126DB71761AE9DBC29 /* AVFoundation.framework */; };
-		116D3767A78FC0657E88B4CEDA4C3299 /* UIImage+KVNEmpty.h in Headers */ = {isa = PBXBuildFile; fileRef = BD54A320EF09D7304D86A07BD49D3ADB /* UIImage+KVNEmpty.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		144405A414830766CD06305169178402 /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92238BC43869DB1786030AF8D13B1132 /* CGRectEx.swift */; };
-		1591DE614547FE2A772F9B44AB0520B3 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B02D177CDE2F47E11B5CD278816A35 /* DesignableTextField.swift */; };
-		1B1FAFB4C5463D5A000E29D983F9C75B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D523200973B87018345C92AE4DDC1A /* Foundation.framework */; };
-		33877679519BE2424FFCAD617B3EC745 /* UCZProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA1D0695FF182908EC2B94F3660EBA0B /* UCZProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		350983A43964F1F77705B21E2F19253B /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E99F3AE7AD1F067D69C01DE9218CE08 /* Misc.swift */; };
-		40A348DBAFBAC1CB7ED10124C451D65F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242078D4ABE087EDD5FCD15C5F7DE22C /* GLKit.framework */; };
-		4244375967A72339B965317FB0B307AD /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262662D7A0099461732EAC8F095A1AC1 /* ArrayEx.swift */; };
-		448600C6398483188CBE97DC1497F82B /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94241D17EC02B9CE804C63D0EDC96779 /* DesignableTextView.swift */; };
-		469669D4E7C1B3D66763C6DE5BBAB940 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C1B4BA9A7625E6478B906D459776FB /* SpringButton.swift */; };
-		4A942A57F2343A6F0D0FA784EADC41E9 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D976A5179404C41557EED031ACBB9862 /* SpringTextView.swift */; };
-		4DC0FDA187A65CCCAC70FF3EB2179837 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1343B9E5F52EB7B08FB4A80BE460ABD /* AutoTextView.swift */; };
-		511B0DA99ACFB668C4767A1C74AD4348 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58150EF9DCA092EEA30C94CA389B4213 /* LoadingView.xib */; };
-		5CA8BCBE8D912BA8500E198D4F47E1AE /* LLSimpleCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 639B38EC4D45BF8F812CA96797CD81A6 /* LLSimpleCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E3D71D11A9778CCAEE350748CD92286 /* LLSimpleCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 71115B30E5A118EDE8A96FCB9A902D2D /* LLSimpleCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FBBB3A122CEA1951C3104AEA6F5100C /* LiquidFloatingActionButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C83C633F6537E172839D189E9EC50CE /* LiquidFloatingActionButton-dummy.m */; };
-		62578A52D3300D477F379ECA85D6AB15 /* UCZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ACF41C12DFEB938DE855E735C4E336 /* UCZProgressView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		65EE2DD87890D3CCE82E3A56CD2AE2B2 /* UCZProgressView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1467CF8A6AB2D63C0E7DC1D61A5473A8 /* UCZProgressView-dummy.m */; };
-		667528014B04A9589177AD2D8D99F0CA /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8512F092E2C0EC86B1BC0DF80B0B1A5 /* DesignableLabel.swift */; };
-		6AD52D80E5C7AB3C0D28A2BB4FCAE074 /* LLSimpleCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B76DBE1B57D4C3445873C0E74E303C0D /* LLSimpleCamera-dummy.m */; };
-		6B1261BCCD2E73CB9B0A5F852B071C50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D523200973B87018345C92AE4DDC1A /* Foundation.framework */; };
-		6F16D46ED6C49A4E9D7CA997E5D4C2DE /* Pods-TimeCapturor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BE17A1E85D6F50ED1CC59CB8655701F /* Pods-TimeCapturor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		706DD00E534236F25B5E1368B594BCC3 /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0675EF8398CFBD5B2704584CB3C98 /* UIImage+KVNEmpty.m */; };
-		72042359B6606B6363E495430D780479 /* LiquidFloatingActionButton.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F3315AAF788079004E87827C91668084 /* LiquidFloatingActionButton.bundle */; };
-		721FF54B4A785E32B4CE9276161249FD /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC35BED496FD728DAE829EF67810B6EB /* DesignableView.swift */; };
-		77B44D096AFF054E4D8CC5B293F56612 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F555C414AD258AECABD48D54A5E70FFC /* SoundPlayer.swift */; };
-		7BFDBBD2140BBAEAE9F8C529FA98E9AD /* EFCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B6526333515D2A9B22386A6191DBA0F2 /* EFCircularSlider.m */; };
-		7C4A7782F2A3F28C5A5E5C751406E528 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D523200973B87018345C92AE4DDC1A /* Foundation.framework */; };
-		82E64159AFF200F6024944614B5E168C /* KVNProgress-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 869CF0C1FC0047BD10A5F28FC9087ACA /* KVNProgress-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8CAC372B4D65D175A0574BB8D40FA96F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D523200973B87018345C92AE4DDC1A /* Foundation.framework */; };
-		90D4F4C109EED5CF54172D788FDBF181 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E5CDD73BE4D84B9931E7F2CE2A1F16 /* AsyncButton.swift */; };
-		924E42C1512BA8B48BF2974343F4D1B4 /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482BF8220238D400C9118A902D2AAF3 /* LLSimpleCamera.m */; };
-		93A65C4380703954DF5831808850E6D6 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB988D308301A17F2AA1C2CE303D76 /* UIImage+FixOrientation.m */; };
-		96D8037E6032143CD5237639BDCBF324 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D9D3032CC3C8B808D47C5D6A6D589FD /* QuartzCore.framework */; };
-		98CEF588F0DF2BF4B36714C5D4D18815 /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1BC9ABE2FEBB9D7DCD8AD16E19B2B /* SpringImageView.swift */; };
-		9D4F49D74918F7237C28EAF763BEA6C1 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E2BC5D5EDF9FB4DD77AAD91043F20E /* DesignableTabBarController.swift */; };
-		A2D21610C3F4F1940DB5B88B227B4C3E /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA859153A1D17DAF3DAB788C73F8817 /* UnwindSegue.swift */; };
-		A4319C2D6D6F82D6A0CA2CB4600883B6 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEEC7C1D4DDD7296726BD8E7F0257F /* KeyboardLayoutConstraint.swift */; };
-		A613847AC9885D0F7886055EE6076C64 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F431C1795856073DC6CFEC114878D /* AsyncImageView.swift */; };
-		A781E4D25452C954ACAAE3FD0AC9B729 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E08E02E1935C94069691BF8B22D0F82 /* BlurView.swift */; };
-		ABF2B055A55B65795E721D4A77BB8D01 /* KVNProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5F42E740DE78DB9F0A4CD0813BFC9 /* KVNProgress-dummy.m */; };
-		AE56B5E1E264B18711A0AE478901B129 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EC1E37C6DC1009B0F6A803F477CBF3 /* DesignableImageView.swift */; };
-		AE59C3FD0BEF00C2CCAB0E64C00EC6F2 /* LiquidUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A023F32AD9604A1A5C81FDF7E2F98D63 /* LiquidUtil.swift */; };
-		AF71B63F7B7FB9C09F4A1424BAFE1360 /* LiquidFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7DEB2CD435C144E78ECC0DB32BE2A /* LiquidFloatingActionButton.swift */; };
-		B0A973C6184C25929F3C56F78BC651E4 /* UIColor+KVNContrast.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEC978438867DAF957A2E374170BDDA /* UIColor+KVNContrast.m */; };
-		B0FDB457A24834D499F21DE41172DBFB /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B428D77744A51A8E0F931C23D4B39D /* SpringView.swift */; };
-		B477BDCD9B1D06725C07B4448903D7F3 /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 237078416EEFBE1AE2FFFEBE8EFF1DA7 /* UIImage+KVNImageEffects.m */; };
-		B7AFD9C143865892B89249A5C69CD5B3 /* UIImage+KVNImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 51AE7DCB654CBF5DD4460C37ADC8090F /* UIImage+KVNImageEffects.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA98EBDB57D30CC7369E42012CB3FB34 /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D18877DF548A475354EFEB0BC86686 /* CGPointEx.swift */; };
-		BCD46D72F2A27D0DF398386FF30B8F26 /* LiquittableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE02C339BB0E4879B6A54378CE4E26 /* LiquittableCircle.swift */; };
-		BD18BDED1CC9AD4AA4050786288C8D8C /* KVNProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B3DD4CFABE94AD44F178C6D16BCA395 /* KVNProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C07017E2811BE1C64C184C5B55417040 /* EFCircularSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = A18E31E357AE547ACEC265A86F32DC55 /* EFCircularSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3C101ACB04EDAC3BA7EC5F4C2984A94 /* UIImage+FixOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 20757ED2458D16AF4638C9A8932A799F /* UIImage+FixOrientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C6237CC769ED3BD1A205D2A9EB8DC96C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D523200973B87018345C92AE4DDC1A /* Foundation.framework */; };
-		C925B5EC210BB0103F4DE084751BF9C4 /* Pods-TimeCapturor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E078D562D7FB09EFEC2DC0B06ADFA5 /* Pods-TimeCapturor-dummy.m */; };
-		CD635561809D218A952928FCA3BC1B78 /* LiquidFloatingActionButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E49DF536EE049317C5031B62EBF1F8B8 /* LiquidFloatingActionButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CE81C87BE66A0443B20EDA83A66BB3D4 /* UIColor+KVNContrast.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BCD25611D5792D9A086C71D2E317862 /* UIColor+KVNContrast.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF7A6F4D7F8C554E17E5FDC23B0BDF19 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F346CE7BFEA33330D055E0FB0F1FE0A /* TransitionManager.swift */; };
-		D4E977BCE4ED1AF24E7E122FC462E42B /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = D09D12676AD757E3F1BFD65F53B35A04 /* KVNProgress.m */; };
-		D5E7E3824F0498F940F05F29A708C72C /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEBA4E1D651B153823DBF68F0EB7471 /* DesignableButton.swift */; };
-		D80B06E8D941BA18E0682854E5D0D9DF /* Spring-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0C76B420F8C9BBF000A0549829BC8D /* Spring-dummy.m */; };
-		DADFF878CB7140130210C8DB8197E291 /* KVNProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2DFA04E1A6F4A1E8C91D94B9FCDE7F /* KVNProgressView.xib */; };
-		DB0D31FDF40C1AE86E988CAB5F7D6578 /* SimpleCircleLiquidEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5688D55B9C527592AF4552088156D44 /* SimpleCircleLiquidEngine.swift */; };
-		DBACA45ACDF9060B17ECAE8EE304081A /* EFCircularSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9396FFF817B4DA667B4521660A905DC /* EFCircularSlider-dummy.m */; };
-		E32ECBC7CEFF1B40A623061F8B402EFB /* UCZProgressView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B7F9E584FD8D48A8A8E3E79FB27335F /* UCZProgressView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4E822FDD424437D7ED32C3A531B66B3 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EDF42B30772A81E8D885A28EF8B24 /* SpringLabel.swift */; };
-		F6E296D865B2E936E3B406EE944459DA /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA1B49657D5F3460885B73B0A26170 /* ImageLoader.swift */; };
-		FB3675DBEA0FCB8B5E43D9E80C7FF843 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C2367AE019475D4804420CFABBB29 /* LoadingView.swift */; };
-		FEE5ADABDECF19DEFA0DF35A5D6378BB /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F92A917F4B895AA56A6D96B93706B1D /* TransitionZoom.swift */; };
-		FF747B3BDF1D1DDF633B9FEBFA9C15ED /* UIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43E7B1F13F0CCFA47E127974CAE3D5 /* UIColorEx.swift */; };
-		FFF97B15D47B207D7557546E256C2C21 /* Spring-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE5F08F8DBFA0CB9B4FBC4EA3BDA15A /* Spring-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		021F41674FEDC147D1CF6701880CCB48 /* EFCircularSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF2C46075DBFD173ADC892B96E298EB3 /* EFCircularSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		066AEF6A1B987399C90F7B3AF53579F5 /* KVNProgressConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = B42D948677CE3B6D4B0B33BDBFDDED62 /* KVNProgressConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EE9D85E3C609CF07EE82AD2AAC58BAD /* KVNProgressConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 73942F774780670832B6A8CFB0A1E00B /* KVNProgressConfiguration.m */; };
+		116D3767A78FC0657E88B4CEDA4C3299 /* UIImage+KVNEmpty.h in Headers */ = {isa = PBXBuildFile; fileRef = 42AC658986FDE3F9C00E204E53DBAEBB /* UIImage+KVNEmpty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		144405A414830766CD06305169178402 /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABBA7EB8C367975C4859CA50A3C0FB /* CGRectEx.swift */; };
+		1B1FAFB4C5463D5A000E29D983F9C75B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E1D525FC60D38299B8AA6FE3B91778 /* Foundation.framework */; };
+		30CBF10C3EBF62450F520ED7A9DCCAF4 /* UCZProgressView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D517E90B005F0386CE7B0B8C90122A /* UCZProgressView-dummy.m */; };
+		38D64693EDC10E100B130F3BB65A7125 /* UCZProgressView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9F532A03F966F4F07E053812A712CC1 /* UCZProgressView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40A348DBAFBAC1CB7ED10124C451D65F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD77FEBECDB7C42A60E8A649AD234DF /* GLKit.framework */; };
+		4244375967A72339B965317FB0B307AD /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8FE271E98AD82FB051C5819B0C5D0 /* ArrayEx.swift */; };
+		5FBBB3A122CEA1951C3104AEA6F5100C /* LiquidFloatingActionButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D53C8AC73DB72D127ABEDF450375D6A /* LiquidFloatingActionButton-dummy.m */; };
+		6B1261BCCD2E73CB9B0A5F852B071C50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E1D525FC60D38299B8AA6FE3B91778 /* Foundation.framework */; };
+		6D1E440F02857E36E50E107CF115E38C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E1D525FC60D38299B8AA6FE3B91778 /* Foundation.framework */; };
+		706DD00E534236F25B5E1368B594BCC3 /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = D066250D71C83EB048FA4EBB8A783519 /* UIImage+KVNEmpty.m */; };
+		72042359B6606B6363E495430D780479 /* LiquidFloatingActionButton.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DAEECB23039DA3C7C1F679C32F83070D /* LiquidFloatingActionButton.bundle */; };
+		77F65E1DF7FFCB57D444EAFC81932D83 /* Pods-TimeCapturor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BE17A1E85D6F50ED1CC59CB8655701F /* Pods-TimeCapturor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BFDBBD2140BBAEAE9F8C529FA98E9AD /* EFCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D689E49E07DA7D4ADB12D5C8AA71F /* EFCircularSlider.m */; };
+		7C4A7782F2A3F28C5A5E5C751406E528 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E1D525FC60D38299B8AA6FE3B91778 /* Foundation.framework */; };
+		82E64159AFF200F6024944614B5E168C /* KVNProgress-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E91D523EC77DE922176F2925DD522E94 /* KVNProgress-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8DE06C5BA1665446756ADA368240AA70 /* UCZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 496080C50EAF0A31FE1E6ECD35DC9674 /* UCZProgressView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		96D8037E6032143CD5237639BDCBF324 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA67F2A9BFD0FE2388B40BD869E59A2 /* QuartzCore.framework */; };
+		ABF2B055A55B65795E721D4A77BB8D01 /* KVNProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F30BBD422CBDBBC91B3F0F5B66B098 /* KVNProgress-dummy.m */; };
+		AE59C3FD0BEF00C2CCAB0E64C00EC6F2 /* LiquidUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB29062B9C09D15546DAF68A1133835 /* LiquidUtil.swift */; };
+		AF71B63F7B7FB9C09F4A1424BAFE1360 /* LiquidFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4773AE0E77BB0DC8DEA85803A5BB694 /* LiquidFloatingActionButton.swift */; };
+		B0A973C6184C25929F3C56F78BC651E4 /* UIColor+KVNContrast.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6423D389C1B3EF868112812797622F /* UIColor+KVNContrast.m */; };
+		B477BDCD9B1D06725C07B4448903D7F3 /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 172FEFCF1D6762DD17C29BEC802E59CC /* UIImage+KVNImageEffects.m */; };
+		B7AFD9C143865892B89249A5C69CD5B3 /* UIImage+KVNImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = BBA4818111B1F79EAEB1FB99620671FF /* UIImage+KVNImageEffects.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA98EBDB57D30CC7369E42012CB3FB34 /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA802719BB122421035AC07C0CE53B /* CGPointEx.swift */; };
+		BCD46D72F2A27D0DF398386FF30B8F26 /* LiquittableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E88758D1C44920ACFD34FE9361F42 /* LiquittableCircle.swift */; };
+		BD18BDED1CC9AD4AA4050786288C8D8C /* KVNProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 4311FAD4E01230EAA0C4DCA5CA8B529A /* KVNProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C07017E2811BE1C64C184C5B55417040 /* EFCircularSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = D8E01032E892B1A8FA95E6C3CA882B95 /* EFCircularSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD635561809D218A952928FCA3BC1B78 /* LiquidFloatingActionButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E6656A36C4558C3401818C40BFD4B6B5 /* LiquidFloatingActionButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE81C87BE66A0443B20EDA83A66BB3D4 /* UIColor+KVNContrast.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FE85DDD16838660449910F57525ED48 /* UIColor+KVNContrast.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4E977BCE4ED1AF24E7E122FC462E42B /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 4575CFE00F9190B567B73947485A7C94 /* KVNProgress.m */; };
+		DA52AF3DC1E7D51AD5803CE4B6E8038D /* Pods-TimeCapturor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E078D562D7FB09EFEC2DC0B06ADFA5 /* Pods-TimeCapturor-dummy.m */; };
+		DADFF878CB7140130210C8DB8197E291 /* KVNProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF883C10AA8B03FBF05004800777ADD3 /* KVNProgressView.xib */; };
+		DB0D31FDF40C1AE86E988CAB5F7D6578 /* SimpleCircleLiquidEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B69C255415195A7C7E4F514D80CD6E8 /* SimpleCircleLiquidEngine.swift */; };
+		DBACA45ACDF9060B17ECAE8EE304081A /* EFCircularSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD6228FB79552D12A59E8CF79D212AF /* EFCircularSlider-dummy.m */; };
+		FF0110D5F2ACE4C82F6AC419B6A4B6EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E1D525FC60D38299B8AA6FE3B91778 /* Foundation.framework */; };
+		FF55E0E0460F41266ED55AC88BE5B02D /* UCZProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEABCB19A02754549596C6D24FC5CB5 /* UCZProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF747B3BDF1D1DDF633B9FEBFA9C15ED /* UIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF73E90E16C9E0C172C54D980F25249D /* UIColorEx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		00D13C5E7060C021C4539D91B6F0D1D1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05516AD18935EA188E67A02E44DA59A2;
-			remoteInfo = Spring;
-		};
-		1518816525CDE6173D1825EF5DADC69A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0A553B647447226A207E710D3FC053DB;
-			remoteInfo = UCZProgressView;
-		};
 		241D7E67C3518A9E632A0EDFC7D211A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -112,168 +58,119 @@
 			remoteGlobalIDString = 2E4A37C88D68A62EA5C1BC7A2A4D19AE;
 			remoteInfo = "LiquidFloatingActionButton-LiquidFloatingActionButton";
 		};
-		7921DF592A085BFA38CBE1DD34C55697 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 190D63557CBC9A591589F57F4E4140A4;
-			remoteInfo = EFCircularSlider;
-		};
-		C84BEC2A0779E0C81E86A8D6F9C27BD5 /* PBXContainerItemProxy */ = {
+		32F11E0F3DB3096008A26D482CADB55E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = ECB4143196184B0E0EA02182DB2B9CCA;
 			remoteInfo = LiquidFloatingActionButton;
 		};
-		DB6B47C4D40A0797110440CA061589BB /* PBXContainerItemProxy */ = {
+		4D15235898C9AF04525F2749D9A3819B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F3B2D43FCC5741C3385E474CA4A79DE;
+			remoteInfo = UCZProgressView;
+		};
+		B0C1B7CE9DB5F559543629CD9608A3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 190D63557CBC9A591589F57F4E4140A4;
+			remoteInfo = EFCircularSlider;
+		};
+		CFE654F41093EF8E9C7FCCE8550A14D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0186EE20AB4D310515B8041966DB7AEB;
 			remoteInfo = KVNProgress;
 		};
-		F0F9ABA88C8F04EA6E290CDF3F902D14 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE0CC7E2B5B550BC4172F6FF9CC5D50A;
-			remoteInfo = LLSimpleCamera;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01D1BC9ABE2FEBB9D7DCD8AD16E19B2B /* SpringImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringImageView.swift; path = Spring/SpringImageView.swift; sourceTree = "<group>"; };
-		02BEEC7C1D4DDD7296726BD8E7F0257F /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardLayoutConstraint.swift; path = Spring/KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
-		04D18877DF548A475354EFEB0BC86686 /* CGPointEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGPointEx.swift; path = Pod/Classes/CGPointEx.swift; sourceTree = "<group>"; };
-		07164BD7A467CDEAB0FC514BFAB6ED1D /* EFCircularSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EFCircularSlider-prefix.pch"; sourceTree = "<group>"; };
-		0F6FBAE6220A9E04433744208252D652 /* UCZProgressView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UCZProgressView-prefix.pch"; sourceTree = "<group>"; };
-		112F5D5F762589FF845C1119439CEB93 /* LLSimpleCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LLSimpleCamera.xcconfig; sourceTree = "<group>"; };
-		143C296F3DC74BD8F9EA775CEC580EB9 /* LLSimpleCamera.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LLSimpleCamera.modulemap; sourceTree = "<group>"; };
-		1467CF8A6AB2D63C0E7DC1D61A5473A8 /* UCZProgressView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UCZProgressView-dummy.m"; sourceTree = "<group>"; };
-		186EDF42B30772A81E8D885A28EF8B24 /* SpringLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringLabel.swift; path = Spring/SpringLabel.swift; sourceTree = "<group>"; };
-		1BCD25611D5792D9A086C71D2E317862 /* UIColor+KVNContrast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+KVNContrast.h"; path = "KVNProgress/Categories/UIColor+KVNContrast.h"; sourceTree = "<group>"; };
-		1C24BB94CA670EA5B727D4DD1D0FDC10 /* Spring.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spring.modulemap; sourceTree = "<group>"; };
-		1DAF8BF58C3052C0E9C9517E50DA4EEA /* Spring.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spring.xcconfig; sourceTree = "<group>"; };
-		20757ED2458D16AF4638C9A8932A799F /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+FixOrientation.h"; path = "LLSimpleCamera/UIImage+FixOrientation.h"; sourceTree = "<group>"; };
-		230C2367AE019475D4804420CFABBB29 /* LoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = Spring/LoadingView.swift; sourceTree = "<group>"; };
-		237078416EEFBE1AE2FFFEBE8EFF1DA7 /* UIImage+KVNImageEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNImageEffects.m"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.m"; sourceTree = "<group>"; };
-		242078D4ABE087EDD5FCD15C5F7DE22C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
-		262662D7A0099461732EAC8F095A1AC1 /* ArrayEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArrayEx.swift; path = Pod/Classes/ArrayEx.swift; sourceTree = "<group>"; };
-		287F431C1795856073DC6CFEC114878D /* AsyncImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncImageView.swift; path = Spring/AsyncImageView.swift; sourceTree = "<group>"; };
-		2A6AA3692E0B1EF608D40FFE3427D16E /* UCZProgressView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UCZProgressView.xcconfig; sourceTree = "<group>"; };
-		2AA859153A1D17DAF3DAB788C73F8817 /* UnwindSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnwindSegue.swift; path = Spring/UnwindSegue.swift; sourceTree = "<group>"; };
-		2CEB235F8BEB7CD6F4D07C1F8FC125CC /* LiquidFloatingActionButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LiquidFloatingActionButton.modulemap; sourceTree = "<group>"; };
-		2D9D3032CC3C8B808D47C5D6A6D589FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		3584B17CFB4ECAED5CFEEF5BA59AA9F4 /* UCZProgressView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UCZProgressView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0122E80C206BEC0C1B4273FC848C4085 /* UCZProgressView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UCZProgressView-prefix.pch"; sourceTree = "<group>"; };
+		019C4EDD4FD1B8646D1F88670FEDA8BA /* LiquidFloatingActionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LiquidFloatingActionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FEABCB19A02754549596C6D24FC5CB5 /* UCZProgressView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UCZProgressView.h; path = Lib/UCZProgressView.h; sourceTree = "<group>"; };
+		172FEFCF1D6762DD17C29BEC802E59CC /* UIImage+KVNImageEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNImageEffects.m"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.m"; sourceTree = "<group>"; };
+		18B670504874E4B39149468E34AEE5A3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D53C8AC73DB72D127ABEDF450375D6A /* LiquidFloatingActionButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LiquidFloatingActionButton-dummy.m"; sourceTree = "<group>"; };
+		2F3EB43C17E384BB34BF6643168B3C13 /* KVNProgress-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVNProgress-prefix.pch"; sourceTree = "<group>"; };
+		2FE85DDD16838660449910F57525ED48 /* UIColor+KVNContrast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+KVNContrast.h"; path = "KVNProgress/Categories/UIColor+KVNContrast.h"; sourceTree = "<group>"; };
+		31D517E90B005F0386CE7B0B8C90122A /* UCZProgressView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UCZProgressView-dummy.m"; sourceTree = "<group>"; };
 		364AE2203B948E252ACCD4E16CD4F685 /* Pods-TimeCapturor-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TimeCapturor-resources.sh"; sourceTree = "<group>"; };
-		3710BADD5389BBA1AF1846FA2F69F789 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39DA1B49657D5F3460885B73B0A26170 /* ImageLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = Spring/ImageLoader.swift; sourceTree = "<group>"; };
-		3B7F9E584FD8D48A8A8E3E79FB27335F /* UCZProgressView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UCZProgressView-umbrella.h"; sourceTree = "<group>"; };
-		3BDE02C339BB0E4879B6A54378CE4E26 /* LiquittableCircle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LiquittableCircle.swift; path = Pod/Classes/LiquittableCircle.swift; sourceTree = "<group>"; };
-		3D431882A11EE21B688625388FE0ABC7 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringAnimation.swift; path = Spring/SpringAnimation.swift; sourceTree = "<group>"; };
-		3EEBA4E1D651B153823DBF68F0EB7471 /* DesignableButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableButton.swift; path = Spring/DesignableButton.swift; sourceTree = "<group>"; };
-		3F346CE7BFEA33330D055E0FB0F1FE0A /* TransitionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = Spring/TransitionManager.swift; sourceTree = "<group>"; };
-		420681BC054C34A97C0489F914D2542D /* KVNProgressConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgressConfiguration.m; path = KVNProgress/Classes/KVNProgressConfiguration.m; sourceTree = "<group>"; };
-		4480A54812B0C5D1D30D8B9C5FDF2B16 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B3DD4CFABE94AD44F178C6D16BCA395 /* KVNProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgress.h; path = KVNProgress/Classes/KVNProgress.h; sourceTree = "<group>"; };
-		4DE5F08F8DBFA0CB9B4FBC4EA3BDA15A /* Spring-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-umbrella.h"; sourceTree = "<group>"; };
-		4EF5F42E740DE78DB9F0A4CD0813BFC9 /* KVNProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KVNProgress-dummy.m"; sourceTree = "<group>"; };
-		51AE7DCB654CBF5DD4460C37ADC8090F /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNImageEffects.h"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
-		57E2BC5D5EDF9FB4DD77AAD91043F20E /* DesignableTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTabBarController.swift; path = Spring/DesignableTabBarController.swift; sourceTree = "<group>"; };
-		58150EF9DCA092EEA30C94CA389B4213 /* LoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LoadingView.xib; path = Spring/LoadingView.xib; sourceTree = "<group>"; };
-		5BBB988D308301A17F2AA1C2CE303D76 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FixOrientation.m"; path = "LLSimpleCamera/UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		38FBE00AFD8483211DB1E3A7A0105E03 /* LiquidFloatingActionButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LiquidFloatingActionButton-prefix.pch"; sourceTree = "<group>"; };
+		3991EAE3526AA7188943B297AEBFF92E /* EFCircularSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EFCircularSlider-prefix.pch"; sourceTree = "<group>"; };
+		3A165174614EA8253332AC1E70CE22F5 /* KVNProgress.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = KVNProgress.modulemap; sourceTree = "<group>"; };
+		3A6423D389C1B3EF868112812797622F /* UIColor+KVNContrast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KVNContrast.m"; path = "KVNProgress/Categories/UIColor+KVNContrast.m"; sourceTree = "<group>"; };
+		42AC658986FDE3F9C00E204E53DBAEBB /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNEmpty.h"; path = "KVNProgress/Categories/UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
+		4311FAD4E01230EAA0C4DCA5CA8B529A /* KVNProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgress.h; path = KVNProgress/Classes/KVNProgress.h; sourceTree = "<group>"; };
+		4575CFE00F9190B567B73947485A7C94 /* KVNProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgress.m; path = KVNProgress/Classes/KVNProgress.m; sourceTree = "<group>"; };
+		49221BC08EEFF8EB23430CD99154D6E3 /* UCZProgressView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = UCZProgressView.modulemap; sourceTree = "<group>"; };
+		496080C50EAF0A31FE1E6ECD35DC9674 /* UCZProgressView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UCZProgressView.m; path = Lib/UCZProgressView.m; sourceTree = "<group>"; };
+		49CC64EE01AA2399AC6D6CAFDE5C2617 /* KVNProgress.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KVNProgress.xcconfig; sourceTree = "<group>"; };
+		4B69C255415195A7C7E4F514D80CD6E8 /* SimpleCircleLiquidEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleCircleLiquidEngine.swift; path = Pod/Classes/SimpleCircleLiquidEngine.swift; sourceTree = "<group>"; };
+		5ACD74E540204030B749015D433941CB /* LiquidFloatingActionButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LiquidFloatingActionButton.modulemap; sourceTree = "<group>"; };
 		5BE17A1E85D6F50ED1CC59CB8655701F /* Pods-TimeCapturor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TimeCapturor-umbrella.h"; sourceTree = "<group>"; };
-		5C43E7B1F13F0CCFA47E127974CAE3D5 /* UIColorEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColorEx.swift; path = Pod/Classes/UIColorEx.swift; sourceTree = "<group>"; };
-		5D050EDD1C52FB8331D5CA5AE8232D90 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62256F00DF8A27F9889BFC2E7AD5A475 /* Spring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spring.swift; path = Spring/Spring.swift; sourceTree = "<group>"; };
-		639B38EC4D45BF8F812CA96797CD81A6 /* LLSimpleCamera-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LLSimpleCamera-umbrella.h"; sourceTree = "<group>"; };
-		649344F9A6EA80657B3383E32BCA9641 /* EFCircularSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EFCircularSlider.xcconfig; sourceTree = "<group>"; };
-		6FC0675EF8398CFBD5B2704584CB3C98 /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNEmpty.m"; path = "KVNProgress/Categories/UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
-		71115B30E5A118EDE8A96FCB9A902D2D /* LLSimpleCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LLSimpleCamera.h; path = LLSimpleCamera/LLSimpleCamera.h; sourceTree = "<group>"; };
-		71A7DEB2CD435C144E78ECC0DB32BE2A /* LiquidFloatingActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LiquidFloatingActionButton.swift; path = Pod/Classes/LiquidFloatingActionButton.swift; sourceTree = "<group>"; };
-		77FC5FB0B876DF964924AB5A49EF2857 /* KVNProgress.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = KVNProgress.modulemap; sourceTree = "<group>"; };
-		7A2DFA04E1A6F4A1E8C91D94B9FCDE7F /* KVNProgressView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = KVNProgressView.xib; path = KVNProgress/Resources/KVNProgressView.xib; sourceTree = "<group>"; };
-		82ADE861F39F7332174A387EBC0DEC15 /* LiquidFloatingActionButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LiquidFloatingActionButton.xcconfig; sourceTree = "<group>"; };
-		8482BF8220238D400C9118A902D2AAF3 /* LLSimpleCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LLSimpleCamera.m; path = LLSimpleCamera/LLSimpleCamera.m; sourceTree = "<group>"; };
-		869CF0C1FC0047BD10A5F28FC9087ACA /* KVNProgress-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVNProgress-umbrella.h"; sourceTree = "<group>"; };
-		88EC1E37C6DC1009B0F6A803F477CBF3 /* DesignableImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableImageView.swift; path = Spring/DesignableImageView.swift; sourceTree = "<group>"; };
-		8E08E02E1935C94069691BF8B22D0F82 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Spring/BlurView.swift; sourceTree = "<group>"; };
-		8E99F3AE7AD1F067D69C01DE9218CE08 /* Misc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Misc.swift; path = Spring/Misc.swift; sourceTree = "<group>"; };
+		65E5021FC7208AB6D8CCE2DCE65816E3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73942F774780670832B6A8CFB0A1E00B /* KVNProgressConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgressConfiguration.m; path = KVNProgress/Classes/KVNProgressConfiguration.m; sourceTree = "<group>"; };
+		76CA802719BB122421035AC07C0CE53B /* CGPointEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGPointEx.swift; path = Pod/Classes/CGPointEx.swift; sourceTree = "<group>"; };
+		7DD6228FB79552D12A59E8CF79D212AF /* EFCircularSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EFCircularSlider-dummy.m"; sourceTree = "<group>"; };
+		8437E53265C112FAC97419D1373C9861 /* UCZProgressView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UCZProgressView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		848FD3DC662309DCA3BB32780535A446 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BD77FEBECDB7C42A60E8A649AD234DF /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		8E0C44B0C77B18F13CE26D03C889F868 /* EFCircularSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EFCircularSlider.modulemap; sourceTree = "<group>"; };
 		8F3B7B69CFCCE17D1C00F6A56F965A29 /* Pods-TimeCapturor-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TimeCapturor-acknowledgements.plist"; sourceTree = "<group>"; };
 		8F5BBEDA305BFD85533D89F899E18E48 /* Pods-TimeCapturor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimeCapturor.debug.xcconfig"; sourceTree = "<group>"; };
-		914553027862727D712E233A118845DD /* KVNProgressConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgressConfiguration.h; path = KVNProgress/Classes/KVNProgressConfiguration.h; sourceTree = "<group>"; };
-		92238BC43869DB1786030AF8D13B1132 /* CGRectEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGRectEx.swift; path = Pod/Classes/CGRectEx.swift; sourceTree = "<group>"; };
 		93E078D562D7FB09EFEC2DC0B06ADFA5 /* Pods-TimeCapturor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TimeCapturor-dummy.m"; sourceTree = "<group>"; };
-		94241D17EC02B9CE804C63D0EDC96779 /* DesignableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextView.swift; path = Spring/DesignableTextView.swift; sourceTree = "<group>"; };
-		949F7415405667B54042C6B70250A47B /* KVNProgress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVNProgress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A5A8108AD82BCE38ACEB20B2109052 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9881D1285AA0DFB8CD6747859ECC3426 /* UCZProgressView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UCZProgressView.xcconfig; sourceTree = "<group>"; };
+		9AB29062B9C09D15546DAF68A1133835 /* LiquidUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LiquidUtil.swift; path = Pod/Classes/LiquidUtil.swift; sourceTree = "<group>"; };
 		9AF868A38EF8764D276CB34EB297FBBB /* Pods-TimeCapturor-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TimeCapturor-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9C83C633F6537E172839D189E9EC50CE /* LiquidFloatingActionButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LiquidFloatingActionButton-dummy.m"; sourceTree = "<group>"; };
-		9F92A917F4B895AA56A6D96B93706B1D /* TransitionZoom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionZoom.swift; path = Spring/TransitionZoom.swift; sourceTree = "<group>"; };
-		A023F32AD9604A1A5C81FDF7E2F98D63 /* LiquidUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LiquidUtil.swift; path = Pod/Classes/LiquidUtil.swift; sourceTree = "<group>"; };
-		A18E31E357AE547ACEC265A86F32DC55 /* EFCircularSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EFCircularSlider.h; path = EFCircularSlider/EFCircularSlider.h; sourceTree = "<group>"; };
-		A51FDE5CC2A9AF3765051F3E46D16892 /* SpringTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextField.swift; path = Spring/SpringTextField.swift; sourceTree = "<group>"; };
-		A63E99C95154895AD6AC799D461EBEB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A71E38BC946D5232080B04EE5BD616E2 /* EFCircularSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EFCircularSlider-umbrella.h"; sourceTree = "<group>"; };
-		AAEC978438867DAF957A2E374170BDDA /* UIColor+KVNContrast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KVNContrast.m"; path = "KVNProgress/Categories/UIColor+KVNContrast.m"; sourceTree = "<group>"; };
-		AC35BED496FD728DAE829EF67810B6EB /* DesignableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableView.swift; path = Spring/DesignableView.swift; sourceTree = "<group>"; };
+		9F9619764D1563D76DEDD5BA27AA731E /* KVNProgress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVNProgress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72D689E49E07DA7D4ADB12D5C8AA71F /* EFCircularSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EFCircularSlider.m; path = EFCircularSlider/EFCircularSlider.m; sourceTree = "<group>"; };
+		A9FCFFD5702472FC6C74B0764C2BF723 /* EFCircularSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EFCircularSlider.xcconfig; sourceTree = "<group>"; };
 		AD2F6E42FCD40245A6EB8115FFA6F9BE /* Pods-TimeCapturor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TimeCapturor.modulemap"; sourceTree = "<group>"; };
-		ADF2232636FA71DF9BDFCAFF98EE800A /* Spring-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-prefix.pch"; sourceTree = "<group>"; };
-		B5D523200973B87018345C92AE4DDC1A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		B6526333515D2A9B22386A6191DBA0F2 /* EFCircularSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EFCircularSlider.m; path = EFCircularSlider/EFCircularSlider.m; sourceTree = "<group>"; };
-		B76DBE1B57D4C3445873C0E74E303C0D /* LLSimpleCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LLSimpleCamera-dummy.m"; sourceTree = "<group>"; };
-		B8ACF41C12DFEB938DE855E735C4E336 /* UCZProgressView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UCZProgressView.m; path = Lib/UCZProgressView.m; sourceTree = "<group>"; };
+		AF2C46075DBFD173ADC892B96E298EB3 /* EFCircularSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EFCircularSlider-umbrella.h"; sourceTree = "<group>"; };
+		B0A39BA528ED2259BBA5CF496DF469C5 /* LiquidFloatingActionButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LiquidFloatingActionButton.xcconfig; sourceTree = "<group>"; };
+		B2F30BBD422CBDBBC91B3F0F5B66B098 /* KVNProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KVNProgress-dummy.m"; sourceTree = "<group>"; };
+		B42D948677CE3B6D4B0B33BDBFDDED62 /* KVNProgressConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgressConfiguration.h; path = KVNProgress/Classes/KVNProgressConfiguration.h; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BB1B547E79D7A7500C1958CCA7637FF0 /* Spring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD54A320EF09D7304D86A07BD49D3ADB /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNEmpty.h"; path = "KVNProgress/Categories/UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
-		BDA650E6A5A8AB11D750DE7E453B87E5 /* KVNProgress.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KVNProgress.xcconfig; sourceTree = "<group>"; };
-		C07C7A1DAFFE2AE0B16D68F022DB644A /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpringApp/Images.xcassets; sourceTree = "<group>"; };
-		C8E5CDD73BE4D84B9931E7F2CE2A1F16 /* AsyncButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncButton.swift; path = Spring/AsyncButton.swift; sourceTree = "<group>"; };
-		CACC4148F117EB5667ACF218A24A6B8C /* LLSimpleCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LLSimpleCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBBFD675F416D5126DB71761AE9DBC29 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		D09D12676AD757E3F1BFD65F53B35A04 /* KVNProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgress.m; path = KVNProgress/Classes/KVNProgress.m; sourceTree = "<group>"; };
-		D23C0B7D12476C4F19B6A4F4D4079002 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAA67F2A9BFD0FE2388B40BD869E59A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		BBA4818111B1F79EAEB1FB99620671FF /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNImageEffects.h"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
+		BF883C10AA8B03FBF05004800777ADD3 /* KVNProgressView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = KVNProgressView.xib; path = KVNProgress/Resources/KVNProgressView.xib; sourceTree = "<group>"; };
+		C8E1D525FC60D38299B8AA6FE3B91778 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CAFD472DB842350531B7FF8794A3744D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDDD097BD97DB4725B9D586A413AE25E /* Pods_TimeCapturor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCapturor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D066250D71C83EB048FA4EBB8A783519 /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNEmpty.m"; path = "KVNProgress/Categories/UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
+		D3E7D48C528842D7378705003AB23FE7 /* EFCircularSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EFCircularSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4737C3E8158FA05A9956E4DD7EB8BBA /* Pods-TimeCapturor-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TimeCapturor-frameworks.sh"; sourceTree = "<group>"; };
-		D5688D55B9C527592AF4552088156D44 /* SimpleCircleLiquidEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleCircleLiquidEngine.swift; path = Pod/Classes/SimpleCircleLiquidEngine.swift; sourceTree = "<group>"; };
-		D780A0C3037BD519ECC4BBE26DD80AC3 /* UCZProgressView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = UCZProgressView.modulemap; sourceTree = "<group>"; };
-		D7B428D77744A51A8E0F931C23D4B39D /* SpringView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringView.swift; path = Spring/SpringView.swift; sourceTree = "<group>"; };
-		D8D4B4A8CD36F3411D2952A7933E3508 /* EFCircularSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EFCircularSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D976A5179404C41557EED031ACBB9862 /* SpringTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextView.swift; path = Spring/SpringTextView.swift; sourceTree = "<group>"; };
-		DC0C76B420F8C9BBF000A0549829BC8D /* Spring-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spring-dummy.m"; sourceTree = "<group>"; };
-		E1343B9E5F52EB7B08FB4A80BE460ABD /* AutoTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoTextView.swift; path = Spring/AutoTextView.swift; sourceTree = "<group>"; };
-		E49DF536EE049317C5031B62EBF1F8B8 /* LiquidFloatingActionButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LiquidFloatingActionButton-umbrella.h"; sourceTree = "<group>"; };
-		E5B02D177CDE2F47E11B5CD278816A35 /* DesignableTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextField.swift; path = Spring/DesignableTextField.swift; sourceTree = "<group>"; };
-		E5C1B4BA9A7625E6478B906D459776FB /* SpringButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringButton.swift; path = Spring/SpringButton.swift; sourceTree = "<group>"; };
-		E8512F092E2C0EC86B1BC0DF80B0B1A5 /* DesignableLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableLabel.swift; path = Spring/DesignableLabel.swift; sourceTree = "<group>"; };
-		E9396FFF817B4DA667B4521660A905DC /* EFCircularSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EFCircularSlider-dummy.m"; sourceTree = "<group>"; };
-		E9B00BFB5277AA44D118D2538906F956 /* LiquidFloatingActionButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LiquidFloatingActionButton-prefix.pch"; sourceTree = "<group>"; };
-		EB76FACD9B9D45F8C42E3B0E5600FFB2 /* Pods_TimeCapturor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCapturor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC10830C58911C43781038D7215FC2BA /* LiquidFloatingActionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LiquidFloatingActionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F260970339C1CB8B1394A07F1DBFD315 /* EFCircularSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EFCircularSlider.modulemap; sourceTree = "<group>"; };
-		F3315AAF788079004E87827C91668084 /* LiquidFloatingActionButton.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiquidFloatingActionButton.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		F36BADFD3B7580F3287D4231FB19C53A /* KVNProgress-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVNProgress-prefix.pch"; sourceTree = "<group>"; };
-		F555C414AD258AECABD48D54A5E70FFC /* SoundPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoundPlayer.swift; path = Spring/SoundPlayer.swift; sourceTree = "<group>"; };
-		F70FA78F8ABB361D387517140EA5D3F4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA1D0695FF182908EC2B94F3660EBA0B /* UCZProgressView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UCZProgressView.h; path = Lib/UCZProgressView.h; sourceTree = "<group>"; };
-		FDA46A7EF25C1DDF884F2AA8FBBA51BE /* LLSimpleCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LLSimpleCamera-prefix.pch"; sourceTree = "<group>"; };
+		D4773AE0E77BB0DC8DEA85803A5BB694 /* LiquidFloatingActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LiquidFloatingActionButton.swift; path = Pod/Classes/LiquidFloatingActionButton.swift; sourceTree = "<group>"; };
+		D8E01032E892B1A8FA95E6C3CA882B95 /* EFCircularSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EFCircularSlider.h; path = EFCircularSlider/EFCircularSlider.h; sourceTree = "<group>"; };
+		DAEECB23039DA3C7C1F679C32F83070D /* LiquidFloatingActionButton.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiquidFloatingActionButton.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF73E90E16C9E0C172C54D980F25249D /* UIColorEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColorEx.swift; path = Pod/Classes/UIColorEx.swift; sourceTree = "<group>"; };
+		E6656A36C4558C3401818C40BFD4B6B5 /* LiquidFloatingActionButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LiquidFloatingActionButton-umbrella.h"; sourceTree = "<group>"; };
+		E67E88758D1C44920ACFD34FE9361F42 /* LiquittableCircle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LiquittableCircle.swift; path = Pod/Classes/LiquittableCircle.swift; sourceTree = "<group>"; };
+		E8E8FE271E98AD82FB051C5819B0C5D0 /* ArrayEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArrayEx.swift; path = Pod/Classes/ArrayEx.swift; sourceTree = "<group>"; };
+		E91D523EC77DE922176F2925DD522E94 /* KVNProgress-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVNProgress-umbrella.h"; sourceTree = "<group>"; };
+		EDABBA7EB8C367975C4859CA50A3C0FB /* CGRectEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGRectEx.swift; path = Pod/Classes/CGRectEx.swift; sourceTree = "<group>"; };
+		F9F532A03F966F4F07E053812A712CC1 /* UCZProgressView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UCZProgressView-umbrella.h"; sourceTree = "<group>"; };
 		FE65BB805E6D48F68A82CD2F41A3A2F8 /* Pods-TimeCapturor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimeCapturor.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		226DB26618D412BBA7684121B8D45E82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D1E440F02857E36E50E107CF115E38C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		23EE5653C5344F25E6EAECA93959DFD7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42B1C09FA49EC551A9BB46E594E7FC63 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				10D07EC8D2BBF2F41773210E68D7F3EE /* AVFoundation.framework in Frameworks */,
-				8CAC372B4D65D175A0574BB8D40FA96F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,19 +190,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8DE97F52A085E35D43BA243EA9CCFD93 /* Frameworks */ = {
+		CC5300531A570899CD8B70E87FE15511 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6237CC769ED3BD1A205D2A9EB8DC96C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1FF5947604767A48704C1E13BC2CB02 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E697617D95A143F2BBA23F382B4DAC9 /* Foundation.framework in Frameworks */,
+				FF0110D5F2ACE4C82F6AC419B6A4B6EA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,144 +208,66 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0B5A8FAD1D029387375B8F21787747B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05AE1C04014A62B08DBE476BCF6D6E95 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		017767C79C1593AC91AEFCDD634E3200 /* Spring */ = {
+		00BEC8B4BF89E28B5ED8EA1876956B61 /* UCZProgressView */ = {
 			isa = PBXGroup;
 			children = (
-				C8E5CDD73BE4D84B9931E7F2CE2A1F16 /* AsyncButton.swift */,
-				287F431C1795856073DC6CFEC114878D /* AsyncImageView.swift */,
-				E1343B9E5F52EB7B08FB4A80BE460ABD /* AutoTextView.swift */,
-				8E08E02E1935C94069691BF8B22D0F82 /* BlurView.swift */,
-				3EEBA4E1D651B153823DBF68F0EB7471 /* DesignableButton.swift */,
-				88EC1E37C6DC1009B0F6A803F477CBF3 /* DesignableImageView.swift */,
-				E8512F092E2C0EC86B1BC0DF80B0B1A5 /* DesignableLabel.swift */,
-				57E2BC5D5EDF9FB4DD77AAD91043F20E /* DesignableTabBarController.swift */,
-				E5B02D177CDE2F47E11B5CD278816A35 /* DesignableTextField.swift */,
-				94241D17EC02B9CE804C63D0EDC96779 /* DesignableTextView.swift */,
-				AC35BED496FD728DAE829EF67810B6EB /* DesignableView.swift */,
-				39DA1B49657D5F3460885B73B0A26170 /* ImageLoader.swift */,
-				02BEEC7C1D4DDD7296726BD8E7F0257F /* KeyboardLayoutConstraint.swift */,
-				230C2367AE019475D4804420CFABBB29 /* LoadingView.swift */,
-				8E99F3AE7AD1F067D69C01DE9218CE08 /* Misc.swift */,
-				F555C414AD258AECABD48D54A5E70FFC /* SoundPlayer.swift */,
-				62256F00DF8A27F9889BFC2E7AD5A475 /* Spring.swift */,
-				3D431882A11EE21B688625388FE0ABC7 /* SpringAnimation.swift */,
-				E5C1B4BA9A7625E6478B906D459776FB /* SpringButton.swift */,
-				01D1BC9ABE2FEBB9D7DCD8AD16E19B2B /* SpringImageView.swift */,
-				186EDF42B30772A81E8D885A28EF8B24 /* SpringLabel.swift */,
-				A51FDE5CC2A9AF3765051F3E46D16892 /* SpringTextField.swift */,
-				D976A5179404C41557EED031ACBB9862 /* SpringTextView.swift */,
-				D7B428D77744A51A8E0F931C23D4B39D /* SpringView.swift */,
-				3F346CE7BFEA33330D055E0FB0F1FE0A /* TransitionManager.swift */,
-				9F92A917F4B895AA56A6D96B93706B1D /* TransitionZoom.swift */,
-				2AA859153A1D17DAF3DAB788C73F8817 /* UnwindSegue.swift */,
-				9A58DBA6A2CE12D477964F84E11FF494 /* Resources */,
-				2E97FA2BC186C51F3CDE9B83AFDA8BF2 /* Support Files */,
+				0FEABCB19A02754549596C6D24FC5CB5 /* UCZProgressView.h */,
+				496080C50EAF0A31FE1E6ECD35DC9674 /* UCZProgressView.m */,
+				F9479E552836C7CAB75DA595355AA7A2 /* Support Files */,
 			);
-			path = Spring;
+			path = UCZProgressView;
 			sourceTree = "<group>";
 		};
-		0EB734531140DAED842C25100A37F38A /* KVNProgress */ = {
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4B3DD4CFABE94AD44F178C6D16BCA395 /* KVNProgress.h */,
-				D09D12676AD757E3F1BFD65F53B35A04 /* KVNProgress.m */,
-				914553027862727D712E233A118845DD /* KVNProgressConfiguration.h */,
-				420681BC054C34A97C0489F914D2542D /* KVNProgressConfiguration.m */,
-				1BCD25611D5792D9A086C71D2E317862 /* UIColor+KVNContrast.h */,
-				AAEC978438867DAF957A2E374170BDDA /* UIColor+KVNContrast.m */,
-				BD54A320EF09D7304D86A07BD49D3ADB /* UIImage+KVNEmpty.h */,
-				6FC0675EF8398CFBD5B2704584CB3C98 /* UIImage+KVNEmpty.m */,
-				51AE7DCB654CBF5DD4460C37ADC8090F /* UIImage+KVNImageEffects.h */,
-				237078416EEFBE1AE2FFFEBE8EFF1DA7 /* UIImage+KVNImageEffects.m */,
-				B484BA536F121CDC24A34C8B02CC2E4A /* Resources */,
-				209BDFEEBE6743C1D0DAD76A5F16F9E2 /* Support Files */,
-			);
-			path = KVNProgress;
-			sourceTree = "<group>";
-		};
-		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F1456053F4C1F4C76A01D41457170033 /* iOS */,
+				B3BE697900F50FFA6B448836E4591321 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		209BDFEEBE6743C1D0DAD76A5F16F9E2 /* Support Files */ = {
+		4C91A96188DF980EF5C15C26EC815884 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F70FA78F8ABB361D387517140EA5D3F4 /* Info.plist */,
-				77FC5FB0B876DF964924AB5A49EF2857 /* KVNProgress.modulemap */,
-				BDA650E6A5A8AB11D750DE7E453B87E5 /* KVNProgress.xcconfig */,
-				4EF5F42E740DE78DB9F0A4CD0813BFC9 /* KVNProgress-dummy.m */,
-				F36BADFD3B7580F3287D4231FB19C53A /* KVNProgress-prefix.pch */,
-				869CF0C1FC0047BD10A5F28FC9087ACA /* KVNProgress-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/KVNProgress";
-			sourceTree = "<group>";
-		};
-		26CB1F75E0F201614C2B1A764EE0B4EB /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4480A54812B0C5D1D30D8B9C5FDF2B16 /* Info.plist */,
-				2CEB235F8BEB7CD6F4D07C1F8FC125CC /* LiquidFloatingActionButton.modulemap */,
-				82ADE861F39F7332174A387EBC0DEC15 /* LiquidFloatingActionButton.xcconfig */,
-				9C83C633F6537E172839D189E9EC50CE /* LiquidFloatingActionButton-dummy.m */,
-				E9B00BFB5277AA44D118D2538906F956 /* LiquidFloatingActionButton-prefix.pch */,
-				E49DF536EE049317C5031B62EBF1F8B8 /* LiquidFloatingActionButton-umbrella.h */,
+				848FD3DC662309DCA3BB32780535A446 /* Info.plist */,
+				5ACD74E540204030B749015D433941CB /* LiquidFloatingActionButton.modulemap */,
+				B0A39BA528ED2259BBA5CF496DF469C5 /* LiquidFloatingActionButton.xcconfig */,
+				1D53C8AC73DB72D127ABEDF450375D6A /* LiquidFloatingActionButton-dummy.m */,
+				38FBE00AFD8483211DB1E3A7A0105E03 /* LiquidFloatingActionButton-prefix.pch */,
+				E6656A36C4558C3401818C40BFD4B6B5 /* LiquidFloatingActionButton-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/LiquidFloatingActionButton";
 			sourceTree = "<group>";
 		};
-		2E97FA2BC186C51F3CDE9B83AFDA8BF2 /* Support Files */ = {
+		54A0AAA03802F85B5617FF886F645704 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D23C0B7D12476C4F19B6A4F4D4079002 /* Info.plist */,
-				1C24BB94CA670EA5B727D4DD1D0FDC10 /* Spring.modulemap */,
-				1DAF8BF58C3052C0E9C9517E50DA4EEA /* Spring.xcconfig */,
-				DC0C76B420F8C9BBF000A0549829BC8D /* Spring-dummy.m */,
-				ADF2232636FA71DF9BDFCAFF98EE800A /* Spring-prefix.pch */,
-				4DE5F08F8DBFA0CB9B4FBC4EA3BDA15A /* Spring-umbrella.h */,
+				BF883C10AA8B03FBF05004800777ADD3 /* KVNProgressView.xib */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Spring";
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		3DF623E4E00975F3112FC73C51269A79 /* Support Files */ = {
+		5A52069DB3D2C1225D489366B7A29F1C /* KVNProgress */ = {
 			isa = PBXGroup;
 			children = (
-				A63E99C95154895AD6AC799D461EBEB4 /* Info.plist */,
-				143C296F3DC74BD8F9EA775CEC580EB9 /* LLSimpleCamera.modulemap */,
-				112F5D5F762589FF845C1119439CEB93 /* LLSimpleCamera.xcconfig */,
-				B76DBE1B57D4C3445873C0E74E303C0D /* LLSimpleCamera-dummy.m */,
-				FDA46A7EF25C1DDF884F2AA8FBBA51BE /* LLSimpleCamera-prefix.pch */,
-				639B38EC4D45BF8F812CA96797CD81A6 /* LLSimpleCamera-umbrella.h */,
+				4311FAD4E01230EAA0C4DCA5CA8B529A /* KVNProgress.h */,
+				4575CFE00F9190B567B73947485A7C94 /* KVNProgress.m */,
+				B42D948677CE3B6D4B0B33BDBFDDED62 /* KVNProgressConfiguration.h */,
+				73942F774780670832B6A8CFB0A1E00B /* KVNProgressConfiguration.m */,
+				2FE85DDD16838660449910F57525ED48 /* UIColor+KVNContrast.h */,
+				3A6423D389C1B3EF868112812797622F /* UIColor+KVNContrast.m */,
+				42AC658986FDE3F9C00E204E53DBAEBB /* UIImage+KVNEmpty.h */,
+				D066250D71C83EB048FA4EBB8A783519 /* UIImage+KVNEmpty.m */,
+				BBA4818111B1F79EAEB1FB99620671FF /* UIImage+KVNImageEffects.h */,
+				172FEFCF1D6762DD17C29BEC802E59CC /* UIImage+KVNImageEffects.m */,
+				54A0AAA03802F85B5617FF886F645704 /* Resources */,
+				A77166BFCE94258BF0BA2678C48F3D69 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/LLSimpleCamera";
-			sourceTree = "<group>";
-		};
-		6CC438932D97BD558769FB7693F62DBC /* EFCircularSlider */ = {
-			isa = PBXGroup;
-			children = (
-				A18E31E357AE547ACEC265A86F32DC55 /* EFCircularSlider.h */,
-				B6526333515D2A9B22386A6191DBA0F2 /* EFCircularSlider.m */,
-				A464B7075738A84EAD4FE3D594FE31B5 /* Support Files */,
-			);
-			path = EFCircularSlider;
+			path = KVNProgress;
 			sourceTree = "<group>";
 		};
 		6E41D356FB8C2FD82D029FC4AA51DCFC /* Targets Support Files */ = {
@@ -471,110 +282,78 @@
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				C4622770FD7512C24898DB11F7654846 /* Pods */,
-				884C17C647423A629FAE5DCAE9260394 /* Products */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				F31B86CE878200657A41CA29590B6143 /* Pods */,
+				A074DBC8CE50D70753499658261D8FE5 /* Products */,
 				6E41D356FB8C2FD82D029FC4AA51DCFC /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		884C17C647423A629FAE5DCAE9260394 /* Products */ = {
+		A074DBC8CE50D70753499658261D8FE5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8D4B4A8CD36F3411D2952A7933E3508 /* EFCircularSlider.framework */,
-				949F7415405667B54042C6B70250A47B /* KVNProgress.framework */,
-				F3315AAF788079004E87827C91668084 /* LiquidFloatingActionButton.bundle */,
-				EC10830C58911C43781038D7215FC2BA /* LiquidFloatingActionButton.framework */,
-				CACC4148F117EB5667ACF218A24A6B8C /* LLSimpleCamera.framework */,
-				EB76FACD9B9D45F8C42E3B0E5600FFB2 /* Pods_TimeCapturor.framework */,
-				BB1B547E79D7A7500C1958CCA7637FF0 /* Spring.framework */,
-				3584B17CFB4ECAED5CFEEF5BA59AA9F4 /* UCZProgressView.framework */,
+				D3E7D48C528842D7378705003AB23FE7 /* EFCircularSlider.framework */,
+				9F9619764D1563D76DEDD5BA27AA731E /* KVNProgress.framework */,
+				DAEECB23039DA3C7C1F679C32F83070D /* LiquidFloatingActionButton.bundle */,
+				019C4EDD4FD1B8646D1F88670FEDA8BA /* LiquidFloatingActionButton.framework */,
+				CDDD097BD97DB4725B9D586A413AE25E /* Pods_TimeCapturor.framework */,
+				8437E53265C112FAC97419D1373C9861 /* UCZProgressView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		974AB773FF4784EBE99017891E9B48F5 /* LiquidFloatingActionButton */ = {
+		A2E3377D6B7E72302E20E24301116C8A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				262662D7A0099461732EAC8F095A1AC1 /* ArrayEx.swift */,
-				04D18877DF548A475354EFEB0BC86686 /* CGPointEx.swift */,
-				92238BC43869DB1786030AF8D13B1132 /* CGRectEx.swift */,
-				71A7DEB2CD435C144E78ECC0DB32BE2A /* LiquidFloatingActionButton.swift */,
-				A023F32AD9604A1A5C81FDF7E2F98D63 /* LiquidUtil.swift */,
-				3BDE02C339BB0E4879B6A54378CE4E26 /* LiquittableCircle.swift */,
-				D5688D55B9C527592AF4552088156D44 /* SimpleCircleLiquidEngine.swift */,
-				5C43E7B1F13F0CCFA47E127974CAE3D5 /* UIColorEx.swift */,
-				26CB1F75E0F201614C2B1A764EE0B4EB /* Support Files */,
-			);
-			path = LiquidFloatingActionButton;
-			sourceTree = "<group>";
-		};
-		9A58DBA6A2CE12D477964F84E11FF494 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C07C7A1DAFFE2AE0B16D68F022DB644A /* Images.xcassets */,
-				58150EF9DCA092EEA30C94CA389B4213 /* LoadingView.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		A464B7075738A84EAD4FE3D594FE31B5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F260970339C1CB8B1394A07F1DBFD315 /* EFCircularSlider.modulemap */,
-				649344F9A6EA80657B3383E32BCA9641 /* EFCircularSlider.xcconfig */,
-				E9396FFF817B4DA667B4521660A905DC /* EFCircularSlider-dummy.m */,
-				07164BD7A467CDEAB0FC514BFAB6ED1D /* EFCircularSlider-prefix.pch */,
-				A71E38BC946D5232080B04EE5BD616E2 /* EFCircularSlider-umbrella.h */,
-				3710BADD5389BBA1AF1846FA2F69F789 /* Info.plist */,
+				8E0C44B0C77B18F13CE26D03C889F868 /* EFCircularSlider.modulemap */,
+				A9FCFFD5702472FC6C74B0764C2BF723 /* EFCircularSlider.xcconfig */,
+				7DD6228FB79552D12A59E8CF79D212AF /* EFCircularSlider-dummy.m */,
+				3991EAE3526AA7188943B297AEBFF92E /* EFCircularSlider-prefix.pch */,
+				AF2C46075DBFD173ADC892B96E298EB3 /* EFCircularSlider-umbrella.h */,
+				CAFD472DB842350531B7FF8794A3744D /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/EFCircularSlider";
 			sourceTree = "<group>";
 		};
-		B484BA536F121CDC24A34C8B02CC2E4A /* Resources */ = {
+		A77166BFCE94258BF0BA2678C48F3D69 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7A2DFA04E1A6F4A1E8C91D94B9FCDE7F /* KVNProgressView.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		C4622770FD7512C24898DB11F7654846 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6CC438932D97BD558769FB7693F62DBC /* EFCircularSlider */,
-				0EB734531140DAED842C25100A37F38A /* KVNProgress */,
-				974AB773FF4784EBE99017891E9B48F5 /* LiquidFloatingActionButton */,
-				E0618E62CE52451BA3D4E01B2018A8EC /* LLSimpleCamera */,
-				017767C79C1593AC91AEFCDD634E3200 /* Spring */,
-				CBC0AF2481513C8370FB6A851F275ACD /* UCZProgressView */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C5E4C9B8FB8B46915CCDA495F3FB858B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5D050EDD1C52FB8331D5CA5AE8232D90 /* Info.plist */,
-				D780A0C3037BD519ECC4BBE26DD80AC3 /* UCZProgressView.modulemap */,
-				2A6AA3692E0B1EF608D40FFE3427D16E /* UCZProgressView.xcconfig */,
-				1467CF8A6AB2D63C0E7DC1D61A5473A8 /* UCZProgressView-dummy.m */,
-				0F6FBAE6220A9E04433744208252D652 /* UCZProgressView-prefix.pch */,
-				3B7F9E584FD8D48A8A8E3E79FB27335F /* UCZProgressView-umbrella.h */,
+				65E5021FC7208AB6D8CCE2DCE65816E3 /* Info.plist */,
+				3A165174614EA8253332AC1E70CE22F5 /* KVNProgress.modulemap */,
+				49CC64EE01AA2399AC6D6CAFDE5C2617 /* KVNProgress.xcconfig */,
+				B2F30BBD422CBDBBC91B3F0F5B66B098 /* KVNProgress-dummy.m */,
+				2F3EB43C17E384BB34BF6643168B3C13 /* KVNProgress-prefix.pch */,
+				E91D523EC77DE922176F2925DD522E94 /* KVNProgress-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/UCZProgressView";
+			path = "../Target Support Files/KVNProgress";
 			sourceTree = "<group>";
 		};
-		CBC0AF2481513C8370FB6A851F275ACD /* UCZProgressView */ = {
+		B3BE697900F50FFA6B448836E4591321 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				FA1D0695FF182908EC2B94F3660EBA0B /* UCZProgressView.h */,
-				B8ACF41C12DFEB938DE855E735C4E336 /* UCZProgressView.m */,
-				C5E4C9B8FB8B46915CCDA495F3FB858B /* Support Files */,
+				C8E1D525FC60D38299B8AA6FE3B91778 /* Foundation.framework */,
+				8BD77FEBECDB7C42A60E8A649AD234DF /* GLKit.framework */,
+				BAA67F2A9BFD0FE2388B40BD869E59A2 /* QuartzCore.framework */,
 			);
-			path = UCZProgressView;
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		BA970476E02435CF8506318A7D7BB0F7 /* LiquidFloatingActionButton */ = {
+			isa = PBXGroup;
+			children = (
+				E8E8FE271E98AD82FB051C5819B0C5D0 /* ArrayEx.swift */,
+				76CA802719BB122421035AC07C0CE53B /* CGPointEx.swift */,
+				EDABBA7EB8C367975C4859CA50A3C0FB /* CGRectEx.swift */,
+				D4773AE0E77BB0DC8DEA85803A5BB694 /* LiquidFloatingActionButton.swift */,
+				9AB29062B9C09D15546DAF68A1133835 /* LiquidUtil.swift */,
+				E67E88758D1C44920ACFD34FE9361F42 /* LiquittableCircle.swift */,
+				4B69C255415195A7C7E4F514D80CD6E8 /* SimpleCircleLiquidEngine.swift */,
+				DF73E90E16C9E0C172C54D980F25249D /* UIColorEx.swift */,
+				4C91A96188DF980EF5C15C26EC815884 /* Support Files */,
+			);
+			path = LiquidFloatingActionButton;
 			sourceTree = "<group>";
 		};
 		CE027F5DB15DD8E34AFF8AFFECBD4AAA /* Pods-TimeCapturor */ = {
@@ -595,27 +374,39 @@
 			path = "Target Support Files/Pods-TimeCapturor";
 			sourceTree = "<group>";
 		};
-		E0618E62CE52451BA3D4E01B2018A8EC /* LLSimpleCamera */ = {
+		F31B86CE878200657A41CA29590B6143 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				71115B30E5A118EDE8A96FCB9A902D2D /* LLSimpleCamera.h */,
-				8482BF8220238D400C9118A902D2AAF3 /* LLSimpleCamera.m */,
-				20757ED2458D16AF4638C9A8932A799F /* UIImage+FixOrientation.h */,
-				5BBB988D308301A17F2AA1C2CE303D76 /* UIImage+FixOrientation.m */,
-				3DF623E4E00975F3112FC73C51269A79 /* Support Files */,
+				FBB83725F79ECE9A3A54242E0C13B9DE /* EFCircularSlider */,
+				5A52069DB3D2C1225D489366B7A29F1C /* KVNProgress */,
+				BA970476E02435CF8506318A7D7BB0F7 /* LiquidFloatingActionButton */,
+				00BEC8B4BF89E28B5ED8EA1876956B61 /* UCZProgressView */,
 			);
-			path = LLSimpleCamera;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		F1456053F4C1F4C76A01D41457170033 /* iOS */ = {
+		F9479E552836C7CAB75DA595355AA7A2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CBBFD675F416D5126DB71761AE9DBC29 /* AVFoundation.framework */,
-				B5D523200973B87018345C92AE4DDC1A /* Foundation.framework */,
-				242078D4ABE087EDD5FCD15C5F7DE22C /* GLKit.framework */,
-				2D9D3032CC3C8B808D47C5D6A6D589FD /* QuartzCore.framework */,
+				18B670504874E4B39149468E34AEE5A3 /* Info.plist */,
+				49221BC08EEFF8EB23430CD99154D6E3 /* UCZProgressView.modulemap */,
+				9881D1285AA0DFB8CD6747859ECC3426 /* UCZProgressView.xcconfig */,
+				31D517E90B005F0386CE7B0B8C90122A /* UCZProgressView-dummy.m */,
+				0122E80C206BEC0C1B4273FC848C4085 /* UCZProgressView-prefix.pch */,
+				F9F532A03F966F4F07E053812A712CC1 /* UCZProgressView-umbrella.h */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/UCZProgressView";
+			sourceTree = "<group>";
+		};
+		FBB83725F79ECE9A3A54242E0C13B9DE /* EFCircularSlider */ = {
+			isa = PBXGroup;
+			children = (
+				D8E01032E892B1A8FA95E6C3CA882B95 /* EFCircularSlider.h */,
+				A72D689E49E07DA7D4ADB12D5C8AA71F /* EFCircularSlider.m */,
+				A2E3377D6B7E72302E20E24301116C8A /* Support Files */,
+			);
+			path = EFCircularSlider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,24 +417,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD635561809D218A952928FCA3BC1B78 /* LiquidFloatingActionButton-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		25F1E83F42AF82C314AD1C94CF61C89C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6F16D46ED6C49A4E9D7CA997E5D4C2DE /* Pods-TimeCapturor-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3CCC3AAF8F87F8D1B6851D6A685CC141 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5CA8BCBE8D912BA8500E198D4F47E1AE /* LLSimpleCamera-umbrella.h in Headers */,
-				5E3D71D11A9778CCAEE350748CD92286 /* LLSimpleCamera.h in Headers */,
-				C3C101ACB04EDAC3BA7EC5F4C2984A94 /* UIImage+FixOrientation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,20 +442,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6251976E62C657F67B6FA0D66144B328 /* Headers */ = {
+		82E6D3062D728494501A3806496180FC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFF97B15D47B207D7557546E256C2C21 /* Spring-umbrella.h in Headers */,
+				38D64693EDC10E100B130F3BB65A7125 /* UCZProgressView-umbrella.h in Headers */,
+				FF55E0E0460F41266ED55AC88BE5B02D /* UCZProgressView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		911B4048C9C5D18F5D42B6A47EBCCC61 /* Headers */ = {
+		92D300B95B05DD737CFB8531E9AD7E3F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E32ECBC7CEFF1B40A623061F8B402EFB /* UCZProgressView-umbrella.h in Headers */,
-				33877679519BE2424FFCAD617B3EC745 /* UCZProgressView.h in Headers */,
+				77F65E1DF7FFCB57D444EAFC81932D83 /* Pods-TimeCapturor-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,42 +477,7 @@
 			);
 			name = KVNProgress;
 			productName = KVNProgress;
-			productReference = 949F7415405667B54042C6B70250A47B /* KVNProgress.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		05516AD18935EA188E67A02E44DA59A2 /* Spring */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 88B87811191531AFEB827EFEC32D164B /* Build configuration list for PBXNativeTarget "Spring" */;
-			buildPhases = (
-				F3B1DFA5CC90A19D2DBD8846C4377B3B /* Sources */,
-				8DE97F52A085E35D43BA243EA9CCFD93 /* Frameworks */,
-				C75FD8508EA3FF6A9B66FE149E2550DD /* Resources */,
-				6251976E62C657F67B6FA0D66144B328 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Spring;
-			productName = Spring;
-			productReference = BB1B547E79D7A7500C1958CCA7637FF0 /* Spring.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		0A553B647447226A207E710D3FC053DB /* UCZProgressView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D3A8DE92D77561665276A594AB1B0FE /* Build configuration list for PBXNativeTarget "UCZProgressView" */;
-			buildPhases = (
-				3C89F1B7213F5B358C05166122F543A7 /* Sources */,
-				E0B5A8FAD1D029387375B8F21787747B /* Frameworks */,
-				911B4048C9C5D18F5D42B6A47EBCCC61 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = UCZProgressView;
-			productName = UCZProgressView;
-			productReference = 3584B17CFB4ECAED5CFEEF5BA59AA9F4 /* UCZProgressView.framework */;
+			productReference = 9F9619764D1563D76DEDD5BA27AA731E /* KVNProgress.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		190D63557CBC9A591589F57F4E4140A4 /* EFCircularSlider */ = {
@@ -756,7 +494,7 @@
 			);
 			name = EFCircularSlider;
 			productName = EFCircularSlider;
-			productReference = D8D4B4A8CD36F3411D2952A7933E3508 /* EFCircularSlider.framework */;
+			productReference = D3E7D48C528842D7378705003AB23FE7 /* EFCircularSlider.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2E4A37C88D68A62EA5C1BC7A2A4D19AE /* LiquidFloatingActionButton-LiquidFloatingActionButton */ = {
@@ -773,47 +511,45 @@
 			);
 			name = "LiquidFloatingActionButton-LiquidFloatingActionButton";
 			productName = "LiquidFloatingActionButton-LiquidFloatingActionButton";
-			productReference = F3315AAF788079004E87827C91668084 /* LiquidFloatingActionButton.bundle */;
+			productReference = DAEECB23039DA3C7C1F679C32F83070D /* LiquidFloatingActionButton.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		C627015BE5F68AFB47C818ECC9BAB9EA /* Pods-TimeCapturor */ = {
+		9F3B2D43FCC5741C3385E474CA4A79DE /* UCZProgressView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4D2ECBAFA52DC0D780EA1E621FB2BF56 /* Build configuration list for PBXNativeTarget "Pods-TimeCapturor" */;
+			buildConfigurationList = 03A5AD2854E1945C18A7A6B1950DA604 /* Build configuration list for PBXNativeTarget "UCZProgressView" */;
 			buildPhases = (
-				39042C0BD4888E1BF101B39460E18376 /* Sources */,
-				A1FF5947604767A48704C1E13BC2CB02 /* Frameworks */,
-				25F1E83F42AF82C314AD1C94CF61C89C /* Headers */,
+				C138D677CA5E324B573E094A2CC1C2C1 /* Sources */,
+				CC5300531A570899CD8B70E87FE15511 /* Frameworks */,
+				82E6D3062D728494501A3806496180FC /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F0C6E0465525144F5145E322D1B64869 /* PBXTargetDependency */,
-				698CEAE2F8D073307291425927D97C79 /* PBXTargetDependency */,
-				5D5B2F397A946A80286A87E966A96F10 /* PBXTargetDependency */,
-				F140FCA0B196C218946FDE6D14F979F3 /* PBXTargetDependency */,
-				7B5AC1C4857CF5CDEAC8C91D4987D8B8 /* PBXTargetDependency */,
-				0ACE0B48083566B05BB0F5F4A4F5C511 /* PBXTargetDependency */,
+			);
+			name = UCZProgressView;
+			productName = UCZProgressView;
+			productReference = 8437E53265C112FAC97419D1373C9861 /* UCZProgressView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C43E8C19882ACBA8B61DD4B27624DF8A /* Pods-TimeCapturor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9EAF257843C00C53F25A8AC81BF2FBF /* Build configuration list for PBXNativeTarget "Pods-TimeCapturor" */;
+			buildPhases = (
+				8EE9D5A2DE8C4914EE11C405350B6030 /* Sources */,
+				226DB26618D412BBA7684121B8D45E82 /* Frameworks */,
+				92D300B95B05DD737CFB8531E9AD7E3F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E494AE5CF7BE7E147BB2D91B0D02A0B /* PBXTargetDependency */,
+				082693AE400EA8D46D196714F9948FF8 /* PBXTargetDependency */,
+				4058EEE05FB8C2AFC854669B92AF44AC /* PBXTargetDependency */,
+				41A68199F1CCC8BEF9D2467F0DB54EE1 /* PBXTargetDependency */,
 			);
 			name = "Pods-TimeCapturor";
 			productName = "Pods-TimeCapturor";
-			productReference = EB76FACD9B9D45F8C42E3B0E5600FFB2 /* Pods_TimeCapturor.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		CE0CC7E2B5B550BC4172F6FF9CC5D50A /* LLSimpleCamera */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1A9E0881D54953A1A29D9CED7E22EE96 /* Build configuration list for PBXNativeTarget "LLSimpleCamera" */;
-			buildPhases = (
-				CDDF6909A7A8BB8CD9AF07F2A7166828 /* Sources */,
-				42B1C09FA49EC551A9BB46E594E7FC63 /* Frameworks */,
-				3CCC3AAF8F87F8D1B6851D6A685CC141 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LLSimpleCamera;
-			productName = LLSimpleCamera;
-			productReference = CACC4148F117EB5667ACF218A24A6B8C /* LLSimpleCamera.framework */;
+			productReference = CDDD097BD97DB4725B9D586A413AE25E /* Pods_TimeCapturor.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		ECB4143196184B0E0EA02182DB2B9CCA /* LiquidFloatingActionButton */ = {
@@ -832,7 +568,7 @@
 			);
 			name = LiquidFloatingActionButton;
 			productName = LiquidFloatingActionButton;
-			productReference = EC10830C58911C43781038D7215FC2BA /* LiquidFloatingActionButton.framework */;
+			productReference = 019C4EDD4FD1B8646D1F88670FEDA8BA /* LiquidFloatingActionButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -852,7 +588,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 884C17C647423A629FAE5DCAE9260394 /* Products */;
+			productRefGroup = A074DBC8CE50D70753499658261D8FE5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -860,10 +596,8 @@
 				0186EE20AB4D310515B8041966DB7AEB /* KVNProgress */,
 				ECB4143196184B0E0EA02182DB2B9CCA /* LiquidFloatingActionButton */,
 				2E4A37C88D68A62EA5C1BC7A2A4D19AE /* LiquidFloatingActionButton-LiquidFloatingActionButton */,
-				CE0CC7E2B5B550BC4172F6FF9CC5D50A /* LLSimpleCamera */,
-				C627015BE5F68AFB47C818ECC9BAB9EA /* Pods-TimeCapturor */,
-				05516AD18935EA188E67A02E44DA59A2 /* Spring */,
-				0A553B647447226A207E710D3FC053DB /* UCZProgressView */,
+				C43E8C19882ACBA8B61DD4B27624DF8A /* Pods-TimeCapturor */,
+				9F3B2D43FCC5741C3385E474CA4A79DE /* UCZProgressView */,
 			);
 		};
 /* End PBXProject section */
@@ -881,15 +615,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				72042359B6606B6363E495430D780479 /* LiquidFloatingActionButton.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C75FD8508EA3FF6A9B66FE149E2550DD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				003915FEC4E4D226090937C5870D1C89 /* Images.xcassets in Resources */,
-				511B0DA99ACFB668C4767A1C74AD4348 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -913,23 +638,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39042C0BD4888E1BF101B39460E18376 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C925B5EC210BB0103F4DE084751BF9C4 /* Pods-TimeCapturor-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3C89F1B7213F5B358C05166122F543A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65EE2DD87890D3CCE82E3A56CD2AE2B2 /* UCZProgressView-dummy.m in Sources */,
-				62578A52D3300D477F379ECA85D6AB15 /* UCZProgressView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		577C1C5E2253B419B3D508C9A34E4663 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -950,13 +658,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CDDF6909A7A8BB8CD9AF07F2A7166828 /* Sources */ = {
+		8EE9D5A2DE8C4914EE11C405350B6030 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD52D80E5C7AB3C0D28A2BB4FCAE074 /* LLSimpleCamera-dummy.m in Sources */,
-				924E42C1512BA8B48BF2974343F4D1B4 /* LLSimpleCamera.m in Sources */,
-				93A65C4380703954DF5831808850E6D6 /* UIImage+FixOrientation.m in Sources */,
+				DA52AF3DC1E7D51AD5803CE4B6E8038D /* Pods-TimeCapturor-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C138D677CA5E324B573E094A2CC1C2C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30CBF10C3EBF62450F520ED7A9DCCAF4 /* UCZProgressView-dummy.m in Sources */,
+				8DE06C5BA1665446756ADA368240AA70 /* UCZProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,79 +691,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3B1DFA5CC90A19D2DBD8846C4377B3B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				90D4F4C109EED5CF54172D788FDBF181 /* AsyncButton.swift in Sources */,
-				A613847AC9885D0F7886055EE6076C64 /* AsyncImageView.swift in Sources */,
-				4DC0FDA187A65CCCAC70FF3EB2179837 /* AutoTextView.swift in Sources */,
-				A781E4D25452C954ACAAE3FD0AC9B729 /* BlurView.swift in Sources */,
-				D5E7E3824F0498F940F05F29A708C72C /* DesignableButton.swift in Sources */,
-				AE56B5E1E264B18711A0AE478901B129 /* DesignableImageView.swift in Sources */,
-				667528014B04A9589177AD2D8D99F0CA /* DesignableLabel.swift in Sources */,
-				9D4F49D74918F7237C28EAF763BEA6C1 /* DesignableTabBarController.swift in Sources */,
-				1591DE614547FE2A772F9B44AB0520B3 /* DesignableTextField.swift in Sources */,
-				448600C6398483188CBE97DC1497F82B /* DesignableTextView.swift in Sources */,
-				721FF54B4A785E32B4CE9276161249FD /* DesignableView.swift in Sources */,
-				F6E296D865B2E936E3B406EE944459DA /* ImageLoader.swift in Sources */,
-				A4319C2D6D6F82D6A0CA2CB4600883B6 /* KeyboardLayoutConstraint.swift in Sources */,
-				FB3675DBEA0FCB8B5E43D9E80C7FF843 /* LoadingView.swift in Sources */,
-				350983A43964F1F77705B21E2F19253B /* Misc.swift in Sources */,
-				77B44D096AFF054E4D8CC5B293F56612 /* SoundPlayer.swift in Sources */,
-				D80B06E8D941BA18E0682854E5D0D9DF /* Spring-dummy.m in Sources */,
-				020A0B366969D565FD7F10C5A233B7E5 /* Spring.swift in Sources */,
-				0B6AE3DCDBCE4F29BEB47B4F2C45965C /* SpringAnimation.swift in Sources */,
-				469669D4E7C1B3D66763C6DE5BBAB940 /* SpringButton.swift in Sources */,
-				98CEF588F0DF2BF4B36714C5D4D18815 /* SpringImageView.swift in Sources */,
-				F4E822FDD424437D7ED32C3A531B66B3 /* SpringLabel.swift in Sources */,
-				086E951555CEC2F39C621193DABBA789 /* SpringTextField.swift in Sources */,
-				4A942A57F2343A6F0D0FA784EADC41E9 /* SpringTextView.swift in Sources */,
-				B0FDB457A24834D499F21DE41172DBFB /* SpringView.swift in Sources */,
-				CF7A6F4D7F8C554E17E5FDC23B0BDF19 /* TransitionManager.swift in Sources */,
-				FEE5ADABDECF19DEFA0DF35A5D6378BB /* TransitionZoom.swift in Sources */,
-				A2D21610C3F4F1940DB5B88B227B4C3E /* UnwindSegue.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0ACE0B48083566B05BB0F5F4A4F5C511 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = UCZProgressView;
-			target = 0A553B647447226A207E710D3FC053DB /* UCZProgressView */;
-			targetProxy = 1518816525CDE6173D1825EF5DADC69A /* PBXContainerItemProxy */;
-		};
-		5D5B2F397A946A80286A87E966A96F10 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LLSimpleCamera;
-			target = CE0CC7E2B5B550BC4172F6FF9CC5D50A /* LLSimpleCamera */;
-			targetProxy = F0F9ABA88C8F04EA6E290CDF3F902D14 /* PBXContainerItemProxy */;
-		};
-		698CEAE2F8D073307291425927D97C79 /* PBXTargetDependency */ = {
+		082693AE400EA8D46D196714F9948FF8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KVNProgress;
 			target = 0186EE20AB4D310515B8041966DB7AEB /* KVNProgress */;
-			targetProxy = DB6B47C4D40A0797110440CA061589BB /* PBXContainerItemProxy */;
+			targetProxy = CFE654F41093EF8E9C7FCCE8550A14D9 /* PBXContainerItemProxy */;
 		};
-		7B5AC1C4857CF5CDEAC8C91D4987D8B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Spring;
-			target = 05516AD18935EA188E67A02E44DA59A2 /* Spring */;
-			targetProxy = 00D13C5E7060C021C4539D91B6F0D1D1 /* PBXContainerItemProxy */;
-		};
-		F0C6E0465525144F5145E322D1B64869 /* PBXTargetDependency */ = {
+		1E494AE5CF7BE7E147BB2D91B0D02A0B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EFCircularSlider;
 			target = 190D63557CBC9A591589F57F4E4140A4 /* EFCircularSlider */;
-			targetProxy = 7921DF592A085BFA38CBE1DD34C55697 /* PBXContainerItemProxy */;
+			targetProxy = B0C1B7CE9DB5F559543629CD9608A3A9 /* PBXContainerItemProxy */;
 		};
-		F140FCA0B196C218946FDE6D14F979F3 /* PBXTargetDependency */ = {
+		4058EEE05FB8C2AFC854669B92AF44AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LiquidFloatingActionButton;
 			target = ECB4143196184B0E0EA02182DB2B9CCA /* LiquidFloatingActionButton */;
-			targetProxy = C84BEC2A0779E0C81E86A8D6F9C27BD5 /* PBXContainerItemProxy */;
+			targetProxy = 32F11E0F3DB3096008A26D482CADB55E /* PBXContainerItemProxy */;
+		};
+		41A68199F1CCC8BEF9D2467F0DB54EE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UCZProgressView;
+			target = 9F3B2D43FCC5741C3385E474CA4A79DE /* UCZProgressView */;
+			targetProxy = 4D15235898C9AF04525F2749D9A3819B /* PBXContainerItemProxy */;
 		};
 		FAE7CB5B7883807D0DC3EFE58E8F5318 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1059,46 +727,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		27A992F3BF3282C7F9106F75782C586E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 649344F9A6EA80657B3383E32BCA9641 /* EFCircularSlider.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/EFCircularSlider/EFCircularSlider-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EFCircularSlider/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EFCircularSlider/EFCircularSlider.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = EFCircularSlider;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		27B0FBFE8C9EFA26FD327675D36A754B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82ADE861F39F7332174A387EBC0DEC15 /* LiquidFloatingActionButton.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = LiquidFloatingActionButton;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		314AEEEF3FE9BC0135411CACECDB85E8 /* Release */ = {
+		0C95F488D17DBA45A89129A7356AE7F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE65BB805E6D48F68A82CD2F41A3A2F8 /* Pods-TimeCapturor.release.xcconfig */;
 			buildSettings = {
@@ -1128,9 +757,36 @@
 			};
 			name = Release;
 		};
-		55C9FE02C0B280C8E993B24853250945 /* Release */ = {
+		27A992F3BF3282C7F9106F75782C586E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82ADE861F39F7332174A387EBC0DEC15 /* LiquidFloatingActionButton.xcconfig */;
+			baseConfigurationReference = A9FCFFD5702472FC6C74B0764C2BF723 /* EFCircularSlider.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EFCircularSlider/EFCircularSlider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EFCircularSlider/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EFCircularSlider/EFCircularSlider.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EFCircularSlider;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		27B0FBFE8C9EFA26FD327675D36A754B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0A39BA528ED2259BBA5CF496DF469C5 /* LiquidFloatingActionButton.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = LiquidFloatingActionButton;
@@ -1138,66 +794,11 @@
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
-		};
-		5DAB8D9937CAE27053EE2BAE30F1DADE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DAF8BF58C3052C0E9C9517E50DA4EEA /* Spring.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Spring/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Spring;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
 			name = Debug;
 		};
-		614677BDB9D979A3061D165242809CE5 /* Release */ = {
+		2F84C8B98F7AC0716C4CE747A6E71A5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDA650E6A5A8AB11D750DE7E453B87E5 /* KVNProgress.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/KVNProgress/KVNProgress-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/KVNProgress/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/KVNProgress/KVNProgress.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = KVNProgress;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		90FD42A0039EB1920CBE1160CEE99865 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A6AA3692E0B1EF608D40FFE3427D16E /* UCZProgressView.xcconfig */;
+			baseConfigurationReference = 9881D1285AA0DFB8CD6747859ECC3426 /* UCZProgressView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1222,9 +823,9 @@
 			};
 			name = Release;
 		};
-		94BBC8829ACD88D9CD196EB624E79A99 /* Debug */ = {
+		52A6A7DACBAF76D18EFE6009C006331D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 112F5D5F762589FF845C1119439CEB93 /* LLSimpleCamera.xcconfig */;
+			baseConfigurationReference = 9881D1285AA0DFB8CD6747859ECC3426 /* UCZProgressView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1233,14 +834,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LLSimpleCamera/LLSimpleCamera-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LLSimpleCamera/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/UCZProgressView/UCZProgressView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UCZProgressView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LLSimpleCamera/LLSimpleCamera.modulemap";
+				MODULEMAP_FILE = "Target Support Files/UCZProgressView/UCZProgressView.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = LLSimpleCamera;
+				PRODUCT_NAME = UCZProgressView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1249,9 +850,48 @@
 			};
 			name = Debug;
 		};
+		55C9FE02C0B280C8E993B24853250945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0A39BA528ED2259BBA5CF496DF469C5 /* LiquidFloatingActionButton.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = LiquidFloatingActionButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		614677BDB9D979A3061D165242809CE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49CC64EE01AA2399AC6D6CAFDE5C2617 /* KVNProgress.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/KVNProgress/KVNProgress-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KVNProgress/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KVNProgress/KVNProgress.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = KVNProgress;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		9A2B8B84AC6D4A667959C0DA06BB3E80 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDA650E6A5A8AB11D750DE7E453B87E5 /* KVNProgress.xcconfig */;
+			baseConfigurationReference = 49CC64EE01AA2399AC6D6CAFDE5C2617 /* KVNProgress.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1315,63 +955,9 @@
 			};
 			name = Debug;
 		};
-		AA73BEABF752DDF39F81BD1FFB2DD8CF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 112F5D5F762589FF845C1119439CEB93 /* LLSimpleCamera.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LLSimpleCamera/LLSimpleCamera-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LLSimpleCamera/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LLSimpleCamera/LLSimpleCamera.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = LLSimpleCamera;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BCC2965BF94C820A1AD39E8FB81CD492 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DAF8BF58C3052C0E9C9517E50DA4EEA /* Spring.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Spring/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Spring;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		C72244A697C30ED6E7A685526AA0E37D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82ADE861F39F7332174A387EBC0DEC15 /* LiquidFloatingActionButton.xcconfig */;
+			baseConfigurationReference = B0A39BA528ED2259BBA5CF496DF469C5 /* LiquidFloatingActionButton.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1397,34 +983,7 @@
 			};
 			name = Debug;
 		};
-		CB0922DE5837E06D8C789620853D7FAC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A6AA3692E0B1EF608D40FFE3427D16E /* UCZProgressView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/UCZProgressView/UCZProgressView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UCZProgressView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/UCZProgressView/UCZProgressView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = UCZProgressView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DF7D8AF5DB665B5F7A43B3A7AF80FC77 /* Debug */ = {
+		D09431A992C47DE52FF7BA860238B717 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F5BBEDA305BFD85533D89F899E18E48 /* Pods-TimeCapturor.debug.xcconfig */;
 			buildSettings = {
@@ -1457,7 +1016,7 @@
 		};
 		E33BD5A1632587B800EF99F19770DE8F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 649344F9A6EA80657B3383E32BCA9641 /* EFCircularSlider.xcconfig */;
+			baseConfigurationReference = A9FCFFD5702472FC6C74B0764C2BF723 /* EFCircularSlider.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1484,7 +1043,7 @@
 		};
 		F9B46FB959A6C576CAA4D9298972A017 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82ADE861F39F7332174A387EBC0DEC15 /* LiquidFloatingActionButton.xcconfig */;
+			baseConfigurationReference = B0A39BA528ED2259BBA5CF496DF469C5 /* LiquidFloatingActionButton.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1546,11 +1105,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1A9E0881D54953A1A29D9CED7E22EE96 /* Build configuration list for PBXNativeTarget "LLSimpleCamera" */ = {
+		03A5AD2854E1945C18A7A6B1950DA604 /* Build configuration list for PBXNativeTarget "UCZProgressView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94BBC8829ACD88D9CD196EB624E79A99 /* Debug */,
-				AA73BEABF752DDF39F81BD1FFB2DD8CF /* Release */,
+				52A6A7DACBAF76D18EFE6009C006331D /* Debug */,
+				2F84C8B98F7AC0716C4CE747A6E71A5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1573,29 +1132,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4D2ECBAFA52DC0D780EA1E621FB2BF56 /* Build configuration list for PBXNativeTarget "Pods-TimeCapturor" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DF7D8AF5DB665B5F7A43B3A7AF80FC77 /* Debug */,
-				314AEEEF3FE9BC0135411CACECDB85E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		574DE9E1109CA0F1C528606B8953E769 /* Build configuration list for PBXNativeTarget "EFCircularSlider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E33BD5A1632587B800EF99F19770DE8F /* Debug */,
 				27A992F3BF3282C7F9106F75782C586E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5D3A8DE92D77561665276A594AB1B0FE /* Build configuration list for PBXNativeTarget "UCZProgressView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CB0922DE5837E06D8C789620853D7FAC /* Debug */,
-				90FD42A0039EB1920CBE1160CEE99865 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1609,11 +1150,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88B87811191531AFEB827EFEC32D164B /* Build configuration list for PBXNativeTarget "Spring" */ = {
+		E9EAF257843C00C53F25A8AC81BF2FBF /* Build configuration list for PBXNativeTarget "Pods-TimeCapturor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5DAB8D9937CAE27053EE2BAE30F1DADE /* Debug */,
-				BCC2965BF94C820A1AD39E8FB81CD492 /* Release */,
+				D09431A992C47DE52FF7BA860238B717 /* Debug */,
+				0C95F488D17DBA45A89129A7356AE7F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

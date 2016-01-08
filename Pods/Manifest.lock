@@ -2,8 +2,6 @@ PODS:
   - EFCircularSlider (0.2.0)
   - KVNProgress (2.2.2)
   - LiquidFloatingActionButton (0.1.1)
-  - LLSimpleCamera (4.0.0)
-  - Spring (1.0.3)
   - UCZProgressView (1.0.2)
 
 DEPENDENCIES:
@@ -11,32 +9,22 @@ DEPENDENCIES:
   - KVNProgress
   - LiquidFloatingActionButton (from `https://github.com/yoavlt/LiquidFloatingActionButton`,
     branch `swift-2.0`)
-  - LLSimpleCamera (~> 4.0.0)
-  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
   - UCZProgressView
 
 EXTERNAL SOURCES:
   LiquidFloatingActionButton:
     :branch: swift-2.0
     :git: https://github.com/yoavlt/LiquidFloatingActionButton
-  Spring:
-    :branch: swift2
-    :git: https://github.com/MengTo/Spring.git
 
 CHECKOUT OPTIONS:
   LiquidFloatingActionButton:
     :commit: 6c2a30a548d1f44e78b54571e616d637c92b5206
     :git: https://github.com/yoavlt/LiquidFloatingActionButton
-  Spring:
-    :commit: 18d5c7b74489de8044e34767f856d1e574f0820e
-    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   EFCircularSlider: 3af1dd6f86eb3eeeeaab0345ef3d6d1c2fc93d17
   KVNProgress: 4697347e21e37fdaa5264ebc24e377c205a50328
   LiquidFloatingActionButton: dcdae1e59eb07eccbf60c027001a4d6731c345c9
-  LLSimpleCamera: 4acecd6fabca1cb5841302ee03e03123e290af3d
-  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   UCZProgressView: 55836987c15ee6efb7cd6dfe297556602ee46c94
 
 COCOAPODS: 0.39.0
