@@ -46,10 +46,10 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: screenWidth, height: screenHeight), false, 0)
         let context = UIGraphicsGetCurrentContext()
         
-        let points = [ CGPoint(x: screenWidth/2 - 90,y: screenHeight/5.0 + 40),
-            CGPoint(x: screenWidth/2 - 45, y: screenHeight/5.0*2),
-            CGPoint(x: screenWidth/2 + 45, y: screenHeight/5.0*2),
-            CGPoint(x: screenWidth/2 + 90, y: screenHeight/5.0 + 40),
+        let points = [ CGPoint(x: screenWidth/6,y: screenHeight/5),
+            CGPoint(x: screenWidth/3 , y: screenHeight/5*2),
+            CGPoint(x: screenWidth/6 * 4, y: screenHeight/5*2),
+            CGPoint(x: screenWidth/6*5, y: screenHeight/5),
             CGPoint(x: screenWidth/2, y: 50),
             CGPoint(x: screenWidth/2, y: screenHeight-150)]
         

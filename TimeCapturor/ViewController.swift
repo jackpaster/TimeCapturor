@@ -9,8 +9,9 @@
 import UIKit
 //import Photos
 import LiquidFloatingActionButton
+import UCZProgressView
 
-class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate,LiquidFloatingActionButtonDataSource,LiquidFloatingActionButtonDelegate,UIGestureRecognizerDelegate,KPTimePickerDelegate,superViewController,BWWalkthroughViewControllerDelegate{
+class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate,LiquidFloatingActionButtonDataSource,LiquidFloatingActionButtonDelegate,UIGestureRecognizerDelegate,KPTimePickerDelegate,superViewController{
     
     
     func getSuperViewController(sender: UIView) -> UIViewController? {
@@ -212,7 +213,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             break
         case 5:
             
-            
             performSegueWithIdentifier("setting", sender: nil)
             break
             
@@ -231,7 +231,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
             let floatingActionButton = LiquidFloatingActionButton(frame: frame)
             floatingActionButton.animateStyle = style
-            floatingActionButton.color = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)
+            floatingActionButton.color = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 1.0)
             floatingActionButton.dataSource = self
             floatingActionButton.delegate = self
             return floatingActionButton
@@ -334,47 +334,43 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
     }
     
-    func showWalkthrough(){
-        
-        // Get view controllers and build the walkthrough
-        let stb = UIStoryboard(name: "Walkthrough", bundle: nil)
-        let walkthrough = stb.instantiateViewControllerWithIdentifier("walk") as! BWWalkthroughViewController
-        let page_zero = stb.instantiateViewControllerWithIdentifier("walk0")
-        let page_one = stb.instantiateViewControllerWithIdentifier("walk1")
-        let page_two = stb.instantiateViewControllerWithIdentifier("walk2")
-        let page_three = stb.instantiateViewControllerWithIdentifier("walk3")
-        
-        // Attach the pages to the master
-        walkthrough.delegate = self
-        walkthrough.addViewController(page_one)
-        walkthrough.addViewController(page_two)
-        walkthrough.addViewController(page_three)
-        walkthrough.addViewController(page_zero)
-        
-        self.presentViewController(walkthrough, animated: false, completion: nil)
-    }
-    
     
     // MARK: - Walkthrough delegate -
-    
-    func walkthroughPageDidChange(pageNumber: Int) {
-        print("Current Page \(pageNumber)")
-    }
-    
-    func walkthroughCloseButtonPressed() {
-        view.alpha = 1
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
 
 
+    func presentCircleAnimation(){
+        self.navigationController?.navigationBarHidden = true
+        let progressView = UCZProgressView(frame: self.view.bounds)
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        progressView.indeterminate = true
+        progressView.radius = 30
+        progressView.lineWidth = 1
+        progressView.animationDidStopBlock =  {() -> Void in
+           UIView.animateWithDuration(0.4,
+            animations: {
+                self.navigationController?.navigationBarHidden = false
+                //self.guideView.alpha = 1
+            }, completion: {_ in
+                UIView.animateWithDuration(0.4,
+                    animations: {
+                        self.guideView.alpha = 1
+                    }, completion: nil )
+            
+            })
+        }
+        progressView.blurEffect = UIBlurEffect(style: .ExtraLight)
+        self.view!.addSubview(progressView)
+        progressView.progress = 1
+        
+
+    }
+    var guideView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         view.alpha = 0
-        
-         showWalkthrough()
-        
+         //view.alpha = 0
+       
         
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "appMovedToForeground", name: UIApplicationWillEnterForegroundNotification , object: nil)
@@ -382,13 +378,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         let defaults = NSUserDefaults.standardUserDefaults()
         
-        if !defaults.boolForKey("walkthroughPresented") {
-            
-           // showWalkthrough()
-            
-            defaults.setBool(true, forKey: "walkthroughPresented")
-            defaults.synchronize()
-        }
+        
         
         if var WeekTimeDic = defaults.dictionaryForKey("WeekTimeDic") as? [String:String]
         {
@@ -443,8 +433,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         defaults.setInteger(collectionData.getAllImageAndDate().Number, forKey: "photoNumber")
 
         
-        
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
+         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
+       
         
 
         screenSize = UIScreen.mainScreen().bounds
@@ -486,21 +476,21 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         navigationController?.navigationBar.layer.masksToBounds = false
         
 
-       // print(screenWidth)
+       // print(screenHeight)
 //        var attachment = NSTextAttachment()
 //        attachment.image = UIImage(named: "ic_camera")
 //        var attachmentString = NSAttributedString(attachment: attachment)
 //        var myString = NSMutableAttributedString(string: "")
 //        myString.appendAttributedString(attachmentString)
         //lable.setattribute = attachmenrstring
-        if(screenWidth == 320){
-            
+        if(screenHeight == 568){
+            //iphone 5
             cameraButton.setImage(UIImage(named: "ic_camera"), forState: .Normal)
             cameraButton.centerLabelVerticallyWithPadding(0)
             cameraButton.imageView?.contentMode = .ScaleAspectFit
             // cameraButton.frame.width = ( screenWidth - 112 - 20 )/2.0
             cameraButton.frame = CGRectMake(cameraButton.frame.origin.x, cameraButton.frame.origin.y , (view.frame.width - 100 - 50), 44)
-            cameraButton.backgroundColor = UIColor(red: 240 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)//rgb(44, 62, 80)
+            cameraButton.backgroundColor = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 1.0)//rgb(44, 62, 80)
             cameraButton.layer.cornerRadius = 22
             
         }else{
@@ -508,7 +498,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cameraButton.centerLabelVerticallyWithPadding(1)
        // cameraButton.frame.width = ( screenWidth - 112 - 20 )/2.0
         cameraButton.frame = CGRectMake(cameraButton.frame.origin.x, cameraButton.frame.origin.y, (view.frame.width - 112 - 80), cameraButton.frame.size.height)
-        cameraButton.backgroundColor = UIColor(red: 240 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)//rgb(44, 62, 80)
+        cameraButton.backgroundColor = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 1.0)//rgb(44, 62, 80)
         cameraButton.layer.cornerRadius = 28
         }
         //cameraButton.layer.borderWidth = 1camraBarButton
@@ -537,11 +527,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
        // let blurView = UIVisualEffectView(effect: darkBlur)
        // blurView.frame = statusView.bounds
         // 3
-        //statusView.addSubview(blurView)rgb(231, 76, 60)rgb(192, 57, 43)
+        //rgb(231, 76, 60)
      
-        statusView.backgroundColor = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 0.97)
-
+        statusView.backgroundColor = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 1)
         
+         //statusView.backgroundColor = UIColor(red: 37 / 255.0, green: 116 / 255.0, blue: 169 / 255.0, alpha: 0.97)
        // self.view.addSubview(statusBackView)
         
         
@@ -599,10 +589,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         collectionView!.delegate = self
         collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")//rgb(29, 78, 111)
         //collectionView.backgroundColor = UIColor(red: 52 / 255.0, green: 73 / 255.0, blue: 94 / 255.0, alpha: 1)
-        collectionView.backgroundColor = UIColor(red: 29 / 255.0, green: 78 / 255.0, blue: 111 / 255.0, alpha: 1)
-        //collectionView.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor).active = true
-        //rgb(149, 165, 166)rgb(52, 73, 94)rgb(127, 140, 141)
-        //collectionView.setCollectionViewLayout(layout, animated: false)
+        //collectionView.backgroundColor = UIColor(red: 29 / 255.0, green: 78 / 255.0, blue: 111 / 255.0, alpha: 1)
+        collectionView.backgroundColor =  UIColor(red: 171 / 255.0, green: 216 / 255.0, blue: 204 / 255.0, alpha: 0.97)
+
         navigationController?.navigationBar.tintAdjustmentMode = .Normal
         //navigationController?.navigationBar.barTintColor = [UIColor blackColor];
         navigationController?.navigationBar.translucent = true
@@ -614,15 +603,32 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         bar.shadowImage = UIImage()
-        bar.backgroundColor = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 0.97)
+        bar.backgroundColor = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 0.97)
         //bar.frame.origin.y = -50
         //bar.frame = CGRect(x: bar.frame.origin.x , y: bar.frame.origin.y-20, width: bar.frame.size.width, height: bar.frame.size.height)
         self.view.addSubview(collectionView!)
+      
+        
+        if collectionData.getAllImageAndDate().Number == 0{
+           
+            guideView.frame = collectionView.frame
+            guideView.backgroundColor = UIColor.clearColor()
+            guideView.image = UIImage(named: "guide")
+            guideView.contentMode = .ScaleAspectFit
+
+            view.addSubview(guideView)
+             if !defaults.boolForKey("circleAnimationPresented") {
+                guideView.alpha = 0
+            }
+        }
+        
+        
         self.view.bringSubviewToFront(toolBar)
         self.view.bringSubviewToFront(bottomView)
         let buttons = createButton()
         buttonLeft = buttons.buttonLeft
         buttonRight = buttons.buttonRight
+        
         
 
         let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
@@ -630,61 +636,29 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         // we use our delegate
         tap.delegate = self
         tap2.delegate = self
-        // allow for user interaction
-       
-        // buttonLeft.userInteractionEnabled = true
-        //buttonRight.userInteractionEnabled = true
-        
-        // add tap as a gestureRecognizer to tapView
-        
-        //buttonLeft.addGestureRecognizer(tap)
-        //buttonRight.addGestureRecognizer(tap2)
-
         
         self.view.addSubview(buttonLeft)
         self.view.addSubview(buttonRight)
-        
-
         self.view.addSubview(statusView)
         
-        // an action we'll call "handleTap:"
-        
-        
-       // buttonLeft as UIButton).addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
-
         
        
         
+        if !defaults.boolForKey("circleAnimationPresented") {
+            
+            presentCircleAnimation()
+            
+            defaults.setBool(true, forKey: "circleAnimationPresented")
+            defaults.synchronize()
+        }
+        
+        
+       
+        
+        
     }
     
-    
-      //self.view.addSubview(collectionView!)
-    //
-    //        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-    //        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
-    //        layout.itemSize = CGSize(width: CGFloat(screenWidth / 3), height: CGFloat(screenWidth / 3))
-    //        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-    //        print(collectionView)
-    //        collectionView!.dataSource = self
-    //        collectionView!.delegate = self
-    //        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
-    //        collectionView!.backgroundColor = UIColor.greenColor()
-    //        self.view.addSubview(collectionView!)
-    
-    
-    
-    //
-    
-    //
-    //        // Do any additional setup after loading the view, typically from a nib
-    //        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-    //        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
-    //        layout.itemSize = CGSize(width: screenWidth / 3, height: screenWidth / 3)
-    //        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-    //
-    //        collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
-    //        collectionView!.backgroundColor = UIColor.greenColor()
-    //        self.view.addSubview(collectionView!)
+  
     override func viewWillDisappear(animated: Bool) {
 
             super.viewWillDisappear(animated)
@@ -709,7 +683,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         self.collectionData.updateData()
         self.collectionView.reloadData()
         self.navigationController?.hidesBarsOnSwipe = true
-       
+        
+        if(collectionData.getAllImageAndDate().Number != 0){
+            guideView.hidden = true
+        }
+      
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -725,7 +703,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath)->UICollectionViewCell{
         let cell: CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
         //cell.backgroundColor = UIColor.whiteColor()rgb(189, 195, 199)rgb(44, 62, 80)
-         cell.layer.borderColor = UIColor(red: 44 / 255.0, green: 62 / 255.0, blue: 80 / 255.0, alpha: 1).CGColor
+         cell.layer.borderColor = UIColor.whiteColor().CGColor
         cell.layer.borderWidth = 0.5
        cell.layer.cornerRadius = CGFloat(1.8)
         //cell.frame.size.width = screenWidth / 3

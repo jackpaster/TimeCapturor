@@ -35,18 +35,15 @@
     _currentValue = 0.0f;
     _lineWidth = 5;
     _lineRadiusDisplacement = 0;
-    _unfilledColor = [UIColor colorWithRed:189.0f/255.0f
-                                     green:195.0f/255.0f
-                                      blue:199.0f/255.0f
-                                     alpha:1.0f]; //rgb(189, 195, 199)
-    _filledColor = [UIColor colorWithRed:192.0f/255.0f
-                                   green:57.0f/255.0f
-                                    blue:43.0f/255.0f
+    _unfilledColor = [UIColor whiteColor];
+    _filledColor = [UIColor colorWithRed:230.0f/255.0f
+                                   green:75.0f/255.0f
+                                    blue:85.0f/255.0f
                                    alpha:1.0f];    //rgb(192, 57, 43)
 
-    _handleColor = [UIColor colorWithRed:231.0f/255.0f
-                                   green:76.0f/255.0f
-                                    blue:60.0f/255.0f
+    _handleColor = [UIColor colorWithRed:230.0f/255.0f
+                                   green:75.0f/255.0f
+                                    blue:85.0f/255.0f
                                    alpha:1.0f];
     _labelFont = [UIFont systemFontOfSize:10.0f];
     _snapToLabels = NO;

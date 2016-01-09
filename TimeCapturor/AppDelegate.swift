@@ -9,22 +9,57 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,BWWalkthroughViewControllerDelegate{
 
     var window: UIWindow?
+    
+    func walkthroughPageDidChange(pageNumber: Int) {
+        //print("Current Page \(pageNumber)")
+    }
+    
+    func walkthroughCloseButtonPressed() {
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = main.instantiateViewControllerWithIdentifier("MainNevigation") as! UINavigationController
+        self.window?.rootViewController = mainViewController
+        
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
-        var viewController: UIViewController = UIViewController()
-        viewController.view!.backgroundColor = UIColor.greenColor()
-        //  Temporary iOS8 fix for 'presentation lag' on launch
-        self.window!.addSubview(viewController.view!)
-        self.window!.rootViewController!.presentViewController(viewController, animated: false, completion: { _ in })
         
         let defaults = NSUserDefaults.standardUserDefaults()
+        
+       if !defaults.boolForKey("walkthroughPresented") {
+           
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            let stb = UIStoryboard(name: "Walkthrough", bundle: nil)
+            let walkthrough = stb.instantiateViewControllerWithIdentifier("walk") as! BWWalkthroughViewController
+            let page_zero = stb.instantiateViewControllerWithIdentifier("walk0")
+            let page_one = stb.instantiateViewControllerWithIdentifier("walk1")
+            let page_two = stb.instantiateViewControllerWithIdentifier("walk2")
+            let page_three = stb.instantiateViewControllerWithIdentifier("walk3")
+           
+            walkthrough.delegate = self
+            walkthrough.addViewController(page_one)
+            walkthrough.addViewController(page_two)
+            walkthrough.addViewController(page_three)
+            walkthrough.addViewController(page_zero)
+            self.window?.rootViewController = walkthrough
+            self.window?.makeKeyAndVisible()
+            
+            
+            defaults.setBool(true, forKey: "walkthroughPresented")
+            defaults.synchronize()
+        }
+
+        
+        
+        //let defaults = NSUserDefaults.standardUserDefaults()
         
         if let launchTimes = defaults.valueForKey("launchTimes") as? Int
         {

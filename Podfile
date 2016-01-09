@@ -8,12 +8,12 @@ pod 'UCZProgressView'
 #pod 'AMScrollingNavbar', '~> 2.0.1'
 pod "EFCircularSlider", '> 0.1.0'
 #pod 'CRGradientNavigationBar'
-#pod 'LLSimpleCamera', '~> 4.0.0'
+pod 'LLSimpleCamera', '~> 4.0.0'
 pod 'KVNProgress'
 #pod 'Expecta'
 #pod "LiquidFloatingActionButton"
 pod "LiquidFloatingActionButton", :git => 'https://github.com/yoavlt/LiquidFloatingActionButton', :branch => 'swift-2.0'
-#pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
+pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 end
 
 

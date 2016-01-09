@@ -15,7 +15,6 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var videoButton: UIButton!
     
     @IBOutlet weak var subTitle: UILabel!
-    @IBOutlet weak var valueLable: UILabel!
 
     @IBOutlet weak var returnButton: UIButton!
     
@@ -66,7 +65,7 @@ class SettingViewController: UIViewController {
         //gifButton.centerLabelVerticallyWithPadding(0)
         gifButton.setTitleColor(UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
         gifButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
-        gifButton.layer.cornerRadius = 28
+        gifButton.layer.cornerRadius = 25
         
         ///////////////////////////////////////////////////////////////////////////////
         
@@ -80,13 +79,12 @@ class SettingViewController: UIViewController {
         //gifButton.centerLabelVerticallyWithPadding(1)
         videoButton.setTitleColor(UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
         videoButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
-        videoButton.layer.cornerRadius = 28
+        videoButton.layer.cornerRadius = 25
         ///////////////////////////////////////////////////////////////////////////////
         
         
-        subTitle.textColor = UIColor(red: 189 / 255.0, green: 195 / 255.0, blue: 199 / 255.0, alpha: 1)//rgb(189, 195, 199)
-        valueLable.textColor = UIColor(red: 189 / 255.0, green: 195 / 255.0, blue: 199 / 255.0, alpha: 1)//rgb(236, 240, 241)
-        
+        subTitle.textColor = UIColor.whiteColor()//rgb(189, 195, 199)
+       
         navigationController?.navigationBar.layer.shadowColor = UIColor.blackColor().CGColor
         navigationController?.navigationBar.layer.shadowOffset = CGSizeMake(0, 4)
         navigationController?.navigationBar.layer.shadowRadius = 2
@@ -96,21 +94,36 @@ class SettingViewController: UIViewController {
         
         bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         bar.shadowImage = UIImage()
-        bar.backgroundColor = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 0.97)
+        bar.backgroundColor = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 0.97)
        
         let statusHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         let statusView = UIView(frame:
             CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height:statusHeight) )
-        statusView.backgroundColor = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 0.97)
+        statusView.backgroundColor = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 0.97)
         self.view.addSubview(statusView)
 
-        view.backgroundColor =  UIColor(red: 29 / 255.0, green: 78 / 255.0, blue: 111 / 255.0, alpha: 1)
+        view.backgroundColor =  UIColor(red: 171 / 255.0, green: 216 / 255.0, blue: 204 / 255.0, alpha: 1)
         
-        let sliderFrame = CGRectMake(0, 150, UIScreen.mainScreen().bounds.width, 250);
+        var sliderFrame = CGRectMake(0, 150, UIScreen.mainScreen().bounds.width, 250);
+        if(screenHeight == 736){
+            sliderFrame = CGRectMake(0, 200, UIScreen.mainScreen().bounds.width, 250);
+
+        }
+        valueLable = UILabel(frame: CGRectMake(screenWidth/2.0, sliderFrame.origin.y+70, 50, 20))
+        valueLable.center = CGPointMake(screenWidth/2.0, sliderFrame.origin.y+70)
+        
+        valueLable.textAlignment = NSTextAlignment.Center
+        
+        //self.view.addSubview(valueLable)
+        
+        //frame = CGRectMake(screenWidth/2.0,sliderFrame.height+20,50,30)
+        valueLable.textColor = UIColor.whiteColor()//rgb(236, 240, 241)
+        view.addSubview(valueLable)
+
         let circularSlider:EFCircularSlider = EFCircularSlider(frame: sliderFrame)
         //valueLable.frame = CGRectMake(250, 200, 50, 30)
         circularSlider.addTarget(self, action: "valueChanged:", forControlEvents: .ValueChanged)
-        
+    
         self.view.addSubview(circularSlider)
         //circularSlider.currentValue = 7
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -124,8 +137,10 @@ class SettingViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    var valueLable = UILabel()
+    
     let userdefault = NSUserDefaults.standardUserDefaults()
-
+    
     func valueChanged(slider:EFCircularSlider) {
         valueLable.text = String(Int(ceil(slider.currentValue))) + " fps"
         userdefault.setValue(slider.currentValue, forKey: "speed")

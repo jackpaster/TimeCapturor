@@ -40,10 +40,18 @@ class selfInfo:UIView{
         {
             firstmoments = first
         }
-        
+         if(screenHeight == 736){
+            self.addSubview( labelCreator( " First captured moment : \(firstmoments)", yPosition: 340) )
+            self.addSubview( labelCreator(" Total launching time : \(launchtime)", yPosition: 410) )
+            self.addSubview( labelCreator( " Total captured moments : \(photonumber)", yPosition: 480) )
+            
+         }else{
+            
         self.addSubview( labelCreator( " First captured moment : \(firstmoments)", yPosition: 340) )
          self.addSubview( labelCreator(" Total launching time : \(launchtime)", yPosition: 380) )
         self.addSubview( labelCreator( " Total captured moments : \(photonumber)", yPosition: 420) )
+            
+        }
         
       }
 
@@ -102,19 +110,38 @@ class selfInfo:UIView{
     }
     
     func labelCreator(labelText:String,yPosition:CGFloat) -> UILabel{
-        let label = UILabel(frame: CGRectMake(0, 0, screenWidth-40, 30) )
-        label.center = CGPointMake(screenWidth/2.0, yPosition)
-        label.textAlignment = NSTextAlignment.Left
-        label.text = labelText
-        label.textColor = UIColor.whiteColor()
-        label.font =  UIFont(name: label.font.fontName, size: 13)
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius = 3
-        //label.layer.backgroundColor = UIColor(red: 46/255.0, green: 204/255.0, blue: 113/255.0, alpha: 0.4).CGColor//rgb(46, 204, 113)
-        label.layer.borderColor = UIColor.whiteColor().CGColor
-        label.layer.borderWidth = 0.4
+       
+        if(screenHeight == 736){
+            let label = UILabel(frame: CGRectMake(0, 0, screenWidth-40, 50) )
+            label.center = CGPointMake(screenWidth/2.0, yPosition)
+            label.textAlignment = NSTextAlignment.Left
+            label.text = labelText
+            label.textColor = UIColor.whiteColor()
+            label.font =  UIFont(name: label.font.fontName, size: 16)
+            label.layer.masksToBounds = true
+            label.layer.cornerRadius = 5
+            //label.layer.backgroundColor = UIColor(red: 46/255.0, green: 204/255.0, blue: 113/255.0, alpha: 0.4).CGColor//rgb(46, 204, 113)
+            label.layer.borderColor = UIColor.whiteColor().CGColor
+            label.layer.borderWidth = 0.8
+            return label
+            
+        }else{
+             let label = UILabel(frame: CGRectMake(0, 0, screenWidth-40, 30) )
+            label.center = CGPointMake(screenWidth/2.0, yPosition)
+            label.textAlignment = NSTextAlignment.Left
+            label.text = labelText
+            label.textColor = UIColor.whiteColor()
+            label.font =  UIFont(name: label.font.fontName, size: 13)
+            label.layer.masksToBounds = true
+            label.layer.cornerRadius = 3
+            //label.layer.backgroundColor = UIColor(red: 46/255.0, green: 204/255.0, blue: 113/255.0, alpha: 0.4).CGColor//rgb(46, 204, 113)
+            label.layer.borderColor = UIColor.whiteColor().CGColor
+            label.layer.borderWidth = 0.4
+            return label
+        }
         
-        return label
+        
+        
     }
     
     func addChart(){

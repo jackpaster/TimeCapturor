@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9714B35751E016227BAE4D73'
+               BlueprintIdentifier = 'F3B0FCEBC4D8064B4B2E2575'
                BlueprintName = 'LiquidFloatingActionButton-LiquidFloatingActionButton'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'LiquidFloatingActionButton.bundle'>

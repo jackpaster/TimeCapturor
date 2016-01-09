@@ -53,6 +53,8 @@
                 
             }
             
+            gifimageView.backgroundColor = UIColor(red: 200 / 255.0, green: 220 / 255.0, blue: 200 / 255.0, alpha: 1)
+            
             
             dateLable.font = UIFont(name: dateLable.font.fontName, size: 11) //rgb(127, 140, 141)
             dateLable.textColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
@@ -69,9 +71,9 @@
             // print(gifButton.frame)
             //gifButton.setImage(UIImage(named: "ic_gif"), forState: .Normal)
             //gifButton.centerLabelVerticallyWithPadding(0)
-            createNewButton.setTitleColor(UIColor(red: 195 / 255.0, green: 57 / 255.0, blue: 43 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
+            createNewButton.setTitleColor(UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 1), forState: UIControlState.Normal)//rgb(236, 240, 241)
             createNewButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
-            createNewButton.layer.cornerRadius = 25
+            createNewButton.layer.cornerRadius = 22.5
             
             
             sharButton.layer.shadowColor = UIColor.blackColor().CGColor
@@ -82,18 +84,18 @@
             // print(gifButton.frame)
             //gifButton.setImage(UIImage(named: "ic_gif"), forState: .Normal)
             //gifButton.centerLabelVerticallyWithPadding(0)
-            sharButton.setTitleColor(UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0), forState: UIControlState.Normal)//rgb(236, 240, 241)
+            sharButton.setTitleColor(UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 1) , forState: UIControlState.Normal)//rgb(236, 240, 241)
             sharButton.backgroundColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)
-            sharButton.layer.cornerRadius = 25
+            sharButton.layer.cornerRadius = 22.5
             
             
             let statusHeight = UIApplication.sharedApplication().statusBarFrame.size.height
             let statusView = UIView(frame:
                 CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height:statusHeight) )
-            statusView.backgroundColor = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 0.97)
+            statusView.backgroundColor = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 0.97)
             self.view.addSubview(statusView)
             
-            view.backgroundColor =  UIColor(red: 29 / 255.0, green: 78 / 255.0, blue: 111 / 255.0, alpha: 1)
+            view.backgroundColor =  UIColor(red: 171 / 255.0, green: 216 / 255.0, blue: 204 / 255.0, alpha: 1)
             
             if let _ = self.navigationController!.viewControllers[0] as? SettingViewController{
                 let backBtton = UIButton(frame: CGRect(x: 0, y: 0, width: 90, height: 20))

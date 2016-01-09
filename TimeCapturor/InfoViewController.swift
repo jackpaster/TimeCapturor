@@ -18,7 +18,7 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var namelable: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
-    var items: [String] = ["How to use", "Any issue or idear", "Rate in App Store","Tell your friend","version 1.0.0"]
+    var items: [String] = ["How to use", "Any issue or idear", "Rate in App Store","Tell your friend","version 1.0.1"]
     
     @IBAction func mailAction(sender: UIButton) {
         
@@ -65,8 +65,9 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let item = UIBarButtonItem(customView: backBtton)
         self.navigationItem.leftBarButtonItem = item
         
+        tableView.backgroundColor = UIColor(red: 250 / 255.0, green: 240 / 255.0, blue: 225 / 255.0, alpha: 1)
         
-        namelable.textColor = UIColor(red: 236 / 255.0, green: 240 / 255.0, blue: 241 / 255.0, alpha: 1)  //rgb(236, 240, 241)
+        namelable.textColor = UIColor.whiteColor() //rgb(236, 240, 241)
         
         mailButton.layer.cornerRadius = 25
         mailButton.layer.masksToBounds = true
@@ -92,11 +93,10 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let statusHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         let statusView = UIView(frame:
             CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height:statusHeight) )
-        statusView.backgroundColor = UIColor(red: 231 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 0.97)
+        statusView.backgroundColor = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 0.97)
         self.view.addSubview(statusView)
         
-        view.backgroundColor =  UIColor(red: 29 / 255.0, green: 78 / 255.0, blue: 111 / 255.0, alpha: 1)
-        
+        view.backgroundColor =  UIColor(red: 171 / 255.0, green: 216 / 255.0, blue: 204 / 255.0, alpha: 1)
         
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -120,18 +120,22 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
           cell.textLabel?.textColor = UIColor.lightGrayColor()
          cell.selectionStyle =  UITableViewCellSelectionStyle.None
         }else{
+           // cell.textLabel?.textColor = UIColor.whiteColor()
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
+        cell.backgroundColor = UIColor.clearColor()
+        
         return cell
         
     }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let selection:Int = indexPath.row
         switch selection {
         case 0:
-            
+            performSegueWithIdentifier("guide", sender: nil)
             break
         case 1:
             reportIssue()
@@ -154,7 +158,7 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func rateInAppStore(){
-        UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/")!)
+        UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/app/timecapturor/id1073022692")!)
     }
     
     func shareApp(){
@@ -162,9 +166,9 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // Please Sign Up (Free!) to remove this limitation.
         let shareParames = NSMutableDictionary()
         
-        shareParames.SSDKSetupShareParamsByText("Check this App out,TimeCapturor(http://mob.com), I highly recommend it to you!",
+        shareParames.SSDKSetupShareParamsByText("Check this App out,TimeCapturor(http://appstore.com/timecapturor), I highly recommend it to you!",
             images : UIImage(named: "logo_HD"),
-            url : NSURL(string:"http://mob.com"),
+            url : NSURL(string:"https://itunes.apple.com/app/timecapturor/id1073022692"),
             title : "Let's capture time!",
             type : SSDKContentType.Auto)
         
@@ -175,8 +179,8 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             switch state{
                 
             case SSDKResponseState.Success:
-                print("分享成功")
-                let alert = UIAlertView(title: "分享成功", message: "分享成功", delegate: self, cancelButtonTitle: "取消")
+                //print("分享成功")
+                let alert = UIAlertView(title: "Share Successful", message: "Thank you for your sharing!", delegate: self, cancelButtonTitle: "Cancel")
                 alert.show()
             case SSDKResponseState.Fail:    print("分享失败,错误描述:\(error)")
             case SSDKResponseState.Cancel:  print("分享取消")

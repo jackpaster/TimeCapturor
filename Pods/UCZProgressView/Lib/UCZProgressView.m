@@ -314,7 +314,7 @@
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"path"];
     animation.delegate = self;
     animation.toValue = (id)finalPath.CGPath;
-    animation.duration = 0.4;
+    animation.duration = 1.8;
     animation.beginTime = CACurrentMediaTime() + 0.4;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
     animation.fillMode  = kCAFillModeForwards;
