@@ -77,9 +77,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,BWWalkthroughViewControlle
             case SSDKPlatformType.TypeQQ:
                 ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
                 break
-            case SSDKPlatformType.TypeSinaWeibo:
-                ShareSDKConnector.connectWeibo(WeiboSDK.classForCoder())
-                break
+  //          case SSDKPlatformType.TypeSinaWeibo:
+//                ShareSDKConnector.connectWeibo(WeiboSDK.classForCoder())
+    //            break
             default:
                 break
             }
