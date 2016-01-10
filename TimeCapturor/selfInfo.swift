@@ -187,7 +187,7 @@ class selfInfo:UIView{
                 date = cal.dateByAddingUnit(.Weekday, value: -1, toDate: date, options: NSCalendarOptions(rawValue: 0))!
             }
         }
-        
+    
         
         let ChartLabel:UILabel = UILabel(frame: CGRectMake(0, 50, screenWidth, 30))
         ChartLabel.text = "Past 7 days captured"

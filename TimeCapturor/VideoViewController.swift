@@ -305,6 +305,7 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         
         self.customConfiguration = self.customKVNProgressUIConfiguration()
         
+                
     }
     
     override func viewWillAppear(animated: Bool) {
