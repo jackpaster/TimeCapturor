@@ -695,28 +695,23 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection: Int)->Int{
-        //print(cellData.count)
+       
         return collectionData.cellData.count
     }
     
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath)->UICollectionViewCell{
+     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath)->UICollectionViewCell{
         let cell: CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
         //cell.backgroundColor = UIColor.whiteColor()rgb(189, 195, 199)rgb(44, 62, 80)
          cell.layer.borderColor = UIColor.whiteColor().CGColor
         cell.layer.borderWidth = 0.5
        cell.layer.cornerRadius = CGFloat(1.8)
-        //cell.frame.size.width = screenWidth / 3
-        //cell.frame.size.height = screenWidth / 3
-        
         cell.layer.shouldRasterize = true //make collection view scroll smooth
         cell.layer.rasterizationScale = UIScreen.mainScreen().scale //as above
-        //cell.layer.borderWidth = 0.5
+       
         
         cell.titleLable?.text = dateGenerating(collectionData.cellData[indexPath.row].lableData)
         cell.imageView?.image = collectionData.cellData[indexPath.row].ImageData
-        
-        // print("11")
+      
         return cell
         
     }
