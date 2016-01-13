@@ -154,22 +154,9 @@
             configuration.stopColor = UIColor.whiteColor()//stop button color
             configuration.circleSize = 110.0
             configuration.fullScreen = true
-            
-            //        let blockSelf: ViewController = self
-            //
-            //        configuration.tapBlock = {(Progress)in
-            //            blockSelf.basicConfiguration.tapBlock = nil
-            //            KVNProgress.dismiss()
-            //        }
+
             configuration.stopRelativeHeight = 0.3
-            // configuration.stopColor = [UIColor whiteColor];
-            
-            
-            //            configuration.tapBlock = {(Progress) in
-            //                // Do what you want
-            //                KVNProgress.dismiss()
-            //
-            //            }
+  
             configuration.showStop = false
             
             return configuration
@@ -269,22 +256,12 @@
         }
         var gifURL = NSURL()
         func getCurrentDate()->String{
-            //            let GMTdate: NSDate = NSDate()
-            //            let zone: NSTimeZone = NSTimeZone.systemTimeZone()
-            //            let interval = zone.secondsFromGMTForDate(GMTdate)
-            //            let localeDate: NSDate = GMTdate.dateByAddingTimeInterval(Double(interval))
-            //            return localeDate
             let todaysDate:NSDate = NSDate()
             let dateFormatter:NSDateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "HH:mm MM/dd/yyyy"
             let DateInFormat:String = dateFormatter.stringFromDate(todaysDate)
             return DateInFormat
-            //            let date = NSDate()
-            //            let formatter = NSDateFormatter()
-            //            formatter.timeStyle = .ShortStyle
-            //            formatter.stringFromDate(date)
-            //            return date
-        }
+       }
         
         @IBAction func btnShare(sender: UIButton) {
             
@@ -300,8 +277,8 @@
             shareBubbles.showMailBubble = true
             shareBubbles.showFacebookBubble = true
             shareBubbles.showTwitterBubble = true
-            shareBubbles.showInsBubble = true
-            //shareBubbles.showInstagramBubble = true
+          //  shareBubbles.showInsBubble = true
+            shareBubbles.showInstagramBubble = true
             shareBubbles.showSinaBubble = true
             shareBubbles.showQQBubble = true
             shareBubbles.showQzoneBubble = true
@@ -328,7 +305,7 @@
                 ShareViaEmail()
                 NSLog("Email")
                 break
-            case AAShareBubbleTypeIns.rawValue:
+            case AAShareBubbleTypeInstagram.rawValue:
                 InformShareError()
                 NSLog("Ins")
                 break

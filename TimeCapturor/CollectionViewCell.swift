@@ -11,10 +11,6 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
-       
-        //    imageView.contentMode = UIViewContentMode.Center
-          //  imageView.clipsToBounds  = true
-    
     @IBOutlet var titleLable: UILabel!
     
     override init(frame: CGRect) {
@@ -25,9 +21,7 @@ class CollectionViewCell: UICollectionViewCell {
         imageView.clipsToBounds  = true
         imageView.layer.cornerRadius = 2
         contentView.addSubview(imageView)
-       // print("frame with \(frame.size.width)")
-       // print(frame.size.height)
-       // print(frame.size.width)
+
         let textFrame = CGRect(x: 0, y: frame.size.width-frame.size.width/7.5 , width: frame.size.width, height: frame.size.height/7.5)
         titleLable = UILabel(frame: textFrame)
         titleLable.font = UIFont(name: titleLable.font.fontName, size: 11) //rgb(127, 140, 141)

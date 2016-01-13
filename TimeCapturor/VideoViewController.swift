@@ -91,8 +91,8 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         shareBubbles.showMailBubble = true
         shareBubbles.showFacebookBubble = true
         shareBubbles.showTwitterBubble = true
-        shareBubbles.showInsBubble = true
-        //shareBubbles.showInstagramBubble = true
+       // shareBubbles.showInsBubble = true
+        shareBubbles.showInstagramBubble = true
         shareBubbles.showSinaBubble = true
         shareBubbles.showQQBubble = true
         shareBubbles.showQzoneBubble = true
@@ -122,7 +122,7 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
             ShareViaEmail()
             NSLog("Email")
             break
-        case AAShareBubbleTypeIns.rawValue:
+        case AAShareBubbleTypeInstagram.rawValue:
             InformShareError()
             NSLog("Ins")
             break

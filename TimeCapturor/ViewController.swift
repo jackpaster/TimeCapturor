@@ -28,24 +28,15 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var panRecognizer = UIPanGestureRecognizer()
     
     func timePicker(timePicker: KPTimePicker!, selectedDate date: NSDate!, switchButton: Bool) {
-        // NSLog(switchButton ? "Yes" : "No")
-       // print(switchButton)
         self.show(false, timePickerAnimated: true)
         let userdefault = NSUserDefaults.standardUserDefaults()
         userdefault.setValue(switchButton, forKey: "switchStatus")
         
         if switchButton == true {
             if(date != nil){
-//                print(date)
-//                let GMTdate: NSDate = NSDate()
-//                let zone: NSTimeZone = NSTimeZone.systemTimeZone()
-//                let interval = zone.secondsFromGMTForDate(GMTdate)
-//                let localeDate: NSDate = date.dateByAddingTimeInterval(Double(interval))
-//                print(localeDate)
                 userdefault.setValue(date, forKey: "reminderTime")
                 cancelNotification()
-                //print(dateLocal)
-                scheduleLocal(date)
+                             scheduleLocal(date)
             }
         
         }else{
@@ -61,15 +52,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             }
             
         }
-//        self.show(false, timePickerAnimated: true)
-//        if date != nil {
-//            let dateFormatter: NSDateFormatter = NSDateFormatter()
-//            dateFormatter.locale = NSLocale.currentLocale()
-//            dateFormatter.dateStyle = .NoStyle
-//            dateFormatter.timeStyle = .ShortStyle
-//            //self.statusLabel.text = dateFormatter.stringFromDate(date).lowercaseString
-//            print(dateFormatter.stringFromDate(date).lowercaseString)
-//        }
     }
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -153,16 +135,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var collectionView: UICollectionView!
     var selectedCell: CollectionViewCell?
     
-//    @IBOutlet var tapView: UIView?{
-//        didSet{
-//            let recognizer =  UITapGestureRecognizer(target: self, action: "Tap")
-//            tapView?.addGestureRecognizer(recognizer)
-//        }
-//    }
-//    
-//    func Tap(gesture :UIGestureRecognizer){
-//        print("www")
-//    }
     
     var cells: [LiquidFloatingCell] = []
     var floatingActionButton: LiquidFloatingActionButton!
@@ -278,15 +250,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     
     var collectionData = Album()
-    
-    //    override func viewDidLoad() {
-    //        super.viewDidLoad()
-    //
-    //        // Do any additional setup after loading the view, typically from a nib.
-    //    }
-    ///////////////////////////////////////////////////////////
-    //    var collectionView: UICollectionView?
-    
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
@@ -440,14 +403,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
-//
-//        if self.respondsToSelector("setNeedsStatusBarAppearanceUpdate") {
-//            self.setNeedsStatusBarAppearanceUpdate()
-//        }
-        //self.view.backgroundColor = UIColor(red: 36, green: 40, blue: 46, alpha: 1)
-       // self.setTimeButton.layer.cornerRadius = 10
-       // self.setTimeButton.layer.borderColor = UIColor.whiteColor().CGColor
-       // self.setTimeButton.layer.borderWidth = 2
+
         self.timePicker = KPTimePicker(frame: self.view.bounds)
         self.timePicker.delegate = self
         self.timePicker.minimumDate = self.timePicker.pickingDate.dateAtStartOfDay()
@@ -476,13 +432,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         navigationController?.navigationBar.layer.masksToBounds = false
         
 
-       // print(screenHeight)
-//        var attachment = NSTextAttachment()
-//        attachment.image = UIImage(named: "ic_camera")
-//        var attachmentString = NSAttributedString(attachment: attachment)
-//        var myString = NSMutableAttributedString(string: "")
-//        myString.appendAttributedString(attachmentString)
-        //lable.setattribute = attachmenrstring
         if(screenHeight == 568){
             //iphone 5
             cameraButton.setImage(UIImage(named: "ic_camera"), forState: .Normal)
@@ -501,45 +450,20 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cameraButton.backgroundColor = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 1.0)//rgb(44, 62, 80)
         cameraButton.layer.cornerRadius = 28
         }
-        //cameraButton.layer.borderWidth = 1camraBarButton
-        //cameraButton.layer.borderColor = UIColor.blackColor().CGColor
-        
-      
-        
+   
         toolBar.setBackgroundImage(UIImage(), forToolbarPosition: UIBarPosition.Any, barMetrics: UIBarMetrics.Default)
         toolBar.setShadowImage(UIImage(),forToolbarPosition: UIBarPosition.Any)
         
-        //    .setBackgroundImage (UIImage(),forToolbarPosition: UIBarPosition.Any,
-        //    barMetrics: UIBarMetrics.Default)
-        //    self.toolbar.setShadowImage(UIImage(),
-        //    forToolbarPosition: UIBarPosition.Any)
-        
-        // self.collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: MyFlowLayout())
+
         let statusHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         let statusView = UIView(frame:
             CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height:statusHeight) )
-        //statusView.backgroundColor = UIColor.whiteColor()
-        // statusView.backgroundColor = UIColor.redColor()
-        
-        // 1  add blur
-       // let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        // 2
-       // let blurView = UIVisualEffectView(effect: darkBlur)
-       // blurView.frame = statusView.bounds
-        // 3
-        //rgb(231, 76, 60)
-     
+
         statusView.backgroundColor = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 1)
         
-         //statusView.backgroundColor = UIColor(red: 37 / 255.0, green: 116 / 255.0, blue: 169 / 255.0, alpha: 0.97)
-       // self.view.addSubview(statusBackView)
-        
-        
+      
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        // UIApplication.sharedApplication().statusBarStyle = .BlackOpaque
-        //UIApplication.sharedApplication()
-        
-        // change title color and drop the shadow like it's hot
+ 
         let shadow = NSShadow()
         shadow.shadowColor = UIColor.blackColor();
         shadow.shadowOffset = CGSizeMake(1,2);
@@ -551,9 +475,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         border.frame = CGRect(x: 0, y: statusHeight, width:  screenWidth, height: 0.6)
         
         border.borderWidth = width
-        //statusView.layer.addSublayer(border)
-        //statusView.layer.masksToBounds = true
-        
+      
         
         
          navigationController?.navigationBar.barTintColor = UIColor(red: 240 / 255.0, green: 76 / 255.0, blue: 60 / 255.0, alpha: 1.0)
@@ -564,19 +486,10 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 3, left: 4, bottom: 75, right: 4)
-        //layout.itemSize = CGSize(width: 150, height: 150)
-        //  print("screen width \(self.collectionView.frame)")
-        // print("view width \(self.view.frame)")
-        //print(screenWidth)
-        // print(screenHeight)
-        //self.collectionView.frame = self.view.frame
+
         layout.itemSize = CGSize(width: (screenWidth-14) / 3, height: (screenWidth-14) / 3)
         layout.minimumInteritemSpacing = 3
         layout.minimumLineSpacing = 3
-        
-        //let margins = view.layoutMarginsGuide
-        //self.collectionView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        // create the constraints with the constant value you want.
         
         
         
@@ -588,24 +501,18 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         collectionView!.dataSource = self
         collectionView!.delegate = self
         collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")//rgb(29, 78, 111)
-        //collectionView.backgroundColor = UIColor(red: 52 / 255.0, green: 73 / 255.0, blue: 94 / 255.0, alpha: 1)
-        //collectionView.backgroundColor = UIColor(red: 29 / 255.0, green: 78 / 255.0, blue: 111 / 255.0, alpha: 1)
         collectionView.backgroundColor =  UIColor(red: 171 / 255.0, green: 216 / 255.0, blue: 204 / 255.0, alpha: 0.97)
 
         navigationController?.navigationBar.tintAdjustmentMode = .Normal
         //navigationController?.navigationBar.barTintColor = [UIColor blackColor];
         navigationController?.navigationBar.translucent = true
-        
-        //navBar.frame=CGRectMake(0, 0, screenWidth, 50)
-        //navBar.backgroundColor=(UIColor .blackColor())
-        
+       
         let bar:UINavigationBar! =  self.navigationController?.navigationBar
         
         bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         bar.shadowImage = UIImage()
         bar.backgroundColor = UIColor(red: 230 / 255.0, green: 75 / 255.0, blue: 85 / 255.0, alpha: 0.97)
-        //bar.frame.origin.y = -50
-        //bar.frame = CGRect(x: bar.frame.origin.x , y: bar.frame.origin.y-20, width: bar.frame.size.width, height: bar.frame.size.height)
+
         self.view.addSubview(collectionView!)
       
         
@@ -727,22 +634,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     }
     
     
-    //    func animationControllerForPresentedController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    //        if ((toVC as? NewViewController) != nil){
-    //            if operation == UINavigationControllerOperation.Push {
-    //                print("1")
-    //                return MagicMoveTransion()
-    //            } else {
-    //                print("2")
-    //                return nil
-    //            }
-    //        }else {
-    //            print("3")
-    //            return FadeAnimator()
-    //        }
-    //    }
-    
-    
+ 
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return MagicMoveTransion()
     }
@@ -762,12 +654,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             vc.transitioningDelegate = self
             // vc.image = self.cellData[indexPath.row].ImageData
             vc.index = indexPath.item
-            //vc.photoCollection = collectionData.getAllImageAndDate().ImageData
-            // vc.urlCollection = collectionData.getAllImageAndDate().groupNSURL
-            
-            //  vc.image = self.selectedCell!.imageView.image!
-            //vc.title = self.collectionData.cellData[indexPath.row].lableData
-            
+       
         }
     }
     
