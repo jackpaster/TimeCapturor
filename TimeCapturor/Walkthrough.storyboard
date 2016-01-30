@@ -21,8 +21,8 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="JJV-op-rSU">
                                 <rect key="frame" x="281" y="530" width="39" height="37"/>
                             </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ad-hv-8C6" userLabel="Prev">
-                                <rect key="frame" x="0.0" y="530" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ad-hv-8C6" userLabel="Prev">
+                                <rect key="frame" x="4" y="530" width="50" height="50"/>
                                 <state key="normal" image="leftarrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -164,7 +164,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TcH-YN-NyM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TcH-YN-NyM">
                                 <rect key="frame" x="0.0" y="0.0" width="618" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HjC-th-GUy">
@@ -188,12 +188,15 @@
                         <constraints>
                             <constraint firstItem="HjC-th-GUy" firstAttribute="top" secondItem="bM9-g6-tPB" secondAttribute="bottom" constant="-27" id="19L-iy-gyi"/>
                             <constraint firstItem="HjC-th-GUy" firstAttribute="leading" secondItem="ilO-KC-33e" secondAttribute="leadingMargin" constant="-20" id="2Fd-iZ-WKh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TcH-YN-NyM" secondAttribute="trailing" constant="-38" id="7ig-10-Nhk"/>
                             <constraint firstItem="dfl-3s-oOE" firstAttribute="leading" secondItem="HjC-th-GUy" secondAttribute="leading" id="8Ng-CL-8MS"/>
+                            <constraint firstItem="TcH-YN-NyM" firstAttribute="leading" secondItem="HjC-th-GUy" secondAttribute="leading" id="8kt-ST-3wc"/>
                             <constraint firstItem="Q0s-D3-K13" firstAttribute="top" secondItem="HjC-th-GUy" secondAttribute="bottom" id="CNy-r7-UAe"/>
-                            <constraint firstItem="dfl-3s-oOE" firstAttribute="leading" secondItem="TcH-YN-NyM" secondAttribute="leading" id="IN3-qj-QQ0"/>
+                            <constraint firstItem="TcH-YN-NyM" firstAttribute="top" secondItem="ilO-KC-33e" secondAttribute="top" id="EIL-pp-JxY"/>
                             <constraint firstItem="dfl-3s-oOE" firstAttribute="trailing" secondItem="HjC-th-GUy" secondAttribute="trailing" id="KQQ-3F-28C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HjC-th-GUy" secondAttribute="trailing" constant="-20" id="X6X-7r-4DX"/>
                             <constraint firstItem="dfl-3s-oOE" firstAttribute="top" secondItem="At2-Nx-1U5" secondAttribute="bottom" constant="257" id="Y5x-jT-dnc"/>
+                            <constraint firstItem="TcH-YN-NyM" firstAttribute="bottom" secondItem="Q0s-D3-K13" secondAttribute="top" id="qYm-9h-o3v"/>
                             <constraint firstAttribute="centerX" secondItem="bM9-g6-tPB" secondAttribute="centerX" constant="0.5" id="u1B-iQ-Joa"/>
                         </constraints>
                     </view>

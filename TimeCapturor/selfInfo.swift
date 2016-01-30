@@ -117,7 +117,7 @@ class selfInfo:UIView{
             label.textAlignment = NSTextAlignment.Left
             label.text = labelText
             label.textColor = UIColor.whiteColor()
-            label.font =  UIFont(name: label.font.fontName, size: 16)
+            label.font =  UIFont(name: label.font.fontName, size: 15)
             label.layer.masksToBounds = true
             label.layer.cornerRadius = 5
             //label.layer.backgroundColor = UIColor(red: 46/255.0, green: 204/255.0, blue: 113/255.0, alpha: 0.4).CGColor//rgb(46, 204, 113)

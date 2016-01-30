@@ -18,7 +18,7 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var namelable: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
-    var items: [String] = ["How to use", "Any issue or idear", "Rate in App Store","Tell your friend","version 1.0.1"]
+    var items: [String] = ["How to use", "Any issue or idea", "Rate in App Store","Tell your friend","version 1.1.0"]
     
     @IBAction func mailAction(sender: UIButton) {
         
@@ -30,7 +30,7 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             //Set the subject and message of the email
             mailComposer.setToRecipients(["tengfeiyang2010@gmail.com"])
             mailComposer.setSubject("TimeCapturor Feedback")
-            mailComposer.setMessageBody("I am using TimeCapturor version 1.0.0", isHTML: false)
+            mailComposer.setMessageBody("I am using TimeCapturor version 1.1.0", isHTML: false)
             self.presentViewController(mailComposer, animated: true, completion: nil)
             
         }else{
@@ -166,13 +166,20 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // Please Sign Up (Free!) to remove this limitation.
         let shareParames = NSMutableDictionary()
         
-        shareParames.SSDKSetupShareParamsByText("Check this App out,TimeCapturor(http://appstore.com/timecapturor), I highly recommend it to you!",
+        shareParames.SSDKSetupShareParamsByText("Check this App out,TimeCapturor(https://itunes.apple.com/app/timecapturor/id1073022692), I highly recommend it to you!",
             images : UIImage(named: "logo_HD"),
             url : NSURL(string:"https://itunes.apple.com/app/timecapturor/id1073022692"),
             title : "Let's capture time!",
             type : SSDKContentType.Auto)
         
-        
+//        let wechattimeline = NSMutableDictionary()
+//        
+//        wechattimeline.SSDKSetupShareParamsByText("Check this App out,TimeCapturor(https://itunes.apple.com/app/timecapturor/id1073022692), I highly recommend it to you!",
+//            images : UIImage(named: "logo_HD"),
+//            url : NSURL(string:"https://files.parsetfss.com/e162e73d-86ba-4868-806b-33ebc40e824a/tfss-5222a658-c527-40d4-8f49-cb3f507e0f39-testVideo.mov"),
+//            title : "Let's capture time!",
+//            type : SSDKContentType.Video)
+//        
         
         ShareSDK.showShareActionSheet(tableView, items: nil, shareParams: shareParames) { (state:SSDKResponseState, platformType:SSDKPlatformType, userData:[NSObject : AnyObject]!, contentEntity:SSDKContentEntity!, error:NSError!, end:Bool) -> Void in
             
@@ -203,7 +210,7 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             //Set the subject and message of the email
             mailComposer.setToRecipients(["tengfeiyang2010@gmail.com"])
             mailComposer.setSubject("TimeCapturor Issue and Idear")
-            mailComposer.setMessageBody("I am using TimeCapturor version 1.0.0", isHTML: false)
+            mailComposer.setMessageBody("I am using TimeCapturor version 1.1.0", isHTML: false)
             self.presentViewController(mailComposer, animated: true, completion: nil)
             
         }else{

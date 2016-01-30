@@ -11,6 +11,8 @@ import KVNProgress
 import AVKit
 import MediaPlayer
 import MessageUI
+import Parse
+
 
 class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate {
     
@@ -58,7 +60,8 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
                         KVNProgress.showSuccessWithStatus("Success")
                         
                         self.videoURL = video
-                        self.previewVideoView.image = self.firstFrameOfVideo(self.videoURL)
+                        //print(video)
+                        self.previewVideoView.image = self.firstFrameOfVideo()
                         
                     })
                     
@@ -91,7 +94,7 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         shareBubbles.showMailBubble = true
         shareBubbles.showFacebookBubble = true
         shareBubbles.showTwitterBubble = true
-       // shareBubbles.showInsBubble = true
+        // shareBubbles.showInsBubble = true
         shareBubbles.showInstagramBubble = true
         shareBubbles.showSinaBubble = true
         shareBubbles.showQQBubble = true
@@ -135,7 +138,9 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
             NSLog("QQ")
             break
         case AAShareBubbleTypeQzone.rawValue:
-            InformShareError()
+            //InformShareError()
+            shareTo("qzone")
+            
             NSLog("Qzone")
             break
         case AAShareBubbleTypeSina.rawValue:
@@ -175,16 +180,18 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         return .LightContent
     }
     
-    
-    func firstFrameOfVideo(path:NSURL)->UIImage{
-        let asset: AVURLAsset = AVURLAsset(URL: path)
-        let imageGenerator: AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
-        let  timeScale =  asset.duration.timescale
-        let frame = try! imageGenerator.copyCGImageAtTime(CMTimeMake(1, timeScale), actualTime: nil)
-        //var image: UIImage = UIImage.imageWithCGImage(frame, actualTime: nil)
-        // videoFrame.image = image
-        let frameImg : UIImage = UIImage(CGImage: frame)
-        return frameImg
+    func firstFrameOfVideo()->UIImage{
+        //        let asset: AVURLAsset = AVURLAsset(URL: path)
+        //        let imageGenerator: AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+        //        let  timeScale =  asset.duration.timescale
+        //        let frame = try! imageGenerator.copyCGImageAtTime(CMTimeMake(1, timeScale), actualTime: nil)
+        //        //var image: UIImage = UIImage.imageWithCGImage(frame, actualTime: nil)
+        //        // videoFrame.image = image
+        //        let frameImg : UIImage = UIImage(CGImage: frame)
+        //        return frameImg
+        let last = Album().getAllImageAndDate().Number
+        return Album().getAllImageAndDate().ImageData[last-1]
+        
     }
     
     override func viewDidLoad() {
@@ -195,8 +202,8 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         {
             let fileExist = NSFileManager.defaultManager().fileExistsAtPath(videoURL.path!)
             if fileExist == true{
-                self.videoURL = videoURL
-                previewVideoView.image = firstFrameOfVideo(videoURL)
+                //self.videoURL = videoURL
+                previewVideoView.image = firstFrameOfVideo()
                 playButton.hidden = false
                 noFileMessage.hidden = true
                 dateLable.hidden = false
@@ -223,7 +230,7 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         
         //NSURL.isFileReferenceURL()
         
-     
+        
         
         createNewButton.layer.shadowColor = UIColor.blackColor().CGColor
         createNewButton.layer.shadowOffset = CGSizeMake(0, 4)
@@ -286,9 +293,6 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
             //print("main")
         }
         
-        
-        
-        
         let statusHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         let statusView = UIView(frame:
             CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height:statusHeight) )
@@ -305,7 +309,6 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         
         self.customConfiguration = self.customKVNProgressUIConfiguration()
         
-                
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -376,9 +379,6 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         }else{
             SweetAlert().showAlert("Video file doesn't exist!", subTitle: "You should create one first", style: AlertStyle.Error)
         }
-        
-        
-        
         
     }
     //var Image = Album().getAllImageAndDate().ImageData
@@ -590,7 +590,86 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         
     }
     
-    
+    func shareTo(platform:String){
+        parseFileManager().deleteVideo()
+        
+        let fileExist = NSFileManager.defaultManager().fileExistsAtPath(videoURL.path!)
+        if fileExist == true{
+            parseFileManager().uplaodVideo(videoURL)
+        }else{
+            SweetAlert().showAlert("Video file doesn't exist!", subTitle: "You should create one first", style: AlertStyle.Error)
+        }
+        
+        //   let videoShareURL = parseFileManager().Retrive()
+        //  print("share url \(videoShareURL)")
+        
+        parseFileManager().Retrive { (videoShareURL) -> Void in
+            
+            print("share url \(videoShareURL)")
+            
+            if(videoShareURL != nil){
+                
+                let shareParames = NSMutableDictionary()
+                
+                shareParames.SSDKSetupShareParamsByText("Check out the time I captured",
+                    images : self.firstFrameOfVideo(),
+                    url : NSURL(string: videoShareURL! ),
+                    title : "Check out the time I captured!",
+                    type : SSDKContentType.Video)
+                
+                var platformType = SSDKPlatformType.TypeAny
+                
+                switch platform{
+                    
+                case "qzone":
+                    platformType = SSDKPlatformType.SubTypeQZone
+                    break
+                    
+                case "qq":
+                    platformType = SSDKPlatformType.TypeQQ
+                    break
+                    
+                case "wechatTimeline":
+                    platformType = SSDKPlatformType.SubTypeWechatTimeline
+                    break
+                    
+                case "sina":
+                    platformType = SSDKPlatformType.TypeSinaWeibo
+                    break
+                    
+                case "facebook":
+                    platformType = SSDKPlatformType.TypeFacebook
+                    break
+                    
+                case "twitter":
+                    platformType = SSDKPlatformType.TypeTwitter
+                    break
+                    
+                default:
+                    break
+                }
+                
+                ShareSDK.share(platformType, parameters: shareParames) { (state : SSDKResponseState, userData : [NSObject : AnyObject]!, contentEntity :SSDKContentEntity!, error : NSError!) -> Void in
+                    
+                    switch state{
+                        
+                    case SSDKResponseState.Success:
+                        print("分享成功")
+                        let alert = UIAlertView(title: "share success", message: "", delegate: self, cancelButtonTitle: "OK")
+                        alert.show()
+                    case SSDKResponseState.Fail:    print("分享失败,错误描述:\(error)")
+                    case SSDKResponseState.Cancel:  print("分享取消")
+                        
+                    default:
+                        break
+                    }
+                }
+                
+            }
+            
+        }
+        
+    }
     
     
 }

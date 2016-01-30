@@ -30,6 +30,7 @@ class CollectionViewCell: UICollectionViewCell {
         titleLable.backgroundColor = UIColor(red: 44 / 255.0, green: 62 / 255.0, blue: 80 / 255.0, alpha: 0.3)//rgb(44, 62, 80)
 
         contentView.addSubview(titleLable)
+        
     }
 
     required init?(coder aDecoder: NSCoder) {

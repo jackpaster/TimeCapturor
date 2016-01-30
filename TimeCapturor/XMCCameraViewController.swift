@@ -170,14 +170,13 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
            //         self.cameraStatus.text = "Uh oh! Something went wrong. Try it again."
                     self.status = .Error
                 }
-                self.Cancle.setTitle("Cancle", forState: UIControlState.Normal)
+                self.Cancle.setTitle("Cancel", forState: UIControlState.Normal)
                  self.captureButton.setImage(UIImage(named: "ic_save"), animated: false)
             })
         } else if self.status == .Still || self.status == .Error {
             if !saveImageToSandBox() {
                 print("save image false")
             }else{
-                
                 self.navigationController?.navigationBarHidden = false
                 self.dismissViewControllerAnimated(true, completion: nil)
                 
@@ -240,7 +239,9 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
                  //   print(s)
                     let url = docsDir.URLByAppendingPathComponent("\(unique).jpg")
                     // if let path = url.absoluteString as? String{
-                    
+                    dispatch_async(dispatch_get_main_queue(), {() -> Void in
+                        parseFileManager().uplaodImage(url)
+                        })
                     if imageData.writeToURL(url, atomically: true)
                     {
                        // print(url.absoluteString)

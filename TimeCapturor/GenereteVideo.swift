@@ -9,12 +9,14 @@
 
 import AVFoundation
 import UIKit
+import AssetsLibrary
+
 
 let kErrorDomain = "TimeLapseBuilder"
 let kFailedToStartAssetWriterError = 0
 let kFailedToAppendPixelBufferError = 1
 
-class TimeLapseBuilder: NSObject {
+class TimeLapseBuilder: NSObject,UIAlertViewDelegate {
     let photoURLs: [String]
     var videoWriter: AVAssetWriter?
     var framePerSecond : Float
@@ -22,6 +24,10 @@ class TimeLapseBuilder: NSObject {
         self.photoURLs = photoURLs
         self.framePerSecond = framePerSecond
     }
+    var videoAsset = AVURLAsset(URL: NSURL(string: "")!)
+    var audioAsset = AVURLAsset(URL: NSURL(string: "")!)
+    
+
     
     
     func build(progress: (CGFloat -> Void), success: (NSURL -> Void), failure: (NSError -> Void)) {
@@ -30,7 +36,7 @@ class TimeLapseBuilder: NSObject {
         var error: NSError?
         
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
-        let videoOutputURL = NSURL(fileURLWithPath: documentsPath.stringByAppendingPathComponent("AssembledVideo.mov"))
+        var videoOutputURL = NSURL(fileURLWithPath: documentsPath.stringByAppendingPathComponent("AssembledVideo.mov"))
         
         do {
             
@@ -131,6 +137,7 @@ class TimeLapseBuilder: NSObject {
                     videoWriterInput.markAsFinished()
                     videoWriter.finishWritingWithCompletionHandler { () -> Void in
                         if error == nil {
+                            videoOutputURL = self.mergeAndSave(videoOutputURL)
                             success(videoOutputURL)
                         }
                         
@@ -206,4 +213,58 @@ class TimeLapseBuilder: NSObject {
         
         CVPixelBufferUnlockBaseAddress(pixelBuffer, 0)
     }
+    
+    
+    func mergeAndSave(videoURL:NSURL)->NSURL {
+        //Create AVMutableComposition Object which will hold our multiple AVMutableCompositionTrack or we can say it will hold our video and audio files.
+        let mixComposition: AVMutableComposition = AVMutableComposition()
+        
+        //Now we will load video file.
+        //let video_url: NSURL = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("testVideo", ofType: "mov")!)
+        let video_url :NSURL = videoURL
+        videoAsset = AVURLAsset(URL: video_url, options: nil)
+        let video_timeRange: CMTimeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
+        //print(video_timeRange)
+        
+        
+        //Now we are creating the second AVMutableCompositionTrack containing our video and add it to our AVMutableComposition object.
+        let a_compositionVideoTrack: AVMutableCompositionTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: kCMPersistentTrackID_Invalid)
+        try! a_compositionVideoTrack.insertTimeRange(video_timeRange, ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0], atTime: kCMTimeZero)
+        
+        
+        //Now first load your audio file using AVURLAsset. Make sure you give the correct path of your videos.
+        let bundleURL = NSBundle.mainBundle().bundleURL
+        let audio_url = bundleURL.URLByAppendingPathComponent("bgm.mp3")
+        audioAsset = AVURLAsset(URL: audio_url, options: nil)
+        let audio_timeRange: CMTimeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
+       // print(audio_timeRange)
+        //Now we are creating the first AVMutableCompositionTrack containing our audio and add it to our AVMutableComposition object.
+        let b_compositionAudioTrack: AVMutableCompositionTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: kCMPersistentTrackID_Invalid)
+        try! b_compositionAudioTrack.insertTimeRange(audio_timeRange, ofTrack: audioAsset.tracksWithMediaType(AVMediaTypeAudio)[0], atTime: kCMTimeZero)
+        
+        //decide the path where you want to store the final video created with audio and video merge.
+        var dirPaths: [AnyObject] = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let docsDir: String = dirPaths[0] as! String
+        let outputFilePath: String = docsDir.stringByAppendingString("/FinalVideo.mov")
+        let outputFileUrl: NSURL = NSURL.fileURLWithPath(outputFilePath)
+        if NSFileManager.defaultManager().fileExistsAtPath(outputFilePath) {
+            try! NSFileManager.defaultManager().removeItemAtPath(outputFilePath)
+        }
+        
+        //Now create an AVAssetExportSession object that will save your final video at specified path.
+        let assetExport: AVAssetExportSession = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)!
+        assetExport.outputFileType = "com.apple.quicktime-movie"
+        assetExport.outputURL = outputFileUrl
+        assetExport.exportAsynchronouslyWithCompletionHandler({() -> Void in
+                print("out put finished")
+                //print(outputFileUrl)
+
+        })
+        return outputFileUrl
+        
+        
+    }
+    
+    
+    
 }

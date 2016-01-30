@@ -102,6 +102,10 @@
 		FED49AF91C45B7B900A64DB1 /* capture.png in Resources */ = {isa = PBXBuildFile; fileRef = FED49AF61C45B7B900A64DB1 /* capture.png */; };
 		FED49AFA1C45B7B900A64DB1 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = FED49AF71C45B7B900A64DB1 /* play.png */; };
 		FED49AFB1C45B7B900A64DB1 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = FED49AF81C45B7B900A64DB1 /* share.png */; };
+		FED49B041C45D60700A64DB1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED49AFE1C45D60700A64DB1 /* Bolts.framework */; };
+		FED49B051C45D60700A64DB1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED49AFF1C45D60700A64DB1 /* Parse.framework */; };
+		FEDCD3261C51A8B80017530B /* parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCD3251C51A8B80017530B /* parse.swift */; };
+		FEDCD3291C51B0780017530B /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FEDCD3281C51B0780017530B /* bgm.mp3 */; };
 		FEF0DC241C373D82002BBE67 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0DC231C373D81002BBE67 /* LocalNotification.swift */; };
 		FEF0DC261C37D3DE002BBE67 /* GenereteGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0DC251C37D3DD002BBE67 /* GenereteGIF.swift */; };
 /* End PBXBuildFile section */
@@ -216,6 +220,10 @@
 		FED49AF61C45B7B900A64DB1 /* capture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = capture.png; sourceTree = "<group>"; };
 		FED49AF71C45B7B900A64DB1 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		FED49AF81C45B7B900A64DB1 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		FED49AFE1C45D60700A64DB1 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		FED49AFF1C45D60700A64DB1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		FEDCD3251C51A8B80017530B /* parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parse.swift; sourceTree = "<group>"; };
+		FEDCD3281C51B0780017530B /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
 		FEF0DC231C373D81002BBE67 /* LocalNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		FEF0DC251C37D3DD002BBE67 /* GenereteGIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenereteGIF.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,11 +233,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED49B041C45D60700A64DB1 /* Bolts.framework in Frameworks */,
 				FE97FAD61C3CFA4F00FB01F1 /* libsqlite3.tbd in Frameworks */,
 				FE97FACC1C3CFA2300FB01F1 /* libz.tbd in Frameworks */,
 				FE9BE88E1C458BFF0068D14C /* SystemConfiguration.framework in Frameworks */,
 				FE9BE88C1C458BF70068D14C /* StoreKit.framework in Frameworks */,
 				FE9BE88A1C458BEE0068D14C /* Security.framework in Frameworks */,
+				FED49B051C45D60700A64DB1 /* Parse.framework in Frameworks */,
 				FE9BE8881C458BDF0068D14C /* QuartzCore.framework in Frameworks */,
 				FE9BE8861C458BD60068D14C /* CoreLocation.framework in Frameworks */,
 				FE9BE8841C458BCB0068D14C /* CoreGraphics.framework in Frameworks */,
@@ -495,6 +505,9 @@
 		FEA216DF1C28626E008F07F0 /* TimeCapturor */ = {
 			isa = PBXGroup;
 			children = (
+				FEDCD3281C51B0780017530B /* bgm.mp3 */,
+				FEDCD3271C51A8C10017530B /* Parse */,
+				FED49AFD1C45D60700A64DB1 /* parse-library-1.12.0 */,
 				FED49AF01C45ADA200A64DB1 /* AAShareBubbles */,
 				FED49ACB1C45ABC800A64DB1 /* BWWalkthrough */,
 				FE97FB881C3DED6900FB01F1 /* Chart */,
@@ -554,6 +567,23 @@
 				FED49AD01C45AC0C00A64DB1 /* leftarrow@2x.png */,
 			);
 			name = icon;
+			sourceTree = "<group>";
+		};
+		FED49AFD1C45D60700A64DB1 /* parse-library-1.12.0 */ = {
+			isa = PBXGroup;
+			children = (
+				FED49AFE1C45D60700A64DB1 /* Bolts.framework */,
+				FED49AFF1C45D60700A64DB1 /* Parse.framework */,
+			);
+			path = "parse-library-1.12.0";
+			sourceTree = "<group>";
+		};
+		FEDCD3271C51A8C10017530B /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				FEDCD3251C51A8B80017530B /* parse.swift */,
+			);
+			name = Parse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,6 +666,7 @@
 				FEA216EB1C28626E008F07F0 /* LaunchScreen.storyboard in Resources */,
 				FED49AE21C45AC4000A64DB1 /* user2.png in Resources */,
 				FE1181B11C3664BB00FECF8A /* schedule_image_moon-high.png in Resources */,
+				FEDCD3291C51B0780017530B /* bgm.mp3 in Resources */,
 				FED49AD31C45AC0C00A64DB1 /* img3@2x.png in Resources */,
 				FE97FAC31C3CF9D100FB01F1 /* ShareSDK.bundle in Resources */,
 				FE1181AF1C3664BB00FECF8A /* round_backarrow_big.png in Resources */,
@@ -719,6 +750,7 @@
 				FEA216E31C28626E008F07F0 /* ViewController.swift in Sources */,
 				FE4DDE731C29DDF400F7A328 /* XMCCamera.swift in Sources */,
 				FE11814A1C333D5500FECF8A /* SettingViewController.swift in Sources */,
+				FEDCD3261C51A8B80017530B /* parse.swift in Sources */,
 				FE97FB901C3DEF9700FB01F1 /* PNChartLabel.swift in Sources */,
 				FED49AF51C45ADFA00A64DB1 /* AAShareBubbles.m in Sources */,
 				FED49AC91C45AB8900A64DB1 /* BWWalkthroughPageViewController.swift in Sources */,
@@ -878,6 +910,7 @@
 					"$(PROJECT_DIR)/TimeCapturor/parse-library-1.12.0",
 				);
 				INFOPLIST_FILE = TimeCapturor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -927,6 +960,7 @@
 					"$(PROJECT_DIR)/TimeCapturor/parse-library-1.12.0",
 				);
 				INFOPLIST_FILE = TimeCapturor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
