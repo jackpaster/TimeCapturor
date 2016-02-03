@@ -85,8 +85,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,BWWalkthroughViewControlle
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         
-        
-        
         ShareSDK.registerApp("e460ee2dc4b8", activePlatforms: [ SSDKPlatformType.SubTypeQZone.rawValue ,SSDKPlatformType.TypeFacebook.rawValue,SSDKPlatformType.TypeMail.rawValue,SSDKPlatformType.TypeSMS.rawValue, SSDKPlatformType.TypeQQ.rawValue , SSDKPlatformType.TypeSinaWeibo.rawValue,SSDKPlatformType.TypeWechat.rawValue], onImport: {(platformType: SSDKPlatformType) -> Void in
             switch platformType {
             case SSDKPlatformType.TypeWechat:

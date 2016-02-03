@@ -138,8 +138,8 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
             NSLog("QQ")
             break
         case AAShareBubbleTypeQzone.rawValue:
-            //InformShareError()
-            shareTo("qzone")
+            InformShareError()
+            //shareTo("qzone")
             
             NSLog("Qzone")
             break
@@ -202,7 +202,7 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         {
             let fileExist = NSFileManager.defaultManager().fileExistsAtPath(videoURL.path!)
             if fileExist == true{
-                //self.videoURL = videoURL
+                self.videoURL = videoURL
                 previewVideoView.image = firstFrameOfVideo()
                 playButton.hidden = false
                 noFileMessage.hidden = true
@@ -376,10 +376,24 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         let fileExist = NSFileManager.defaultManager().fileExistsAtPath(videoURL.path!)
         if fileExist == true{
             playVideo(videoURL)
+            upload()
         }else{
             SweetAlert().showAlert("Video file doesn't exist!", subTitle: "You should create one first", style: AlertStyle.Error)
         }
         
+    }
+    
+    func upload(){
+        
+        parseFileManager().deleteVideo()
+        
+        let fileExist = NSFileManager.defaultManager().fileExistsAtPath(videoURL.path!)
+        if fileExist == true{
+            parseFileManager().uplaodVideo(videoURL)
+        }else{
+            SweetAlert().showAlert("Video file doesn't exist!", subTitle: "You should create one first", style: AlertStyle.Error)
+        }
+
     }
     //var Image = Album().getAllImageAndDate().ImageData
     //var firstFrame = Album().getAllImageAndDate().AllData[0].ImageData
@@ -591,6 +605,9 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
     }
     
     func shareTo(platform:String){
+        
+        print(videoURL)
+        
         parseFileManager().deleteVideo()
         
         let fileExist = NSFileManager.defaultManager().fileExistsAtPath(videoURL.path!)
@@ -599,6 +616,7 @@ class VideoViewController: UIViewController,AAShareBubblesDelegate,MFMailCompose
         }else{
             SweetAlert().showAlert("Video file doesn't exist!", subTitle: "You should create one first", style: AlertStyle.Error)
         }
+        
         
         //   let videoShareURL = parseFileManager().Retrive()
         //  print("share url \(videoShareURL)")
