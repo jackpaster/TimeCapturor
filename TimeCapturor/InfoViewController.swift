@@ -18,7 +18,7 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var namelable: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
-    var items: [String] = ["How to use", "Any issue or idea", "Rate in App Store","Tell your friend","version 1.1.0"]
+    var items: [String] = ["How to use", "Any issue or idea", "Rate in App Store","Tell your friend","version 1.3.0"]
     
     @IBAction func mailAction(sender: UIButton) {
         
@@ -30,7 +30,7 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             //Set the subject and message of the email
             mailComposer.setToRecipients(["tengfeiyang2010@gmail.com"])
             mailComposer.setSubject("TimeCapturor Feedback")
-            mailComposer.setMessageBody("I am using TimeCapturor version 1.1.0", isHTML: false)
+            mailComposer.setMessageBody("I am using TimeCapturor version 1.3.0", isHTML: false)
             self.presentViewController(mailComposer, animated: true, completion: nil)
             
         }else{
@@ -209,8 +209,8 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             mailComposer.mailComposeDelegate = self
             //Set the subject and message of the email
             mailComposer.setToRecipients(["tengfeiyang2010@gmail.com"])
-            mailComposer.setSubject("TimeCapturor Issue and Idear")
-            mailComposer.setMessageBody("I am using TimeCapturor version 1.1.0", isHTML: false)
+            mailComposer.setSubject("TimeCapturor Issue and Idea")
+            mailComposer.setMessageBody("I am using TimeCapturor version 1.3.0", isHTML: false)
             self.presentViewController(mailComposer, animated: true, completion: nil)
             
         }else{

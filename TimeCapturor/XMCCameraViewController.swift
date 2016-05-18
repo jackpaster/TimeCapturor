@@ -17,8 +17,10 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
     
    
     
+    @IBOutlet weak var imageBefore: UIImageView!
     @IBOutlet weak var cameraStill: UIImageView!
     @IBOutlet weak var cameraPreview: UIView!
+    
     //@IBOutlet weak var cameraStatus: UILabel!
    // @IBOutlet weak var cameraCapture: UIButton!
     //@IBOutlet weak var cameraCaptureShadow: UILabel!
@@ -73,7 +75,14 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
         baseLines.image = img
         
         view.addSubview(baseLines)
-
+        
+        if getPreviouseImage() == false {
+            imageBefore.hidden = true
+        }else{
+            imageBefore.hidden = false
+            imageBefore.alpha = 0.5
+        }
+        
         
         
         Cancle.frame = CGRect(x: screenSize.width/2 - 130, y: screenSize.height - 95, width: 80, height: 50)
@@ -91,11 +100,14 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
         
         view.addSubview(Cancle)
         view.addSubview(captureButton)
+        view.addSubview(imageBefore)
         
         
     }
     
     func btnCancel(sender: UIButton) {
+        
+        imageBefore.hidden = false
         
         if self.status == .Preview {
             self.navigationController?.navigationBarHidden = false
@@ -134,6 +146,16 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
         self.camera = XMCCamera(sender: self)
     }
     
+    func getPreviouseImage() ->Bool{
+        let imagesData = Album()
+        if imagesData.getAllImageAndDate().Number==0 {
+            return false
+        }
+        imageBefore.image = imagesData.getAllImageAndDate().ImageData[0];
+        
+        return true
+    }
+    
     func establishVideoPreviewArea() {
         self.preview = AVCaptureVideoPreviewLayer(session: self.camera?.session)
         self.preview?.videoGravity = AVLayerVideoGravityResizeAspectFill
@@ -145,6 +167,9 @@ class XMCCameraViewController: UIViewController, XMCCameraDelegate {
     // MARK: Button Actions
     
     func captureFrame(sender: AnyObject) {
+        
+        imageBefore.hidden = true
+        
         if self.status == .Preview {
           //  self.cameraStatus.text = "Capturing Photo"
             
