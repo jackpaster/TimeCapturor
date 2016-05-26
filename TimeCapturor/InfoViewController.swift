@@ -16,9 +16,10 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var weiboButton: UIButton!
     
     @IBOutlet weak var namelable: UILabel!
+    @IBOutlet weak var lookingjobs: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
-    var items: [String] = ["How to use", "Any issue or idea", "Rate in App Store","Tell your friend","version 1.3.0"]
+    var items: [String] = ["How to use", "Refer Tengfei for a Job", "Rate in App Store","Tell your friend","version 1.3.0"]
     
     @IBAction func mailAction(sender: UIButton) {
         
@@ -46,7 +47,7 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @IBAction func weiboAction(sender: UIButton) {
         
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://weibo.com/tengfeiyang")!)
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://tengfei.tech/")!)
 
     }
     
@@ -68,6 +69,7 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.backgroundColor = UIColor(red: 250 / 255.0, green: 240 / 255.0, blue: 225 / 255.0, alpha: 1)
         
         namelable.textColor = UIColor.whiteColor() //rgb(236, 240, 241)
+        lookingjobs.textColor = UIColor.whiteColor()
         
         mailButton.layer.cornerRadius = 25
         mailButton.layer.masksToBounds = true
@@ -86,7 +88,7 @@ class InfoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         weiboButton.layer.masksToBounds = true
         weiboButton.tintColor = UIColor.whiteColor()
         weiboButton.layer.backgroundColor =  UIColor(red: 230 / 255.0, green: 22 / 255.0, blue: 45 / 255.0, alpha: 1).CGColor
-        weiboButton.setImage(UIImage(named: "ic_weibo"), forState: .Normal)
+        weiboButton.setImage(UIImage(named: "ic_web"), forState: .Normal)
         
         
         

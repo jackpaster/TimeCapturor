@@ -353,7 +353,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6C-KB-BM6">
-                                <rect key="frame" x="187" y="176" width="227" height="20"/>
+                                <rect key="frame" x="187" y="164" width="227" height="20"/>
                                 <attributedString key="attributedText">
                                     <fragment content="TimeCapturor ">
                                         <attributes>
@@ -404,15 +404,22 @@
                                     <outlet property="delegate" destination="cyy-zD-ioL" id="PlF-7W-q7n"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New graduate CS master looking for a full-time job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXf-jG-oPE">
+                                <rect key="frame" x="147" y="191" width="307" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3PV-Gh-QVV" firstAttribute="leading" secondItem="g1g-ab-8hp" secondAttribute="trailing" constant="54" id="6R7-yl-rmt"/>
+                            <constraint firstItem="wXf-jG-oPE" firstAttribute="centerX" secondItem="u6C-KB-BM6" secondAttribute="centerX" id="863-xe-0zE"/>
                             <constraint firstItem="l1p-GD-tDe" firstAttribute="centerX" secondItem="G3i-dB-S5F" secondAttribute="centerX" id="Amm-3b-1cB"/>
-                            <constraint firstItem="u6C-KB-BM6" firstAttribute="top" secondItem="l1p-GD-tDe" secondAttribute="bottom" constant="26" id="Ijo-qD-JRQ"/>
+                            <constraint firstItem="u6C-KB-BM6" firstAttribute="top" secondItem="l1p-GD-tDe" secondAttribute="bottom" constant="14" id="Ijo-qD-JRQ"/>
                             <constraint firstItem="myG-F6-cgX" firstAttribute="top" secondItem="Mmh-n6-yIn" secondAttribute="bottom" constant="35" id="MeK-Oq-rSB"/>
                             <constraint firstItem="u6C-KB-BM6" firstAttribute="centerX" secondItem="G3i-dB-S5F" secondAttribute="centerX" id="RlK-Rm-wTm"/>
-                            <constraint firstItem="3PV-Gh-QVV" firstAttribute="top" secondItem="u6C-KB-BM6" secondAttribute="bottom" constant="19.5" id="SIV-Ar-cep"/>
+                            <constraint firstItem="3PV-Gh-QVV" firstAttribute="top" secondItem="u6C-KB-BM6" secondAttribute="bottom" constant="31" id="SIV-Ar-cep"/>
                             <constraint firstItem="g1g-ab-8hp" firstAttribute="centerY" secondItem="3PV-Gh-QVV" secondAttribute="centerY" id="Sn7-ib-Ak1"/>
                             <constraint firstItem="myG-F6-cgX" firstAttribute="top" secondItem="3PV-Gh-QVV" secondAttribute="bottom" constant="28" id="UY6-Wn-Xdd"/>
                             <constraint firstItem="3PV-Gh-QVV" firstAttribute="centerX" secondItem="G3i-dB-S5F" secondAttribute="centerX" id="YVU-rc-1Ad"/>
@@ -420,6 +427,7 @@
                             <constraint firstItem="Mmh-n6-yIn" firstAttribute="leading" secondItem="3PV-Gh-QVV" secondAttribute="trailing" constant="54" id="dBS-Tg-pOL"/>
                             <constraint firstItem="l1p-GD-tDe" firstAttribute="top" secondItem="tnK-r2-gfl" secondAttribute="bottom" constant="26" id="eCc-NU-EB1"/>
                             <constraint firstItem="Mmh-n6-yIn" firstAttribute="centerY" secondItem="3PV-Gh-QVV" secondAttribute="centerY" id="fVJ-MI-Qwa"/>
+                            <constraint firstItem="3PV-Gh-QVV" firstAttribute="top" secondItem="wXf-jG-oPE" secondAttribute="bottom" constant="8" id="fWt-Xo-IFc"/>
                             <constraint firstItem="myG-F6-cgX" firstAttribute="centerX" secondItem="l1p-GD-tDe" secondAttribute="centerX" id="ivb-oB-E5u"/>
                             <constraint firstItem="myG-F6-cgX" firstAttribute="leading" secondItem="G3i-dB-S5F" secondAttribute="leading" id="j9x-vX-96F"/>
                             <constraint firstItem="8u9-T6-DCU" firstAttribute="top" secondItem="myG-F6-cgX" secondAttribute="bottom" constant="159" id="je6-hg-CaO"/>
@@ -438,6 +446,7 @@
                     </view>
                     <connections>
                         <outlet property="linkedinButton" destination="3PV-Gh-QVV" id="zqx-yV-Dac"/>
+                        <outlet property="lookingjobs" destination="wXf-jG-oPE" id="X9i-hp-Jr6"/>
                         <outlet property="mailButton" destination="g1g-ab-8hp" id="5KT-MM-Uvi"/>
                         <outlet property="namelable" destination="u6C-KB-BM6" id="cmh-pt-Ra9"/>
                         <outlet property="tableView" destination="myG-F6-cgX" id="Ifu-M0-sTj"/>
